@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Living Collective Store">
+  <circle cx="128" cy="128" r="128" fill="#3E8E1A"/>
+  <path d="M0 128a128 128 0 0 1 256 0" fill="#F26B1D"/>
+  <path fill="#fff" d="M78 118V86h18v32H78zm82 0V86h18v32h-18zM96 122V70h64v52H96z"/>
+  <path fill="#fff" d="M70 86h34v-8H78l-8 8zm82 0h34l-8-8h-26v8zM104 70h48l-6-16h-36l-6 16z"/>
+  <rect x="118" y="92" width="20" height="30" rx="8" fill="#F26B1D"/>
+  <text x="128" y="162" text-anchor="middle" fill="#fff" font-family="Figtree, Arial, sans-serif" font-size="34" font-weight="800">LIVING</text>
+  <text x="128" y="188" text-anchor="middle" fill="#fff" font-family="Figtree, Arial, sans-serif" font-size="16" font-weight="800" letter-spacing="1">COLLECTIVE</text>
+  <text x="128" y="214" text-anchor="middle" fill="#fff" font-family="Figtree, Arial, sans-serif" font-size="22" font-weight="800" letter-spacing="2">STORE</text>
+</svg>
