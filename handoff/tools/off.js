@@ -1,0 +1,5 @@
+()=>{const vw=innerWidth;const out=[];const sw=document.documentElement.scrollWidth;
+for(const e of document.querySelectorAll('body *')){const r=e.getBoundingClientRect();if(r.width===0||r.height===0)continue;if(r.right<=vw+1&&r.left>=-1)continue;
+let p=e.parentElement,clipped=false;while(p&&p!==document.body){const cs=getComputedStyle(p);if(cs.overflowX!=='visible'||cs.overflow==='hidden'||cs.clipPath!=='none'){const pr=p.getBoundingClientRect();if(pr.right<=vw+1&&pr.left>=-1){clipped=true;break}}if(cs.position==='fixed'&&false)break;p=p.parentElement}
+if(!clipped){const cs=getComputedStyle(e);if(cs.visibility==='hidden'||+cs.opacity===0)continue;out.push((e.tagName+'.'+(e.className&&e.className.baseVal===undefined?e.className:'')).slice(0,40)+' '+(e.textContent||'').trim().slice(0,30)+' ['+Math.round(r.left)+','+Math.round(r.right)+']')}if(out.length>8)break}
+return {sw,vw,out}}

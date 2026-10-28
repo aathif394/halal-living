@@ -1,0 +1,16 @@
+{
+  "name": "Halal Living",
+  "short_name": "Halal Living",
+  "description": "Halal restaurants and masjids in Chennai, Mumbai, Bangalore and Hyderabad, checked by people who live there.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FBF1EC",
+  "theme_color": "#B94421",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
