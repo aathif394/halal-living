@@ -1,3 +1,4 @@
+import { clarityId, clarityScript } from "@/lib/analytics";
 import { CITIES, SITE_DESCRIPTION, getCity, type CitySlug } from "@/lib/cities";
 import { getAboutPage, getMasjid, getRestaurant, listCommunity, listMasjids, listRestaurants } from "@/lib/data";
 import { breadcrumbLd, faqLd, graphLd, itemListLd, jsonLdScript, masjidLd, organizationLd, restaurantLd, siteUrl, websiteLd } from "@/lib/seo";
@@ -204,7 +205,8 @@ export async function GET(request: Request, context: { params: Promise<{ path?: 
     return new Response("Shell is missing its mount point.", { status: 500 });
   }
 
-  const head = `<title>${esc(title)}</title>\n<meta name="description" content="${esc(description)}">\n<link rel="canonical" href="${esc(`${base}${canonicalPath}`)}">${noindex ? '\n<meta name="robots" content="noindex">' : ""}`;
+  const clarity = await clarityId();
+  const head = `<title>${esc(title)}</title>\n<meta name="description" content="${esc(description)}">\n<link rel="canonical" href="${esc(`${base}${canonicalPath}`)}">${noindex ? '\n<meta name="robots" content="noindex">' : ""}${clarity ? `\n${clarityScript(clarity)}` : ""}`;
   const bootScript =
     "(function(){var boot=window.__HLC&&window.__HLC.boot;if(!boot||!boot.slug)return;var pack=window.__HLC.byCity[window.__HLC.city];var list=pack&&(boot.kind==='masjids'?pack.masjids:pack.restaurants);if(!list)return;for(var i=0;i<list.length;i++){if(list[i].slug===boot.slug){window.__HLC_DETAIL=list[i];break;}}})();";
   const injected = `<script>window.__HLC=${jsValue({ city, boot, byCity, reels })};${bootScript}</script>\n<script type="application/ld+json">${jsonLdScript(graph)}</script>\n${noscript}\n`;

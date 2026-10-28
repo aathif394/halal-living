@@ -18,6 +18,7 @@ export default defineConfig({
       IMAGES: bindings.images(),
       NEXT_PUBLIC_SUPABASE_URL: bindings.text("https://xrhwforbjljuztqcpqnp.supabase.co"),
       NEXT_PUBLIC_SUPABASE_ANON_KEY: bindings.text("sb_publishable_vo7N12rMCyBxnOb4OOSTNQ_ueZJRUf_"),
+      NEXT_PUBLIC_CLARITY_ID: bindings.text(""),
     },
   }),
 });
