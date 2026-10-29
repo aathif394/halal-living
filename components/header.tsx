@@ -18,7 +18,7 @@ export function Header({ city, current }: { city: CityTheme; current?: "restaura
       <div className="hl-head__bar">
         <a className="hl-brand" href={`/${city.slug}`}>
           <span className="hl-mark" aria-hidden="true">
-            <img className="hl-brand__img" src="/store-logo.svg" alt="" width="46" height="46" />
+            <img className="hl-brand__img" src={`/icons/cities/${city.slug}.jpg`} alt="" width="46" height="46" />
           </span>
           Halal Living
         </a>

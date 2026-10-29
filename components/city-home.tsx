@@ -199,7 +199,7 @@ export function CityHome({
           <div className="hl-wrap">
             <div className="hl-section-head">
               <div style={{ display: "flex", gap: 14, alignItems: "center" }}>
-                <img src="/store-logo.svg" alt="" width="72" height="72" />
+                <img src="/icons/partners/living-collective-store.png" alt="" width="72" height="72" style={{ borderRadius: 999 }} />
                 <h2 id="store-heading">Halal Living Store</h2>
               </div>
               <a className="hl-link" href={STORE_URL}>Shop the edit →</a>

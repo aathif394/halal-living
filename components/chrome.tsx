@@ -7,7 +7,7 @@ export function Footer({ city }: { city?: CityTheme }) {
       <div className="hl-footer-grid">
         <div>
           <a className="hl-brand" href={city ? `/${city.slug}` : "/chennai"}>
-            <span className="hl-mark"><img src="/store-logo.svg" alt="" width="46" height="46" /></span>
+            <span className="hl-mark"><img src={`/icons/cities/${city?.slug ?? "chennai"}.jpg`} alt="" width="46" height="46" /></span>
             Halal Living
           </a>
           <p>Halal restaurants and masjids in four cities, checked by people who live there.</p>
