@@ -1,4 +1,4 @@
-import { CITIES, STORE_URL, type CityTheme } from "@/lib/cities";
+import { STORE_URL, type CityTheme } from "@/lib/cities";
 import type { CommunityPost, Featured, PrayerHall, Restaurant } from "@/lib/types";
 import { faqLd } from "@/lib/seo";
 import { toShellMasjid, toShellReel, toShellRestaurant } from "@/lib/shell-data";
@@ -7,8 +7,16 @@ import { FormNotice } from "./form-notice";
 import { HeroIcons } from "./hero-icons";
 import { JsonLd } from "./json-ld";
 import { ReelsCarousel } from "./reels-carousel";
+import { SponsorCarousel } from "./sponsor-carousel";
 import { SuggestForm } from "./suggest-form";
 import { WordCycle } from "./word-cycle";
+
+const PARTNERS: { name: string; blurb: string; href: string; icon: string; cc: string }[] = [
+  { name: "Living Collective", blurb: "Grow your network and business", href: "https://livingcollective.net", icon: "/icons/partners/living-collective.jpg", cc: "#287A16" },
+  { name: "The Umrah Company", blurb: "Umrah trips with people who've been", href: "https://theumrahcompany.in", icon: "/icons/partners/umrah-company.jpg", cc: "#344E30" },
+  { name: "Halal Interactions", blurb: "Matrimony, with family in the loop", href: "https://halalinteractions.in", icon: "/icons/partners/halal-interactions.jpg", cc: "#89145C" },
+  { name: "Living Collective Store", blurb: "Buy from 100+ Muslim owned businesses", href: "https://livingcollective.store", icon: "/icons/partners/living-collective-store.png", cc: "#9A5440" },
+];
 
 const PRODUCTS: [string, string, string, string][] = [
   ["Ajwa dates, 500 g", "Pantry", "₹899", "Bestseller"],
@@ -37,7 +45,6 @@ export function CityHome({
   notice?: "sent" | "error";
 }) {
   const areas = [...new Set(restaurants.map((place) => place.neighborhood).concat(masjids.map((place) => place.neighborhood)))].slice(0, 8);
-  const lead = featured[0];
   const questions = [
     {
       q: `Where can I find halal food in ${city.name}?`,
@@ -58,7 +65,6 @@ export function CityHome({
   ];
 
   const reels = posts.map((post) => toShellReel(post));
-  const otherCities = CITIES.filter((item) => item.slug !== city.slug);
 
   return (
     <div>
@@ -81,29 +87,33 @@ export function CityHome({
             <p className="hl-dek">Halal restaurants and masjids in {city.name}, checked by people who live there.</p>
             <form className="hl-search" action={`/${city.slug}/search`}>
               <span className="hl-sr">Search</span>
+              <button type="submit" aria-label="Search">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" aria-hidden="true">
+                  <circle cx="11" cy="11" r="7" />
+                  <path d="m20 20-3.5-3.5" />
+                </svg>
+              </button>
               <input name="q" placeholder="Search restaurants, masjids, or areas" aria-label={`Search halal places in ${city.name}`} />
-              <button type="submit">Search</button>
             </form>
           </div>
           <aside className="hl-side">
-            {lead ? (
-              <a className="hl-side-card" href={lead.restaurant_slug ? `/${lead.restaurant_city ?? city.slug}/restaurants/${lead.restaurant_slug}` : `/${city.slug}/restaurants`}>
-                <div className="hl-kicker">{lead.sponsor_label || "SPONSORED"}</div>
-                <strong>{lead.name}</strong>
-                <p>{lead.pitch}</p>
-                <b>{lead.cta}</b>
-              </a>
-            ) : null}
-            <div>
-              <div className="hl-kicker" style={{ marginBottom: 10 }}>MORE FROM OUR COMMUNITY</div>
-              {otherCities.map((other) => (
-                <a key={other.slug} className="hl-comm hl-glass" href={`/${other.slug}`} style={{ marginBottom: 10, background: other.btn }}>
-                  <span className="hl-comm-avatar" style={{ display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 900, color: other.btn }}>
-                    {other.name[0]}
+            <div className="hl-kicker" style={{ marginBottom: 14 }}>MORE FROM OUR COMMUNITY</div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+              {PARTNERS.map((partner) => (
+                <a
+                  key={partner.name}
+                  className="hl-comm hl-glass"
+                  href={partner.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ background: partner.cc }}
+                >
+                  <span className="hl-comm-avatar">
+                    <img src={partner.icon} alt="" width="56" height="56" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                   </span>
                   <span style={{ flex: 1, minWidth: 0 }}>
-                    <span className="hl-comm-name">Halal Living {other.name}</span>
-                    <span className="hl-comm-sub">Browse restaurants &amp; masjids</span>
+                    <span className="hl-comm-name">{partner.name}</span>
+                    <span className="hl-comm-sub">{partner.blurb}</span>
                   </span>
                   <span className="hl-comm-arrow">
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -116,6 +126,7 @@ export function CityHome({
           </aside>
         </div>
       </header>
+      {featured.length ? <SponsorCarousel city={city.slug} featured={featured} /> : null}
       <main id="content">
         <section className="hl-section hl-wrap" aria-labelledby="restaurants-heading">
           <div className="hl-section-head">

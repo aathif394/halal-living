@@ -66,8 +66,13 @@ export function Directory({
         {filters.cuisine && kind !== "masjids" ? <input type="hidden" name="cuisine" value={filters.cuisine} /> : null}
         {filters.lat != null ? <input type="hidden" name="lat" value={filters.lat} /> : null}
         {filters.lng != null ? <input type="hidden" name="lng" value={filters.lng} /> : null}
+        <button type="submit" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m20 20-3.5-3.5" />
+          </svg>
+        </button>
         <input name="q" defaultValue={filters.q ?? ""} placeholder="Search restaurants, masjids, or areas" aria-label={`Search halal places in ${city.name}`} />
-        <button type="submit">Search</button>
       </form>
       <div className="hl-chips">
         <NearButton label={filters.lat != null ? "Location on" : "Sort by my location"} />

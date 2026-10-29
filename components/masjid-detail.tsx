@@ -20,7 +20,7 @@ export function MasjidDetail({ city, place, base }: { city: CityTheme; place: Pr
       <h1>{place.name}</h1>
       <p className="hl-prose">
         {[shell.kind, place.neighborhood, place.madhab ? `${place.madhab} madhab` : ""].filter(Boolean).join(" · ")}
-        {place.description ? ` ${place.description}` : ""}
+        {place.description ? `. ${place.description}` : ""}
       </p>
 
       <div className="hl-detail">
