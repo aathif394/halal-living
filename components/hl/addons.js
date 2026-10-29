@@ -171,7 +171,7 @@ export function installSheet() {
   function standalone() { try { return window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true; } catch (e) { return false; } }
   function later(v) { try { if (v === undefined) return +localStorage.getItem(KEY) || 0; localStorage.setItem(KEY, String(v)); } catch (e) { return 0; } }
   window.addEventListener('beforeinstallprompt', function (e) { e.preventDefault(); deferred = e; });
-  window.addEventListener('appinstalled', function () { deferred = null; close(); toast('Halal Living is on your home screen'); });
+  window.addEventListener('appinstalled', function () { deferred = null; close(); try { localStorage.setItem('hl-installed', '1'); } catch (e) {} window.dispatchEvent(new Event('hl:installed')); toast('Halal Living is on your home screen'); });
   var st = document.createElement('style');
   st.textContent = [
     '#hl-pwa-scrim{position:fixed;inset:0;z-index:400;background:rgba(24,10,4,.5);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);opacity:0;transition:opacity .35s;font-family:Figtree,system-ui,sans-serif;-webkit-tap-highlight-color:transparent}',
@@ -270,7 +270,7 @@ export function installSheet() {
   function fallback() { setTimeout(function () { open(true); }, 300); }
   try { var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) { es.forEach(function (e) { e.target.classList.toggle('hla-off', !e.isIntersecting); }); }) : null;
     if (io) { var seen = new WeakSet(); new MutationObserver(function () { document.querySelectorAll('[data-appcard]').forEach(function (c) { if (!seen.has(c)) { seen.add(c); io.observe(c); } }); }).observe(document.body, { childList: true, subtree: true }); } } catch (e) {}
-  window.hlInstall = function () { if (deferred && !iOS) { open(false); return; } open(false); };
+  window.hlInstall = function () { if (standalone()) { toast('You already have the app open'); return; } if (iOS && typeof navigator.install !== 'function') { open(true); return; } install(); };
   // Offer it once on phones, after the visitor has looked around a little; ask again after 14 days if they said not now.
   var t0 = Date.now();
   function maybe() {

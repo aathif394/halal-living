@@ -294,3 +294,5 @@ body{margin:0;background:#E9E9E6;font-family:'Figtree',sans-serif;-webkit-font-s
 .hm2af2180:active{transform:scale(.9) !important}
 .hm157d7b4:active{transform:scale(.92) !important}
 .hm5429b0a:hover{transform:scale(1.12) !important}
+/* running as the installed app: no install prompts, even before hydration */
+@media (display-mode: standalone){[data-appcard]{display:none!important}}

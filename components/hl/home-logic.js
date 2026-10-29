@@ -99,7 +99,8 @@ class Component extends DCLogic {
     const HC = Component.HC[p.city] || {};
     const hoods = Object.keys(HC);
     // each listed masjid sits near the centre of its area
-    const list = p.masjids.map((m, i) => { const c = HC[m.area] || HC[hoods[0]] || [0, 0]; const a = (i * 2.399) % 6.283, r = 0.0018 + ((i * 37) % 11) / 11 * 0.0035; return { ...m, lat: c[0] + Math.sin(a) * r, lng: c[1] + Math.cos(a) * r }; });
+    const realAll = (p.allMasjids && p.allMasjids.length ? p.allMasjids : p.masjids).filter(m => m.lat != null && m.lng != null);
+    const list = realAll.length ? realAll : p.masjids.map((m, i) => { const c = HC[m.area] || HC[hoods[0]] || [0, 0]; const a = (i * 2.399) % 6.283, r = 0.0018 + ((i * 37) % 11) / 11 * 0.0035; return { ...m, lat: c[0] + Math.sin(a) * r, lng: c[1] + Math.cos(a) * r }; });
     const hav = (a, b) => { const R = 6371, dLa = (b[0] - a[0]) * Math.PI / 180, dLo = (b[1] - a[1]) * Math.PI / 180, x = Math.sin(dLa / 2) ** 2 + Math.cos(a[0] * Math.PI / 180) * Math.cos(b[0] * Math.PI / 180) * Math.sin(dLo / 2) ** 2; return 2 * R * Math.asin(Math.sqrt(x)); };
     const bear = (a, b) => Math.atan2((b[1] - a[1]) * Math.cos(a[0] * Math.PI / 180), b[0] - a[0]);
     const [phase, setPhase] = React.useState('locating'); // locating | pick | scan | done
@@ -107,19 +108,20 @@ class Component extends DCLogic {
     const SCAN = 2600, tRef = React.useRef(0);
     const begin = (pos, how) => { setMe(pos); setSrc(how); setSel(0); setPhase('scan'); clearTimeout(tRef.current); tRef.current = setTimeout(() => setPhase('done'), SCAN); };
     const locate = () => {
-      setPhase('locating'); let fin = false;
-      const fail = () => { if (fin) return; fin = true; setPhase('pick'); };
-      const to = setTimeout(fail, 4500);
+      setPhase('locating'); let gaveUp = false;
+      const fail = () => { if (gaveUp) return; gaveUp = true; setPhase(ph => ph === 'locating' ? 'pick' : ph); };
+      const to = setTimeout(fail, 20000);
+      const got = g => { clearTimeout(to); const pos = [g.coords.latitude, g.coords.longitude]; const centre = HC[hoods[0]]; setFar(!!centre && hav(pos, centre) > 60); if (p.onPos) p.onPos(pos); begin(pos, 'your location'); };
       try {
-        if (!navigator.geolocation) { clearTimeout(to); setTimeout(fail, 900); return; }
-        navigator.geolocation.getCurrentPosition(g => { if (fin) return; fin = true; clearTimeout(to); const pos = [g.coords.latitude, g.coords.longitude]; const centre = HC[hoods[0]]; const isFar = centre && hav(pos, centre) > 60; setFar(isFar); begin(pos, 'your location'); }, () => { clearTimeout(to); setTimeout(fail, 700); }, { timeout: 4000, maximumAge: 300000 });
-      } catch (e) { clearTimeout(to); setTimeout(fail, 700); }
+        if (!navigator.geolocation) { clearTimeout(to); setTimeout(fail, 400); return; }
+        navigator.geolocation.getCurrentPosition(got, err => { if (err && err.code === 3) { navigator.geolocation.getCurrentPosition(got, () => { clearTimeout(to); fail(); }, { enableHighAccuracy: false, timeout: 10000, maximumAge: 600000 }); return; } clearTimeout(to); fail(); }, { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 });
+      } catch (e) { clearTimeout(to); fail(); }
     };
     React.useEffect(() => { locate(); const k = e => { if (e.key === 'Escape') p.onClose(); }; window.addEventListener('keydown', k); return () => { window.removeEventListener('keydown', k); clearTimeout(tRef.current); }; }, []);
     const ranked = me ? list.map(m => ({ ...m, km: hav(me, [m.lat, m.lng]), ang: bear(me, [m.lat, m.lng]) })).sort((a, b) => a.km - b.km) : [];
     const best = ranked[sel] || ranked[0];
     const kmT = k => k < 1 ? Math.round(k * 1000 / 10) * 10 + ' m' : k.toFixed(1) + ' km';
-    const howT = k => k <= 2 ? Math.max(1, Math.round(k / 4.8 * 60)) + ' min walk' : Math.max(2, Math.round(k / 18 * 60)) + ' min by car';
+    const howT = k => k <= 2 ? Math.max(1, Math.round(k / 4.8 * 60)) + ' min walk' : k <= 40 ? Math.max(2, Math.round(k / 18 * 60)) + ' min by car' : 'about ' + Math.max(1, Math.round(k / 55)) + ' h by car';
 
     // radar
     const R = mob ? 128 : 150, D = R * 2;
@@ -148,7 +150,7 @@ class Component extends DCLogic {
 
     let body;
     if (phase === 'locating') body = h('div', { key: 'l' }, title('Finding where you are…'), sub('Allow location when your browser asks.'));
-    else if (phase === 'pick') body = h('div', { key: 'p' }, title('Pick your area'),
+    else if (phase === 'pick') body = h('div', { key: 'p' }, title('Pick your area'), sub('We couldn\u2019t get your location. Allow location for this site, or pick your area.'), h('div', { style: { marginTop: 14 } }, pill('Use my location', locate)),
       h('div', { style: { display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 16 } }, hoods.map(a => h('button', { key: a, type: 'button', onClick: () => begin(HC[a], a), style: { height: 38, padding: '0 14px', borderRadius: 999, border: 0, background: 'rgba(255,255,255,.08)', boxShadow: 'inset 0 0 0 1px rgba(255,255,255,.16)', color: '#fff', font: '700 14px ' + F, cursor: 'pointer' } }, a))));
     else if (phase === 'scan') body = h('div', { key: 's' }, title('Finding the nearest masjid…'));
     else if (best) body = h('div', { key: 'd' + sel, style: { animation: 'ccfade .45s ease both' } },
@@ -157,7 +159,7 @@ class Component extends DCLogic {
       h('div', { style: { marginTop: 8, font: '700 16px ' + F, color: 'rgba(255,255,255,.75)' } }, kmT(best.km) + ' · ' + howT(best.km)),
       far ? sub('You’re outside ' + t.name + '.') : null,
       h('div', { style: { display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 18 } },
-        pill('Directions ↗', null, true, 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(best.name + ', ' + best.area + ', ' + t.name))));
+        pill('Directions ↗', null, true, me && best.lat != null ? 'https://www.google.com/maps/dir/?api=1&origin=' + me[0] + ',' + me[1] + '&destination=' + best.lat + ',' + best.lng + '&travelmode=' + (best.km <= 2 ? 'walking' : 'driving') : 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(best.name + ', ' + best.area + ', ' + t.name)), best.slug ? pill('Prayer times', () => { location.href = '/' + (best.city || p.city) + '/masjids/' + best.slug; }) : null));
     return h('div', { role: 'dialog', 'aria-modal': true, 'aria-label': 'Locate nearest masjid', onClick: e => { if (e.target === e.currentTarget) p.onClose(); }, style: { position: 'fixed', inset: 0, zIndex: 300, background: 'rgba(10,10,10,.62)', backdropFilter: 'blur(6px)', WebkitBackdropFilter: 'blur(6px)', display: 'flex', alignItems: mob ? 'flex-end' : 'center', justifyContent: 'center', padding: mob ? 0 : 24, animation: 'lnfade .25s ease both' } },
       h('style', null, '@keyframes lnsweep{to{transform:rotate(360deg)}}@keyframes lnpop{0%{opacity:0;transform:scale(0)}100%{opacity:1;transform:scale(1)}}@keyframes lndraw{from{stroke-dashoffset:120;opacity:0}to{stroke-dashoffset:0;opacity:1}}@keyframes lnfade{from{opacity:0}to{opacity:1}}@keyframes lnup{from{transform:translateY(30px);opacity:0}to{transform:none;opacity:1}}@keyframes ccfade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}'),
       h('div', { style: { position: 'relative', width: mob ? '100%' : 860, maxWidth: '100%', maxHeight: mob ? '92vh' : '90vh', overflowY: 'auto', borderRadius: mob ? '26px 26px 0 0' : 30, background: '#121312', color: '#fff', boxShadow: '0 40px 100px rgba(0,0,0,.5)', padding: mob ? '22px 18px 26px' : '34px 36px', display: 'grid', gridTemplateColumns: mob ? '1fr' : 'auto minmax(0,1fr)', gap: mob ? 18 : 40, alignItems: 'center', animation: 'lnup .4s cubic-bezier(.2,.8,.2,1) both' } },
@@ -708,6 +710,10 @@ class Component extends DCLogic {
   quiet() { const s = this.state; return document.hidden || !!(s.view || s.detail || s.notFound || s.reelFull >= 0 || s.adForm || s.locOpen || s.sOpen) || Component.reduced(); }
   componentDidMount() {
     this.applyRoute(true);
+    this.checkInstalled = () => { let yes = false; try { yes = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true || localStorage.getItem('hl-installed') === '1'; } catch (e) {} if (yes && !this.state.installed) this.setState({ installed: true }); };
+    this.checkInstalled();
+    try { if (navigator.getInstalledRelatedApps) navigator.getInstalledRelatedApps().then(a => { if (a && a.length) { try { localStorage.setItem('hl-installed', '1'); } catch (e) {} this.setState({ installed: true }); } }).catch(() => {}); } catch (e) {}
+    window.addEventListener('hl:installed', this.checkInstalled);
     try {
       const boot = this.props.hlc && this.props.hlc.boot;
       if (boot && boot.scroll) { const el = document.querySelector(boot.scroll); if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 500); }
@@ -840,8 +846,8 @@ class Component extends DCLogic {
     this.setState({ loc: 'busy' });
     const t0 = Date.now(); let fin = false;
     const done = approx => { if (fin) return; fin = true; clearTimeout(this.lt2); clearTimeout(this.lt); this.lt = setTimeout(() => this.setState({ loc: 'done', locApprox: approx }), Math.max(0, 1500 - (Date.now() - t0))); };
-    this.lt2 = setTimeout(() => done(true), 4000);
-    try { if (navigator.geolocation) navigator.geolocation.getCurrentPosition(() => done(false), () => done(true), { timeout: 3500, maximumAge: 600000 }); else done(true); } catch (e) { done(true); }
+    this.lt2 = setTimeout(() => done(true), 20000);
+    try { if (navigator.geolocation) navigator.geolocation.getCurrentPosition(g => { const v = [g.coords.latitude, g.coords.longitude]; try { localStorage.setItem('hl_pos', JSON.stringify(v)); } catch (e) {} this.setState({ userPos: v }); done(false); }, () => done(true), { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 }); else done(true); } catch (e) { done(true); }
   }
   renderVals() {
     const s = this.state, TH = Component.THEMES, LM = Component.LM, t = Object.assign({}, TH[s.city]);
@@ -1037,11 +1043,11 @@ let hoods = HOODS[s.city]; if (__pack && __pack.areas && __pack.areas.length) ho
       locAskTitle: locState === 'busy' ? 'Finding where you are\u2026' : locState === 'fail' ? 'Couldn\u2019t get your location' : 'Show places near you',
       locAskSub: locState === 'fail' ? 'Showing places across ' + t.name + ' instead. You can try again any time.' : 'Sorts this list by distance. We only use it on your phone.',
       locAskBtn: locState === 'busy' ? '\u2026' : locState === 'fail' ? 'Try again' : 'Allow',
-      askLoc: () => { if (this.state.locAsk === 'busy') return; this.setState({ locAsk: 'busy' }); let done = false; const fail = () => { if (done) return; done = true; this.setState({ locAsk: 'fail' }); }; const to = setTimeout(fail, 6000); try { navigator.geolocation.getCurrentPosition(g => { if (done) return; done = true; clearTimeout(to); const v = [g.coords.latitude, g.coords.longitude]; try { localStorage.setItem('hl_pos', JSON.stringify(v)); } catch (e) {} this.setState({ userPos: v, locAsk: 'idle' }); }, () => { clearTimeout(to); fail(); }, { timeout: 5500, maximumAge: 600000 }); } catch (e) { clearTimeout(to); fail(); } },
+      askLoc: () => { if (this.state.locAsk === 'busy') return; this.setState({ locAsk: 'busy' }); let done = false; const fail = () => { if (done) return; done = true; this.setState({ locAsk: 'fail' }); }; const to = setTimeout(fail, 20000); try { navigator.geolocation.getCurrentPosition(g => { done = true; clearTimeout(to); const v = [g.coords.latitude, g.coords.longitude]; try { localStorage.setItem('hl_pos', JSON.stringify(v)); } catch (e) {} this.setState({ userPos: v, locAsk: 'idle' }); }, () => { clearTimeout(to); fail(); }, { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 }); } catch (e) { clearTimeout(to); fail(); } },
       dismissLoc: () => { try { localStorage.setItem('hl_locask', '1'); } catch (e) {} this.setState({ locDismiss: true }); },
       resetLoc: () => { try { localStorage.removeItem('hl_pos'); } catch (e) {} this.setState({ userPos: null }); },
       openLocator: () => this.setState({ locOpen: true }),
-      locatorEl: s.locOpen ? React.createElement(Component.LocateNearest, { key: 'loc-' + s.city, t, city: s.city, mob: s.isMob, masjids: mAll.map(mDeco), total: t.m, onClose: () => this.setState({ locOpen: false }) }) : null,
+      locatorEl: s.locOpen ? React.createElement(Component.LocateNearest, { key: 'loc-' + s.city, t, city: s.city, mob: s.isMob, masjids: mAll.map(mDeco), total: t.m, allMasjids: Object.entries((this.props.hlc && this.props.hlc.byCity) || {}).flatMap(([c, pk]) => pk.masjids.filter(m => m.pos).map(m => ({ name: m.name, area: m.area, kind: m.kind, slug: m.slug, city: c, lat: m.pos[0], lng: m.pos[1] }))), onPos: pos => { try { localStorage.setItem('hl_pos', JSON.stringify(pos)); } catch (e) {} this.setState({ userPos: pos }); }, onClose: () => this.setState({ locOpen: false }) }) : null,
       mapEl: React.createElement(Component.MapPanel, { key: 'mp' + (isRest ? 'r' : 'm') + s.city, t, mob: s.isMob, isRest, items: (isRest ? lrItems : lmList).slice(0, 6), areas: hoods, water: WATER[s.city] }),
       storeShow: React.createElement(Component.StoreShowcase, { key: 'ss', storeLogo: comm[comm.length - 1].logoImg, t, mob: s.isMob, products: prodX, storeUrl }),
       footPrayUnused: (() => { const nx = PR.findIndex(([, b]) => b > nowM); const ni = nx < 0 ? 0 : nx; return PR.map(([n, b], i) => ({ n, time: fmtT(b), short: fmtT(b).replace(' am', '').replace(' pm', ''), bg: i === ni ? '#fff' : 'rgba(255,255,255,.07)', fg: i === ni ? '#111211' : 'rgba(255,255,255,.85)' })); })(),
@@ -1193,7 +1199,7 @@ let hoods = HOODS[s.city]; if (__pack && __pack.areas && __pack.areas.length) ho
       reelViewer, reelPrev: () => this.goReel(s.reel - 1), reelNext: () => this.goReel(s.reel + 1),
       noop: () => {},
       installApp: () => { try { window.hlInstall && window.hlInstall(true); } catch (e) {} },
-      appIcon: HL_GLOBALS.appIcon || '', showAppBtn: !(function () { try { return window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true; } catch (e) { return false; } })(),
+      appIcon: HL_GLOBALS.appIcon || '', showAppBtn: !s.installed,
       ...extra
     };
   }

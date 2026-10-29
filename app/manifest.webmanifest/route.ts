@@ -20,8 +20,10 @@ const manifest = {
   ],
 };
 
-export function GET() {
-  return new Response(JSON.stringify(manifest), {
+export function GET(request: Request) {
+  const origin = new URL(request.url).origin;
+  const body = { ...manifest, related_applications: [{ platform: "webapp", url: `${origin}/manifest.webmanifest` }] };
+  return new Response(JSON.stringify(body), {
     headers: {
       "content-type": "application/manifest+json; charset=utf-8",
       "cache-control": "public, max-age=86400",
