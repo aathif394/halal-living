@@ -125,6 +125,8 @@ export async function GET(request: Request, context: { params: Promise<{ path?: 
   const url = new URL(request.url);
   const path = (await context.params).path ?? [];
   if (path.length === 0) return Response.redirect(new URL(`/chennai${url.search}`, url), 307);
+  if (path.length === 1 && path[0] === "search") return Response.redirect(new URL(`/chennai${url.search}`, url), 307);
+  if (path.length === 2 && path[1] === "search" && getCity(path[0] ?? "")) return Response.redirect(new URL(`/${path[0]}${url.search}`, url), 307);
 
   const page = parsePage(path);
   if (!page) return missing(url);
