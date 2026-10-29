@@ -1,24 +1,12 @@
 import type { Metadata } from "next";
-import { Frame } from "@/components/chrome";
-import { CITIES } from "@/lib/cities";
+import { HalalApp } from "@/components/hl/halal-app";
+import { emptyAppData } from "@/lib/app-data";
 
 export const metadata: Metadata = {
-  title: "Page not found",
+  title: { absolute: "Page not found · Halal Living" },
   robots: { index: false, follow: true },
 };
 
-export default function NotFound() {
-  return (
-    <Frame city={CITIES[0]!}>
-      <div className="hl-page-main">
-        <h1>That page is not in the directory.</h1>
-        <p className="hl-prose">Try one of the four cities.</p>
-        <div className="hl-chips">
-          {CITIES.map((city) => (
-            <a className="hl-chip" key={city.slug} href={`/${city.slug}`}>{city.name}</a>
-          ))}
-        </div>
-      </div>
-    </Frame>
-  );
+export default async function NotFound() {
+  return <HalalApp hlc={await emptyAppData()} />;
 }

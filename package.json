@@ -13,14 +13,13 @@
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "2.0.0-beta.v.4",
-    "@tailwindcss/postcss": "latest",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "@vitejs/plugin-react": "^6.1.2",
     "@vitejs/plugin-rsc": "^0.5.38",
     "cf": "1.0.0-beta.21",
-    "tailwindcss": "latest",
+    "parse5": "7.1.2",
     "typescript": "latest",
     "vite": "8.3.0"
   },

@@ -19,7 +19,6 @@ export async function GET() {
     ]),
     "/suggest",
     "/advertise",
-    "/how-we-verify",
     ...places
       .filter((place) => getCity(place.city))
       .map((place) => `/${place.city}/${place.kind}/${encodeURIComponent(place.slug)}`),

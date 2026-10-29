@@ -34,7 +34,6 @@ export async function GET() {
     `- Filters: area, cuisine, and q are crawlable query parameters. lat and lng sort by distance and should not be indexed.`,
     `- Suggest a place: ${base}/suggest`,
     `- Advertise: ${base}/advertise`,
-    `- How we verify: ${base}/how-we-verify`,
     `- Store, a separate shop: ${STORE_URL}`,
     "",
     "## Listings",
