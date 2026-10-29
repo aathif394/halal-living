@@ -1,10 +1,12 @@
-import { STORE_URL, type CityTheme } from "@/lib/cities";
+import { CITIES, STORE_URL, type CityTheme } from "@/lib/cities";
 import type { CommunityPost, Featured, PrayerHall, Restaurant } from "@/lib/types";
 import { faqLd } from "@/lib/seo";
+import { toShellMasjid, toShellReel, toShellRestaurant } from "@/lib/shell-data";
 import { MasjidCard, RestaurantCard } from "./cards";
-import { Footer, Nav } from "./chrome";
 import { FormNotice } from "./form-notice";
+import { HeroIcons } from "./hero-icons";
 import { JsonLd } from "./json-ld";
+import { ReelsCarousel } from "./reels-carousel";
 import { SuggestForm } from "./suggest-form";
 import { WordCycle } from "./word-cycle";
 
@@ -55,15 +57,17 @@ export function CityHome({
     },
   ];
 
+  const reels = posts.map((post) => toShellReel(post));
+  const otherCities = CITIES.filter((item) => item.slug !== city.slug);
+
   return (
-    <div data-city={city.slug}>
-      <a className="hl-skip" href="#content">Skip to content</a>
+    <div>
       <header className="hl-hero">
         <div className="hl-pattern" />
+        <HeroIcons />
         <svg className="hl-landmark" width="460" height="460" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="0.5" aria-hidden="true">
           <path d={city.landmark} />
         </svg>
-        <Nav city={city} />
         <div className="hl-hero-grid">
           <div>
             <h1>
@@ -90,11 +94,24 @@ export function CityHome({
                 <b>{lead.cta}</b>
               </a>
             ) : null}
-            <div className="hl-near">
-              <div className="hl-kicker">NEAR YOU IN {city.name.toUpperCase()}</div>
-              <a href={`/${city.slug}/restaurants`}><span>Restaurants</span><span>{restaurants.length}</span></a>
-              <a href={`/${city.slug}/masjids`}><span>Masjids & prayer halls</span><span>{masjids.length}</span></a>
-              <a href={`/${city.slug}/masjids`}>Locate nearest masjid</a>
+            <div>
+              <div className="hl-kicker" style={{ marginBottom: 10 }}>MORE FROM OUR COMMUNITY</div>
+              {otherCities.map((other) => (
+                <a key={other.slug} className="hl-comm hl-glass" href={`/${other.slug}`} style={{ marginBottom: 10, background: other.btn }}>
+                  <span className="hl-comm-avatar" style={{ display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 900, color: other.btn }}>
+                    {other.name[0]}
+                  </span>
+                  <span style={{ flex: 1, minWidth: 0 }}>
+                    <span className="hl-comm-name">Halal Living {other.name}</span>
+                    <span className="hl-comm-sub">Browse restaurants &amp; masjids</span>
+                  </span>
+                  <span className="hl-comm-arrow">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M7 17 17 7M8 7h9v9" />
+                    </svg>
+                  </span>
+                </a>
+              ))}
             </div>
           </aside>
         </div>
@@ -114,7 +131,7 @@ export function CityHome({
           ) : null}
           {restaurants.length ? (
             <div className="hl-grid cols-3">
-              {restaurants.slice(0, 6).map((place) => <RestaurantCard key={place.id} place={place} city={city} />)}
+              {restaurants.slice(0, 6).map((place, index) => <RestaurantCard key={place.id} place={toShellRestaurant(place, index)} city={city} />)}
             </div>
           ) : (
             <div className="hl-empty">No restaurants in {city.name} yet. <a className="hl-link" href="/suggest">Suggest a place</a></div>
@@ -128,26 +145,19 @@ export function CityHome({
           </div>
           {masjids.length ? (
             <div className="hl-grid cols-3">
-              {masjids.slice(0, 6).map((place) => <MasjidCard key={place.id} place={place} city={city} />)}
+              {masjids.slice(0, 6).map((place, index) => <MasjidCard key={place.id} place={toShellMasjid(place, index)} city={city} />)}
             </div>
           ) : (
             <div className="hl-empty">No masjids in {city.name} yet. <a className="hl-link" href="/suggest">Suggest a place</a></div>
           )}
         </section>
 
-        {posts.length ? (
-          <section className="hl-section hl-wrap" aria-labelledby="community-heading">
+        {reels.length ? (
+          <section className="hl-section hl-wrap" aria-labelledby="reels-heading">
             <div className="hl-section-head">
-              <h2 id="community-heading">More from our community</h2>
+              <h2 id="reels-heading">Check out these reels</h2>
             </div>
-            <div className="hl-community">
-              {posts.slice(0, 4).map((post) => (
-                <a key={post.id} href={post.permalink} target="_blank" rel="noopener noreferrer">
-                  <img src={post.media_url} alt={post.alt_text || post.caption || "Community photo"} />
-                  {post.caption ? <p>{post.caption}</p> : null}
-                </a>
-              ))}
-            </div>
+            <ReelsCarousel reels={reels} />
           </section>
         ) : null}
 
@@ -209,7 +219,6 @@ export function CityHome({
           <SuggestForm next={`/${city.slug}`} areaPlaceholder={city.areas[0]} />
         </section>
       </main>
-      <Footer city={city} />
       <JsonLd data={faqLd(questions)} />
     </div>
   );

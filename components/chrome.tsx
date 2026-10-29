@@ -1,30 +1,5 @@
 import { CITIES, STORE_URL, type CityTheme } from "@/lib/cities";
-import { CitySwitcher } from "./city-switcher";
-
-export function Nav({ city, current }: { city: CityTheme; current?: "restaurants" | "masjids" }) {
-  return (
-    <div className="hl-nav">
-      <a className="hl-brand" href={`/${city.slug}`}>
-        <span className="hl-mark" aria-hidden="true">
-          <img src="/store-logo.svg" alt="" width="46" height="46" />
-        </span>
-        Halal Living
-      </a>
-      <CitySwitcher city={city} />
-      <div className="hl-nav-tabs">
-        <a className="hl-pill" href={`/${city.slug}/restaurants`} aria-current={current === "restaurants" ? "page" : undefined}>
-          Restaurants
-        </a>
-        <a className="hl-pill" href={`/${city.slug}/masjids`} aria-current={current === "masjids" ? "page" : undefined}>
-          Masjids
-        </a>
-      </div>
-      <a className="hl-store" href={STORE_URL} target="_blank" rel="noopener noreferrer">
-        Store
-      </a>
-    </div>
-  );
-}
+import { NavChrome } from "./nav-chrome";
 
 export function Footer({ city }: { city?: CityTheme }) {
   return (
@@ -59,20 +34,15 @@ export function Footer({ city }: { city?: CityTheme }) {
 
 export function Frame({
   city,
-  current,
   children,
 }: {
   city: CityTheme;
-  current?: "restaurants" | "masjids";
   children: React.ReactNode;
 }) {
   return (
     <div data-city={city.slug}>
       <a className="hl-skip" href="#content">Skip to content</a>
-      <header className="hl-bar">
-        <div className="hl-pattern" />
-        <Nav city={city} current={current} />
-      </header>
+      <NavChrome city={city} />
       <main id="content">{children}</main>
       <Footer city={city} />
     </div>

@@ -1,6 +1,7 @@
 import type { CityTheme } from "@/lib/cities";
 import { withFilters, type PlaceFilters } from "@/lib/filters";
 import { breadcrumbLd, itemListLd } from "@/lib/seo";
+import { toShellMasjid, toShellRestaurant } from "@/lib/shell-data";
 import type { PrayerHall, Restaurant } from "@/lib/types";
 import { MasjidCard, RestaurantCard } from "./cards";
 import { Crumbs } from "./crumbs";
@@ -111,7 +112,7 @@ export function Directory({
           </div>
           {restaurants.length ? (
             <div className="hl-grid cols-3">
-              {restaurants.map((place) => <RestaurantCard key={place.id} place={place} city={city} />)}
+              {restaurants.map((place, index) => <RestaurantCard key={place.id} place={toShellRestaurant(place, index)} city={city} />)}
             </div>
           ) : (
             <div className="hl-empty">
@@ -130,7 +131,7 @@ export function Directory({
           </div>
           {masjids.length ? (
             <div className="hl-grid cols-3">
-              {masjids.map((place) => <MasjidCard key={place.id} place={place} city={city} />)}
+              {masjids.map((place, index) => <MasjidCard key={place.id} place={toShellMasjid(place, index)} city={city} />)}
             </div>
           ) : (
             <div className="hl-empty">
