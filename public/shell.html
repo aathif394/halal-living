@@ -4155,7 +4155,7 @@ let hoods = HOODS[s.city]; if (__pack && __pack.areas && __pack.areas.length) ho
     const RD = liveReels ? liveReels.map(function (p) { return [p.handle || '@halalliving', p.place || t.name, p.title || 'From the community', '', '', p.bg || '']; }) : [['@ayesha.eats', 'Al-Nawaz Biryani', 'Dum biryani reveal', '42.1k', '0:32'], ['@foodie.' + t.name.toLowerCase(), 'Kebab Gali', 'Seekh at midnight', '18.6k', '0:45'], ['@halalliving', 'Masjid-e-Noor', 'Iftar at the masjid', '9.3k', '1:10'], ['@yusuf.cooks', 'Irani Chai Corner', 'Bun maska + chai', '27k', '0:28'], ['@sana.k', 'Hyderabadi Handi', 'Haleem season', '15.9k', '0:51'], ['@halalliving', 'Living Collective Store', 'Ramadan box unboxing', '6.2k', '0:20'], ['@omar.walks', 'Nizam Rolls', 'Rolls after Isha', '11.3k', '0:37']];
     const RDn = RD.length;
     const reels = RD.map((r, i) => {
-      let d = ((i - s.reel) % RDn + RDn) % RDn; if (d > 3) d -= RDn; const a = Math.abs(d);
+      let d = ((i - s.reel) % RDn + RDn) % RDn; if (d > RDn / 2) d -= RDn; const a = Math.abs(d);
       const sc = a === 0 ? 1 : a === 1 ? 0.84 : 0.7;
       return { handle: r[0], place: r[1], title: r[2], views: r[3], dur: r[4], bg: r[5] || RB[i % 7], avatar: RB[(i + 3) % 7], active: d === 0, op: a > 2 ? 0 : a === 2 ? 0.5 : 1, z: 10 - a, tfD: `translateX(${d * 330}px) scale(${sc}) rotateY(${-d * 16}deg)`, tfM: `translateX(${d * 170}px) scale(${sc}) rotateY(${-d * 18}deg)`, zoom: d === 0 ? 'scale(1.14)' : 'scale(1)', playOp: d === 0 ? 0 : 1, onClick: () => { clearInterval(this.ti); this.setState({ reelFull: i }); }, dotLabel: 'Play reel ' + (i + 1) + ': ' + r[2], dotW: d === 0 ? '28px' : '8px', dotWm: d === 0 ? '20px' : '6px', dotBg: d === 0 ? t.accent : 'rgba(255,255,255,.3)' };
     });
