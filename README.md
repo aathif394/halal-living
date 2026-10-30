@@ -10,7 +10,7 @@ pnpm build
 pnpm deploy                  # Cloudflare Workers
 ```
 
-- `app/`, `components/`, `lib/`: the Next-style app (vinext)
+- `app/`, `components/`, `lib/`: the Next-style app (vinext). Pages are React components built from the mockup in `handoff/`
 - `supabase/`: migrations and seed SQL
 - `cloudflare.config.ts`: worker + bindings
 

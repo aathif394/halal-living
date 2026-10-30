@@ -89,7 +89,9 @@ export type Featured = {
 
 export type CommunityPost = {
   id: string;
+  media_type: string;
   media_url: string;
+  thumbnail_url: string | null;
   permalink: string;
   caption: string | null;
   alt_text: string | null;

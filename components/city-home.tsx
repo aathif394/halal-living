@@ -1,12 +1,12 @@
 import { STORE_URL, type CityTheme } from "@/lib/cities";
-import type { CommunityPost, Featured, PrayerHall, Restaurant } from "@/lib/types";
-import { faqLd } from "@/lib/seo";
-import { MasjidCard, RestaurantCard } from "./cards";
-import { Footer, Nav } from "./chrome";
-import { FormNotice } from "./form-notice";
-import { JsonLd } from "./json-ld";
-import { SuggestForm } from "./suggest-form";
-import { WordCycle } from "./word-cycle";
+import type { Featured } from "@/lib/types";
+import type { PlaceCard, ReelSlide } from "@/lib/view";
+import { Landmark, StarPattern } from "./brand";
+import { COMMUNITY } from "./chrome";
+import { AdvertiseButton, HeroWord, ReelsStrip, SuggestForm, SuggestSheetButton, TypingSearch } from "./home-client";
+import { Icon } from "./icons";
+import { InstallCard } from "./install";
+import { PlaceBrowser } from "./place-browser";
 
 const PRODUCTS: [string, string, string, string][] = [
   ["Ajwa dates, 500 g", "Pantry", "₹899", "Bestseller"],
@@ -14,203 +14,261 @@ const PRODUCTS: [string, string, string, string][] = [
   ["Oud attar, 6 ml", "Fragrance", "₹1,250", "New"],
   ["HLC Cookbook, Vol. 1", "Books", "₹599", ""],
   ["Kids Arabic flashcards", "Kids", "₹399", ""],
-  ["Olive-wood tasbih", "Prayer", "₹299", ""],
-  ["Biryani spice box", "Pantry", "₹499", "New"],
-  ["HLC tote bag", "Merch", "₹449", ""],
 ];
+const PRODUCT_BG = ["#F6E6CF", "#0F4C5C", "#F3E8DA", "#F6EEE6", "#F6F6F4"];
+
+const HERO_WORDS = ["food", "kebabs", "biryani", "burgers", "pizza", "eats"];
+
+function Community() {
+  return (
+    <div className="hl-comm-list">
+      {COMMUNITY.map((item) => (
+        <a key={item.name} className="hl-comm hl-glass" href={item.url} target="_blank" rel="noopener noreferrer">
+          <span className="hl-mono">
+            <img src={item.logo} alt="" />
+          </span>
+          <span className="hl-comm__t">
+            <span className="hl-comm__n">{item.name}</span>
+            <span className="hl-comm__s">{item.short}</span>
+          </span>
+          <span className="hl-arr">
+            <Icon name="arrowUpRight" size={13} stroke={2.6} />
+          </span>
+        </a>
+      ))}
+    </div>
+  );
+}
+
+function Sponsored({ featured, city }: { featured: Featured[]; city: CityTheme }) {
+  const lead = featured[0];
+  if (!lead) return null;
+  const href = lead.restaurant_slug ? `/${lead.restaurant_city ?? city.slug}/restaurants/${lead.restaurant_slug}` : `/${city.slug}/restaurants`;
+  return (
+    <div className="hl-wrap hl-sec-sm">
+      <a className="hl-ad" href={href}>
+        <span className="hl-ad__art" aria-hidden="true">
+          <img src="/art/food-1.svg" alt="" />
+        </span>
+        <span className="hl-ad__t">
+          <span className="hl-ad__k">{lead.sponsor_label || "Sponsored"}</span>
+          <b>{lead.name}</b>
+          <span className="hl-ad__p">{lead.pitch}</span>
+        </span>
+        <span className="hl-ad__cta">
+          {lead.cta}
+          <Icon name="arrowRight" size={14} stroke={2.6} />
+        </span>
+      </a>
+    </div>
+  );
+}
 
 export function CityHome({
   city,
   restaurants,
   masjids,
+  areas,
   featured,
-  posts,
-  notice,
+  reels,
 }: {
   city: CityTheme;
-  restaurants: Restaurant[];
-  masjids: PrayerHall[];
+  restaurants: PlaceCard[];
+  masjids: PlaceCard[];
+  areas: string[];
   featured: Featured[];
-  posts: CommunityPost[];
-  notice?: "sent" | "error";
+  reels: ReelSlide[];
 }) {
-  const areas = [...new Set(restaurants.map((place) => place.neighborhood).concat(masjids.map((place) => place.neighborhood)))].slice(0, 8);
-  const lead = featured[0];
-  const questions = [
-    {
-      q: `Where can I find halal food in ${city.name}?`,
-      a: restaurants.length
-        ? `${city.name} currently has ${restaurants.length} halal restaurants on Halal Living, including ${restaurants.slice(0, 3).map((place) => place.name).join(", ")}.`
-        : `Halal Living does not have restaurant listings for ${city.name} yet. Suggest a place and someone from the community checks it before it is listed.`,
-    },
-    {
-      q: `Which masjids are listed in ${city.name}?`,
-      a: masjids.length
-        ? `${masjids.length} masjids and prayer halls are listed, including ${masjids.slice(0, 3).map((place) => place.name).join(", ")}. Each page shows Jumu'ah time, madhab, and facilities.`
-        : `No masjids are listed in ${city.name} yet.`,
-    },
-    {
-      q: "How does a listing get on Halal Living?",
-      a: "Someone suggests a restaurant or masjid. A person from the community checks it before it is published. Halal certification is labelled as HMC certified, self-certified, or vegetarian.",
-    },
+  const examples = [
+    `Mutton biryani in ${areas[0] ?? city.areas[0]}`,
+    "Kebabs open after Isha",
+    `Family seating in ${areas[1] ?? city.areas[1]}`,
+    `Haleem near ${areas[2] ?? city.areas[2]}`,
+    "Chai and bun maska",
   ];
-
   return (
-    <div data-city={city.slug}>
-      <a className="hl-skip" href="#content">Skip to content</a>
-      <header className="hl-hero">
-        <div className="hl-pattern" />
-        <svg className="hl-landmark" width="460" height="460" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="0.5" aria-hidden="true">
-          <path d={city.landmark} />
+    <>
+      <section className="hl-hero">
+        <StarPattern />
+        <Landmark city={city} size={460} className="hl-hero__lm" />
+        <svg className="hl-hero__bob hl-only-desk" width="62" height="62" viewBox="0 0 60 60" fill="none" stroke="#fff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <path d="M10 28 H50 M12 28 Q12 52 30 52 Q48 52 48 28 M16 28 Q30 18 44 28 M22 20 q3 -5 0 -10 M30 18 q3 -5 0 -10 M38 20 q3 -5 0 -10" />
         </svg>
-        <Nav city={city} />
-        <div className="hl-hero-grid">
-          <div>
-            <h1>
-              <span>Halal</span>
-              <WordCycle words={["food", "kebabs", "biryani", "burgers", "pizza", "eats"]} />
-              <span>&amp;</span>
-              <span>masjids</span>
-              <span>in</span>
-              <span className="hl-soft hl-under">{city.name}</span>
+        <div className="hl-hero__grid">
+          <div className="hl-hero__main">
+            <h1 className="hl-hero__h" aria-label={`Halal food and masjids in ${city.name}`}>
+              <span className="hl-hw">Halal</span> <HeroWord words={HERO_WORDS} /> <span className="hl-hw">&amp;</span> <span className="hl-hw">masjids</span>{" "}
+              <span className="hl-hw">in</span> <span className="hl-hw hl-hw--city">{city.name}</span>
             </h1>
-            <p className="hl-dek">Halal restaurants and masjids in {city.name}, checked by people who live there.</p>
-            <form className="hl-search" action={`/${city.slug}/search`}>
-              <span className="hl-sr">Search</span>
-              <input name="q" placeholder="Search restaurants, masjids, or areas" aria-label={`Search halal places in ${city.name}`} />
-              <button type="submit">Search</button>
-            </form>
+            <TypingSearch action={`/${city.slug}/restaurants`} examples={examples} label={`Search halal places in ${city.name}`} />
           </div>
-          <aside className="hl-side">
-            {lead ? (
-              <a className="hl-side-card" href={lead.restaurant_slug ? `/${lead.restaurant_city ?? city.slug}/restaurants/${lead.restaurant_slug}` : `/${city.slug}/restaurants`}>
-                <div className="hl-kicker">{lead.sponsor_label || "SPONSORED"}</div>
-                <strong>{lead.name}</strong>
-                <p>{lead.pitch}</p>
-                <b>{lead.cta}</b>
-              </a>
-            ) : null}
-            <div className="hl-near">
-              <div className="hl-kicker">NEAR YOU IN {city.name.toUpperCase()}</div>
-              <a href={`/${city.slug}/restaurants`}><span>Restaurants</span><span>{restaurants.length}</span></a>
-              <a href={`/${city.slug}/masjids`}><span>Masjids & prayer halls</span><span>{masjids.length}</span></a>
-              <a href={`/${city.slug}/masjids`}>Locate nearest masjid</a>
+          <div className="hl-hero__side">
+            <h2 className="hl-kicker">MORE FROM OUR COMMUNITY</h2>
+            <Community />
+            <div className="hl-only-mob">
+              <InstallCard />
             </div>
-          </aside>
+          </div>
         </div>
-      </header>
-      <main id="content">
-        <section className="hl-section hl-wrap" aria-labelledby="restaurants-heading">
-          <div className="hl-section-head">
-            <h2 id="restaurants-heading">Restaurants</h2>
-            <a className="hl-link" href={`/${city.slug}/restaurants`}>See all {restaurants.length} →</a>
+      </section>
+
+      <Sponsored featured={featured} city={city} />
+
+      <section className="hl-wrap hl-sec" aria-label={`Near you in ${city.name}`}>
+        <PlaceBrowser city={{ slug: city.slug, name: city.name }} restaurants={restaurants} masjids={masjids} areas={areas} mode="home" initialKind="restaurants" />
+      </section>
+
+      <section className="hl-stats" aria-labelledby="stats-h">
+        <div className="hl-wrap">
+          <h2 id="stats-h" className="hl-h2">
+            Halal Living in {city.name}
+          </h2>
+          <div className="hl-stats__grid">
+            <div className="hl-stat hl-stat--big">
+              <span className="hl-live">
+                <i />
+                Live
+              </span>
+              <b>{restaurants.length + masjids.length}</b>
+              <span>places checked by the community</span>
+            </div>
+            <a className="hl-stat" href={`/${city.slug}/restaurants`}>
+              <span className="hl-stat__top">
+                <span className="hl-stat__ic">
+                  <Icon name="food" size={18} stroke={2} />
+                </span>
+                <span className="hl-stat__go">
+                  <Icon name="arrowRight" size={14} stroke={2.6} />
+                </span>
+              </span>
+              <b>{restaurants.length}</b>
+              <span>halal restaurants</span>
+            </a>
+            <a className="hl-stat" href={`/${city.slug}/masjids`}>
+              <span className="hl-stat__top">
+                <span className="hl-stat__ic hl-stat__ic--gold">
+                  <Icon name="masjidWide" size={18} stroke={2} />
+                </span>
+                <span className="hl-stat__go">
+                  <Icon name="arrowRight" size={14} stroke={2.6} />
+                </span>
+              </span>
+              <b className="hl-gold">{masjids.length}</b>
+              <span>masjids &amp; prayer halls</span>
+            </a>
           </div>
-          {areas.length ? (
-            <div className="hl-chips">
-              {areas.map((area) => (
-                <a className="hl-chip" key={area} href={`/${city.slug}/restaurants?area=${encodeURIComponent(area)}`}>{area}</a>
-              ))}
-            </div>
-          ) : null}
-          {restaurants.length ? (
-            <div className="hl-grid cols-3">
-              {restaurants.slice(0, 6).map((place) => <RestaurantCard key={place.id} place={place} city={city} />)}
-            </div>
-          ) : (
-            <div className="hl-empty">No restaurants in {city.name} yet. <a className="hl-link" href="/suggest">Suggest a place</a></div>
-          )}
-        </section>
+        </div>
+      </section>
 
-        <section className="hl-section hl-wrap" aria-labelledby="masjid-heading">
-          <div className="hl-section-head">
-            <h2 id="masjid-heading">Masjids & prayer halls</h2>
-            <a className="hl-link" href={`/${city.slug}/masjids`}>See all {masjids.length} →</a>
+      <section className="hl-store" aria-labelledby="store-h">
+        <div className="hl-wrap hl-store__grid">
+          <div className="hl-store__intro">
+            <div className="hl-store__k">HALAL LIVING STORE</div>
+            <h2 id="store-h">Shop from Muslim-owned businesses</h2>
+            <div className="hl-store__perks">
+              <span>
+                <i>
+                  <Icon name="box" size={14} stroke={2.2} />
+                </i>
+                100+ Muslim-owned brands
+              </span>
+              <span>
+                <i>
+                  <Icon name="sparkle" size={14} stroke={2.2} />
+                </i>
+                Picked by the Halal Living team
+              </span>
+            </div>
+            <a className="hl-store__cta hl-only-desk" href={STORE_URL} target="_blank" rel="noopener noreferrer">
+              Shop the store
+              <Icon name="arrowUpRight" size={13} stroke={2.6} />
+            </a>
           </div>
-          {masjids.length ? (
-            <div className="hl-grid cols-3">
-              {masjids.slice(0, 6).map((place) => <MasjidCard key={place.id} place={place} city={city} />)}
-            </div>
-          ) : (
-            <div className="hl-empty">No masjids in {city.name} yet. <a className="hl-link" href="/suggest">Suggest a place</a></div>
-          )}
-        </section>
-
-        {posts.length ? (
-          <section className="hl-section hl-wrap" aria-labelledby="community-heading">
-            <div className="hl-section-head">
-              <h2 id="community-heading">More from our community</h2>
-            </div>
-            <div className="hl-community">
-              {posts.slice(0, 4).map((post) => (
-                <a key={post.id} href={post.permalink} target="_blank" rel="noopener noreferrer">
-                  <img src={post.media_url} alt={post.alt_text || post.caption || "Community photo"} />
-                  {post.caption ? <p>{post.caption}</p> : null}
-                </a>
-              ))}
-            </div>
-          </section>
-        ) : null}
-
-        <section className="hl-stats" aria-labelledby="stats-heading">
-          <div className="hl-wrap hl-section">
-            <h2 id="stats-heading">Halal Living in {city.name}</h2>
-            <div className="hl-stats-grid" style={{ marginTop: 22 }}>
-              <a className="hl-stat" href={`/${city.slug}/restaurants`}><b>{restaurants.length}</b>Restaurants. Every one shows its halal status.</a>
-              <a className="hl-stat" href={`/${city.slug}/masjids`}><b>{masjids.length}</b>Masjids and prayer halls, with Jumu'ah times.</a>
-              <div className="hl-stat"><b>{areas.length}</b>Neighbourhoods covered from the live directory.</div>
-            </div>
-          </div>
-        </section>
-
-        <section className="hl-faq hl-section hl-wrap" aria-labelledby="answers-heading">
-          <h2 id="answers-heading">Answers</h2>
-          <div className="hl-faq" style={{ marginTop: 18 }}>
-            {questions.map((item) => (
-              <article key={item.q}>
-                <h3>{item.q}</h3>
-                <p>{item.a}</p>
-              </article>
+          <div className="hl-store__cards">
+            {PRODUCTS.map(([name, cat, price], i) => (
+              <a key={name} className={`hl-prod${i === 0 ? " hl-prod--big" : ""}`} href={STORE_URL} target="_blank" rel="noopener noreferrer" aria-label={`${name}, ${price}`}>
+                <span className="hl-prod__img" style={{ background: PRODUCT_BG[i] }}>
+                  <img src={`/art/product-${i}.svg`} alt="" loading="lazy" />
+                </span>
+                <span className="hl-prod__t">
+                  <span className="hl-prod__n">{i === 0 ? name : name}</span>
+                  <b>{price}</b>
+                  <span className="hl-prod__c">{cat}</span>
+                </span>
+                {i === 0 ? (
+                  <span className="hl-prod__go">
+                    Shop now
+                    <Icon name="arrowUpRight" size={12} stroke={2.6} />
+                  </span>
+                ) : null}
+              </a>
             ))}
           </div>
-        </section>
+          <a className="hl-store__cta hl-store__cta--block hl-only-mob" href={STORE_URL} target="_blank" rel="noopener noreferrer">
+            Shop the store
+            <Icon name="arrowUpRight" size={13} stroke={2.6} />
+          </a>
+        </div>
+      </section>
 
-        <section className="hl-store hl-section" aria-labelledby="store-heading">
-          <div className="hl-wrap">
-            <div className="hl-section-head">
-              <div style={{ display: "flex", gap: 14, alignItems: "center" }}>
-                <img src="/store-logo.svg" alt="" width="72" height="72" />
-                <h2 id="store-heading">Halal Living Store</h2>
+      <section id="advertise" className="hl-wrap hl-sec" aria-labelledby="ad-h2">
+        <div className="hl-adv">
+          <div>
+            <div className="hl-adv__k">ADVERTISE WITH US</div>
+            <h2 id="ad-h2">Reach people looking for halal places in {city.name}</h2>
+            <p>Put your restaurant, shop or service in front of people looking for halal places near them.</p>
+          </div>
+          <AdvertiseButton city={city.slug} cityName={city.name} />
+        </div>
+      </section>
+
+      {reels.length ? <ReelsStrip reels={reels} /> : null}
+
+      <section id="suggest" className="hl-wrap hl-sec" aria-labelledby="sg-h">
+        <div className="hl-sg">
+          <StarPattern />
+          <div className="hl-sg__intro">
+            <h2 id="sg-h" className="hl-sg__h">
+              Know a
+              <br />
+              <span>chai stall</span>
+              <br />
+              we haven't found?
+            </h2>
+            <details className="hl-halal">
+              <summary aria-label="What we consider as halal. Tap to read">
+                <Icon name="info" size={16} stroke={2.2} />
+                What we consider as halal
+                <Icon name="chevronDown" size={12} stroke={3} className="hl-halal-chev" />
+              </summary>
+              <div role="note">
+                We only cover places where we have personally verified that only Zabiha sourced meat is used. This sometimes excludes restaurants serving sausages, momos, frozen meat, unless we can source their
+                actual zabiha process.
               </div>
-              <a className="hl-link" href={STORE_URL}>Shop the edit →</a>
-            </div>
-            <p>Buy from Muslim-owned businesses. The store is a separate shop.</p>
-            <div className="hl-products">
-              {PRODUCTS.map(([name, cat, price, badge]) => (
-                <a className="hl-product" key={name} href={STORE_URL} target="_blank" rel="noopener noreferrer">
-                  <div style={{ background: "var(--soft)" }} />
-                  <p><b>{name}</b><br />{cat} · {price}{badge ? <> · <em>{badge}</em></> : null}</p>
-                </a>
-              ))}
+            </details>
+            <ol className="hl-sg__steps">
+              <li>
+                <b>You tell us</b>
+                <span>The name, the area and why you rate it.</span>
+              </li>
+              <li>
+                <b>We go and check</b>
+                <span>A local volunteer visits within a week.</span>
+              </li>
+              <li>
+                <b>It goes live</b>
+                <span>Listed with a badge that says what we found.</span>
+              </li>
+            </ol>
+            <div className="hl-only-mob">
+              <SuggestSheetButton city={city.slug} areas={areas} />
             </div>
           </div>
-        </section>
-
-        <section className="hl-suggest" id="suggest" aria-labelledby="suggest-heading">
-          <div className="hl-kicker">SUGGEST A PLACE</div>
-          <h2 id="suggest-heading" style={{ margin: "10px 0 0", fontSize: "clamp(32px, 4vw, 48px)", letterSpacing: "-0.03em" }}>
-            Know a place we haven't found?
-          </h2>
-          <p>Tell us about a restaurant or masjid. Someone from the community checks it before it's listed.</p>
-          <FormNotice
-            notice={notice}
-            sent="Thanks. Someone from the community will check this before it's listed."
-            error="That didn't send. Add the place name, a real email, and a short note, then try again."
-          />
-          <SuggestForm next={`/${city.slug}`} areaPlaceholder={city.areas[0]} />
-        </section>
-      </main>
-      <Footer city={city} />
-      <JsonLd data={faqLd(questions)} />
-    </div>
+          <div className="hl-sg__card hl-only-desk">
+            <SuggestForm city={city.slug} areas={areas} />
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

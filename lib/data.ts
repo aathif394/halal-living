@@ -242,14 +242,16 @@ export async function listCommunity(): Promise<CommunityPost[]> {
   const supabase = await getSupabase();
   const { data, error } = await supabase
     .from("instagram_posts")
-    .select("id,media_url,permalink,caption,alt_text,position")
+    .select("id,media_type,media_url,thumbnail_url,permalink,caption,alt_text,position")
     .eq("active", true)
     .order("position", { ascending: true })
     .limit(8);
   if (error) return [];
   return (data ?? []).map((row) => ({
     id: String(row.id),
+    media_type: String(row.media_type ?? "IMAGE"),
     media_url: String(row.media_url),
+    thumbnail_url: row.thumbnail_url ? String(row.thumbnail_url) : null,
     permalink: String(row.permalink),
     caption: row.caption ? String(row.caption) : null,
     alt_text: row.alt_text ? String(row.alt_text) : null,

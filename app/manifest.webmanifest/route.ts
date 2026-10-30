@@ -9,7 +9,7 @@ const manifest = {
   scope: "/",
   display: "standalone",
   background_color: "#ffffff",
-  theme_color: "#1C1C1C",
+  theme_color: "#B94421",
   lang: "en",
   categories: ["food", "lifestyle"],
   icons: [
