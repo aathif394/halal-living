@@ -310,48 +310,52 @@ function InstallSheet({ steps, onClose, onInstall }: { steps: boolean; onClose: 
 export function InstallCard() {
   const { open, standalone } = useInstall();
   const ref = useRef<HTMLButtonElement>(null);
+  // All animation state lives in React (a class added by hand would be wiped on the next render).
+  // runId > 0 means the drop is playing; bumping it remounts the art so the drop starts from the top.
+  const [runId, setRunId] = useState(0);
   const [paused, setPaused] = useState(false);
 
-  // The drop only starts once the card is fully clear of the bottom bar and the launch screen has gone,
-  // and it replays from the top every time the card comes back into view.
+  // The drop starts once the card is clear of the top bar and the bottom bar and the launch screen
+  // has gone, and replays from the top each time the card comes back into view.
   useEffect(() => {
     const node = ref.current;
     if (!node) return;
-    let inView = false;
-    let running = false;
-    const launching = () => document.documentElement.classList.contains("hl-launching");
-    const start = () => {
-      if (running || !inView || launching()) return;
-      running = true;
-      node.classList.remove("is-run");
-      void node.offsetWidth; // restart the CSS animations
-      node.classList.add("is-run");
-      setPaused(false);
+    let wasIn = false;
+    let frame = 0;
+    const check = () => {
+      frame = 0;
+      if (document.documentElement.classList.contains("hl-launching")) return;
+      const r = node.getBoundingClientRect();
+      const top = 64;
+      const bottom = window.innerHeight - 76;
+      const visible = Math.max(0, Math.min(r.bottom, bottom) - Math.max(r.top, top));
+      const isIn = r.height > 0 && visible / r.height >= 0.8;
+      const onScreen = r.bottom > 0 && r.top < window.innerHeight;
+      if (isIn && !wasIn) setRunId((x) => x + 1);
+      wasIn = isIn;
+      setPaused(!onScreen);
     };
-    const stop = () => {
-      running = false;
-      setPaused(true);
+    const schedule = () => {
+      if (!frame) frame = requestAnimationFrame(check);
     };
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        inView = entry!.isIntersecting && entry!.intersectionRatio >= 0.85;
-        if (inView) start();
-        else if (!entry!.isIntersecting) stop();
-      },
-      { threshold: [0, 0.85, 1], rootMargin: "0px 0px -80px 0px" },
-    );
-    io.observe(node);
-    const mo = new MutationObserver(start);
+    schedule();
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    window.visualViewport?.addEventListener("resize", schedule);
+    const mo = new MutationObserver(schedule);
     mo.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
     return () => {
-      io.disconnect();
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+      window.visualViewport?.removeEventListener("resize", schedule);
       mo.disconnect();
     };
   }, []);
 
   if (standalone) return null;
   return (
-    <button ref={ref} type="button" className={`hla${paused ? " hla-off" : ""}`} aria-label="Get the Halal Living app" onClick={open}>
+    <button ref={ref} type="button" className={`hla${runId ? " is-run" : ""}${paused ? " hla-off" : ""}`} aria-label="Get the Halal Living app" onClick={open}>
       <span className="hla-txt">
         <span className="hla-k">Halal Living app</span>
         <span className="hla-h">Your city’s halal guide, one tap away</span>
@@ -360,7 +364,7 @@ export function InstallCard() {
           Install free
         </span>
       </span>
-      <span className="hla-art" aria-hidden="true">
+      <span key={runId} className="hla-art" aria-hidden="true">
         <span className="hla-ph">
           <span className="hla-notch" />
           <span className="hla-grid">

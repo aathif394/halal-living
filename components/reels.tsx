@@ -158,7 +158,11 @@ export function ReelViewer({ reels, start, onClose }: { reels: ReelSlide[]; star
 
 /** "Check out these reels": 3D coverflow that advances every 3.6 s; tap a reel to open the viewer. */
 export function ReelsCarousel({ reels }: { reels: ReelSlide[] }) {
-  const n = reels.length;
+  // The ring needs at least 7 cards so there are two either side of the centre (as in the mockup);
+  // with fewer reels it repeats them. Dots and the viewer use the real reel index.
+  const count = reels.length;
+  const slots = Array.from({ length: Math.max(7, count) }, (_, i) => ({ reel: reels[i % count]!, key: `${reels[i % count]!.id}-${i}` }));
+  const n = slots.length;
   const [cur, setCur] = useState(0);
   const [open, setOpen] = useState(-1);
   const [visible, setVisible] = useState(false);
@@ -218,7 +222,7 @@ export function ReelsCarousel({ reels }: { reels: ReelSlide[] }) {
           if (Math.abs(dx) > 40) goTo(cur + (dx < 0 ? 1 : -1));
         }}
       >
-        {reels.map((reel, i) => {
+        {slots.map(({ reel, key }, i) => {
           let d = (((i - cur) % n) + n) % n;
           if (d > n / 2) d -= n;
           const a = Math.abs(d);
@@ -226,7 +230,7 @@ export function ReelsCarousel({ reels }: { reels: ReelSlide[] }) {
           const active = d === 0;
           return (
             <button
-              key={reel.id}
+              key={key}
               type="button"
               className={`hl-cf__card${active ? " is-active" : ""}`}
               style={
@@ -239,8 +243,8 @@ export function ReelsCarousel({ reels }: { reels: ReelSlide[] }) {
                 } as React.CSSProperties
               }
               tabIndex={a > 1 ? -1 : 0}
-              aria-label={`Play reel ${i + 1}: ${reel.title}`}
-              onClick={() => (active ? setOpen(i) : goTo(i))}
+              aria-label={`Play reel ${(i % count) + 1}: ${reel.title}`}
+              onClick={() => (active ? setOpen(i % count) : goTo(i))}
             >
               <Media reel={reel} className="hl-cf__bg" />
               <span className="hl-cf__shade" />
@@ -272,7 +276,7 @@ export function ReelsCarousel({ reels }: { reels: ReelSlide[] }) {
       </div>
       <div className="hl-cf__dots">
         {reels.map((reel, i) => (
-          <button key={reel.id} type="button" aria-label={`Show reel ${i + 1}: ${reel.title}`} aria-current={i === cur ? "true" : undefined} onClick={() => goTo(i)} />
+          <button key={reel.id} type="button" aria-label={`Show reel ${i + 1}: ${reel.title}`} aria-current={i === cur % count ? "true" : undefined} onClick={() => goTo(cur - (cur % count) + i)} />
         ))}
       </div>
       {open >= 0 ? (
@@ -281,7 +285,7 @@ export function ReelsCarousel({ reels }: { reels: ReelSlide[] }) {
           start={open}
           onClose={(index) => {
             setOpen(-1);
-            goTo(index);
+            goTo(cur - (cur % count) + index);
           }}
         />
       ) : null}
