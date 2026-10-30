@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Frame } from "@/components/chrome";
 import { CityHome } from "@/components/city-home";
 import { JsonLd } from "@/components/json-ld";
 import { SITE_DESCRIPTION } from "@/lib/cities";
@@ -43,7 +42,7 @@ export default async function CityPage({ params }: Props) {
     },
   ];
   return (
-    <Frame city={city} current="home">
+    <>
       <CityHome
         city={city}
         restaurants={restaurants.map((place) => restaurantCard(toRestaurantView(place)))}
@@ -58,6 +57,6 @@ export default async function CityPage({ params }: Props) {
           itemListLd(base, `Halal restaurants in ${city.name}`, restaurants.map((place) => ({ name: place.name, path: `/${city.slug}/restaurants/${place.slug}` }))),
         ])}
       />
-    </Frame>
+    </>
   );
 }

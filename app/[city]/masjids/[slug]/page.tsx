@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Frame } from "@/components/chrome";
 import { MasjidDetail } from "@/components/detail";
 import { JsonLd } from "@/components/json-ld";
 import { getMasjid } from "@/lib/data";
@@ -35,7 +34,7 @@ export default async function MasjidPage({ params }: Props) {
   const place = toMasjidView(row);
   const reel = placeReel(place.name, place.area, place.photos, place.art, reels);
   return (
-    <Frame city={city} current="masjids" back detail>
+    <>
       <MasjidDetail city={city} place={place} reel={reel} />
       <JsonLd
         data={graphLd([
@@ -47,6 +46,6 @@ export default async function MasjidPage({ params }: Props) {
           masjidLd(base, row),
         ])}
       />
-    </Frame>
+    </>
   );
 }

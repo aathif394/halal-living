@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Frame } from "@/components/chrome";
 import { RestaurantDetail } from "@/components/detail";
 import { JsonLd } from "@/components/json-ld";
 import { getRestaurant } from "@/lib/data";
@@ -35,7 +34,7 @@ export default async function RestaurantPage({ params }: Props) {
   const place = toRestaurantView(row);
   const reel = placeReel(place.name, place.area, place.photos, place.art, reels);
   return (
-    <Frame city={city} current="restaurants" back detail>
+    <>
       <RestaurantDetail city={city} place={place} reel={reel} />
       <JsonLd
         data={graphLd([
@@ -47,6 +46,6 @@ export default async function RestaurantPage({ params }: Props) {
           restaurantLd(base, row),
         ])}
       />
-    </Frame>
+    </>
   );
 }

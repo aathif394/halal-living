@@ -13,7 +13,7 @@ export function DrawerHandle() {
         const sheet = event.currentTarget.closest("[data-sheet]") as HTMLElement | null;
         if (!sheet) return;
         const top = sheet.getBoundingClientRect().top + window.scrollY;
-        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const reduce = false;
         window.scrollTo({ top: window.scrollY + 8 >= top ? 0 : top, behavior: reduce ? "auto" : "smooth" });
       }}
     >

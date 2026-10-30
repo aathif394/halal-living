@@ -2,15 +2,17 @@
 
 import { useEffect } from "react";
 import { Icon } from "./icons";
-import { useDeferredNav, useIndicator } from "./slide";
+import { useRouteState } from "./route";
+import { useIndicator, useNavTo } from "./slide";
 
 /** Desktop Restaurants / Masjids switch: the white pill slides across, then the page changes. */
-export function NavSwitch({ city, current }: { city: string; current?: "home" | "restaurants" | "masjids" }) {
+export function NavSwitch({ city }: { city: string }) {
+  const { section } = useRouteState();
   const items = [
     { key: "restaurants", label: "Restaurants", href: `/${city}/restaurants`, icon: "food" },
     { key: "masjids", label: "Masjids", href: `/${city}/masjids`, icon: "masjidWide" },
   ] as const;
-  const { active, go } = useDeferredNav(items.findIndex((item) => item.key === current));
+  const { active, go } = useNavTo(items.findIndex((item) => item.key === section));
   const { container, box, anim } = useIndicator([active]);
   return (
     <div ref={container as React.RefObject<HTMLDivElement>} className="hl-switch">
@@ -45,4 +47,26 @@ export function HeaderScroll() {
     return () => window.removeEventListener("scroll", update);
   }, []);
   return null;
+}
+
+/** Frame root: on phones, place pages hide the top bar, footer and bottom bar (reel + drawer instead). */
+export function FrameRoot({ className, style, city, children }: { className: string; style: React.CSSProperties; city: string; children: React.ReactNode }) {
+  const { detail } = useRouteState();
+  return (
+    <div id="top" className={`${className}${detail ? " hl-frame--detail" : ""}`} data-city={city} style={style}>
+      {children}
+    </div>
+  );
+}
+
+/** Desktop: "← City" on place pages, the city chooser elsewhere. */
+export function CityOrBack({ city, name, chooser }: { city: string; name: string; chooser: React.ReactNode }) {
+  const { detail, section } = useRouteState();
+  if (!detail) return <>{chooser}</>;
+  return (
+    <a className="hl-city hl-back" href={`/${city}/${section}`} aria-label={`Back to ${name}`}>
+      <Icon name="arrowLeft" size={16} stroke={2.6} />
+      {name}
+    </a>
+  );
 }

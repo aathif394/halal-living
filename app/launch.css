@@ -103,12 +103,7 @@
 @keyframes hlm-d3 { 0%, 70% { opacity: .25; } 73%, 90% { opacity: 1; } 97%, 100% { opacity: .25; } }
 
 /* reduced motion: a still, finished scene and a plain fade */
-@media (prefers-reduced-motion: reduce) {
-  .hlm * { animation: none !important; }
-  .hlm .hlm-brand, .hlm .hlm-art, .hlm .hlm-text, .hlm .hlm-d, .hlm .hlm-sat-in { opacity: 1; }
-  .hlm .hlm-sat-in { transform: none; }
-  .hlm.is-out .hlm-inner { transform: none; }
-}
+
 
 
 .hlm-brand img { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; background: #fff; display: block; }

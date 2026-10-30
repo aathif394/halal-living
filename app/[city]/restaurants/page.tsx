@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Frame } from "@/components/chrome";
 import { JsonLd } from "@/components/json-ld";
 import { ListPage } from "@/components/list-page";
 import { cityOr404, loadCity, one } from "@/lib/load";
@@ -28,7 +27,7 @@ export default async function RestaurantsPage({ params, searchParams }: Props) {
   const [{ restaurants: rows, areas }, base] = await Promise.all([loadCity(city), siteUrl()]);
   const area = one(query.area);
   return (
-    <Frame city={city} current="restaurants">
+    <>
       <ListPage
         city={city}
         kind="restaurants"
@@ -47,6 +46,6 @@ export default async function RestaurantsPage({ params, searchParams }: Props) {
           itemListLd(base, `Restaurants in ${city.name}`, rows.map((place) => ({ name: place.name, path: `/${city.slug}/restaurants/${place.slug}` }))),
         ])}
       />
-    </Frame>
+    </>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback, useLayoutEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 
 // Sliding indicators copied from the mockup's #hl-switch-js: a pill (or underline) that
 // springs to the active item instead of the colour jumping.
@@ -83,17 +84,23 @@ export function SegTabs<T extends string>({
 }
 
 /**
- * Links whose indicator slides to the clicked item before the page changes,
- * like the mockup's deferred switch (340 ms).
+ * Navigation whose indicator slides to the tapped item straight away; the page then changes client-side
+ * while the bar stays on screen, so the slide is seen (mockup #hl-switch-js).
  */
-export function useDeferredNav(current: number) {
-  const [active, setActive] = useState(current);
+export function useNavTo(current: number) {
+  const router = useRouter();
+  const [pending, setPending] = useState<number | null>(null);
+  useEffect(() => setPending(null), [current]);
+  const active = pending ?? current;
   const go = (index: number, href: string) => (event: React.MouseEvent) => {
-    if (event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0 || index === active) return;
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
     event.preventDefault();
-    setActive(index);
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    window.setTimeout(() => window.location.assign(href), reduce ? 0 : 340);
+    if (index === current) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    setPending(index);
+    router.push(href);
   };
   return { active, go };
 }

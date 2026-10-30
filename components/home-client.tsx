@@ -5,7 +5,7 @@ import { Icon } from "./icons";
 import { SegTabs } from "./slide";
 
 function reduced() {
-  return typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  return false;
 }
 
 /** The changing word in the hero headline ("Halal food / kebabs / biryani …"). */
@@ -306,7 +306,7 @@ export function AdCarousel({ ads }: { ads: AdSlide[] }) {
   const [i, setI] = useState(0);
   const [paused, setPaused] = useState(false);
   useEffect(() => {
-    if (ads.length < 2 || paused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (ads.length < 2 || paused) return;
     const id = window.setInterval(() => !document.hidden && setI((x) => (x + 1) % ads.length), 5000);
     return () => window.clearInterval(id);
   }, [ads.length, paused]);

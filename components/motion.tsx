@@ -2,12 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 
+// Motion is part of the design and runs on every device, as in the mockup.
 function reduced() {
-  try {
-    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  } catch {
-    return false;
-  }
+  return false;
 }
 
 /**

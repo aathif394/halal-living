@@ -98,7 +98,7 @@ export function SmartSearch({
 
   // Typing placeholder (55 ms per letter, pause, delete, next example).
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (examples.length === 0) {
       setPh(examples[0] ?? "");
       return;
     }

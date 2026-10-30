@@ -18,7 +18,7 @@ const CENTRES: Record<string, [number, number]> = {
 };
 
 function reduced() {
-  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  return false;
 }
 
 function Wipe({ city, phase }: { city: CityTheme; phase: "in" | "full" | "out" }) {
@@ -122,7 +122,7 @@ export function CitySwitcher({ city, variant }: { city: CityTheme; variant: "pil
         pick(nearest);
       },
       () => setLocating(false),
-      { timeout: 8000, maximumAge: 600000 },
+      { timeout: 20000, maximumAge: 600000 },
     );
   };
 

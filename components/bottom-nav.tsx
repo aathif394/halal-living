@@ -3,16 +3,18 @@
 import type { CityTheme } from "@/lib/cities";
 import { Icon } from "./icons";
 import { LocatorLink } from "./locator";
-import { useDeferredNav, useIndicator } from "./slide";
+import { useRouteState } from "./route";
+import { useIndicator, useNavTo } from "./slide";
 
 /** Mobile bottom bar: Home · Food · Masjids · Masjid locator (pill in the theme colour). */
-export function BottomNav({ city, current }: { city: CityTheme; current: "home" | "restaurants" | "masjids" }) {
+export function BottomNav({ city }: { city: CityTheme }) {
+  const { section } = useRouteState();
   const items = [
     { key: "home", label: "Home", href: `/${city.slug}`, icon: "home" },
     { key: "restaurants", label: "Food", href: `/${city.slug}/restaurants`, icon: "food" },
     { key: "masjids", label: "Masjids", href: `/${city.slug}/masjids`, icon: "masjid" },
   ] as const;
-  const { active, go } = useDeferredNav(items.findIndex((item) => item.key === current));
+  const { active, go } = useNavTo(items.findIndex((item) => item.key === section));
   const { container, box, anim } = useIndicator([active]);
   return (
     <nav ref={container as React.RefObject<HTMLElement>} className="hl-bnav" aria-label="Main">
@@ -31,7 +33,7 @@ export function BottomNav({ city, current }: { city: CityTheme; current: "home" 
           Masjid locator
         </LocatorLink>
       </span>
-      {box ? <span className={`hl-bn-ind${anim ? " is-anim" : ""}`} aria-hidden="true" style={{ transform: `translateX(${box.x + box.w / 2 - 8}px)` }} /> : null}
+      {box && active >= 0 ? <span className={`hl-bn-ind${anim ? " is-anim" : ""}`} aria-hidden="true" style={{ transform: `translateX(${box.x + box.w / 2 - 8}px)` }} /> : null}
     </nav>
   );
 }

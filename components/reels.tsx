@@ -9,7 +9,7 @@ const CAROUSEL_MS = 3600;
 const VIEWER_MS = 7000;
 
 function reduced() {
-  return typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  return false;
 }
 
 function Media({ reel, className, playing, onEnded, onProgress }: { reel: ReelSlide; className: string; playing?: boolean; onEnded?: () => void; onProgress?: (k: number) => void }) {

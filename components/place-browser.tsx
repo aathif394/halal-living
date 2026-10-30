@@ -195,7 +195,7 @@ export function PlaceBrowser({
         setLoc("hidden");
       },
       () => setLoc("denied"),
-      { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 },
+      { enableHighAccuracy: false, timeout: 20000, maximumAge: 300000 },
     );
   };
 

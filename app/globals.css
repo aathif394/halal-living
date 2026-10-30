@@ -1507,7 +1507,6 @@ p {
 .hla-slot {
   background: transparent;
   border: 1.5px dashed rgba(255, 255, 255, 0.55);
-  animation: hlaSlot 9.8s ease-in-out infinite;
 }
 
 .hla-cell {
@@ -1528,7 +1527,6 @@ p {
   height: 100%;
   border-radius: 9px;
   box-shadow: 0 8px 14px rgba(0, 0, 0, 0.35);
-  animation: hlaDrop 9.8s cubic-bezier(0.3, 0.7, 0.3, 1) infinite;
   transform-origin: 50% 100%;
   z-index: 2;
 }
@@ -1540,7 +1538,6 @@ p {
   border-radius: 9px;
   background: #fff;
   opacity: 0;
-  animation: hlaSp 9.8s ease-out infinite;
 }
 
 .hla-sp1 {
@@ -1575,7 +1572,6 @@ p {
   font: 800 11.5px/24px var(--font);
   white-space: nowrap;
   opacity: 0;
-  animation: hlaOk 9.8s ease infinite;
 }
 
 @keyframes hlaDrop {
@@ -1653,6 +1649,36 @@ p {
     opacity: 0;
     transform: none;
   }
+}
+
+/* Until the card has been seen, the icon waits above the phone; .is-run starts the drop. */
+.hla .hla-ic {
+  opacity: 0;
+  transform: translate(34px, -86px) rotate(-22deg) scale(1.35);
+}
+
+.hla.is-run .hla-slot {
+  animation: hlaSlot 9.8s ease-in-out infinite;
+}
+
+.hla.is-run .hla-ic {
+  animation: hlaDrop 9.8s cubic-bezier(0.3, 0.7, 0.3, 1) infinite;
+}
+
+.hla.is-run .hla-sp {
+  animation: hlaSp 9.8s ease-out infinite;
+}
+
+.hla.is-run .hla-sp2 {
+  animation-delay: 0.08s;
+}
+
+.hla.is-run .hla-sp3 {
+  animation-delay: 0.16s;
+}
+
+.hla.is-run .hla-ok {
+  animation: hlaOk 9.8s ease infinite;
 }
 
 .hla.hla-off * {
@@ -6253,31 +6279,7 @@ html:not(.rv-on) .hl-draw path {
   color: #fff;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
 
-  .hla * {
-    animation: none !important;
-  }
-
-  .hla-ic {
-    opacity: 1;
-  }
-
-  .hla-slot {
-    border-color: transparent;
-  }
-
-  .hl-reel__img {
-    animation: none;
-  }
-}
 
 /* ---------- Smart search (mockup SmartSearch) ---------- */
 

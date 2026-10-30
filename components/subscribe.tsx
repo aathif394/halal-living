@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { CITIES, type CitySlug } from "@/lib/cities";
 import { Icon } from "./icons";
+import { useRouteState } from "./route";
 
 // Mockup Subscribe: a floating "Stay updated" button (a bell on phones) that appears after the first screen.
 // Desktop opens a card above it; phones open a bottom sheet. Monthly digest per city.
@@ -11,6 +12,7 @@ import { Icon } from "./icons";
 const KEY = "hl-sub";
 
 export function Subscribe({ city }: { city: CitySlug }) {
+  const { detail } = useRouteState();
   const [mounted, setMounted] = useState(false);
   const [shown, setShown] = useState(false);
   const [open, setOpen] = useState(false);
@@ -68,7 +70,7 @@ export function Subscribe({ city }: { city: CitySlug }) {
     };
   }, [open, mob]);
 
-  if (!mounted) return null;
+  if (!mounted || detail) return null;
 
   const up = (patch: Partial<typeof form>) => {
     setForm((f) => ({ ...f, ...patch }));

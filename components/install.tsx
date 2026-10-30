@@ -312,23 +312,41 @@ export function InstallCard() {
   const ref = useRef<HTMLButtonElement>(null);
   const [paused, setPaused] = useState(false);
 
-  // Pause off screen, and replay the drop from the top each time the card comes into view,
-  // so the visitor always sees the icon land (on load the card is often under the bottom bar).
+  // The drop only starts once the card is fully clear of the bottom bar and the launch screen has gone,
+  // and it replays from the top every time the card comes back into view.
   useEffect(() => {
     const node = ref.current;
-    if (!node || !("IntersectionObserver" in window)) return;
-    let shown = false;
-    const observer = new IntersectionObserver(
+    if (!node) return;
+    let inView = false;
+    let running = false;
+    const launching = () => document.documentElement.classList.contains("hl-launching");
+    const start = () => {
+      if (running || !inView || launching()) return;
+      running = true;
+      node.classList.remove("is-run");
+      void node.offsetWidth; // restart the CSS animations
+      node.classList.add("is-run");
+      setPaused(false);
+    };
+    const stop = () => {
+      running = false;
+      setPaused(true);
+    };
+    const io = new IntersectionObserver(
       ([entry]) => {
-        const visible = entry!.isIntersecting && entry!.intersectionRatio >= 0.6;
-        if (visible && !shown) node.getAnimations?.({ subtree: true }).forEach((animation) => (animation.currentTime = 0));
-        shown = visible;
-        setPaused(!entry!.isIntersecting);
+        inView = entry!.isIntersecting && entry!.intersectionRatio >= 0.85;
+        if (inView) start();
+        else if (!entry!.isIntersecting) stop();
       },
-      { threshold: [0, 0.6] },
+      { threshold: [0, 0.85, 1], rootMargin: "0px 0px -80px 0px" },
     );
-    observer.observe(node);
-    return () => observer.disconnect();
+    io.observe(node);
+    const mo = new MutationObserver(start);
+    mo.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+    return () => {
+      io.disconnect();
+      mo.disconnect();
+    };
   }, []);
 
   if (standalone) return null;

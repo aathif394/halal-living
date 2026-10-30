@@ -7,7 +7,7 @@ const ART = "<div class=\"hlm-inner\">\n    <svg class=\"hlm-art\" viewBox=\"0 0
 // Runs before paint: skip the loader if it was already seen this session.
 const BOOT = `(function(){var el=document.getElementById('hlm'),seen=false;try{seen=sessionStorage.getItem('hl_launch_seen')==='1'}catch(e){}if(seen||!el){if(el)el.classList.add('is-gone');return}document.documentElement.classList.add('hl-launching');window.__hlLaunch={t0:performance.now()};
 var LOOP=2400,DELAY=300,EXIT_AT=0.8,done=false,readyAt=null;
-function reduced(){try{return matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){return false}}
+function reduced(){return false}
 function finish(){if(done)return;done=true;try{sessionStorage.setItem('hl_launch_seen','1')}catch(e){}el.classList.add('is-out');document.documentElement.classList.remove('hl-launching');setTimeout(function(){el.classList.add('is-gone')},750)}
 window.__hlLaunchFinish=finish;
 window.__hlLaunchReady=function(){if(readyAt!=null||done)return;var now=performance.now()-window.__hlLaunch.t0;readyAt=now;if(reduced()){setTimeout(finish,Math.max(0,700-now));return}var at=DELAY+(Math.max(0,Math.floor((now-DELAY)/LOOP))+EXIT_AT)*LOOP;if(at<now+40)at+=LOOP;setTimeout(finish,at-now)};

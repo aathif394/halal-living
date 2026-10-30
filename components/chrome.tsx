@@ -7,10 +7,8 @@ import { GetAppButton, InstallLink } from "./install";
 import { LaunchLoader } from "./launch";
 import { LocatorLink, MasjidLocator } from "./locator";
 import { Motion } from "./motion";
-import { HeaderScroll, NavSwitch } from "./nav-switch";
+import { CityOrBack, FrameRoot, HeaderScroll, NavSwitch } from "./nav-switch";
 import { Subscribe } from "./subscribe";
-
-type Section = "home" | "restaurants" | "masjids";
 
 const COMMUNITY = [
   { name: "Living Collective", short: "Grow your network and business", url: "https://livingcollective.net", logo: "/brand/living-collective.jpg" },
@@ -32,23 +30,16 @@ function StoreLink({ variant }: { variant: "glass" | "solid" }) {
 }
 
 /** Desktop top bar: logo, city, Restaurants / Masjids switch, Get the app, Store. */
-function DesktopBar({ city, current, back }: { city: CityTheme; current?: Section; back?: boolean }) {
+function DesktopBar({ city }: { city: CityTheme }) {
   return (
     <div className="hl-dbar">
       <a className="hl-dbar__brand" href={`/${city.slug}`}>
         <CityLogo city={city} size={46} />
         <span>Halal Living</span>
       </a>
-      {back ? (
-        <a className="hl-city hl-back" href={`/${city.slug}`} aria-label={`Back to ${city.name}`}>
-          <Icon name="arrowLeft" size={16} stroke={2.6} />
-          {city.name}
-        </a>
-      ) : (
-        <CitySwitcher city={city} variant="pill" />
-      )}
+      <CityOrBack city={city.slug} name={city.name} chooser={<CitySwitcher city={city} variant="pill" />} />
       <nav className="hl-dbar__right" aria-label="Main">
-        <NavSwitch city={city.slug} current={current} />
+        <NavSwitch city={city.slug} />
         <GetAppButton />
         <StoreLink variant="solid" />
       </nav>
@@ -71,11 +62,11 @@ function MobileBar({ city }: { city: CityTheme }) {
   );
 }
 
-export function TopBar({ city, current, back }: { city: CityTheme; current?: Section; back?: boolean }) {
+export function TopBar({ city }: { city: CityTheme }) {
   return (
     <header className="hl-topbar">
       <HeaderScroll />
-      <DesktopBar city={city} current={current} back={back} />
+      <DesktopBar city={city} />
       <MobileBar city={city} />
     </header>
   );
@@ -182,25 +173,13 @@ export function Footer({ city }: { city: CityTheme }) {
   );
 }
 
-/** Page frame shared by every page: theme colours, top bar, footer and the mobile bottom nav. */
-export function Frame({
-  city,
-  current,
-  back,
-  detail,
-  hideChrome,
-  children,
-}: {
-  city: CityTheme;
-  current?: Section;
-  back?: boolean;
-  /** Place pages: on phones the reel and drawer replace the top bar, footer and bottom nav. */
-  detail?: boolean;
-  hideChrome?: boolean;
-  children: React.ReactNode;
-}) {
+/**
+ * Page frame: theme colours, top bar, footer, mobile bottom bar and the site-wide overlays.
+ * Used by the [city] layout, so it stays mounted while pages change and its indicators can slide.
+ */
+export function Frame({ city, children }: { city: CityTheme; children: React.ReactNode }) {
   return (
-    <div id="top" className={`hl-frame${detail ? " hl-frame--detail" : ""}`} data-city={city.slug} style={themeStyle(city)}>
+    <FrameRoot className="hl-frame" city={city.slug} style={themeStyle(city)}>
       {/* City colours on :root too, so dialogs rendered on <body> (search, install, reels) match the page. */}
       <style>{`:root{--btn:${city.btn};--tint:${city.tint};--soft:${city.soft}}`}</style>
       <LaunchLoader city={city.slug} />
@@ -208,19 +187,17 @@ export function Frame({
       <a className="hl-skip" href="#content">
         Skip to content
       </a>
-      {hideChrome ? null : (
-        <div className="hl-band" aria-hidden="true">
-          <StarPattern />
-          <Landmark city={city} size={210} className="hl-band__lm" />
-        </div>
-      )}
-      {hideChrome ? null : <TopBar city={city} current={current} back={back} />}
+      <div className="hl-band" aria-hidden="true">
+        <StarPattern />
+        <Landmark city={city} size={210} className="hl-band__lm" />
+      </div>
+      <TopBar city={city} />
       <main id="content">{children}</main>
-      {hideChrome ? null : <Footer city={city} />}
-      {hideChrome ? null : <BottomNav city={city} current={current ?? "home"} />}
+      <Footer city={city} />
+      <BottomNav city={city} />
       <MasjidLocator city={city.slug} cityName={city.name} />
       <CityWipeIn />
-      {hideChrome || detail ? null : <Subscribe city={city.slug} />}
-    </div>
+      <Subscribe city={city.slug} />
+    </FrameRoot>
   );
 }

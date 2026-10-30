@@ -94,38 +94,36 @@ function LocatorDialog({ city, cityName, onClose }: { city: string; cityName: st
     };
   }, [city, onClose]);
 
-  // Locate once the masjids are in.
+  // Ask for location straight away (in parallel with loading the masjids). Real phones can take a
+  // while: the permission prompt, then a GPS fix. Only fall back to "Pick your area" on an actual error.
+  const [here, setHere] = useState<[number, number] | null>(null);
+  const [denied, setDenied] = useState(false);
   useEffect(() => {
-    if (!list) return;
-    let done = false;
-    const fail = () => {
-      if (done) return;
-      done = true;
-      setPhase("pick");
-    };
-    const to = window.setTimeout(fail, 4500);
     if (!("geolocation" in navigator)) {
-      window.setTimeout(fail, 900);
+      setPhase("pick");
       return;
     }
+    let live = true;
     navigator.geolocation.getCurrentPosition(
-      (g) => {
-        if (done) return;
-        done = true;
-        window.clearTimeout(to);
-        const pos: [number, number] = [g.coords.latitude, g.coords.longitude];
-        const centre = list[0] ? ([list[0].lat, list[0].lng] as [number, number]) : null;
-        setFar(Boolean(centre && hav(pos, centre) > 60));
-        begin(pos);
+      (g) => live && setHere([g.coords.latitude, g.coords.longitude]),
+      (error) => {
+        if (!live) return;
+        setDenied(error.code === error.PERMISSION_DENIED);
+        setPhase("pick");
       },
-      () => {
-        window.clearTimeout(to);
-        window.setTimeout(fail, 700);
-      },
-      { timeout: 4000, maximumAge: 300000 },
+      { enableHighAccuracy: false, timeout: 20000, maximumAge: 300000 },
     );
-    return () => window.clearTimeout(to);
-  }, [list, begin]);
+    return () => {
+      live = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!list || !here || phase !== "locating") return;
+    const centre = list[0] ? ([list[0].lat, list[0].lng] as [number, number]) : null;
+    setFar(Boolean(centre && hav(here, centre) > 60));
+    begin(here);
+  }, [list, here, phase, begin]);
 
   // Area centres for "Pick your area", from the masjids in each area.
   const areas = new Map<string, [number, number, number]>();
@@ -156,6 +154,7 @@ function LocatorDialog({ city, cityName, onClose }: { city: string; cityName: st
     body = (
       <div key="p">
         <div className="ln-title">Pick your area</div>
+        {denied ? <div className="ln-sub">Location is off for this site. Turn it on in your browser settings, or pick the area you’re in.</div> : null}
         <div className="ln-areas">
           {[...areas.entries()].map(([name, [la, lo, n]]) => (
             <button key={name} type="button" onClick={() => begin([la / n, lo / n])}>
