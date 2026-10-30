@@ -1,11 +1,14 @@
 import { STORE_URL, type CityTheme } from "@/lib/cities";
 import type { Featured } from "@/lib/types";
 import type { PlaceCard, ReelSlide } from "@/lib/view";
-import { Landmark, StarPattern } from "./brand";
+import { StarPattern } from "./brand";
 import { COMMUNITY } from "./chrome";
-import { AdvertiseButton, HeroWord, ReelsStrip, SuggestForm, SuggestSheetButton, TypingSearch } from "./home-client";
+import { AdCarousel, AdvertiseButton, HeroWord, SuggestForm, SuggestSheetButton } from "./home-client";
+import { SmartSearch } from "./smart-search";
+import { ReelsCarousel } from "./reels";
 import { Icon } from "./icons";
 import { InstallCard } from "./install";
+import { CountUp, HeroParallax } from "./motion";
 import { PlaceBrowser } from "./place-browser";
 
 const PRODUCTS: [string, string, string, string][] = [
@@ -17,13 +20,19 @@ const PRODUCTS: [string, string, string, string][] = [
 ];
 const PRODUCT_BG = ["#F6E6CF", "#0F4C5C", "#F3E8DA", "#F6EEE6", "#F6F6F4"];
 
+function countBy(values: string[]): [string, number][] {
+  const counts = new Map<string, number>();
+  for (const value of values) counts.set(value, (counts.get(value) ?? 0) + 1);
+  return [...counts.entries()].sort((a, b) => b[1] - a[1]);
+}
+
 const HERO_WORDS = ["food", "kebabs", "biryani", "burgers", "pizza", "eats"];
 
 function Community() {
   return (
     <div className="hl-comm-list">
-      {COMMUNITY.map((item) => (
-        <a key={item.name} className="hl-comm hl-glass" href={item.url} target="_blank" rel="noopener noreferrer">
+      {COMMUNITY.map((item, i) => (
+        <a key={item.name} className="hl-comm hl-glass" href={item.url} target="_blank" rel="noopener noreferrer" style={{ animationDelay: `${500 + i * 110}ms` }}>
           <span className="hl-mono">
             <img src={item.logo} alt="" />
           </span>
@@ -40,26 +49,24 @@ function Community() {
   );
 }
 
+const AD_BG = ["#2B1710", "#3A1B14", "#12403F", "#1F2A44"];
+const AD_ART = ["/art/food-1.svg", "/art/product-0.svg", "/art/product-2.svg", "/art/food-4.svg"];
+
 function Sponsored({ featured, city }: { featured: Featured[]; city: CityTheme }) {
-  const lead = featured[0];
-  if (!lead) return null;
-  const href = lead.restaurant_slug ? `/${lead.restaurant_city ?? city.slug}/restaurants/${lead.restaurant_slug}` : `/${city.slug}/restaurants`;
+  if (!featured.length) return null;
+  const ads = featured.map((ad, i) => ({
+    id: ad.id,
+    href: ad.restaurant_slug ? `/${ad.restaurant_city ?? city.slug}/restaurants/${ad.restaurant_slug}` : `/${city.slug}/restaurants`,
+    label: ad.sponsor_label || "Sponsored",
+    name: ad.name,
+    pitch: ad.pitch,
+    cta: ad.cta,
+    art: AD_ART[i % AD_ART.length]!,
+    bg: AD_BG[i % AD_BG.length]!,
+  }));
   return (
-    <div className="hl-wrap hl-sec-sm">
-      <a className="hl-ad" href={href}>
-        <span className="hl-ad__art" aria-hidden="true">
-          <img src="/art/food-1.svg" alt="" />
-        </span>
-        <span className="hl-ad__t">
-          <span className="hl-ad__k">{lead.sponsor_label || "Sponsored"}</span>
-          <b>{lead.name}</b>
-          <span className="hl-ad__p">{lead.pitch}</span>
-        </span>
-        <span className="hl-ad__cta">
-          {lead.cta}
-          <Icon name="arrowRight" size={14} stroke={2.6} />
-        </span>
-      </a>
+    <div className="hl-wrap hl-sec-sm" data-rv="">
+      <AdCarousel ads={ads} />
     </div>
   );
 }
@@ -88,11 +95,20 @@ export function CityHome({
   ];
   return (
     <>
-      <section className="hl-hero">
+      <HeroParallax className="hl-hero">
         <StarPattern />
-        <Landmark city={city} size={460} className="hl-hero__lm" />
-        <svg className="hl-hero__bob hl-only-desk" width="62" height="62" viewBox="0 0 60 60" fill="none" stroke="#fff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <svg className="hl-hero__lm" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth=".55" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <path d={city.landmark} pathLength={1} />
+        </svg>
+        {/* Floating line icons that drift with the pointer (desktop). */}
+        <svg className="hl-bob hl-bob--1 hl-only-desk" width="62" height="62" viewBox="0 0 60 60" aria-hidden="true">
           <path d="M10 28 H50 M12 28 Q12 52 30 52 Q48 52 48 28 M16 28 Q30 18 44 28 M22 20 q3 -5 0 -10 M30 18 q3 -5 0 -10 M38 20 q3 -5 0 -10" />
+        </svg>
+        <svg className="hl-bob hl-bob--2 hl-only-desk" width="50" height="50" viewBox="0 0 60 60" aria-hidden="true">
+          <path d="M18 18 H42 L38 52 H22 Z M20 28 H40 M26 12 q3 -4 0 -8 M34 12 q3 -4 0 -8" />
+        </svg>
+        <svg className="hl-bob hl-bob--3 hl-only-desk" width="46" height="46" viewBox="0 0 60 60" aria-hidden="true">
+          <path d="M8 52 L50 10 M14 40 a6 6 0 1 0 12 0 a6 6 0 1 0 -12 0 M24 30 a6 6 0 1 0 12 0 a6 6 0 1 0 -12 0 M34 20 a6 6 0 1 0 12 0 a6 6 0 1 0 -12 0" />
         </svg>
         <div className="hl-hero__grid">
           <div className="hl-hero__main">
@@ -100,7 +116,17 @@ export function CityHome({
               <span className="hl-hw">Halal</span> <HeroWord words={HERO_WORDS} /> <span className="hl-hw">&amp;</span> <span className="hl-hw">masjids</span>{" "}
               <span className="hl-hw">in</span> <span className="hl-hw hl-hw--city">{city.name}</span>
             </h1>
-            <TypingSearch action={`/${city.slug}/restaurants`} examples={examples} label={`Search halal places in ${city.name}`} />
+            <SmartSearch
+              city={city.slug}
+              cityName={city.name}
+              examples={examples}
+              places={[
+                ...restaurants.map((place) => ({ type: "r" as const, name: place.name, sub: `${place.sub} · ${place.area}`, href: `/${city.slug}/restaurants/${place.slug}` })),
+                ...masjids.map((place) => ({ type: "m" as const, name: place.name, sub: `${place.sub} · ${place.area}`, href: `/${city.slug}/masjids/${place.slug}` })),
+              ]}
+              dishes={countBy(restaurants.flatMap((place) => place.sub.split(/\s*[·—,/]\s*/)).filter(Boolean)).map(([name, count]) => ({ name, count }))}
+              areas={countBy([...restaurants, ...masjids].map((place) => place.area).filter(Boolean)).map(([name, count]) => ({ name, count }))}
+            />
           </div>
           <div className="hl-hero__side">
             <h2 className="hl-kicker">MORE FROM OUR COMMUNITY</h2>
@@ -110,57 +136,71 @@ export function CityHome({
             </div>
           </div>
         </div>
-      </section>
+      </HeroParallax>
 
       <Sponsored featured={featured} city={city} />
 
-      <section className="hl-wrap hl-sec" aria-label={`Near you in ${city.name}`}>
+      <section className="hl-wrap hl-sec" aria-label={`Near you in ${city.name}`} data-rv="">
         <PlaceBrowser city={{ slug: city.slug, name: city.name }} restaurants={restaurants} masjids={masjids} areas={areas} mode="home" initialKind="restaurants" />
       </section>
 
-      <section className="hl-stats" aria-labelledby="stats-h">
+      <section className="hl-stats" aria-labelledby="stats-h" data-rv="">
         <div className="hl-wrap">
-          <h2 id="stats-h" className="hl-h2">
+          <h2 id="stats-h" className="hl-stats__h">
             Halal Living in {city.name}
           </h2>
           <div className="hl-stats__grid">
-            <div className="hl-stat hl-stat--big">
+            <div className="hl-live-card">
+              <span className="hl-live-card__c1" aria-hidden="true" />
+              <span className="hl-live-card__c2" aria-hidden="true" />
               <span className="hl-live">
                 <i />
                 Live
               </span>
-              <b>{restaurants.length + masjids.length}</b>
-              <span>places checked by the community</span>
+              <b className="hl-live-card__n">
+                <CountUp value={restaurants.length + masjids.length} />
+              </b>
+              <span className="hl-live-card__l">places checked by the community</span>
             </div>
-            <a className="hl-stat" href={`/${city.slug}/restaurants`}>
-              <span className="hl-stat__top">
-                <span className="hl-stat__ic">
-                  <Icon name="food" size={18} stroke={2} />
+            <div className="hl-cc-tiles">
+              <a className="cc-tile" href={`/${city.slug}/restaurants`}>
+                <span className="cc-tile__top">
+                  <span className="cc-tile__ic" style={{ color: city.soft, background: `${city.soft}22` }}>
+                    <Icon name="food" size={22} stroke={1.8} />
+                  </span>
+                  <span className="cc-go">
+                    <Icon name="arrowRight" size={14} stroke={2.8} />
+                  </span>
                 </span>
-                <span className="hl-stat__go">
-                  <Icon name="arrowRight" size={14} stroke={2.6} />
+                <span>
+                  <b className="cc-tile__n" style={{ color: city.soft }}>
+                    <CountUp value={restaurants.length} />
+                  </b>
+                  <span className="cc-tile__l">halal restaurants</span>
                 </span>
-              </span>
-              <b>{restaurants.length}</b>
-              <span>halal restaurants</span>
-            </a>
-            <a className="hl-stat" href={`/${city.slug}/masjids`}>
-              <span className="hl-stat__top">
-                <span className="hl-stat__ic hl-stat__ic--gold">
-                  <Icon name="masjidWide" size={18} stroke={2} />
+              </a>
+              <a className="cc-tile" href={`/${city.slug}/masjids`}>
+                <span className="cc-tile__top">
+                  <span className="cc-tile__ic" style={{ color: "#E2BE62", background: "#E2BE6222" }}>
+                    <Icon name="masjidWide" size={22} stroke={1.8} />
+                  </span>
+                  <span className="cc-go">
+                    <Icon name="arrowRight" size={14} stroke={2.8} />
+                  </span>
                 </span>
-                <span className="hl-stat__go">
-                  <Icon name="arrowRight" size={14} stroke={2.6} />
+                <span>
+                  <b className="cc-tile__n" style={{ color: "#E2BE62" }}>
+                    <CountUp value={masjids.length} />
+                  </b>
+                  <span className="cc-tile__l">masjids &amp; prayer halls</span>
                 </span>
-              </span>
-              <b className="hl-gold">{masjids.length}</b>
-              <span>masjids &amp; prayer halls</span>
-            </a>
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="hl-store" aria-labelledby="store-h">
+      <section className="hl-store" aria-labelledby="store-h" data-rv="">
         <div className="hl-wrap hl-store__grid">
           <div className="hl-store__intro">
             <div className="hl-store__k">HALAL LIVING STORE</div>
@@ -211,7 +251,7 @@ export function CityHome({
         </div>
       </section>
 
-      <section id="advertise" className="hl-wrap hl-sec" aria-labelledby="ad-h2">
+      <section id="advertise" className="hl-wrap hl-sec" aria-labelledby="ad-h2" data-rv="">
         <div className="hl-adv">
           <div>
             <div className="hl-adv__k">ADVERTISE WITH US</div>
@@ -222,9 +262,9 @@ export function CityHome({
         </div>
       </section>
 
-      {reels.length ? <ReelsStrip reels={reels} /> : null}
+      {reels.length ? <ReelsCarousel reels={reels} /> : null}
 
-      <section id="suggest" className="hl-wrap hl-sec" aria-labelledby="sg-h">
+      <section id="suggest" className="hl-wrap hl-sec" aria-labelledby="sg-h" data-rv="">
         <div className="hl-sg">
           <StarPattern />
           <div className="hl-sg__intro">

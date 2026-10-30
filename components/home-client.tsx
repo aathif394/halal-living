@@ -1,9 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import type { ReelSlide } from "@/lib/view";
+import { useEffect, useState } from "react";
 import { Icon } from "./icons";
-import { ReelPlayer } from "./reel-player";
 import { SegTabs } from "./slide";
 
 function reduced() {
@@ -35,137 +33,36 @@ export function HeroWord({ words }: { words: string[] }) {
   );
 }
 
-/** Search pill with a typing placeholder, as in the mockup. Submits to the list page. */
-export function TypingSearch({ action, examples, label }: { action: string; examples: string[]; label: string }) {
-  const [ph, setPh] = useState("");
-  const [value, setValue] = useState("");
-  const [focus, setFocus] = useState(false);
+/** Mockup success burst: 18 stars fly out from the tick in the city colour, gold and ink. */
+function Confetti() {
+  const [go, setGo] = useState(false);
   useEffect(() => {
-    if (reduced()) {
-      setPh(examples[0] ?? "");
-      return;
-    }
-    let i = 0;
-    let n = 0;
-    let dir = 1;
-    let wait = 4;
-    const id = window.setInterval(() => {
-      if (document.hidden) return;
-      const word = examples[i % examples.length] ?? "";
-      if (wait > 0) {
-        wait--;
-        return;
-      }
-      n += dir;
-      if (n >= word.length) {
-        n = word.length;
-        dir = -1;
-        wait = 30;
-      } else if (n <= 0) {
-        n = 0;
-        dir = 1;
-        i++;
-        wait = 6;
-      }
-      setPh(word.slice(0, n));
-    }, 55);
-    return () => window.clearInterval(id);
-  }, [examples]);
+    const frame = requestAnimationFrame(() => requestAnimationFrame(() => setGo(true)));
+    return () => cancelAnimationFrame(frame);
+  }, []);
   return (
-    <form className={`hl-search${focus ? " is-focus" : ""}`} action={action} role="search">
-      <span className="hl-search__ic">
-        <Icon name="search" size={20} stroke={2.4} />
+    <span className="hl-burst">
+      {Array.from({ length: 18 }, (_, k) => {
+        const ang = (k / 18) * Math.PI * 2;
+        const d = 90 + (k % 3) * 34;
+        return (
+          <svg
+            key={k}
+            className={`hl-burst__p${go ? " is-go" : ""}`}
+            width="16"
+            height="16"
+            viewBox="0 0 40 40"
+            aria-hidden="true"
+            style={{ "--tx": `${Math.round(Math.cos(ang) * d * 1.6)}px`, "--ty": `${Math.round(Math.sin(ang) * d)}px`, "--r": `${k * 47}deg` } as React.CSSProperties}
+          >
+            <path d="M20 3 C24 14 26 16 37 20 C26 24 24 26 20 37 C16 26 14 24 3 20 C14 16 16 14 20 3z" fill={["var(--btn)", "#E8B030", "#1C1C1C"][k % 3]} />
+          </svg>
+        );
+      })}
+      <span className="hl-burst__tick">
+        <Icon name="check" size={38} stroke={2.6} />
       </span>
-      <input
-        name="q"
-        value={value}
-        onChange={(event) => setValue(event.target.value)}
-        onFocus={() => setFocus(true)}
-        onBlur={() => setFocus(false)}
-        placeholder={`${ph}|`}
-        aria-label={label}
-        enterKeyHint="search"
-        autoComplete="off"
-      />
-      {value ? (
-        <button type="submit" className="hl-search__go" aria-label="Search">
-          <Icon name="arrowRight" size={18} stroke={2.6} />
-        </button>
-      ) : null}
-    </form>
-  );
-}
-
-/** Horizontal reel carousel; tapping a reel opens it full screen in the player. */
-export function ReelsStrip({ reels }: { reels: ReelSlide[] }) {
-  const [open, setOpen] = useState(-1);
-  const track = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    if (open < 0) return;
-    const overflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    const onKey = (event: KeyboardEvent) => event.key === "Escape" && setOpen(-1);
-    window.addEventListener("keydown", onKey);
-    return () => {
-      document.body.style.overflow = overflow;
-      window.removeEventListener("keydown", onKey);
-    };
-  }, [open]);
-  const scroll = (dir: number) => {
-    const node = track.current;
-    if (node) node.scrollBy({ left: dir * Math.min(node.clientWidth * 0.8, 600), behavior: reduced() ? "auto" : "smooth" });
-  };
-  return (
-    <section className="hl-reels" aria-labelledby="reels-h">
-      <div className="hl-wrap hl-reels__head">
-        <h2 id="reels-h" className="hl-h2 hl-ul hl-ul--light">
-          Check out these reels
-        </h2>
-        <div className="hl-reels__arrows">
-          <button type="button" aria-label="Previous reels" onClick={() => scroll(-1)}>
-            <Icon name="arrowLeft" size={18} stroke={2.4} />
-          </button>
-          <button type="button" aria-label="Next reels" onClick={() => scroll(1)}>
-            <Icon name="arrowRight" size={18} stroke={2.4} />
-          </button>
-        </div>
-      </div>
-      <div className="hl-reels__track" ref={track}>
-        {reels.map((reel, i) => (
-          <button key={reel.id} type="button" className="hl-reels__card" aria-label={`Play reel: ${reel.title}`} onClick={() => setOpen(i)}>
-            {reel.kind === "video" && !reel.poster ? (
-              <video src={reel.src} muted playsInline preload="metadata" />
-            ) : (
-              <img src={reel.poster || reel.src} alt="" loading="lazy" />
-            )}
-            <span className="hl-reels__shade" />
-            <span className="hl-reels__top">
-              <span className="hl-reels__av">
-                <img src="/icons/icon-192.png" alt="" />
-              </span>
-              {reel.by}
-            </span>
-            <span className="hl-reels__play">
-              <Icon name="play" size={22} />
-            </span>
-            <span className="hl-reels__cap">
-              <span className="hl-reel__place">
-                <Icon name="pin" size={12} stroke={2.4} />
-                {reel.place}
-              </span>
-              <b>{reel.title}</b>
-            </span>
-          </button>
-        ))}
-      </div>
-      {open >= 0 ? (
-        <div className="hl-viewer" role="dialog" aria-modal="true" aria-label="Reels">
-          <div className="hl-viewer__box">
-            <ReelPlayer slides={reels} startAt={open} avatar="/icons/icon-192.png" handle="@halalliving" variant="viewer" label="Community reels" onClose={() => setOpen(-1)} />
-          </div>
-        </div>
-      ) : null}
-    </section>
+    </span>
   );
 }
 
@@ -179,9 +76,7 @@ export function SuggestForm({ city, areas }: { city: string; areas: string[] }) 
   if (status === "sent") {
     return (
       <div className="hl-sg-done" role="status">
-        <span className="hl-sg-done__ic">
-          <Icon name="check" size={34} stroke={3} />
-        </span>
+        <Confetti />
         <b>JazakAllah khair!</b>
         <p>Someone from the community will check it before it’s listed.</p>
         <button type="button" className="hl-btn-line" onClick={() => setStatus("idle")}>
@@ -401,5 +296,49 @@ export function AdvertiseButton({ city, cityName }: { city: string; cityName: st
         </div>
       ) : null}
     </>
+  );
+}
+
+export type AdSlide = { id: string; href: string; label: string; name: string; pitch: string; cta: string; art: string; bg: string };
+
+/** Mockup .hl-ads: sponsored banners slide every 5 s (paused on hover), with progress dots. */
+export function AdCarousel({ ads }: { ads: AdSlide[] }) {
+  const [i, setI] = useState(0);
+  const [paused, setPaused] = useState(false);
+  useEffect(() => {
+    if (ads.length < 2 || paused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const id = window.setInterval(() => !document.hidden && setI((x) => (x + 1) % ads.length), 5000);
+    return () => window.clearInterval(id);
+  }, [ads.length, paused]);
+  return (
+    <div className="hl-ads" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
+      <div className="hl-adtrack" style={{ transform: `translateX(-${i * 100}%)` }}>
+        {ads.map((ad, k) => (
+          <a key={ad.id} className="hl-ad" href={ad.href} style={{ background: ad.bg }} tabIndex={k === i ? 0 : -1} aria-hidden={k !== i}>
+            <span className="hl-ad__art" aria-hidden="true">
+              <img src={ad.art} alt="" />
+            </span>
+            <span className="hl-ad__t">
+              <span className="hl-ad__k">{ad.label}</span>
+              <b>{ad.name}</b>
+              <span className="hl-ad__p">{ad.pitch}</span>
+            </span>
+            <span className="hl-ad__cta">
+              {ad.cta}
+              <Icon name="arrowRight" size={14} stroke={2.6} />
+            </span>
+          </a>
+        ))}
+      </div>
+      {ads.length > 1 ? (
+        <div className="hl-adots">
+          {ads.map((ad, k) => (
+            <button key={ad.id} type="button" aria-label={`Show sponsored ${k + 1}`} aria-current={k === i ? "true" : undefined} onClick={() => setI(k)}>
+              {k === i ? <i key={`${i}-${paused}`} className={paused ? "" : "is-run"} /> : null}
+            </button>
+          ))}
+        </div>
+      ) : null}
+    </div>
   );
 }

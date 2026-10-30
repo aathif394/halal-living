@@ -158,7 +158,16 @@ export function ReelPlayer({
             onError={() => go(index + 1)}
           />
         ) : (
-          <div key={slide.id} className={`hl-reel__media hl-reel__img${slide.art ? " hl-reel__img--art" : ""}`} style={{ backgroundImage: `url("${slide.src.replace(/"/g, "")}")` }} />
+          <>
+            {slide.art ? <div key={`${slide.id}-bd`} className="hl-reel__backdrop" style={{ backgroundImage: `url("${slide.src.replace(/"/g, "")}")` }} /> : null}
+            {slide.art ? (
+              <div key={slide.id} className="hl-reel__media hl-reel__img hl-reel__img--art">
+                <img src={slide.src} alt="" />
+              </div>
+            ) : (
+              <div key={slide.id} className="hl-reel__media hl-reel__img" style={{ backgroundImage: `url("${slide.src.replace(/"/g, "")}")` }} />
+            )}
+          </>
         )}
       </div>
       <div className="hl-reel__shade" aria-hidden="true" />

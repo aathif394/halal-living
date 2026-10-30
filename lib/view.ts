@@ -295,7 +295,7 @@ export function placeReel(name: string, area: string, photos: Photo[], art: stri
   }));
   const slides = [...mentions, ...fromPhotos];
   if (slides.length) return slides.slice(0, 8);
-  return [{ id: "art", kind: "image", src: art, poster: art, title: `Inside ${name}`, by: name, place: area, link: "", art: true }];
+  return [{ id: "art", kind: "image", src: art, poster: art, title: `Inside ${name}`, by: "@halalliving", place: area, link: "", art: true }];
 }
 
 export function topAreas(names: string[], fallback: string[]): string[] {

@@ -5,6 +5,8 @@ import type { PlaceCard } from "@/lib/view";
 import { TrustDot } from "./brand";
 import { ShareButton } from "./detail-parts";
 import { Icon } from "./icons";
+import { openLocator } from "./locator";
+import { tiltHandlers } from "./motion";
 import { SegTabs } from "./slide";
 
 type Kind = "restaurants" | "masjids";
@@ -52,8 +54,9 @@ export function PlaceTile({ place }: { place: Row }) {
   return (
     <article className="hl-tile">
       <a className="hl-tile__link" href={place.href}>
-        <span className="hl-tile__ph">
+        <span className="hl-tile__ph" {...tiltHandlers()}>
           <img src={place.photo} alt="" loading="lazy" />
+          <span className="hl-tile__shine" aria-hidden="true" />
           {place.km != null ? <span className="hl-tile__km">{distLabel(place.km)}</span> : null}
           {place.trust ? (
             <span className="hl-tile__trust" style={{ color: place.trust.color }}>
@@ -333,7 +336,7 @@ export function PlaceBrowser({
           <span className="hl-frow__map">{mapButton}</span>
         </div>
         {kind === "masjids" ? (
-          <button type="button" className="hl-locate" onClick={ask}>
+          <button type="button" className="hl-locate" onClick={openLocator}>
             <span className="hl-radar" aria-hidden="true">
               <i />
               <b />

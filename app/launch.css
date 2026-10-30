@@ -1,0 +1,118 @@
+.hlm { --gold: #F2D27A; --white: #FFFFFF; --text: rgba(255,255,255,.94); --muted: rgba(255,255,255,.7); --brand: #B94421; --soft: #F0CFC2; --font: 'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif; }
+.hlm[data-city="mumbai"]    { --brand: #5A2FAC; --soft: #D6CBEE; }
+.hlm[data-city="bangalore"] { --brand: #45A34D; --soft: #CBE7CE; }
+.hlm[data-city="hyderabad"] { --brand: #09AAAC; --soft: #BDE8E8; }
+/* ---------- the launch loader ---------- */
+.hlm {
+  position: fixed; inset: 0; z-index: 100000;
+  background:
+    radial-gradient(70vw 52vw at 50% 47%, color-mix(in srgb, var(--brand) 82%, #fff 18%), transparent 72%),
+    linear-gradient(180deg, color-mix(in srgb, var(--brand) 94%, #000) 0%, color-mix(in srgb, var(--brand) 80%, #000) 100%);
+  color: var(--text); font-family: var(--font); -webkit-font-smoothing: antialiased;
+}
+.hlm-inner { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 0 16px; }
+.hlm-brand { position: absolute; top: calc(26px + env(safe-area-inset-top, 0px)); left: 0; right: 0; display: flex; justify-content: center; align-items: center; gap: 10px; font: 800 15px var(--font); color: var(--white); opacity: 0; animation: hlm-in .6s ease .05s forwards; }
+.hlm-brand i { width: 30px; height: 30px; border-radius: 50%; background: var(--white); color: var(--brand); display: grid; place-items: center; font: 900 11px/1 var(--font); font-style: normal; }
+.hlm-brand span { color: var(--muted); font-weight: 700; }
+.hlm-art { width: min(84vw, 360px); height: auto; aspect-ratio: 1; overflow: visible; opacity: 0; animation: hlm-in .5s ease forwards; }
+
+/* ground: two faint guide ellipses + the pulse rings */
+.hlm-guide { fill: none; stroke: rgba(255,255,255,.12); stroke-width: 1; stroke-dasharray: 2 5; vector-effect: non-scaling-stroke; }
+.hlm-ring { fill: none; stroke: rgba(255,255,255,.75); stroke-width: 1.5; vector-effect: non-scaling-stroke; transform-box: fill-box; transform-origin: center; opacity: 0; }
+.hlm-ring.two { stroke: rgba(255,255,255,.4); }
+.hlm-loop .hlm-ring.one { animation: hlm-ring1 2.4s .3s infinite both; }
+.hlm-loop .hlm-ring.two { animation: hlm-ring2 2.4s .3s infinite both; }
+
+/* places around the pin */
+.hlm-sat-in, .hlm-bob { transform-box: fill-box; transform-origin: 50% 100%; }
+.hlm-sat-in { transform: scale(0); opacity: 0; }
+.hlm-sat.r path { fill: var(--white); }
+.hlm-sat.r .hole { fill: var(--brand); }
+.hlm-sat.m path { fill: var(--gold); }
+.hlm-sat .door { fill: none; stroke: var(--brand); stroke-width: 1.8; stroke-linecap: round; }
+.hlm-loop .hlm-bob { animation: hlm-bob 2.4s ease-in-out infinite; }
+@keyframes hlm-s0 { 0%, 59.0% { transform: scale(0); opacity: 0; } 63.0% { transform: scale(1.18); opacity: 1; } 67.0%, 86% { transform: scale(1); opacity: 1; } 93%, 100% { transform: scale(0); opacity: 0; } }
+.hlm-loop .s0 { animation: hlm-s0 2.4s .3s infinite both; }
+@keyframes hlm-s1 { 0%, 64.2% { transform: scale(0); opacity: 0; } 68.2% { transform: scale(1.18); opacity: 1; } 72.2%, 86% { transform: scale(1); opacity: 1; } 93%, 100% { transform: scale(0); opacity: 0; } }
+.hlm-loop .s1 { animation: hlm-s1 2.4s .3s infinite both; }
+@keyframes hlm-s2 { 0%, 54.5% { transform: scale(0); opacity: 0; } 58.5% { transform: scale(1.18); opacity: 1; } 62.5%, 86% { transform: scale(1); opacity: 1; } 93%, 100% { transform: scale(0); opacity: 0; } }
+.hlm-loop .s2 { animation: hlm-s2 2.4s .3s infinite both; }
+@keyframes hlm-s3 { 0%, 66.1% { transform: scale(0); opacity: 0; } 70.1% { transform: scale(1.18); opacity: 1; } 74.1%, 86% { transform: scale(1); opacity: 1; } 93%, 100% { transform: scale(0); opacity: 0; } }
+.hlm-loop .s3 { animation: hlm-s3 2.4s .3s infinite both; }
+@keyframes hlm-s4 { 0%, 60.3% { transform: scale(0); opacity: 0; } 64.3% { transform: scale(1.18); opacity: 1; } 68.3%, 86% { transform: scale(1); opacity: 1; } 93%, 100% { transform: scale(0); opacity: 0; } }
+.hlm-loop .s4 { animation: hlm-s4 2.4s .3s infinite both; }
+@keyframes hlm-s5 { 0%, 66.8% { transform: scale(0); opacity: 0; } 70.8% { transform: scale(1.18); opacity: 1; } 74.8%, 86% { transform: scale(1); opacity: 1; } 93%, 100% { transform: scale(0); opacity: 0; } }
+.hlm-loop .s5 { animation: hlm-s5 2.4s .3s infinite both; }
+
+/* the main pin: hops, turns into a prayer-hall arch at the top of every other hop */
+.hlm-shadow { fill: rgba(0,0,0,.28); transform-box: fill-box; transform-origin: center; }
+.hlm-hop, .hlm-sq { transform-box: fill-box; transform-origin: 50% 100%; }
+.hlm-flip { transform-box: fill-box; transform-origin: 50% 50%; }
+.hlm-main path:first-child { fill: var(--white); }
+.hlm-main .hole { fill: var(--brand); }
+.hlm-arch path:first-child { fill: var(--gold); }
+.hlm-arch .door { fill: none; stroke: var(--brand); stroke-width: 1.7; stroke-linecap: round; }
+.hlm-arch { opacity: 0; }
+.hlm-main-wrap { filter: drop-shadow(0 6px 10px rgba(0,0,0,.22)); }
+.hlm-loop .hlm-hop { animation: hlm-hop 2.4s .3s infinite both; }
+.hlm-loop .hlm-sq { animation: hlm-sq 2.4s .3s infinite both; }
+.hlm-loop .hlm-shadow { animation: hlm-shadow 2.4s .3s infinite both; }
+.hlm-loop .hlm-pin { animation: hlm-pinf 4.8s .3s infinite both; }
+.hlm-loop .hlm-flip { animation: hlm-flip 4.8s .3s infinite both; }
+.hlm-loop .hlm-arch { animation: hlm-archf 4.8s .3s infinite both; }
+
+/* text: large enough to count as large text on every city colour */
+.hlm-text { margin: 4px 0 0; font: 700 19px/1.3 var(--font); letter-spacing: .005em; color: var(--text); text-align: center; opacity: 0; animation: hlm-in .6s ease .2s forwards; }
+.hlm-d { display: inline-block; width: .3em; opacity: .25; }
+.hlm-loop .d1 { animation: hlm-d1 2.4s .3s infinite both; }
+.hlm-loop .d2 { animation: hlm-d2 2.4s .3s infinite both; }
+.hlm-loop .d3 { animation: hlm-d3 2.4s .3s infinite both; }
+
+/* exit: the art lifts away, then the colour fades into the homepage header underneath */
+.hlm.is-out { opacity: 0; transition: opacity .45s ease .18s; }
+.hlm.is-out .hlm-inner { opacity: 0; transform: translateY(-14px) scale(.96); transition: opacity .3s ease, transform .4s cubic-bezier(.4,0,.2,1); }
+
+@keyframes hlm-in { to { opacity: 1; } }
+@keyframes hlm-hop {
+  0%, 6%  { transform: none; animation-timing-function: cubic-bezier(.2,.75,.35,1); }
+  20%     { transform: translateY(-46px); animation-timing-function: cubic-bezier(.6,0,.9,.55); }
+  28%, 100% { transform: none; }
+}
+@keyframes hlm-sq {
+  0%, 2%, 20%, 27.4%, 38%, 100% { transform: none; }
+  6%    { transform: scale(1.1, .88); }
+  12%   { transform: scale(.92, 1.1); }
+  29.2% { transform: scale(1.16, .84); }
+  33%   { transform: scale(.95, 1.06); }
+}
+@keyframes hlm-shadow {
+  0%, 6%   { transform: scale(1); opacity: 1; animation-timing-function: cubic-bezier(.2,.75,.35,1); }
+  20%      { transform: scale(.5); opacity: .45; animation-timing-function: cubic-bezier(.6,0,.9,.55); }
+  28%      { transform: scale(1.12); opacity: 1; }
+  34%, 100%{ transform: scale(1); opacity: 1; }
+}
+/* every other loop: top of the hop (10% and 60% of 4.8s) swaps pin <-> arch */
+@keyframes hlm-pinf  { 0%, 9.95% { opacity: 1; } 10.05%, 59.95% { opacity: 0; } 60.05%, 100% { opacity: 1; } }
+@keyframes hlm-archf { 0%, 9.95% { opacity: 0; } 10.05%, 59.95% { opacity: 1; } 60.05%, 100% { opacity: 0; } }
+@keyframes hlm-flip { 0%, 8.4%, 11.6%, 58.4%, 61.6%, 100% { transform: none; } 10%, 60% { transform: scaleX(.04); } }
+@keyframes hlm-ring1 { 0%, 27.9% { transform: scale(.06); opacity: 0; } 28% { transform: scale(.06); opacity: .95; } 60% { opacity: .5; } 72%, 100% { transform: scale(1.06); opacity: 0; } }
+@keyframes hlm-ring2 { 0%, 33.9% { transform: scale(.06); opacity: 0; } 34% { transform: scale(.06); opacity: .8; } 66% { opacity: .3; } 78%, 100% { transform: scale(1.06); opacity: 0; } }
+@keyframes hlm-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-2.5px); } }
+@keyframes hlm-d1 { 0%, 28% { opacity: .25; } 31%, 90% { opacity: 1; } 97%, 100% { opacity: .25; } }
+@keyframes hlm-d2 { 0%, 49% { opacity: .25; } 52%, 90% { opacity: 1; } 97%, 100% { opacity: .25; } }
+@keyframes hlm-d3 { 0%, 70% { opacity: .25; } 73%, 90% { opacity: 1; } 97%, 100% { opacity: .25; } }
+
+/* reduced motion: a still, finished scene and a plain fade */
+@media (prefers-reduced-motion: reduce) {
+  .hlm * { animation: none !important; }
+  .hlm .hlm-brand, .hlm .hlm-art, .hlm .hlm-text, .hlm .hlm-d, .hlm .hlm-sat-in { opacity: 1; }
+  .hlm .hlm-sat-in { transform: none; }
+  .hlm.is-out .hlm-inner { transform: none; }
+}
+
+
+.hlm-brand img { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; background: #fff; display: block; }
+html.hl-launching, html.hl-launching body { overflow: hidden; }
+.hlm.is-out { pointer-events: none; }
+
+.hlm.is-gone { display: none; }

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import "./launch.css";
 import { InstallProvider } from "@/components/install";
 import { SITE_DESCRIPTION } from "@/lib/cities";
 import { graphLd, jsonLdScript, organizationLd, siteUrl, websiteLd } from "@/lib/seo";
@@ -36,7 +37,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
   const base = await siteUrl();
   const graph = [organizationLd(base), websiteLd(base)];
   return (
-    <html lang="en-IN">
+    <html lang="en-IN" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />

@@ -1,10 +1,14 @@
 import { CITIES, STORE_URL, type CityTheme } from "@/lib/cities";
 import { CityLogo, Landmark, StarPattern, themeStyle } from "./brand";
 import { BottomNav } from "./bottom-nav";
-import { CitySwitcher } from "./city-switcher";
+import { CitySwitcher, CityWipeIn } from "./city-switcher";
 import { Icon } from "./icons";
 import { GetAppButton, InstallLink } from "./install";
+import { LaunchLoader } from "./launch";
+import { LocatorLink, MasjidLocator } from "./locator";
+import { Motion } from "./motion";
 import { HeaderScroll, NavSwitch } from "./nav-switch";
+import { Subscribe } from "./subscribe";
 
 type Section = "home" | "restaurants" | "masjids";
 
@@ -79,7 +83,7 @@ export function TopBar({ city, current, back }: { city: CityTheme; current?: Sec
 
 export function Footer({ city }: { city: CityTheme }) {
   return (
-    <footer className="hl-footer">
+    <footer className="hl-footer" data-rv="">
       <div className="hl-footer__glow" aria-hidden="true" />
       <div className="hl-wrap">
         <div className="hl-footer__cta">
@@ -128,7 +132,9 @@ export function Footer({ city }: { city: CityTheme }) {
             <h2>EXPLORE</h2>
             <a className="hl-flink" href={`/${city.slug}/restaurants`}>Restaurants</a>
             <a className="hl-flink" href={`/${city.slug}/masjids`}>Masjids</a>
-            <a className="hl-flink" href={`/${city.slug}/masjids?near=1`}>Closest masjid</a>
+            <LocatorLink className="hl-flink" city={city.slug}>
+              Closest masjid
+            </LocatorLink>
             <a className="hl-flink" href={`/${city.slug}#suggest`}>Suggest a place</a>
             <InstallLink className="hl-flink" />
           </div>
@@ -195,6 +201,10 @@ export function Frame({
 }) {
   return (
     <div id="top" className={`hl-frame${detail ? " hl-frame--detail" : ""}`} data-city={city.slug} style={themeStyle(city)}>
+      {/* City colours on :root too, so dialogs rendered on <body> (search, install, reels) match the page. */}
+      <style>{`:root{--btn:${city.btn};--tint:${city.tint};--soft:${city.soft}}`}</style>
+      <LaunchLoader city={city.slug} />
+      <Motion />
       <a className="hl-skip" href="#content">
         Skip to content
       </a>
@@ -208,6 +218,9 @@ export function Frame({
       <main id="content">{children}</main>
       {hideChrome ? null : <Footer city={city} />}
       {hideChrome ? null : <BottomNav city={city} current={current ?? "home"} />}
+      <MasjidLocator city={city.slug} cityName={city.name} />
+      <CityWipeIn />
+      {hideChrome || detail ? null : <Subscribe city={city.slug} />}
     </div>
   );
 }

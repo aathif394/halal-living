@@ -2,6 +2,7 @@
 
 import type { CityTheme } from "@/lib/cities";
 import { Icon } from "./icons";
+import { LocatorLink } from "./locator";
 import { useDeferredNav, useIndicator } from "./slide";
 
 /** Mobile bottom bar: Home · Food · Masjids · Masjid locator (pill in the theme colour). */
@@ -25,10 +26,10 @@ export function BottomNav({ city, current }: { city: CityTheme; current: "home" 
         );
       })}
       <span className="bn-loc">
-        <a className="bn-fab" href={`/${city.slug}/masjids?near=1`}>
+        <LocatorLink className="bn-fab" city={city.slug}>
           <Icon name="pin" size={18} />
           Masjid locator
-        </a>
+        </LocatorLink>
       </span>
       {box ? <span className={`hl-bn-ind${anim ? " is-anim" : ""}`} aria-hidden="true" style={{ transform: `translateX(${box.x + box.w / 2 - 8}px)` }} /> : null}
     </nav>

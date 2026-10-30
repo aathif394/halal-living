@@ -312,10 +312,21 @@ export function InstallCard() {
   const ref = useRef<HTMLButtonElement>(null);
   const [paused, setPaused] = useState(false);
 
+  // Pause off screen, and replay the drop from the top each time the card comes into view,
+  // so the visitor always sees the icon land (on load the card is often under the bottom bar).
   useEffect(() => {
     const node = ref.current;
     if (!node || !("IntersectionObserver" in window)) return;
-    const observer = new IntersectionObserver(([entry]) => setPaused(!entry!.isIntersecting));
+    let shown = false;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const visible = entry!.isIntersecting && entry!.intersectionRatio >= 0.6;
+        if (visible && !shown) node.getAnimations?.({ subtree: true }).forEach((animation) => (animation.currentTime = 0));
+        shown = visible;
+        setPaused(!entry!.isIntersecting);
+      },
+      { threshold: [0, 0.6] },
+    );
     observer.observe(node);
     return () => observer.disconnect();
   }, []);
