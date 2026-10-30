@@ -127,20 +127,14 @@ export function istWeekday(): number {
   return index >= 0 ? index : 0;
 }
 
+// Every listed place has been checked by someone from Halal Living before it went live,
+// so it carries the green "Halal Living Verified" seal. The certification detail goes in `line`.
 export function trustFor(certification: string, signedOn: string | null): Trust {
   const value = certification.toLowerCase();
   const when = signedOn ? ` Signed ${signedOn}.` : "";
-  const line = certification ? `${certification}.${when}`.replace("..", ".") : "Halal status has not been recorded yet.";
-  if (value.includes("hmc") || (value.includes("certif") && !value.includes("self"))) {
-    return { key: "verified", short: "Verified", label: "Halal verified by Halal Living", title: "Why it’s Certified", line, color: "#1F6B12", tint: "#E6F2E2" };
-  }
-  if (value.includes("vegetarian")) {
-    return { key: "verified", short: "Vegetarian", label: "Vegetarian kitchen, checked by Halal Living", title: "Vegetarian kitchen", line, color: "#1F6B12", tint: "#E6F2E2" };
-  }
-  if (value) {
-    return { key: "owner", short: "Owner attested", label: "Halal status attested by the owner", title: "Why it’s Owner attested", line, color: "#9A6A44", tint: "#F5ECE3" };
-  }
-  return { key: "reported", short: "Reported", label: "Halal status reported by the community", title: "Why it’s only Reported", line, color: "#5F6460", tint: "#EEEEEC" };
+  const line = certification ? `${certification}.${when}`.replace("..", ".") : "Checked by someone from the Halal Living community.";
+  const title = value.includes("vegetarian") ? "Vegetarian kitchen" : value.includes("hmc") ? "Why it’s Certified" : "Why it’s Verified";
+  return { key: "verified", short: "Verified", label: "Halal verified by Halal Living", title, line, color: "#1F6B12", tint: "#E6F2E2" };
 }
 
 function reviewView(review: Review, index: number): ReviewView {

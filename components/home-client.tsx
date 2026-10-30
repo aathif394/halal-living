@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import type { ReelSlide } from "@/lib/view";
 import { Icon } from "./icons";
 import { ReelPlayer } from "./reel-player";
+import { SegTabs } from "./slide";
 
 function reduced() {
   return typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -211,14 +212,17 @@ export function SuggestForm({ city, areas }: { city: string; areas: string[] }) 
       }}
     >
       <p className="hl-sg-form__h">What are you suggesting?</p>
-      <div className="hl-seg hl-seg--form" role="radiogroup" aria-label="Type">
-        <button type="button" role="radio" aria-checked={type === "rest"} onClick={() => setType("rest")}>
-          Restaurant
-        </button>
-        <button type="button" role="radio" aria-checked={type === "mas"} onClick={() => setType("mas")}>
-          Masjid
-        </button>
-      </div>
+      <SegTabs
+        role="radiogroup"
+        label="Type"
+        className="hl-seg--form"
+        value={type}
+        onChange={setType}
+        options={[
+          { value: "rest", label: "Restaurant" },
+          { value: "mas", label: "Masjid" },
+        ]}
+      />
       <label className="hl-field">
         <span className="hl-label">{type === "rest" ? "Restaurant name" : "Masjid name"}</span>
         <input className="hl-input" name="name" maxLength={200} placeholder={type === "rest" ? "e.g. Kebab corner near the station" : "e.g. Masjid-e-Noor"} />

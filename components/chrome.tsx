@@ -4,6 +4,7 @@ import { BottomNav } from "./bottom-nav";
 import { CitySwitcher } from "./city-switcher";
 import { Icon } from "./icons";
 import { GetAppButton, InstallLink } from "./install";
+import { HeaderScroll, NavSwitch } from "./nav-switch";
 
 type Section = "home" | "restaurants" | "masjids";
 
@@ -43,16 +44,7 @@ function DesktopBar({ city, current, back }: { city: CityTheme; current?: Sectio
         <CitySwitcher city={city} variant="pill" />
       )}
       <nav className="hl-dbar__right" aria-label="Main">
-        <div className="hl-switch">
-          <a className="hl-switch__item" href={`/${city.slug}/restaurants`} aria-current={current === "restaurants" ? "page" : undefined}>
-            <Icon name="food" size={18} stroke={2} />
-            Restaurants
-          </a>
-          <a className="hl-switch__item" href={`/${city.slug}/masjids`} aria-current={current === "masjids" ? "page" : undefined}>
-            <Icon name="masjidWide" size={18} stroke={2} />
-            Masjids
-          </a>
-        </div>
+        <NavSwitch city={city.slug} current={current} />
         <GetAppButton />
         <StoreLink variant="solid" />
       </nav>
@@ -78,6 +70,7 @@ function MobileBar({ city }: { city: CityTheme }) {
 export function TopBar({ city, current, back }: { city: CityTheme; current?: Section; back?: boolean }) {
   return (
     <header className="hl-topbar">
+      <HeaderScroll />
       <DesktopBar city={city} current={current} back={back} />
       <MobileBar city={city} />
     </header>

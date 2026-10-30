@@ -349,6 +349,16 @@ p {
   backdrop-filter: blur(24px) saturate(1.8);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Transparent at the top of the page; coloured and blurred once the page scrolls. */
+.hl-topbar:not([data-sc]) {
+  background: transparent;
+  border-bottom-color: transparent;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
 
 .hl-mbar {
@@ -459,6 +469,7 @@ p {
 }
 
 .hl-switch {
+  position: relative;
   display: flex;
   align-items: center;
   padding: 4px;
@@ -483,11 +494,60 @@ p {
   opacity: 0.82;
 }
 
+.hl-switch__item {
+  position: relative;
+  z-index: 1;
+}
+
 .hl-switch__item[aria-current="page"] {
-  background: #fff;
   color: var(--btn);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
   opacity: 1;
+}
+
+/* Sliding indicators (mockup #hl-switch-js). */
+.hl-switch__ind {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 0;
+  z-index: 0;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  pointer-events: none;
+}
+
+.hl-switch__ind.is-anim {
+  transition: transform 0.38s cubic-bezier(0.34, 1.3, 0.5, 1), width 0.38s cubic-bezier(0.34, 1.3, 0.5, 1);
+}
+
+.hl-slide-ind {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  border-radius: 11px;
+  background: var(--btn);
+  pointer-events: none;
+}
+
+.hl-slide-ind.is-anim {
+  transition: transform 0.38s cubic-bezier(0.34, 1.3, 0.5, 1), width 0.38s cubic-bezier(0.34, 1.3, 0.5, 1), background-color 0.5s;
+}
+
+.hl-bn-ind {
+  position: absolute;
+  left: 0;
+  bottom: 7px;
+  width: 16px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--btn);
+  pointer-events: none;
+}
+
+.hl-bn-ind.is-anim {
+  transition: transform 0.4s cubic-bezier(0.34, 1.3, 0.5, 1), background-color 0.4s;
 }
 
 .hl-getapp {
@@ -629,6 +689,7 @@ p {
 
 .hl-bnav {
   position: fixed;
+  isolation: isolate;
   left: 0;
   right: 0;
   bottom: 0;
@@ -669,16 +730,6 @@ p {
 .bn-it[aria-current="page"] svg {
   fill: var(--tint);
   transform: translateY(-1px) scale(1.08);
-}
-
-.bn-it[aria-current="page"]::after {
-  content: "";
-  position: absolute;
-  bottom: 6px;
-  width: 18px;
-  height: 3px;
-  border-radius: 999px;
-  background: var(--btn);
 }
 
 .bn-it:active svg {
@@ -1761,6 +1812,7 @@ p {
 }
 
 .hl-seg {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 4px;
@@ -1770,6 +1822,8 @@ p {
 }
 
 .hl-seg button {
+  position: relative;
+  z-index: 1;
   height: 42px;
   border: 0;
   border-radius: 11px;
@@ -1781,8 +1835,12 @@ p {
 
 .hl-seg button[aria-selected="true"],
 .hl-seg button[aria-checked="true"] {
-  background: var(--btn);
   color: #fff;
+}
+
+/* Before the indicator is measured (first paint), the active tab is filled directly. */
+.hl-seg button.is-solid {
+  background: var(--btn);
 }
 
 .hl-seg button:active {
@@ -2260,6 +2318,10 @@ p {
   .hl-near__head .hl-seg button {
     height: 38px;
     padding: 0 14px;
+    border-radius: 10px;
+  }
+
+  .hl-near__head .hl-slide-ind {
     border-radius: 10px;
   }
 

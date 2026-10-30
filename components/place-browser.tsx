@@ -5,6 +5,7 @@ import type { PlaceCard } from "@/lib/view";
 import { TrustDot } from "./brand";
 import { ShareButton } from "./detail-parts";
 import { Icon } from "./icons";
+import { SegTabs } from "./slide";
 
 type Kind = "restaurants" | "masjids";
 type Coords = [number, number];
@@ -292,15 +293,24 @@ export function PlaceBrowser({
       <div className="hl-near">
         <div className="hl-near__head">
           <h2 className="hl-h2 hl-ul">Near you in {city.name}</h2>
-          <div className="hl-seg" role="tablist" aria-label="Show">
-            <button type="button" role="tab" aria-selected={kind === "restaurants"} onClick={() => setKind("restaurants")}>
-              Restaurants
-            </button>
-            <button type="button" role="tab" aria-selected={kind === "masjids"} onClick={() => setKind("masjids")}>
-              <span className="hl-only-mob-i">Masjids</span>
-              <span className="hl-only-desk-i">Masjids &amp; prayer halls</span>
-            </button>
-          </div>
+          <SegTabs
+            role="tablist"
+            label="Show"
+            value={kind}
+            onChange={setKind}
+            options={[
+              { value: "restaurants", label: "Restaurants" },
+              {
+                value: "masjids",
+                label: (
+                  <>
+                    <span className="hl-only-mob-i">Masjids</span>
+                    <span className="hl-only-desk-i">Masjids &amp; prayer halls</span>
+                  </>
+                ),
+              },
+            ]}
+          />
           <div className="hl-near__acts">
             <a className="hl-btn-brand hl-btn-sm" href={`/${city.slug}/${kind}`}>
               See all
