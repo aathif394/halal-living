@@ -5,7 +5,7 @@ import { CallButton, DrawerHandle } from "./detail-parts";
 import { Icon, Stars, type IconName } from "./icons";
 import { ReelPlayer } from "./reel-player";
 
-const AMENITY_ICON: Record<Amenity["key"], IconName> = { parking: "parking", women: "women", jummah: "calendar", wudu: "drop" };
+const AMENITY_ICON: Record<Amenity["key"], IconName> = { parking: "parking", women: "women", jummah: "calendar" };
 
 function MapArt({ kind, compact }: { kind: "restaurant" | "masjid"; compact?: boolean }) {
   return (
@@ -149,13 +149,15 @@ export function RestaurantDetail({ city, place, reel }: { city: CityTheme; place
             <span>HOURS</span>
             <OpenBadge open={place.isOpen} />
           </div>
-          <div className="hl-hours__head">{place.today}</div>
-          {place.hours.length ? null : <p className="hl-muted hl-hours__none">Weekly hours are not listed yet. Call ahead to check.</p>}
-          <div className="hl-hours__rows">
-            {place.hours.map((row) => (
-              <div key={row.day} className={row.today ? "is-today" : undefined}>
-                <span>{row.day}</span>
-                <span>{row.time}</span>
+          <div className="hl-hours__headrow">
+            <div className="hl-hours__head">{place.openHead}</div>
+            {place.openSub ? <div className="hl-hours__sub">{place.openSub}</div> : null}
+          </div>
+          <div className="hl-hours__groups">
+            {place.hourGroups.map((g) => (
+              <div key={g.days} className={g.today ? "is-today" : undefined}>
+                <span>{g.days}</span>
+                <span>{g.time}</span>
               </div>
             ))}
           </div>
@@ -223,10 +225,6 @@ export function RestaurantDetail({ city, place, reel }: { city: CityTheme; place
               <img key={i} src={photo.src} alt="" loading="lazy" />
             ))}
           </div>
-          <div className="hl-sheet__trust" style={{ background: place.trust.tint }}>
-            <b style={{ color: place.trust.color }}>{place.trust.title}</b>
-            <p>{place.trust.line}</p>
-          </div>
           <div className="hl-sheet__map">
             <div className="hl-sheet__mapart">
               <MapArt kind="restaurant" compact />
@@ -235,14 +233,6 @@ export function RestaurantDetail({ city, place, reel }: { city: CityTheme; place
               <b>{place.address || place.area}</b>
               <span>Today · {place.today}</span>
             </div>
-          </div>
-          <div className="hl-sheet__hours">
-            {place.hours.map((row) => (
-              <div key={row.day} className={row.today ? "is-today" : undefined}>
-                <span>{row.day}</span>
-                <span>{row.time}</span>
-              </div>
-            ))}
           </div>
           <div className="hl-sheet__sec">
             <h2>Google reviews</h2>
@@ -280,7 +270,6 @@ export function MasjidDetail({ city, place, reel }: { city: CityTheme; place: Ma
           <div className="hl-dhero__meta">
             <span className="hl-kind">{place.kind}</span>
             {place.area}
-            {place.madhab ? ` · ${place.madhab}` : ""}
           </div>
           <div>
             <h1 className="hl-dhero__h">{place.name}</h1>
@@ -315,27 +304,6 @@ export function MasjidDetail({ city, place, reel }: { city: CityTheme; place: Ma
         <section className="hl-dcard hl-dphotos">
           <PhotoGrid photos={place.photos} art={place.art} label={place.photos.length ? "from Google" : "illustration"} />
         </section>
-        {place.prayers.length ? (
-          <section className="hl-dcard hl-prayers">
-            <div className="hl-card-k">
-              <span>PRAYER TIMES</span>
-            </div>
-            <div className="hl-prayers__row">
-              {place.prayers.map((prayer) => (
-                <div key={prayer.name}>
-                  <small>{prayer.name}</small>
-                  <b>{prayer.time}</b>
-                </div>
-              ))}
-              {place.jummah ? (
-                <div className="is-jummah">
-                  <small>Jumu’ah</small>
-                  <b>{place.jummah}</b>
-                </div>
-              ) : null}
-            </div>
-          </section>
-        ) : null}
       </div>
 
       <div className="hl-mdetail hl-only-mob">
@@ -347,35 +315,13 @@ export function MasjidDetail({ city, place, reel }: { city: CityTheme; place: Ma
           <h1 className="hl-sheet__h">{place.name}</h1>
           <div className="hl-sheet__facts">
             <span className="hl-kind hl-kind--tint">{place.kind}</span>
-            {place.madhab ? <span className="hl-sheet__rc">{place.madhab}</span> : null}
           </div>
           <p className="hl-sheet__address">{place.address}</p>
           <div className="hl-sheet__cta">
             <a className="hl-actionbar__go" href={place.mapsUrl} target="_blank" rel="noopener noreferrer">
-              <Icon name="pin" size={18} />
               Directions
             </a>
-            <CallButton phone={place.phone} className="hl-actionbar__call" iconOnly />
           </div>
-          {place.prayers.length || place.jummah ? (
-            <>
-              <h2 className="hl-sheet__h2">Prayer times</h2>
-              <div className="hl-prayers__row hl-prayers__row--m">
-                {place.prayers.map((prayer) => (
-                  <div key={prayer.name}>
-                    <small>{prayer.name}</small>
-                    <b>{prayer.time}</b>
-                  </div>
-                ))}
-                {place.jummah ? (
-                  <div className="is-jummah">
-                    <small>Jumu’ah</small>
-                    <b>{place.jummah}</b>
-                  </div>
-                ) : null}
-              </div>
-            </>
-          ) : null}
           <h2 className="hl-sheet__h2">Photos</h2>
           <div className="hl-sheet__gallery">
             {(place.photos.length ? place.photos.slice(0, 4) : [{ src: place.art, credit: "" }]).map((photo, i) => (

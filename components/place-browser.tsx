@@ -2,7 +2,6 @@
 
 import { useEffect, useMemo, useState } from "react";
 import type { PlaceCard } from "@/lib/view";
-import { TrustDot } from "./brand";
 import { ShareButton } from "./detail-parts";
 import { Icon } from "./icons";
 import { openLocator } from "./locator";
@@ -37,12 +36,11 @@ export function PlaceRow({ place }: { place: Row }) {
         <span className="hl-row__t">
           <span className="hl-row__name">
             {place.name}
-            {place.trust?.key === "verified" ? <TrustDot trust={place.trust} /> : null}
           </span>
           <span className="hl-row__sub">
             {place.sub} · {place.area}
           </span>
-          <span className="hl-row__d">{place.km != null ? distLabel(place.km) : place.women ? "Women's area" : place.trust?.short ?? ""}</span>
+          <span className="hl-row__d">{place.km != null ? distLabel(place.km) : ""}</span>
         </span>
       </a>
       <ShareButton title={place.name} url={place.href} />
@@ -50,38 +48,38 @@ export function PlaceRow({ place }: { place: Row }) {
   );
 }
 
-export function PlaceTile({ place }: { place: Row }) {
+/**
+ * Mockup cards. "list" (list pages): distance chip on the photo, nothing else; restaurants end with
+ * "View", masjids are shorter with no footer. "near" (home, desktop): share button on the photo,
+ * then name and "cuisine · area" with the distance on the right.
+ */
+export function PlaceTile({ place, variant }: { place: Row; variant: "list" | "near" }) {
+  const masjid = place.kind === "masjids";
   return (
-    <article className="hl-tile">
+    <article className={`hl-tile hl-tile--${variant}${masjid ? " hl-tile--m" : ""}`}>
       <a className="hl-tile__link" href={place.href}>
-        <span className="hl-tile__ph" {...tiltHandlers()}>
+        <span className="hl-tile__ph" {...(variant === "near" ? tiltHandlers() : {})}>
           <img src={place.photo} alt="" loading="lazy" />
           <span className="hl-tile__shine" aria-hidden="true" />
-          {place.km != null ? <span className="hl-tile__km">{distLabel(place.km)}</span> : null}
-          {place.trust ? (
-            <span className="hl-tile__trust" style={{ color: place.trust.color }}>
-              <TrustDot trust={place.trust} />
-              {place.trust.short}
-            </span>
-          ) : place.women ? (
-            <span className="hl-tile__trust">
-              <Icon name="women" size={14} stroke={2.2} />
-              Women's area
-            </span>
-          ) : null}
+          {variant === "list" && place.km != null ? <span className="hl-tile__km">{distLabel(place.km)}</span> : null}
         </span>
         <span className="hl-tile__b">
           <span className="hl-tile__name">{place.name}</span>
           <span className="hl-tile__sub">
-            {place.sub} · {place.area}
+            <span>
+              {place.sub} · {place.area}
+            </span>
+            {variant === "near" && place.km != null ? <span>{distLabel(place.km)}</span> : null}
           </span>
-          <span className="hl-tile__foot">
-            View
-            <Icon name="arrowRight" size={14} stroke={2.4} />
-          </span>
+          {variant === "list" && !masjid ? (
+            <span className="hl-tile__foot">
+              View
+              <Icon name="arrowRight" size={14} stroke={2.4} />
+            </span>
+          ) : null}
         </span>
       </a>
-      <ShareButton title={place.name} url={place.href} />
+      {variant === "near" ? <ShareButton title={place.name} url={place.href} /> : null}
     </article>
   );
 }
@@ -353,7 +351,7 @@ export function PlaceBrowser({
         </div>
         <div className="hl-near__tiles">
           {rows.slice(0, 4).map((place) => (
-            <PlaceTile key={place.slug} place={place} />
+            <PlaceTile key={place.slug} place={place} variant="near" />
           ))}
         </div>
         {!rows.length ? (
@@ -379,7 +377,6 @@ export function PlaceBrowser({
           {areaSelect}
           {womenToggle}
           <span className="hl-frow__grow" />
-          {mapButton}
           <label className="hl-chip hl-sortc">
             <Icon name="sort" size={18} className="hl-sort-ic" />
             <span className="hl-chip-k">Sort</span>
@@ -411,11 +408,10 @@ export function PlaceBrowser({
             </a>
           ) : null}
         </div>
-        {locAsk}
-        {map ? <PlacesMap rows={rows} kind={kind} cityName={city.name} /> : null}
+        {pos ? locAsk : null}
         <div className="hl-tiles">
           {rows.map((place) => (
-            <PlaceTile key={place.slug} place={place} />
+            <PlaceTile key={place.slug} place={place} variant="list" />
           ))}
           {!rows.length ? (
             <div className="hl-empty">

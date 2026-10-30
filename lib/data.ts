@@ -286,3 +286,13 @@ export async function listSitemapPlaces(): Promise<{ city: string; slug: string;
     })),
   ];
 }
+
+/** Listing counts for the footer ("118 restaurants in Chennai"). */
+export async function countPlaces(city: string): Promise<{ restaurants: number; masjids: number }> {
+  const supabase = await getSupabase();
+  const [r, m] = await Promise.all([
+    supabase.from("restaurants").select("id", { count: "exact", head: true }).eq("active", true).eq("city", city),
+    supabase.from("prayer_halls").select("id", { count: "exact", head: true }).eq("active", true).eq("city", city),
+  ]);
+  return { restaurants: r.count ?? 0, masjids: m.count ?? 0 };
+}

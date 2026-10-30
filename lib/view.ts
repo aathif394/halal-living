@@ -39,6 +39,10 @@ export type RestaurantView = {
   today: string;
   /** Empty when the week's hours are not known. */
   hours: HoursRow[];
+  /** Mockup hours card: "Till 11:30 pm" / "Opens 12 pm", and consecutive days with the same hours grouped. */
+  openHead: string;
+  openSub: string;
+  hourGroups: { days: string; time: string; today: boolean }[];
   phone: string;
   mapsUrl: string;
   reviewsUrl: string;
@@ -46,7 +50,7 @@ export type RestaurantView = {
   lng: number | null;
 };
 
-export type Amenity = { key: "parking" | "women" | "jummah" | "wudu"; label: string; ok: boolean; detail: string };
+export type Amenity = { key: "parking" | "women" | "jummah"; label: string; ok: boolean; detail: string };
 
 export type MasjidView = {
   slug: string;
@@ -159,6 +163,45 @@ function hoursFor(week: string[], todayLine: string): HoursRow[] {
   });
 }
 
+function lowerTime(value: string) {
+  return value.replace(/:00(?=\s*[AP]M)/i, "").replace(/\s*([AP])M/i, (_, x: string) => ` ${x.toLowerCase()}m`).trim();
+}
+
+function clock24(value: string) {
+  const [h, m] = value.split(":").map(Number) as [number, number];
+  const suffix = h >= 12 && h < 24 ? "pm" : "am";
+  const hour = h % 12 || 12;
+  return m ? `${hour}:${String(m).padStart(2, "0")} ${suffix}` : `${hour} ${suffix}`;
+}
+
+function hoursCard(rows: HoursRow[], open: boolean, rawToday: string) {
+  // Listing hours like "Mo-Su 07:00-22:30" become "7 am – 10:30 pm".
+  const range = rawToday.match(/(\d{1,2}:\d{2})\s*-\s*(\d{1,2}:\d{2})/);
+  const everyDay = /^mo\s*-\s*su/i.test(rawToday.trim());
+  const todayText = range ? `${clock24(range[1]!)} – ${clock24(range[2]!)}` : rawToday;
+  const closes = todayText.match(/closes\s+(.+)$/i);
+  const parts = closes ? ["", closes[1]!] : todayText.split(/\s*[–-]\s*/);
+  const start = parts.length === 2 && /\d/.test(parts[0]!) ? lowerTime(parts[0]!) : "";
+  const end = parts.length === 2 && /\d/.test(parts[1]!) ? lowerTime(parts[1]!) : "";
+  const closed = /closed/i.test(todayText);
+  const openHead = open ? (end ? `Till ${lowerTime(end)}` : "Open now") : closed ? "Closed today" : start ? `Opens ${start}` : "Closed now";
+  const openSub = open ? "" : closed ? "" : start ? "Closed right now" : todayText === "Hours not listed" ? "" : todayText;
+  const groups: { days: string; time: string; today: boolean }[] = [];
+  let i = 0;
+  while (i < rows.length) {
+    let j = i;
+    while (j + 1 < rows.length && rows[j + 1]!.time === rows[i]!.time && !rows[j + 1]!.today && !rows[i]!.today) j++;
+    const time = rows[i]!.time.split(/\s*[–-]\s*/).map(lowerTime).join(" – ");
+    groups.push({ days: i === j ? rows[i]!.day : `${rows[i]!.day} – ${rows[j]!.day}`, time, today: rows[i]!.today });
+    i = j + 1;
+  }
+  // Without the week from Google, show today's line on its own.
+  if (!groups.length && todayText && todayText !== "Hours not listed") {
+    groups.push({ days: everyDay ? "Every day" : "Today", time: closes ? `Closes ${lowerTime(closes[1]!)}` : todayText.replace(/^Open now\s*·?\s*/i, "") || "Open", today: true });
+  }
+  return { openHead, openSub, hourGroups: groups };
+}
+
 export function toRestaurantView(place: Restaurant): RestaurantView {
   const linked = Boolean(place.google_place_id);
   const photos = googlePhotos(place.google_photos);
@@ -191,6 +234,7 @@ export function toRestaurantView(place: Restaurant): RestaurantView {
     isOpen: openNow,
     today: hours.find((row) => row.today)?.time || fallbackToday,
     hours: week.length ? hours : [],
+    ...hoursCard(week.length ? hours : [], openNow, hours.find((row) => row.today)?.time || fallbackToday),
     phone: dial(place.google_phone || place.phone),
     mapsUrl: mapsLink(place.google_maps_url, `${place.name}, ${place.address}`, place.lat, place.lng),
     reviewsUrl: place.google_place_id
@@ -209,7 +253,6 @@ export function toMasjidView(place: PrayerHall): MasjidView {
   const photos = googlePhotos(place.google_photos);
   const women = hasFacility(place.facilities, /women|ladies|sisters/i);
   const parking = hasFacility(place.facilities, /park/i) && !hasFacility(place.facilities, /no parking/i);
-  const wudu = hasFacility(place.facilities, /wudu|wudhu|ablution/i);
   const jummah = place.jummah_time.trim();
   const art = masjidArt(place.slug);
   const pos = position(place.lat, place.lng);
@@ -237,7 +280,6 @@ export function toMasjidView(place: PrayerHall): MasjidView {
       { key: "parking", label: "Parking", ok: parking, detail: parking ? "Room for cars and two-wheelers" : "Street parking only" },
       { key: "women", label: "Women's prayer area", ok: women, detail: women ? "Separate space for women" : "Not available here" },
       { key: "jummah", label: "Jumu’ah held", ok: Boolean(jummah), detail: jummah ? `Khutbah at ${jummah}` : "Daily prayers only" },
-      { key: "wudu", label: "Wudu area", ok: wudu, detail: wudu ? "Wudu facilities on site" : "Not listed" },
     ],
     women,
     parking,

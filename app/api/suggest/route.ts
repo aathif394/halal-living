@@ -3,6 +3,9 @@ import { getSupabase } from "@/lib/supabase";
 
 export const dynamic = "force-dynamic";
 
+const MAPS = /^https:\/\/((www\.)?google\.[a-z.]{2,8}\/maps|maps\.google\.[a-z.]{2,8}|maps\.app\.goo\.gl|goo\.gl\/maps)/i;
+
+// "What are you suggesting?" form: a restaurant or masjid, by Google Maps link or by name and area.
 export async function POST(request: Request) {
   let body: Record<string, unknown>;
   try {
@@ -12,27 +15,29 @@ export async function POST(request: Request) {
   }
   if (typeof body.company === "string" && body.company.trim()) return Response.json({ ok: true });
 
-  const name = String(body.name ?? "").trim().slice(0, 200);
-  const contact = String(body.contact ?? "").trim().slice(0, 40);
-  const digits = contact.replace(/\D/g, "");
-  const area = String(body.area ?? "").trim().slice(0, 120);
-  const cuisine = String(body.cuisine ?? "").trim().slice(0, 120);
-  const why = String(body.why ?? "").trim().slice(0, 2000);
-  const city = getCity(String(body.city ?? "").trim());
   const topic = body.type === "mas" ? "masjid" : "restaurant";
-  if (name.length < 2 || digits.length < 10) return Response.json({ ok: false }, { status: 400 });
+  const maps = String(body.maps ?? "").trim().slice(0, 2000);
+  const name = String(body.name ?? "").trim().slice(0, 80);
+  const area = String(body.area ?? "").trim().slice(0, 120);
+  const you = String(body.you ?? "").trim().slice(0, 60);
+  const email = String(body.email ?? "").trim().toLowerCase().slice(0, 120);
+  const facilities = Array.isArray(body.facilities) ? body.facilities.filter((x): x is string => typeof x === "string").slice(0, 6) : [];
+  const city = getCity(String(body.city ?? "").trim());
+  const hasMaps = MAPS.test(maps);
+  if ((!hasMaps && !name) || !you || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return Response.json({ ok: false }, { status: 400 });
 
-  const lines = [`City: ${city?.name ?? "Unknown"}`, `Phone: ${contact}`];
+  const lines = [`City: ${city?.name ?? "Unknown"}`];
+  if (hasMaps) lines.push(`Google Maps: ${maps}`);
+  if (name) lines.push(`Name: ${name}`);
   if (area) lines.push(`Area: ${area}`);
-  if (cuisine) lines.push(`Cuisine: ${cuisine}`);
-  if (why) lines.push("", why);
+  if (facilities.length) lines.push(`Facilities: ${facilities.join(", ")}`);
 
   const supabase = await getSupabase();
   const { error } = await supabase.from("contact_submissions").insert({
     topic,
-    name,
-    email: contact,
-    subject: `Suggestion: ${name}`,
+    name: you,
+    email,
+    subject: `Suggestion: ${name || maps}`,
     body: lines.join("\n"),
   });
   if (error) return Response.json({ ok: false }, { status: 500 });

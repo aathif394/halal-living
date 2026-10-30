@@ -18,8 +18,8 @@ export function Subscribe({ city }: { city: CitySlug }) {
   const [open, setOpen] = useState(false);
   const [mob, setMob] = useState(false);
   const [subbed, setSubbed] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", city, rest: true, mas: true });
-  const [err, setErr] = useState<{ email?: boolean; kinds?: boolean }>({});
+  const [form, setForm] = useState<{ name: string; email: string; cities: CitySlug[]; rest: boolean; mas: boolean }>({ name: "", email: "", cities: [city], rest: true, mas: true });
+  const [err, setErr] = useState<{ email?: boolean; kinds?: boolean; cities?: boolean }>({});
   const [busy, setBusy] = useState(false);
   const [done, setDone] = useState(false);
   const [saveErr, setSaveErr] = useState("");
@@ -84,6 +84,7 @@ export function Subscribe({ city }: { city: CitySlug }) {
     const e: typeof err = {};
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(form.email.trim())) e.email = true;
     if (!form.rest && !form.mas) e.kinds = true;
+    if (!form.cities.length) e.cities = true;
     setErr(e);
     if (Object.keys(e).length) return;
     setBusy(true);
@@ -93,7 +94,7 @@ export function Subscribe({ city }: { city: CitySlug }) {
       setDone(true);
       setSubbed(true);
       try {
-        localStorage.setItem(KEY, form.city);
+        localStorage.setItem(KEY, form.cities.join(","));
       } catch {
         // Private mode.
       }
@@ -104,7 +105,10 @@ export function Subscribe({ city }: { city: CitySlug }) {
     }
   };
 
-  const chosen = CITIES.find((c) => c.slug === form.city) ?? CITIES[0]!;
+  const chosenCities = CITIES.filter((c) => form.cities.includes(c.slug));
+  const chosen = chosenCities[0] ?? CITIES[0]!;
+  const names = chosenCities.map((c) => c.name);
+  const cityNames = names.length > 1 ? `${names.slice(0, -1).join(", ")} and ${names[names.length - 1]}` : (names[0] ?? "");
   const chip = (on: boolean, label: string, onClick: () => void) => (
     <button key={label} type="button" className={`sub-chip${on ? " is-on" : ""}`} aria-pressed={on} onClick={onClick}>
       {on ? <Icon name="check" size={13} stroke={3} /> : null}
@@ -117,7 +121,7 @@ export function Subscribe({ city }: { city: CitySlug }) {
       <span className="sub-done__ic" style={{ background: chosen.tint, color: chosen.btn }}>
         <Icon name="check" size={26} stroke={2.6} />
       </span>
-      <b>You’re on the list for {chosen.name}</b>
+      <b>You’re on the list for {cityNames}</b>
       <p>
         Once a month we’ll email {form.email.trim()} with new {form.rest && form.mas ? "restaurants and masjids" : form.rest ? "restaurants" : "masjids"}. Every email has an unsubscribe link.
       </p>
@@ -164,7 +168,18 @@ export function Subscribe({ city }: { city: CitySlug }) {
         </div>
       ) : null}
       <div className="sub-lab">City</div>
-      <div className="sub-chips">{CITIES.map((c) => chip(form.city === c.slug, c.name, () => up({ city: c.slug })))}</div>
+      <div className="sub-chips">
+        {CITIES.map((c) =>
+          chip(form.cities.includes(c.slug), c.name, () =>
+            up({ cities: form.cities.includes(c.slug) ? form.cities.filter((x) => x !== c.slug) : [...form.cities, c.slug] }),
+          ),
+        )}
+      </div>
+      {err.cities ? (
+        <div className="sub-err" role="alert">
+          Pick at least one city.
+        </div>
+      ) : null}
       <div className="sub-lab">Tell me about</div>
       <div className="sub-chips">
         {chip(form.rest, "Restaurants", () => up({ rest: !form.rest }))}

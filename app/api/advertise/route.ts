@@ -3,8 +3,7 @@ import { getSupabase } from "@/lib/supabase";
 
 export const dynamic = "force-dynamic";
 
-const SPOTS = new Set(["top", "mid", "bot"]);
-
+// "Advertise on Halal Living" enquiry: business, contact name, phone, email, message.
 export async function POST(request: Request) {
   let body: Record<string, unknown>;
   try {
@@ -16,31 +15,21 @@ export async function POST(request: Request) {
 
   const biz = String(body.biz ?? "").trim().slice(0, 200);
   const name = String(body.name ?? "").trim().slice(0, 200);
-  const contact = String(body.contact ?? "").trim().slice(0, 200);
-  const spot = String(body.spot ?? "").trim();
-  const month = String(body.month ?? "").trim().slice(0, 40);
+  const phone = String(body.phone ?? "").trim().slice(0, 40);
+  const email = String(body.email ?? "").trim().toLowerCase().slice(0, 200);
   const msg = String(body.msg ?? "").trim().slice(0, 2000);
   const city = getCity(String(body.city ?? "").trim());
-  const digits = contact.replace(/\D/g, "");
-  const email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact);
-  if (biz.length < 2 || !SPOTS.has(spot) || (!email && digits.length < 8)) {
+  const digits = (phone.match(/\d/g) ?? []).length;
+  if (!biz || digits < 10 || !/^\+?[\d\s-]+$/.test(phone) || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
     return Response.json({ ok: false }, { status: 400 });
   }
 
-  const lines = [
-    `City: ${city?.name ?? "Unknown"}`,
-    `Spot: ${spot}`,
-    month ? `Month: ${month}` : "",
-    name ? `Contact name: ${name}` : "",
-    `Reach: ${contact}`,
-    msg ? `\n${msg}` : "",
-  ].filter(Boolean);
-
+  const lines = [`City: ${city?.name ?? "Unknown"}`, `Phone: ${phone}`, name ? `Contact name: ${name}` : "", msg ? `\n${msg}` : ""].filter(Boolean);
   const supabase = await getSupabase();
   const { error } = await supabase.from("contact_submissions").insert({
     topic: "advertise",
     name: biz,
-    email: contact,
+    email,
     subject: `Advertise: ${biz}`,
     body: lines.join("\n"),
   });

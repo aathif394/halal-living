@@ -3,7 +3,7 @@ import { CityLogo, Landmark, StarPattern, themeStyle } from "./brand";
 import { BottomNav } from "./bottom-nav";
 import { CitySwitcher, CityWipeIn } from "./city-switcher";
 import { Icon } from "./icons";
-import { GetAppButton, InstallLink } from "./install";
+import { InstallLink } from "./install";
 import { LaunchLoader } from "./launch";
 import { LocatorLink, MasjidLocator } from "./locator";
 import { Motion } from "./motion";
@@ -40,7 +40,6 @@ function DesktopBar({ city }: { city: CityTheme }) {
       <CityOrBack city={city.slug} name={city.name} chooser={<CitySwitcher city={city} variant="pill" />} />
       <nav className="hl-dbar__right" aria-label="Main">
         <NavSwitch city={city.slug} />
-        <GetAppButton />
         <StoreLink variant="solid" />
       </nav>
     </div>
@@ -72,7 +71,7 @@ export function TopBar({ city }: { city: CityTheme }) {
   );
 }
 
-export function Footer({ city }: { city: CityTheme }) {
+export function Footer({ city, counts }: { city: CityTheme; counts?: { restaurants: number; masjids: number } | null }) {
   return (
     <footer className="hl-footer" data-rv="">
       <div className="hl-footer__glow" aria-hidden="true" />
@@ -84,7 +83,7 @@ export function Footer({ city }: { city: CityTheme }) {
             </span>
             <span className="hl-fcta__t">
               <b>Find halal food</b>
-              <span>Restaurants in {city.name}</span>
+              <span>{counts ? `${counts.restaurants} restaurants in ${city.name}` : `Restaurants in ${city.name}`}</span>
             </span>
             <span className="hl-fgo">
               <Icon name="arrowRight" size={18} stroke={2.4} />
@@ -96,7 +95,7 @@ export function Footer({ city }: { city: CityTheme }) {
             </span>
             <span className="hl-fcta__t">
               <b>Find a masjid</b>
-              <span>Masjids &amp; prayer halls</span>
+              <span>{counts ? `${counts.masjids} masjids & prayer halls` : "Masjids & prayer halls"}</span>
             </span>
             <span className="hl-fgo">
               <Icon name="arrowRight" size={18} stroke={2.4} />
@@ -142,7 +141,6 @@ export function Footer({ city }: { city: CityTheme }) {
             <h2>ABOUT</h2>
             <a className="hl-flink" href="/how-we-verify">How we verify</a>
             <a className="hl-flink" href={`/${city.slug}#advertise`}>Advertise with us</a>
-            <a className="hl-flink" href="/llms.txt">llms.txt</a>
           </div>
           <div>
             <h2>CITIES</h2>
@@ -177,7 +175,7 @@ export function Footer({ city }: { city: CityTheme }) {
  * Page frame: theme colours, top bar, footer, mobile bottom bar and the site-wide overlays.
  * Used by the [city] layout, so it stays mounted while pages change and its indicators can slide.
  */
-export function Frame({ city, children }: { city: CityTheme; children: React.ReactNode }) {
+export function Frame({ city, counts, children }: { city: CityTheme; counts?: { restaurants: number; masjids: number } | null; children: React.ReactNode }) {
   return (
     <FrameRoot className="hl-frame" city={city.slug} style={themeStyle(city)}>
       {/* City colours on :root too, so dialogs rendered on <body> (search, install, reels) match the page. */}
@@ -193,7 +191,7 @@ export function Frame({ city, children }: { city: CityTheme; children: React.Rea
       </div>
       <TopBar city={city} />
       <main id="content">{children}</main>
-      <Footer city={city} />
+      <Footer city={city} counts={counts} />
       <BottomNav city={city} />
       <MasjidLocator city={city.slug} cityName={city.name} />
       <CityWipeIn />

@@ -394,17 +394,6 @@ export function InstallCard() {
   );
 }
 
-export function GetAppButton() {
-  const { open, standalone } = useInstall();
-  if (standalone) return null;
-  return (
-    <button type="button" className="hl-getapp" onClick={open}>
-      <Icon name="download" size={17} stroke={2.4} />
-      Get the app
-    </button>
-  );
-}
-
 export function InstallLink({ className }: { className?: string }) {
   const { open } = useInstall();
   return (

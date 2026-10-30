@@ -158,9 +158,9 @@ export function CityHome({
                 Live
               </span>
               <b className="hl-live-card__n">
-                <CountUp value={restaurants.length + masjids.length} />
+                <CountUp value={city.monthlyReach} />
               </b>
-              <span className="hl-live-card__l">places checked by the community</span>
+              <span className="hl-live-card__l">visits this month</span>
             </div>
             <div className="hl-cc-tiles">
               <a className="cc-tile" href={`/${city.slug}/restaurants`}>
@@ -255,10 +255,13 @@ export function CityHome({
         <div className="hl-adv">
           <div>
             <div className="hl-adv__k">ADVERTISE WITH US</div>
-            <h2 id="ad-h2">Reach people looking for halal places in {city.name}</h2>
-            <p>Put your restaurant, shop or service in front of people looking for halal places near them.</p>
+            <h2 id="ad-h2">
+              Reach {Math.round(city.monthlyReach / 1000)}k people a month in {city.name}
+            </h2>
+            <p className="hl-only-desk">Put your restaurant, shop or service in front of people looking for halal places near them.</p>
+            <p className="hl-only-mob">Put your business in front of people looking for halal places near them.</p>
           </div>
-          <AdvertiseButton city={city.slug} cityName={city.name} />
+          <AdvertiseButton city={city.slug} cityName={city.name} reach={`${Math.round(city.monthlyReach / 1000)}k`} />
         </div>
       </section>
 
@@ -301,11 +304,11 @@ export function CityHome({
               </li>
             </ol>
             <div className="hl-only-mob">
-              <SuggestSheetButton city={city.slug} areas={areas} />
+              <SuggestSheetButton city={city.slug} cityName={city.name} areas={areas} />
             </div>
           </div>
           <div className="hl-sg__card hl-only-desk">
-            <SuggestForm city={city.slug} areas={areas} />
+            <SuggestForm city={city.slug} cityName={city.name} areas={areas} />
           </div>
         </div>
       </section>
