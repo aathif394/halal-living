@@ -29,6 +29,8 @@
     "dev": "vite dev",
     "build": "vite build",
     "start": "vite preview",
-    "deploy": "vinext-cloudflare deploy"
+    "deploy": "vinext-cloudflare deploy",
+    "places:refresh": "node scripts/places.mjs refresh",
+    "test:places": "node --test tests/*.test.mjs"
   }
 }

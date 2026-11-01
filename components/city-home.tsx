@@ -271,10 +271,10 @@ export function CityHome({
         <div className="hl-sg">
           <StarPattern />
           <div className="hl-sg__intro">
-            <h2 id="sg-h" className="hl-sg__h">
+            <h2 id="sg-h" className="hl-sg__h" aria-label="Know a chai stall we haven’t found?">
               Know a
               <br />
-              <span>chai stall</span>
+              <HeroWord words={["chai stall", "biryani spot", "new masjid", "halal café"]} />
               <br />
               we haven't found?
             </h2>

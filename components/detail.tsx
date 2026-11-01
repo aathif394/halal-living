@@ -1,13 +1,21 @@
 import type { CityTheme } from "@/lib/cities";
-import type { Amenity, MasjidView, ReelSlide, RestaurantView, ReviewView } from "@/lib/view";
+import type { Amenity, MasjidView, ReelSlide, RestaurantView } from "@/lib/view";
 import { SealPill, VerifiedSeal } from "./brand";
 import { CallButton, DrawerHandle } from "./detail-parts";
 import { Icon, Stars, type IconName } from "./icons";
 import { ReelPlayer } from "./reel-player";
+import { mapEmbedUrl } from "@/lib/maps";
+import { ReviewsCarousel } from "./reviews-carousel";
 
 const AMENITY_ICON: Record<Amenity["key"], IconName> = { parking: "parking", women: "women", jummah: "calendar" };
 
-function MapArt({ kind, compact }: { kind: "restaurant" | "masjid"; compact?: boolean }) {
+function MapArt({ kind, compact, name, lat, lng }: { kind: "restaurant" | "masjid"; compact?: boolean; name: string; lat: number | null; lng: number | null }) {
+  const src = mapEmbedUrl(lat == null || lng == null ? null : [lat, lng]);
+  if (src) return (
+    <div className="hl-map-art">
+      <iframe src={src} title={`${name} location map`} loading="lazy" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen style={{ display: "block", width: "100%", height: compact ? "100%" : "calc(100% - 124px)", border: 0 }} />
+    </div>
+  );
   return (
     <div className="hl-map-art" aria-hidden="true">
       <svg width="100%" height="100%" viewBox={compact ? "0 0 360 150" : "0 0 1100 420"} preserveAspectRatio={compact ? "none" : "xMidYMid slice"}>
@@ -43,29 +51,6 @@ function MapArt({ kind, compact }: { kind: "restaurant" | "masjid"; compact?: bo
           </>
         )}
       </svg>
-    </div>
-  );
-}
-
-function ReviewCards({ reviews, layout }: { reviews: ReviewView[]; layout: "grid" | "row" }) {
-  if (!reviews.length) return <p className="hl-muted">No Google reviews are linked for this place yet.</p>;
-  return (
-    <div className={layout === "grid" ? "hl-reviews" : "hl-reviews-row"} tabIndex={layout === "row" ? 0 : undefined} role={layout === "row" ? "region" : undefined} aria-label={layout === "row" ? "Google reviews" : undefined}>
-      {reviews.map((review, i) => (
-        <article key={i} className="hl-review">
-          <div className="hl-review__head">
-            <span className="hl-review__av" style={{ background: review.color }}>
-              {review.initial}
-            </span>
-            <span className="hl-review__who">
-              <b>{review.name}</b>
-              <small>{review.when}</small>
-            </span>
-            {review.rating ? <Stars value={review.rating} size={11} /> : null}
-          </div>
-          <p>{review.text}</p>
-        </article>
-      ))}
     </div>
   );
 }
@@ -163,7 +148,7 @@ export function RestaurantDetail({ city, place, reel }: { city: CityTheme; place
           </div>
         </section>
         <section className="hl-dmap">
-          <MapArt kind="restaurant" />
+          <MapArt kind="restaurant" name={place.name} lat={place.lat} lng={place.lng} />
           <div className="hl-dmap__card">
             <div>
               <b>{place.address || place.area}</b>
@@ -192,7 +177,7 @@ export function RestaurantDetail({ city, place, reel }: { city: CityTheme; place
               <Icon name="arrowUpRight" size={13} stroke={2.6} />
             </a>
           </div>
-          <ReviewCards reviews={place.reviews} layout="grid" />
+          <ReviewsCarousel reviews={place.reviews} />
         </section>
       </div>
 
@@ -227,7 +212,7 @@ export function RestaurantDetail({ city, place, reel }: { city: CityTheme; place
           </div>
           <div className="hl-sheet__map">
             <div className="hl-sheet__mapart">
-              <MapArt kind="restaurant" compact />
+              <MapArt kind="restaurant" name={place.name} lat={place.lat} lng={place.lng} compact />
             </div>
             <div className="hl-sheet__addr">
               <b>{place.address || place.area}</b>
@@ -241,7 +226,7 @@ export function RestaurantDetail({ city, place, reel }: { city: CityTheme; place
               <Icon name="arrowUpRight" size={12} stroke={2.6} />
             </a>
           </div>
-          <ReviewCards reviews={place.reviews} layout="row" />
+          <ReviewsCarousel reviews={place.reviews} />
           <div style={{ height: 100 }} />
         </section>
         <div className="hl-actionbar">
@@ -290,7 +275,7 @@ export function MasjidDetail({ city, place, reel }: { city: CityTheme; place: Ma
           <ReelPlayer slides={reel} avatar={place.photo} handle={handle} variant="card" label={`Reel: ${place.name}`} />
         </div>
         <section className="hl-dmap hl-dmap--m">
-          <MapArt kind="masjid" />
+          <MapArt kind="masjid" name={place.name} lat={place.lat} lng={place.lng} />
           <div className="hl-dmap__card">
             <div>
               <b>{place.address || place.area}</b>
@@ -304,6 +289,13 @@ export function MasjidDetail({ city, place, reel }: { city: CityTheme; place: Ma
         <section className="hl-dcard hl-dphotos">
           <PhotoGrid photos={place.photos} art={place.art} label={place.photos.length ? "from Google" : "illustration"} />
         </section>
+        {place.reviews.length ? <section className="hl-dcard hl-dreviews">
+          <div className="hl-dreviews__head">
+            <h2>Google reviews<span><Icon name="starFill" size={16} style={{ color: "#F2A20C" }} /> {place.rating} · {place.reviewCount}</span></h2>
+            <a className="hl-link" href={place.reviewsUrl} target="_blank" rel="noopener noreferrer">See all on Google<Icon name="arrowUpRight" size={13} stroke={2.6} /></a>
+          </div>
+          <ReviewsCarousel reviews={place.reviews} />
+        </section> : null}
       </div>
 
       <div className="hl-mdetail hl-only-mob">
@@ -345,7 +337,7 @@ export function MasjidDetail({ city, place, reel }: { city: CityTheme; place: Ma
           <h2 className="hl-sheet__h2">Location</h2>
           <div className="hl-sheet__map">
             <div className="hl-sheet__mapart">
-              <MapArt kind="masjid" compact />
+              <MapArt kind="masjid" name={place.name} lat={place.lat} lng={place.lng} compact />
             </div>
             <div className="hl-sheet__addr">
               <b>{place.address || place.area}</b>
@@ -354,6 +346,10 @@ export function MasjidDetail({ city, place, reel }: { city: CityTheme; place: Ma
               </span>
             </div>
           </div>
+          {place.reviews.length ? <>
+            <div className="hl-sheet__sec"><h2>Google reviews</h2><a className="hl-link" href={place.reviewsUrl} target="_blank" rel="noopener noreferrer">See all<Icon name="arrowUpRight" size={12} stroke={2.6} /></a></div>
+            <ReviewsCarousel reviews={place.reviews} />
+          </> : null}
           <div style={{ height: 100 }} />
         </section>
       </div>

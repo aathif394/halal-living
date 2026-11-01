@@ -1,6 +1,11 @@
 import { headers } from "next/headers";
 import { CITIES, SITE_DESCRIPTION } from "./cities";
 import type { PrayerHall, Restaurant } from "./types";
+import { STATIC_PLACE_PHOTO } from "./place-import";
+
+function placePhoto(base: string, name: string): string {
+  return STATIC_PLACE_PHOTO.test(name) ? `${base}${name}` : `${base}/api/photo?name=${encodeURIComponent(name)}`;
+}
 
 export async function siteUrl(): Promise<string> {
   if (process.env.NEXT_PUBLIC_SITE_URL) return process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, "");
@@ -76,7 +81,7 @@ export function restaurantLd(base: string, place: Restaurant) {
     address: place.address,
     telephone: place.google_phone || place.phone || undefined,
     image: place.google_photos[0]
-      ? `${base}/api/photo?name=${encodeURIComponent(place.google_photos[0].name)}`
+      ? placePhoto(base, place.google_photos[0].name)
       : place.hero_image ?? undefined,
     openingHours: place.google_hours.length ? place.google_hours : undefined,
     geo:
@@ -103,7 +108,7 @@ export function masjidLd(base: string, place: PrayerHall) {
     description: place.description ?? undefined,
     address: place.address,
     telephone: place.google_phone || undefined,
-    image: place.google_photos[0] ? `${base}/api/photo?name=${encodeURIComponent(place.google_photos[0].name)}` : undefined,
+    image: place.google_photos[0] ? placePhoto(base, place.google_photos[0].name) : undefined,
     maximumAttendeeCapacity: place.capacity || undefined,
     geo:
       place.lat && place.lng

@@ -7,6 +7,7 @@ import { Icon } from "./icons";
 import { openLocator } from "./locator";
 import { tiltHandlers } from "./motion";
 import { SegTabs } from "./slide";
+import { mapEmbedUrl } from "@/lib/maps";
 
 type Kind = "restaurants" | "masjids";
 type Coords = [number, number];
@@ -86,51 +87,11 @@ export function PlaceTile({ place, variant }: { place: Row; variant: "list" | "n
 
 function PlacesMap({ rows, kind, cityName }: { rows: Row[]; kind: Kind; cityName: string }) {
   const pins = rows.filter((row) => row.lat != null && row.lng != null);
-  const [sel, setSel] = useState(0);
   if (!pins.length) return <div className="hl-empty">No map positions for these places yet.</div>;
-  const lats = pins.map((pin) => pin.lat!);
-  const lngs = pins.map((pin) => pin.lng!);
-  const [minLat, maxLat, minLng, maxLng] = [Math.min(...lats), Math.max(...lats), Math.min(...lngs), Math.max(...lngs)];
-  const spanLat = Math.max(maxLat - minLat, 0.01);
-  const spanLng = Math.max(maxLng - minLng, 0.01);
-  const current = pins[Math.min(sel, pins.length - 1)]!;
+  const current = pins[0]!;
   return (
     <div className="hl-pmap">
-      <svg className="hl-pmap__bg" width="100%" height="100%" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <rect width="600" height="600" fill="#ECEEE6" />
-        <path d="M0 180 L600 150" stroke="#fff" strokeWidth="15" />
-        <path d="M0 420 L600 400" stroke="#fff" strokeWidth="12" />
-        <path d="M0 300 L600 330" stroke="#fff" strokeWidth="5" />
-        <path d="M320 0 L340 600" stroke="#fff" strokeWidth="14" />
-        <path d="M140 0 L120 600" stroke="#fff" strokeWidth="6" />
-        <rect x="380" y="200" width="140" height="90" rx="14" fill="#D6EAD0" />
-        <path d="M480 600 C 520 520, 580 500, 600 498 L600 600z" fill="#CFE3EE" />
-      </svg>
-      {pins.map((pin, i) => {
-        const x = 8 + ((pin.lng! - minLng) / spanLng) * 84;
-        const y = 10 + (1 - (pin.lat! - minLat) / spanLat) * 72;
-        const on = i === sel;
-        return (
-          <button
-            key={pin.slug}
-            type="button"
-            className={`hl-pmap__pin${on ? " is-on" : ""}`}
-            style={{ left: `${x}%`, top: `${y}%` }}
-            aria-label={`${pin.name}, ${pin.area}`}
-            aria-pressed={on}
-            onClick={() => setSel(i)}
-          >
-            <svg width="30" height="38" viewBox="0 0 40 50" aria-hidden="true">
-              {kind === "restaurants" ? (
-                <path d="M20 48c-8-11-17-19-17-29a17 17 0 0 1 34 0c0 10-9 18-17 29z" />
-              ) : (
-                <path d="M5 46V20a15 15 0 0 1 30 0v26z" />
-              )}
-              <circle cx="20" cy={kind === "restaurants" ? 19 : 28} r="5.5" fill="#fff" />
-            </svg>
-          </button>
-        );
-      })}
+      <iframe className="hl-pmap__bg" src={mapEmbedUrl([current.lat!, current.lng!])} title={`${cityName} ${kind === "masjids" ? "masjids" : "restaurants"} map`} loading="lazy" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen style={{ width: "100%", height: "calc(100% - 86px)", border: 0 }} />
       <a className="hl-pmap__open" href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${kind === "masjids" ? "masjid" : "halal restaurant"} ${cityName}`)}`} target="_blank" rel="noopener noreferrer">
         <Icon name="map" size={14} stroke={2.2} />
         Open in Google Maps

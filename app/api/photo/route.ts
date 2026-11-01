@@ -6,6 +6,7 @@ export const dynamic = "force-dynamic";
 export async function GET(request: Request) {
   const name = new URL(request.url).searchParams.get("name") ?? "";
   if (!PHOTO_NAME.test(name)) return new Response(null, { status: 400 });
+  if ((await readEnv("ENABLE_PAID_GOOGLE_PLACES")) !== "true") return new Response(null, { status: 404 });
   const key = await readEnv("GOOGLE_PLACES_API_KEY");
   if (!key) return new Response(null, { status: 404 });
 

@@ -1,5 +1,6 @@
 import { asGooglePhotos, asGoogleReviews, asHourLines } from "./google";
 import { getSupabase } from "./supabase";
+import { withPlaceSnapshot } from "./place-snapshot";
 import type { AboutPage, CommunityPost, Featured, PrayerHall, Restaurant, Review, Signature } from "./types";
 
 const GOOGLE_COLUMNS =
@@ -51,6 +52,7 @@ function googleFields(row: Record<string, unknown>) {
 }
 
 function mapRestaurant(row: Record<string, unknown>): Restaurant {
+  row = withPlaceSnapshot(row, "restaurants");
   return {
     id: String(row.id),
     slug: String(row.slug),
@@ -84,6 +86,7 @@ function mapRestaurant(row: Record<string, unknown>): Restaurant {
 }
 
 function mapMasjid(row: Record<string, unknown>): PrayerHall {
+  row = withPlaceSnapshot(row, "prayer_halls");
   return {
     id: String(row.id),
     slug: String(row.slug),

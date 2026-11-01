@@ -1,4 +1,5 @@
 import { getServiceSupabase, readEnv } from "./supabase";
+import { STATIC_PLACE_PHOTO } from "./place-import";
 
 export const PHOTO_NAME = /^places\/[A-Za-z0-9_-]+\/photos\/[A-Za-z0-9_-]+$/;
 
@@ -62,7 +63,7 @@ export function asGooglePhotos(value: unknown): GooglePhoto[] {
   for (const item of value) {
     if (!item || typeof item !== "object") continue;
     const name = String((item as { name?: unknown }).name ?? "");
-    if (!PHOTO_NAME.test(name)) continue;
+    if (!PHOTO_NAME.test(name) && !STATIC_PLACE_PHOTO.test(name)) continue;
     const raw = (item as { attributions?: unknown }).attributions;
     const attributions = Array.isArray(raw) ? raw.filter((entry): entry is string => typeof entry === "string").slice(0, 3) : [];
     photos.push({ name, attributions });
@@ -232,6 +233,7 @@ async function syncTable(table: "restaurants" | "prayer_halls", key: string, cit
 }
 
 export async function syncGooglePlaces(options: { city?: string; limit: number; force?: boolean }) {
+  if ((await readEnv("ENABLE_PAID_GOOGLE_PLACES")) !== "true") return { ok: false as const, reason: "paid-places-disabled-use-local-import" };
   const key = await readEnv("GOOGLE_PLACES_API_KEY");
   if (!key) return { ok: false as const, reason: "missing-places-key" };
   const supabase = await getServiceSupabase();

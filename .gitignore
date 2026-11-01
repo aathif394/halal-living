@@ -8,3 +8,5 @@ next-env.d.ts
 .cloudflare/
 *.tsbuildinfo
 .DS_Store
+
+.local/

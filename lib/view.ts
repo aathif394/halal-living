@@ -1,4 +1,5 @@
 import type { CommunityPost, GooglePhoto, PrayerHall, Restaurant, Review } from "./types";
+import { STATIC_PLACE_PHOTO } from "./place-import";
 
 // Shapes the database rows into what the page components render.
 
@@ -69,6 +70,10 @@ export type MasjidView = {
   madhab: string;
   phone: string;
   mapsUrl: string;
+  rating: string;
+  reviewCount: string;
+  reviews: ReviewView[];
+  reviewsUrl: string;
   lat: number | null;
   lng: number | null;
 };
@@ -103,7 +108,7 @@ export function masjidArt(seed: string): string {
 
 function googlePhotos(photos: GooglePhoto[]): Photo[] {
   return photos.slice(0, 8).map((photo) => ({
-    src: `/api/photo?name=${encodeURIComponent(photo.name)}`,
+    src: STATIC_PLACE_PHOTO.test(photo.name) ? photo.name : `/api/photo?name=${encodeURIComponent(photo.name)}`,
     credit: photo.attributions[0] ? `Photo · ${photo.attributions[0]}` : "Photo from Google",
   }));
 }
@@ -158,7 +163,7 @@ function hoursFor(week: string[], todayLine: string): HoursRow[] {
   return DAYS.map((day, i) => {
     // Google gives "Monday: 12:00 – 11:30 PM"; keep the time part.
     const raw = week[i] ?? "";
-    const time = raw.includes(":") ? raw.slice(raw.indexOf(":") + 1).trim() : raw;
+    const time = raw.replace(/^[A-Za-z]+day:\s*/i, "").trim();
     return { day, time: time || (i === today ? todayLine : "Hours not listed"), today: i === today };
   });
 }
@@ -237,9 +242,9 @@ export function toRestaurantView(place: Restaurant): RestaurantView {
     ...hoursCard(week.length ? hours : [], openNow, hours.find((row) => row.today)?.time || fallbackToday),
     phone: dial(place.google_phone || place.phone),
     mapsUrl: mapsLink(place.google_maps_url, `${place.name}, ${place.address}`, place.lat, place.lng),
-    reviewsUrl: place.google_place_id
+    reviewsUrl: place.google_maps_url || (place.google_place_id
       ? `https://search.google.com/local/reviews?placeid=${encodeURIComponent(place.google_place_id)}`
-      : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${place.name} ${place.neighborhood}`)}`,
+      : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${place.name} ${place.neighborhood}`)}`),
     lat: pos?.[0] ?? null,
     lng: pos?.[1] ?? null,
   };
@@ -286,6 +291,10 @@ export function toMasjidView(place: PrayerHall): MasjidView {
     jummah,
     prayers,
     madhab: place.madhab,
+    rating: place.google_rating != null && place.google_rating > 0 ? place.google_rating.toFixed(1) : "–",
+    reviewCount: (place.google_review_count ?? 0).toLocaleString("en-IN"),
+    reviews: place.google_reviews.filter((review) => review.body || review.who).map(reviewView),
+    reviewsUrl: mapsLink(place.google_maps_url, `${place.name}, ${place.address}`, place.lat, place.lng),
     phone: dial(place.google_phone),
     mapsUrl: mapsLink(place.google_maps_url, `${place.name}, ${place.address}`, place.lat, place.lng),
     lat: pos?.[0] ?? null,

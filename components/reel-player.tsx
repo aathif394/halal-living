@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { ReelSlide } from "@/lib/view";
 import { Icon } from "./icons";
+import { ReelViewer } from "./reels";
 
 const IMAGE_MS = 6000;
 
@@ -36,6 +37,7 @@ export function ReelPlayer({
 }) {
   const [index, setIndex] = useState(Math.min(startAt, Math.max(0, slides.length - 1)));
   const [playing, setPlaying] = useState(true);
+  const [viewerOpen, setViewerOpen] = useState(false);
   const [progress, setProgress] = useState(0);
   const [visible, setVisible] = useState(true);
   const [muted, setMuted] = useState(true);
@@ -44,7 +46,7 @@ export function ReelPlayer({
   const video = useRef<HTMLVideoElement>(null);
   const elapsed = useRef(0);
   const slide = slides[index] ?? slides[0]!;
-  const active = playing && visible;
+  const active = playing && visible && !viewerOpen;
 
   const go = useCallback(
     (next: number) => {
@@ -104,18 +106,21 @@ export function ReelPlayer({
     else node.pause();
   }, [active, slide.kind, index]);
 
+  const closeViewer = useCallback((next: number) => { go(next); setViewerOpen(false); }, [go]);
   const toggle = () => setPlaying((value) => !value);
 
   const onKey = (event: React.KeyboardEvent) => {
+    if ((event.target as HTMLElement).closest("button, a, input")) return;
     if (event.key === " " || event.key === "Enter") {
       event.preventDefault();
-      toggle();
+      if (variant === "full") setViewerOpen(true); else toggle();
     } else if (event.key === "ArrowRight") go(index + 1);
     else if (event.key === "ArrowLeft") go(index - 1);
     else if (event.key === "Escape" && onClose) onClose();
   };
 
   const tap = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (variant === "full") { setViewerOpen(true); return; }
     const box = event.currentTarget.getBoundingClientRect();
     const x = (event.clientX - box.left) / box.width;
     if (slides.length > 1 && x < 0.25) go(index - 1);
@@ -126,6 +131,7 @@ export function ReelPlayer({
   const counter = remaining != null ? clock(remaining) : slides.length > 1 ? `${index + 1}/${slides.length}` : slide.kind === "image" ? clock(((1 - progress) * IMAGE_MS) / 1000) : "";
 
   return (
+    <>
     <div
       ref={root}
       className={`hl-reel hl-reel--${variant}${active ? " is-playing" : ""}`}
@@ -135,7 +141,7 @@ export function ReelPlayer({
       tabIndex={0}
       onKeyDown={onKey}
     >
-      <div className="hl-reel__stage" onClick={tap}>
+      <div className="hl-reel__stage" onClick={tap} role={variant === "full" ? "button" : undefined} tabIndex={variant === "full" ? 0 : undefined} aria-label={variant === "full" ? "Open reel full screen" : undefined}>
         {slide.kind === "video" ? (
           <video
             key={slide.id}
@@ -237,5 +243,7 @@ export function ReelPlayer({
         </div>
       </div>
     </div>
+    {viewerOpen ? <ReelViewer reels={slides} start={index} onClose={closeViewer} /> : null}
+    </>
   );
 }

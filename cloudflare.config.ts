@@ -11,11 +11,12 @@ export default defineConfig({
     assets: {
       htmlHandling: "none",
       notFoundHandling: "none",
-      runWorkerFirst: ["/*", "!/_next/static/*", "!/*/_next/static/*", "!/icons/*", "!/art/*", "!/brand/*"],
+      runWorkerFirst: ["/*", "!/_next/static/*", "!/*/_next/static/*", "!/icons/*", "!/art/*", "!/brand/*", "!/places/photos/*"],
     },
     env: {
       ASSETS: bindings.assets(),
       IMAGES: bindings.images(),
+      ENABLE_PAID_GOOGLE_PLACES: bindings.text("false"),
       NEXT_PUBLIC_SUPABASE_URL: bindings.text("https://xrhwforbjljuztqcpqnp.supabase.co"),
       NEXT_PUBLIC_SUPABASE_ANON_KEY: bindings.text("sb_publishable_vo7N12rMCyBxnOb4OOSTNQ_ueZJRUf_"),
     },
