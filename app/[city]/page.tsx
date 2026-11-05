@@ -6,6 +6,8 @@ import { listFeatured } from "@/lib/data";
 import { cityOr404, loadCity, loadReels } from "@/lib/load";
 import { faqLd, graphLd, itemListLd, siteUrl } from "@/lib/seo";
 import { masjidCard, restaurantCard, toMasjidView, toRestaurantView } from "@/lib/view";
+import { initialStoreProducts, randomStoreProducts } from "@/lib/store-products";
+import { trafficSnapshot } from "@/lib/traffic";
 
 export const dynamic = "force-dynamic";
 
@@ -22,7 +24,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function CityPage({ params }: Props) {
   const city = cityOr404((await params).city);
-  const [{ restaurants, masjids, areas }, reels, featured, base] = await Promise.all([loadCity(city), loadReels(), listFeatured(city.slug).catch(() => []), siteUrl()]);
+  const [{ restaurants, masjids, areas }, reels, base] = await Promise.all([loadCity(city), loadReels(city.slug), siteUrl()]);
+  // Optional remote services must never hold up the city page or its navigation.
+  const featured = listFeatured(city.slug).catch(() => []);
+  const products = randomStoreProducts();
   const questions = [
     {
       q: `Where can I find halal food in ${city.name}?`,
@@ -50,6 +55,9 @@ export default async function CityPage({ params }: Props) {
         areas={areas}
         featured={featured}
         reels={reels}
+        products={products}
+        initialProducts={initialStoreProducts()}
+        traffic={trafficSnapshot()}
       />
       <JsonLd
         data={graphLd([

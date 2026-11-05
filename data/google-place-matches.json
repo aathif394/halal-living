@@ -1,0 +1,558 @@
+{
+  "restaurants/chennai/zaheer-s-bbq-feast-triplicane": {
+    "placeId": "ChIJ6RMWJfBnUjoRvapwToGIfvg",
+    "title": "Zaheer's BBQ Feast",
+    "address": "No . 127 FF, Triplicane High Rd, Triplicane, Chennai, Tamil Nadu 600005",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "restaurants/chennai/taibah-flavours-of-bombay-chetpet": {
+    "placeId": "ChIJbU2UtYVnUjoRICFxqHMutG4",
+    "title": "TAIBAH - Flavours of Bombay",
+    "address": "18/1, Sait Colony 1st St, Egmore, Chennai, Tamil Nadu 600008",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "restaurants/chennai/urban-spatula-anna-nagar": {
+    "placeId": "ChIJAQUW6RxkUjoRwQw86gvFYJY",
+    "title": "Urban Spatula",
+    "address": "I Block, Urban Spatula, 1, 2nd Main Rd, R.V. Nagar, Block I, Annanagar East, Chennai, Tamil Nadu 600102",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "restaurants/chennai/yaghma-kababs-thousand-lights": {
+    "placeId": "ChIJYfe0l_pnUjoRAAHLCKaHNck",
+    "title": "Yaghma Kababs",
+    "address": "Annasalai, Aziz Mulk 7th St, Thousand Lights West, Thousand Lights, Chennai, Tamil Nadu 600006",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "restaurants/chennai/buhari-anna-salai": {
+    "placeId": "ChIJNbNezBtmUjoRTmhzJsj0qK8",
+    "title": "BUHARI - MOUNT ROAD",
+    "address": "83, Anna Salai, Border Thottam, Anna Salai, Triplicane, Chennai, Tamil Nadu 600002",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "restaurants/chennai/juice-juice-baby-iftar-house-kodambakkam": {
+    "placeId": "ChIJR2ClEgBnUjoRoU6yRjMZ-EE",
+    "title": "Juice Juice Baby",
+    "address": "313/1, Arcot Rd, Ganga Nagar, Kodambakkam, Chennai, Tamil Nadu 600024",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "restaurants/chennai/ferrara-pizzeria-nungambakkam": {
+    "placeId": "ChIJx1EiJ2JnUjoRArLKiFGpAMc",
+    "title": "Ferrara Pizzeria",
+    "address": "No.10, Ferrara Pizzeria, Shyam Garden, Khader Nawaz Khan Rd, Srirampuram, Thousand Lights West, Thousand Lights, Chennai, Poombukar Nagar, Tamil Nadu 600006",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "restaurants/chennai/taste-of-turkey-mannady": {
+    "placeId": "ChIJL2vdjkJvUjoRAkMlJyLRmLA",
+    "title": "Taste of Turkey",
+    "address": "245, Linghi Chetty Street, near Apple Palace, Mannadi, George Town, Chennai, Tamil Nadu 600001",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "restaurants/chennai/kafei-palazzo-perumbakkam": {
+    "placeId": "ChIJEfhvehlbUjoRnhLIvFJYP1Q",
+    "title": "Kafei Palazzo",
+    "address": "Bollineni Hillside Rd, Nookampalayam, Arasankalani, Perumbakkam, Tamil Nadu 600131",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "restaurants/chennai/time-cafe-nungambakkam": {
+    "placeId": "ChIJDQlMHnZnUjoR_0s8fylxwl0",
+    "title": "Time cafe",
+    "address": "1 krishna street, Valluvar Kottam High Rd, Nungambakkam, Chennai, Tamil Nadu 600034",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "restaurants/chennai/barakath-kitchen-kolathur": {
+    "placeId": "ChIJ2_FcXQBlUjoRjXAgOz53HeI",
+    "title": "BARAKATH KITCHEN",
+    "address": "Silanthikuttai, Kolathur Main Rd, Vetrivelan Nagar, Muthamizh Nagar, Kolathur, Chennai, Tamil Nadu 600082",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "restaurants/chennai/beach-vibes-marina-beach": {
+    "placeId": "ChIJh9fTQwBpUjoR121aPTz-WS0",
+    "title": "Beach Vibe's",
+    "address": "27XJ+7CX Beach Vibe's, Marina Beach, Triplicane, Chennai, Tamil Nadu 600005",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "restaurants/chennai/stack-alwarpet": {
+    "placeId": "ChIJ7bDSZ05nUjoRF-QptJN2l9s",
+    "title": "Stack",
+    "address": "253, TTK Rd, Kasturi Estate, Alwarpet, Chennai, Tamil Nadu 600018",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "restaurants/chennai/frysto-the-frying-stories-anna-nagar": {
+    "placeId": "ChIJ5bU0EQBlUjoR-4wNgzgBqeY",
+    "title": "FRYSTO - The Frying Stories",
+    "address": "12th Main Rd, L Block, Kurinji Colony, Anna Nagar, Chennai, Tamil Nadu 600040",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "restaurants/chennai/krave-kitchen-royapettah": {
+    "placeId": "ChIJFz1WdABnUjoREp99b4jpIx0",
+    "title": "Krave Kitchen Royapettah",
+    "address": "24, Peter's Rd, Balaji Nagar, Royapettah, Chennai, Tamil Nadu 600014",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "restaurants/chennai/affu-s-kitchen-marina-beach": {
+    "placeId": "ChIJL-95kqZpUjoRbLHpLLbdNE0",
+    "title": "AFFU'S KITCHEN Fast Food & Kabab's",
+    "address": "Marina Beach Road, near Vivekananda, Marina Beach, Triplicane, Chennai, Tamil Nadu 600005",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "restaurants/chennai/grill-house-nungambakkam": {
+    "placeId": "ChIJjx6zqthlUjoRwPZuyABn3FY",
+    "title": "grill house Chennai",
+    "address": "19, Dr Thirumoorthy Nagar Main Rd, near GG Hospital, Tirumurthy Nagar, Nungambakkam, Chennai, Tamil Nadu 600034",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "restaurants/chennai/zaara-biryani-anna-salai": {
+    "placeId": "ChIJ9yp34QlnUjoRf9sr5tjfRds",
+    "title": "Zaara’s Biryani",
+    "address": "Door no 92/190 Woods Road, Anna Salai, Chennai, Tamil Nadu 600002",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "restaurants/chennai/bunker-bites-ecr": {
+    "placeId": "ChIJLUYVZJZbUjoRjDGEkHzENqw",
+    "title": "BunkerBites",
+    "address": "Sea Cliff Conclave, Akkarai, Panaiyur, Chennai, Tamil Nadu 600119",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "restaurants/chennai/bombay-food-court-triplicane": {
+    "placeId": "ChIJ04wtKBxnUjoRpE7cJUU61VU",
+    "title": "Bombay Food Court",
+    "address": "8/A, Dr Besant Rd, Ice House, Mirsahibpet, Royapettah, Chennai, Tamil Nadu 600014",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "restaurants/chennai/doner-and-shish-alwarpet": {
+    "placeId": "ChIJX0ONiwFnUjoR0VW-MOBH-Xc",
+    "title": "Doner & Shish",
+    "address": "354, TTK Rd, Alwarpet, Chennai, Tamil Nadu 600018",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "restaurants/chennai/fattoush-sholinganallur": {
+    "placeId": "ChIJGU6z2M5bUjoRt5foZl8Lntc",
+    "title": "Fattoush Restaurant & Banquet",
+    "address": "425/1A, Nookampalayam Link Rd, Alamelu Manga Puram, Sholinganallur, Chennai, Tamil Nadu 600119",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "restaurants/chennai/hotel-royal-darbar-periamet": {
+    "placeId": "ChIJB8wYef1lUjoRGNp8ROS-6xc",
+    "title": "Hotel Royal Darbar",
+    "address": "M Veerabadran St, Periamet, Park Town, Chennai, Tamil Nadu 600003",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "restaurants/chennai/ambur-canteen-chennai": {
+    "placeId": "ChIJpaiAKiZnUjoRxdDqi-XXZXk",
+    "title": "The Ambur Canteen",
+    "address": "2, Habibullah Rd, Satyamurthy Nagar, T. Nagar, Chennai, Tamil Nadu 600017",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "restaurants/chennai/sucre-et-sal-anna-nagar": {
+    "placeId": "ChIJhV6T7X5lUjoRtYZJd8EYoco",
+    "title": "Sucré et salé",
+    "address": "1st floor, Sucré et salé, River view colony, AG-89, 3rd Cross St, AG Block, River View Colony, Anna Nagar, Chennai, Tamil Nadu 600040",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "restaurants/chennai/hotel-safari-royapettah": {
+    "placeId": "ChIJhxxTYTtmUjoR7IA_38XxdXM",
+    "title": "Hotel Safari",
+    "address": "6, Hotel Safari, 296, Royapettah High Rd, Ganapathy Colony, Royapettah, Chennai, Tamil Nadu 600014",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "restaurants/chennai/soul-by-dair-nungambakkam": {
+    "placeId": "ChIJhYT3jB5nUjoRtUdmBO_u3NU",
+    "title": "SOUL by Dair",
+    "address": "Old No.14, New No. 25 3rd Street, Wallace Gdn 3rd St, Chennai, Tamil Nadu 600006",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "restaurants/chennai/hundreds-bistro-chetpet": {
+    "placeId": "ChIJocEFXCtnUjoRJLIJms7IMXk",
+    "title": "HUNDREDS BISTRO",
+    "address": "105, Harrington Rd, opposite Shoppers Stop, Chetpet, Chennai, Tamil Nadu 600031",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "restaurants/chennai/al-hafa-multi-cuisine-ashok-nagar": {
+    "placeId": "ChIJAdBoYaNnUjoRah0BgFVOZuY",
+    "title": "AL HAFA MULTICUISINE RESTAURANT",
+    "address": "NO:17/36,1ST FLOOR,4TH AVENUE, Dr Ambedkar Rd, Ashok Nagar, Chennai, Tamil Nadu 600083",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "restaurants/chennai/melt-anna-nagar": {
+    "placeId": "ChIJActSlBhlUjoRV47GwCj5Z9Q",
+    "title": "MELT (Belly Melts Your Mind) - Anna Nagar",
+    "address": "13th Main Rd, Thirumoolar Colony, Anna Nagar, Chennai, Tamil Nadu 600040",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "restaurants/chennai/nasi-kandar-pelita-t-nagar": {
+    "placeId": "ChIJRWTsElJmUjoR9WCuN0c1cGE",
+    "title": "Nasi Kandar Pelita Halal Malaysian Cuisine",
+    "address": "16, Nasi Kandar Pelita Halal Malaysian Cuisine, Appaswamy Towers, 17 & 18, Sir Thyagaraya Rd, T. Nagar, Chennai, Tamil Nadu 600017",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "restaurants/chennai/zamzam-jaaler-murthabak-mylapore": {
+    "placeId": "ChIJuRzGPwBnUjoR2M2-vNMNgHI",
+    "title": "Zam Zam Jaaler Murthabak",
+    "address": "10/11, Dr Radha Krishnan Salai, Loganathan Colony, Mylapore, Chennai, Tamil Nadu 600004",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/masjid-e-noor-sowcarpet": {
+    "placeId": "ChIJV05i-VZvUjoRjVyXBJ7yWMU",
+    "title": "Masjid-e-Noor",
+    "address": "66, Narayana Mudali Street, Sowcarpet, George Town, Chennai, Tamil Nadu 600001",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/masjid-saliha-purasaiwakkam": {
+    "placeId": "ChIJU1aK1uBlUjoRsnFQQIZqeQo",
+    "title": "Madarsa-e-Saliha",
+    "address": "37P4+QR3 Madarsa-e-Saliha, Mookathal St, Above Chennai Fashion, Perumalpet, Purasaiwakkam, Chennai, Tamil Nadu 600007",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/masjid-e-noor-e-huda-old-washermanpet": {
+    "placeId": "ChIJSyukpN9vUjoRvko8mhhsCxo",
+    "title": "MASJID-E-NOOR-E-HUDA",
+    "address": "12/19, Boja Raja Nagar Main Rd, Rajiv Gandhi Nagar, Vijaya Raghavalu Nagar, Old Washermanpet, Chennai, Tamil Nadu 600021",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/muhi-masjid-royapettah": {
+    "placeId": "ChIJD3BxJctnUjoRXnqneFBCikE",
+    "title": "MUHI Masjid & Markaz",
+    "address": "102/107, Jani Jhan Khan Rd, Bharathi Salai, Royapettah, Chennai, Tamil Nadu 600014",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/hameethiya-jamiya-masjid-saligramam": {
+    "placeId": "ChIJZ95V88RmUjoRbJ9lW5ofhJg",
+    "title": "Masjid (Hamithiya Jamiya Palli Vasal)",
+    "address": "No. 1, Mosque Garden, Arcot Rd, Saligramam, Chennai, Tamil Nadu 600093",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/uswathun-hasana-community-hall-nungambakkam": {
+    "placeId": "ChIJs7-UYABnUjoR9KE9X1xFgNI",
+    "title": "Usvatun Hasana Community Hall",
+    "address": "364R+QXH Usvatun Hasana Community Hall, Lake Area, Nungambakkam, Chennai, Tamil Nadu 600034",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/kannadi-vappah-masjid-nungambakkam": {
+    "placeId": "ChIJ6QSAflpnUjoRCE8l9dofFiU",
+    "title": "Kannadi Vappah Masjid",
+    "address": "37, Jambulingam St, Pushpa Nagar, Nungambakkam, Chennai, Tamil Nadu 600034",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/green-masjid-airport-area": {
+    "placeId": "ChIJH09wAzFeUjoRQoxFQvpy2O8",
+    "title": "GREEN MASJID",
+    "address": "X5C2+C4Q GREEN MASJID, Acharya Tulsi Rd, Pallavaram, Pallavaram (Contonment), Tamil Nadu 600043",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/masjid-madina-airport-area": {
+    "placeId": "ChIJIXct9jVeUjoR-3GDtcOL414",
+    "title": "Masjid Madina",
+    "address": "71/88, Grand Southern Trunk Rd, Sunnambu Colony, Pallavaram, Tambaram, Tamil Nadu 600043",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/islamic-centre-musallah-adyar": {
+    "placeId": "ChIJcYg0NF1nUjoRqCVJuE6smDM",
+    "title": "Islamic centre",
+    "address": "KG Vallencia, 57, Gandhi Nagar 1st Main Rd, Gandhi Nagar, Adyar, Chennai, Tamil Nadu 600020",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/shafi-marriage-hall-old-washermanpet": {
+    "placeId": "ChIJcZgPMGJvUjoRzTBpMCLnIiQ",
+    "title": "Shafi Marriage Hall",
+    "address": "Gowner Illam, Aziz Mohamed Ghouse St, Korukkupet, Old Washermanpet, Chennai, Tamil Nadu 600021",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/cutchi-memon-masjid-old-washermanpet": {
+    "placeId": "ChIJ46VZPmFvUjoRWfUe46R341Y",
+    "title": "Cutchi Memon Masjid",
+    "address": "421, Thiruvottiyur High Rd, Old Washermanpet, Chennai, Tamil Nadu 600021",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/masjid-e-khaadim-old-washermanpet": {
+    "placeId": "ChIJ40zbYmRvUjoRcEYWaXizmE0",
+    "title": "Masjid - E- Khadeem Mosque",
+    "address": "Shop No.36, Masjid - E- Khadeem Mosque, 2, W Cemetery Rd, Old Washermanpet, Chennai, Tamil Nadu 600021",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/jamia-masjid-aminjikarai-aminjikarai": {
+    "placeId": "ChIJv3lSG4RmUjoRVvnyU1P3JXA",
+    "title": "Jamia Masjid",
+    "address": "New No. 562, Old No. 685, Periyar EVR Salai, P.H. Road, Aminjikarai, Shenoy Nagar, Chennai, Tamil Nadu 600030",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/masjid-javed-anna-nagar": {
+    "placeId": "ChIJ_ceo5SRkUjoRCIoDe_sMjkE",
+    "title": "Masjid Javeed Pallivasal Anna Nagar",
+    "address": "H-5, 3rd Ave, Block H, Annanagar East, Chennai, Tamil Nadu 600102",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/masjid-thaqwa-anna-nagar-west": {
+    "placeId": "ChIJpVyZewxkUjoRqYxmhzViwpE",
+    "title": "Masjid Thaqwa",
+    "address": "Park Rd, U R Nagar Extension, AP Block, Anna Nagar West, Anna Nagar West Extension, Chennai, Tamil Nadu 600101",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/jamia-masjid-arumbakkam-arumbakkam": {
+    "placeId": "ChIJVcaeKZdmUjoR9NikaqmGHmg",
+    "title": "JAMIA MASJID",
+    "address": "3688+G37 JAMIA MASJID, M.G.R.Street, P Block, MMDA Colony, Arumbakkam, Chennai, Tamil Nadu 600106",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/bsnl-quarters-masjid-royapettah": {
+    "placeId": "ChIJRXo4NiRmUjoRIfe3jH8hPmQ",
+    "title": "P&T Staff Quarters Masjid",
+    "address": "64/177, VM St, Balaji Nagar, Royapettah, Chennai, Tamil Nadu 600014",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/masjid-e-noor-smj-parrys-plaza-parrys-corner": {
+    "placeId": "ChIJkcU5C09vUjoRQEQ07OoakoE",
+    "title": "MASJID E NOOR",
+    "address": "5th Floor No. 12, MASJID E NOOR, S.M.J. Parrys Plaza, 2nd Line Beach Rd, Mannadi, George Town, Chennai, Tamil Nadu 600001",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/masjid-ah-ghafoor-adyar": {
+    "placeId": "ChIJIUEtf5pnUjoRG-i19khfZEg",
+    "title": "Masjid-ul-Gafoor",
+    "address": "Zam Zam Guest house, ( SPARROW'S NEST ) No.26, 3rd floor on terrace, Sriram Nagar Main Rd, next to metro water tank, Pallipattu, Tharamani, Chennai, Tamil Nadu 600113",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/masjid-near-besant-nagar-beach-besant-nagar": {
+    "placeId": "ChIJeR5KPuNnUjoR7XrTHV0Zkos",
+    "title": "Masjid Allah",
+    "address": "2, Ellaiamman Koil St, Urrur Kuppam, Besant Nagar, Chennai, Tamil Nadu 600090",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/masjid-near-ashok-pillar-ashok-nagar": {
+    "placeId": "ChIJyyZTROFmUjoRO821BVMHGyA",
+    "title": "AMCA Mosque",
+    "address": "125B, 4th Ave, Sarvamangala Colony, LIG Colony, Ashok Nagar, Chennai, Tamil Nadu 600083",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/anjuman-prayer-hall-ritchie-street-anna-salai": {
+    "placeId": "ChIJXVMlUgBnUjoR3RB-n6Rmu-w",
+    "title": "ANJUMAN MASJID",
+    "address": "Mn complex, 39, Wallers Rd, Mount Road, Chintadripet, Chennai, Tamil Nadu 600002",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/governor-s-bodyguard-masjid-anna-salai": {
+    "placeId": "ChIJNYZgMwBnUjoRb5xT0AyxVAQ",
+    "title": "Governor's Bodyguard Mosque",
+    "address": "37FG+G58 Governor's Bodyguard Mosque, Pallavan Salai, The Island, Chintadripet, Chennai, Tamil Nadu 600002",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/masjidul-jannah-thirumangalam": {
+    "placeId": "ChIJCY4tmARkUjoR7q0vxS-YDAs",
+    "title": "Masjid-ul-Jannah",
+    "address": "35PW+5RX Masjid-ul-Jannah, Anna St, Natarajan Nagar, Anna Nagar West, thillayadi valliyammal nagar, Chennai, Tamil Nadu 600040",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/masjid-e-habib-kotturpuram": {
+    "placeId": "ChIJ8eRK8LxnUjoRegkqf9SWOFI",
+    "title": "Masjid - e - Habeeb",
+    "address": "No.45, 1st Street, Thiruvalluvar Nagar, Varadapuram, Kotturpuram, Chennai, Tamil Nadu 600085",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/anjuman-masjid-t-nagar": {
+    "placeId": "ChIJX7OprE9mUjoRyWzUPLnlHF4",
+    "title": "Anjuman-E-Himayath-E-Islam Masjid",
+    "address": "Shop No: 16, B.N Reddy Road, No: 16, Dr B.N. Reddy Rd, off Vijayaraghava Road, Lakshimi Colony, T. Nagar, Chennai, Tamil Nadu 600017",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/al-huda-jumma-masjid-and-madrasa-kodambakkam": {
+    "placeId": "ChIJMXK5IVxmUjoRe6xHyDyWr8c",
+    "title": "Al-Huda Jumma Masjid & Madarasa",
+    "address": "24 30, Kamarajapuram 2nd St, Kakkan Colony, Kamarajapuram, Nungambakkam, Chennai, Tamil Nadu 600034",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/masjid-mehmoodu-pallivasal-alwarpet": {
+    "placeId": "ChIJLbaoTbBnUjoR7XmfDC_LV1w",
+    "title": "Masjid mahmoodh",
+    "address": "124, Eldams Rd, Subbarayan Nagar, Teynampet, Chennai, Tamil Nadu 600018",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/ibnul-qayyim-irgc-prayer-space-royapettah": {
+    "placeId": "ChIJt9NkbTtmUjoR1fdNnaW4mPA",
+    "title": "Ibnul Qayyim Islamic Research & Guidance Centre",
+    "address": "No 39, Gowdiamutt Rd, Ganapathy Colony, Royapettah, Chennai, Tamil Nadu 600014",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/mosque-rizwan-velachery": {
+    "placeId": "ChIJ6RddYQtnUjoRxczr8Z3orso",
+    "title": "masjid rizwan",
+    "address": "49/5, TamilNadu Housing Board Colony, Periyar Nagar, Velachery, Chennai, Tamil Nadu 600042",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/malabar-muslim-association-prayer-hall-egmore": {
+    "placeId": "ChIJFSid2g5mUjoR842L9NLNccs",
+    "title": "Malabar Muslim Association Masjida s er Area]",
+    "address": "Railway Station, 20, 14, Kennet Ln, opposite Hotel Pandian, Egmore, Chennai, Tamil Nadu 600008",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/masjid-e-baitul-hujjaj-sriperumbudur-route": {
+    "placeId": "ChIJhWtM3l3tUjoRXfQES9AAAiE",
+    "title": "MASJID-E-BAITUL HUJJAJ",
+    "address": "WVJW+PP2 MASJID-E-BAITUL HUJJAJ, Sriperumbudur Rd, Sunguvarchatram, Thirumangalam, Tamil Nadu 602106",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/madrasa-e-majidiya-prayer-hall-royapettah": {
+    "placeId": "ChIJ-T_TsyJmUjoRoNOS3RjSW0E",
+    "title": "Madrasa-E- Majeedia Mosque",
+    "address": "157, Pycrofts Rd, Royapettah, Chennai, Tamil Nadu 600014",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the reel caption or filmed directions."
+  },
+  "prayer_halls/chennai/hamid-fatima-palli-nungambakkam": {
+    "placeId": "ChIJMQQh7qNnUjoR6TWKryf5NqI",
+    "title": "Maami Laatha Masjid - Hameed Fathima Palli",
+    "address": "1, Wallace Gdn 3rd St, Sadras, Thousand Lights, Chennai, Tamil Nadu 600006",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched alternate masjid name and precise locality against the original reel."
+  },
+  "prayer_halls/chennai/the-marina-mall-prayer-hall-egattur": {
+    "placeId": "ChIJ17IYzMRbUjoR-vmiohQSVHI",
+    "title": "Marina Mall Masjid",
+    "address": "Marina Mall, Egattur, Tamil Nadu 600130",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched alternate masjid name and precise locality against the original reel."
+  },
+  "restaurants/chennai/hungry-tiger-perambur": {
+    "placeId": "ChIJiWV7vz9lUjoRAUyNgkeA2R8",
+    "title": "HUNGRY TIGER",
+    "address": "Aishwaryam Complex, No.25A, Red Hills Rd, Sundaram Nagar, Balakumaran Nagar, Kolathur, Chennai, Tamil Nadu 600099",
+    "scope": "place",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the original reel; Hungry Tiger also has the same business phone on both Google records."
+  },
+  "prayer_halls/chennai/preston-college-prayer-space-chennai": {
+    "placeId": "ChIJG7kzSLVnUjoRDo44zNyeYPg",
+    "title": "Preston College Masjid Bilal",
+    "address": "27P3+46W Preston College Masjid Bilal, Kavignar Bharathidasan Rd, Seetammal Colony, Seethammal Colony, Lubdhi Colony, Alwarpet, Chennai, Tamil Nadu 600018",
+    "scope": "place",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the original reel; Hungry Tiger also has the same business phone on both Google records."
+  },
+  "prayer_halls/chennai/alsa-mall-musallah-egmore": {
+    "placeId": "ChIJV2OsBNhnUjoRhvj76xQoTY8",
+    "title": "Alsa Mall Prayer Hall",
+    "address": "Top Floor, Alsa Mall Prayer Hall, alsa mall complex, Red Cross Rd, Egmore, Chennai, Tamil Nadu 600008",
+    "scope": "place",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the original reel; Hungry Tiger also has the same business phone on both Google records."
+  },
+  "prayer_halls/chennai/marina-beach-prayer-space-marina-beach": {
+    "placeId": "ChIJ3fcXaCVpUjoRTiGgmT91ljY",
+    "title": "MASJID-E-QUAIDE MILLLATH",
+    "address": "377M+CR8 MASJID-E-QUAIDE MILLLATH, Shankar Rd, Marina Beach, Triplicane, Chennai, Tamil Nadu 600005",
+    "scope": "place",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the original reel; Hungry Tiger also has the same business phone on both Google records."
+  },
+  "prayer_halls/chennai/nexus-vijaya-mall-prayer-hall-vadapalani": {
+    "placeId": "ChIJ9aCNDMJmUjoRlDubaVU3DdQ",
+    "title": "Masjid @ Forum Mall",
+    "address": "Forum mall 3rd Floor, Arcot Rd, near car parking or food court, Kannika Puram, Vadapalani, Chennai, Tamil Nadu 600026",
+    "scope": "place",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name and locality against the original reel; Hungry Tiger also has the same business phone on both Google records."
+  },
+  "prayer_halls/chennai/green-park-academy-musallah-anna-nagar": {
+    "placeId": "ChIJxQSn_SFkUjoRoSmK0kQt3vM",
+    "title": "GREEN PARK ACADEMY",
+    "address": "5/1,2nd Floor, GREEN PARK ACADEMY, Tower Metro Station, &, 2nd Ave, near Blue Star Bus stop, AD Block, Anna Nagar, Chennai, Tamil Nadu 600040",
+    "scope": "venue",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name, street and venue against reel directions. Venue matches provide building map/photos only; venue reviews and hours are excluded."
+  },
+  "prayer_halls/chennai/chennai-citi-centre-prayer-hall-mylapore": {
+    "placeId": "ChIJ8X9W6P9nUjoR1PQDf-g24qg",
+    "title": "CHENNAI CITI CENTRE",
+    "address": "10/11, Dr Radha Krishnan Salai, Loganathan Colony, Mylapore, Chennai, Tamil Nadu 600004",
+    "scope": "venue",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name, street and venue against reel directions. Venue matches provide building map/photos only; venue reviews and hours are excluded."
+  },
+  "prayer_halls/chennai/parsn-complex-musallah-thousand-lights": {
+    "placeId": "ChIJzbT_q0pnUjoRoY8hMHuXXe4",
+    "title": "Parsn complex",
+    "address": "120, Kodambakkam High Rd, Tirumurthy Nagar, Kodambakkam, Chennai, Tamil Nadu 600006",
+    "scope": "venue",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name, street and venue against reel directions. Venue matches provide building map/photos only; venue reviews and hours are excluded."
+  },
+  "prayer_halls/chennai/hong-kong-complex-prayer-hall-t-nagar": {
+    "placeId": "ChIJX2T01v5mUjoRAuq7zonFtjs",
+    "title": "Hong Kong Shopping Complex",
+    "address": "No.5, Rameswaram St, T. Nagar, Chennai, Tamil Nadu 600017",
+    "scope": "venue",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name, street and venue against reel directions. Venue matches provide building map/photos only; venue reviews and hours are excluded."
+  },
+  "prayer_halls/chennai/spencer-plaza-prayer-hall-anna-salai": {
+    "placeId": "ChIJoz57ygdnUjoRTw7nvgkxf-0",
+    "title": "Spencer Plaza",
+    "address": "Old College Buildings, 38, College Rd, Anna Salai, Chennai, Tamil Nadu 600002",
+    "scope": "venue",
+    "reviewedAt": "2026-11-02",
+    "evidence": "Matched name, street and venue against reel directions. Venue matches provide building map/photos only; venue reviews and hours are excluded."
+  }
+}

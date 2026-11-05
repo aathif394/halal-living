@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import { Frame } from "@/components/chrome";
 import { Icon } from "@/components/icons";
@@ -26,7 +27,7 @@ export default async function HowWeVerify() {
         <div className="hl-stars-bg" aria-hidden="true" />
         <div className="hl-wrap hl-lhero__in">
           <nav className="hl-crumbs" aria-label="Breadcrumb">
-            <a href="/chennai">Home</a>
+            <Link href="/chennai">Home</Link>
             <span aria-hidden="true">/</span>
             <span aria-current="page">How we verify</span>
           </nav>
@@ -44,10 +45,10 @@ export default async function HowWeVerify() {
           ))}
         </ol>
         <p>
-          <a className="hl-link" href="/chennai#suggest">
+          <Link className="hl-link" href="/chennai#suggest">
             Suggest a place
             <Icon name="arrowRight" size={14} stroke={2.6} />
-          </a>
+          </Link>
         </p>
       </div>
     </Frame>

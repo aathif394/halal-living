@@ -32,27 +32,13 @@ async function atomicJson(file, value) {
 }
 
 async function prepare() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL || "https://xrhwforbjljuztqcpqnp.supabase.co";
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "sb_publishable_vo7N12rMCyBxnOb4OOSTNQ_ueZJRUf_";
   const snapshot = await readJson(SNAPSHOT);
-  const targets = [];
-  for (const table of ["restaurants", "prayer_halls"]) {
-    const api = new URL(`/rest/v1/${table}`, url);
-    api.searchParams.set("select", "id,slug,name,city,address,lat,lng,google_place_id,google_maps_url");
-    api.searchParams.set("active", "eq.true");
-    api.searchParams.set("order", "name");
-    if (city) api.searchParams.set("city", `eq.${city}`);
-    const response = await fetch(api, { headers: { apikey: key }, signal: AbortSignal.timeout(20000) });
-    if (!response.ok) throw new Error(`Reading ${table} failed (${response.status}).`);
-    const rows = await response.json();
-    if (!Array.isArray(rows)) throw new Error(`Invalid ${table} response.`);
-    for (const row of rows) {
-      const target = { ...row, table };
-      if (flag("--missing") && snapshot.places[snapshotKey(target)]) continue;
-      if (row.lat == null || row.lng == null || !Number.isFinite(Number(row.lat)) || !Number.isFinite(Number(row.lng))) continue;
-      targets.push(target);
-    }
-  }
+  const catalog = await readJson(path.join(ROOT, "data/reel-directory.json"));
+  const targets = catalog.places.filter(place => !city || place.city === city).map(place => ({
+    id: `reel-${place.slug}`, table: place.kind === "restaurants" ? "restaurants" : "prayer_halls",
+    slug: place.slug, name: place.name, city: place.city, address: place.address, area: place.area,
+    lat: 0, lng: 0,
+  })).filter(target => !flag("--missing") || !snapshot.places[snapshotKey(target)]);
   const selected = targets.slice(0, limit);
   await atomicJson(path.join(WORK, "targets.json"), selected);
   const queries = selected.map(target => {
@@ -148,21 +134,33 @@ async function importResults() {
   const photoCache = new Map();
   for (const target of targets) {
     const key = snapshotKey(target);
+    if (flag("--missing") && snapshot.places[key]) continue;
     const approved = approvedMatches[key]?.placeId;
     if (flag("--only-reviewed") && !approved) continue;
-    const candidates = entries.filter(entry => (!entry.input_id || entry.input_id === target.id) &&
-      (approved ? entry.place_id === approved && matchesTarget({ ...target, google_place_id: approved }, entry) : matchesTarget(target, entry)));
+    const candidates = entries.filter(entry => approved
+      ? entry.place_id === approved && matchesTarget({ ...target, google_place_id: approved }, entry)
+      : (!entry.input_id || entry.input_id === target.id) && matchesTarget(target, entry));
     candidates.sort((a, b) => distanceKm(target.lat, target.lng, a.latitude, a.longitude ?? a.longtitude) - distanceKm(target.lat, target.lng, b.latitude, b.longitude ?? b.longtitude));
     const entry = candidates[0];
     if (!entry?.place_id) { report.unmatched.push(key); continue; }
     const normalized = normalizeEntry(entry, timestamp);
-    for (const url of photoCandidates(entry)) {
-      try {
-        if (!photoCache.has(url)) photoCache.set(url, await downloadPhoto(url));
-        const name = photoCache.get(url);
-        if (!normalized.google_photos.some(photo => photo.name === name)) normalized.google_photos.push({ name, attributions: photoAuthors(entry, url) });
-      } catch (error) { report.photoErrors.push({ place: key, message: error.message }); }
+    if (approvedMatches[key]?.scope === "venue") {
+      // The building's reviews and hours do not describe its prayer room.
+      normalized.google_venue_name = String(entry.title);
+      normalized.address = `${target.address} · ${normalized.address || ""}`;
+      normalized.google_rating = null;
+      normalized.google_review_count = null;
+      normalized.google_reviews = [];
+      normalized.google_hours = [];
     }
+    const photos = await Promise.all(photoCandidates(entry).map(async url => {
+      try {
+        if (!photoCache.has(url)) photoCache.set(url, downloadPhoto(url));
+        const name = await photoCache.get(url);
+        return { name, attributions: photoAuthors(entry, url) };
+      } catch (error) { report.photoErrors.push({ place: key, message: error.message }); return null; }
+    }));
+    normalized.google_photos = photos.filter((photo, index) => photo && photos.findIndex(other => other?.name === photo.name) === index);
     const previous = snapshot.places[key];
     // Partial refreshes must not erase previously downloaded media or reviews.
     if (previous?.google_place_id === normalized.google_place_id) {
@@ -205,7 +203,7 @@ try {
   else if (command === "import") await importResults();
   else if (command === "prune") await prunePhotos();
   else if (command === "refresh") { const targets = await prepare(); if (targets.length) { await run(); await importResults(); } }
-  else console.log("Usage: node scripts/places.mjs prepare|run|import|refresh|prune [--city chennai] [--limit 5] [--missing] [--extra-reviews] [--resume]\n\nRequires Node 24+ and a running local Docker engine. Free public Supabase reads only.\nResults and reports: .local/places/. Snapshot and photos become deployable site assets.\nNo cloud compute or paid APIs are used. No deployment runs automatically.");
+  else console.log("Usage: node scripts/places.mjs prepare|run|import|refresh|prune [--city chennai] [--limit 5] [--missing] [--extra-reviews] [--resume]\n\nRequires Node 24+ and a running local Docker engine. Reads only the reel catalog; Google matches without coordinates require reviewed place IDs.\nResults and reports: .local/places/. Snapshot and photos become deployable site assets.\nNo cloud compute or paid APIs are used. No deployment runs automatically.");
 } catch (error) {
   console.error(error.message);
   process.exitCode = 1;

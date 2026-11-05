@@ -1,5 +1,8 @@
 "use client";
 
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Icon, type IconName } from "./icons";
@@ -76,6 +79,7 @@ export function SmartSearch({
   areas: { name: string; count: number }[];
   examples: string[];
 }) {
+  const router = useRouter();
   const [q, setQ] = useState("");
   const [open, setOpen] = useState(false);
   const [hi, setHi] = useState(-1);
@@ -196,7 +200,7 @@ export function SmartSearch({
     input.current?.blur();
   };
 
-  const go = (href: string) => window.location.assign(href);
+  const go = (href: string) => router.push(href);
 
   const pick = (item: Item | undefined) => {
     if (!item) return;
@@ -339,9 +343,9 @@ export function SmartSearch({
           </button>
         ) : null}
         <p>Know this place? Tell us and someone from the community will check it.</p>
-        <a className="ss-suggest" href={`/${city}#suggest`} onClick={close}>
+        <Link className="ss-suggest" href={`/${city}#suggest`} onClick={close}>
           Suggest a place
-        </a>
+        </Link>
       </div>
     )
   ) : (

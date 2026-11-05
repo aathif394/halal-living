@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { useEffect } from "react";
 import { Icon } from "./icons";
 import { useRouteState } from "./route";
@@ -20,17 +22,18 @@ export function NavSwitch({ city }: { city: string }) {
         <span className={`hl-switch__ind${anim ? " is-anim" : ""}`} aria-hidden="true" style={{ width: box.w, transform: `translateX(${box.x}px)` }} />
       ) : null}
       {items.map((item, i) => (
-        <a
+        <Link
           key={item.key}
           className="hl-switch__item"
           href={item.href}
+          prefetch={true}
           aria-current={i === active ? "page" : undefined}
           data-on={i === active ? "1" : undefined}
           onClick={go(i, item.href)}
         >
           <Icon name={item.icon} size={18} stroke={2} />
           {item.label}
-        </a>
+        </Link>
       ))}
     </div>
   );
@@ -64,9 +67,9 @@ export function CityOrBack({ city, name, chooser }: { city: string; name: string
   const { detail, section } = useRouteState();
   if (!detail) return <>{chooser}</>;
   return (
-    <a className="hl-city hl-back" href={`/${city}/${section}`} aria-label={`Back to ${name}`}>
+    <Link className="hl-city hl-back" href={`/${city}/${section}`} aria-label={`Back to ${name}`}>
       <Icon name="arrowLeft" size={16} stroke={2.6} />
       {name}
-    </a>
+    </Link>
   );
 }

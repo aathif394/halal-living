@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { CityTheme } from "@/lib/cities";
 import type { PlaceCard } from "@/lib/view";
 import { Landmark, StarPattern } from "./brand";
@@ -30,7 +31,7 @@ export function ListPage({
         <Landmark city={city} size={300} className="hl-lhero__lm" />
         <div className="hl-wrap hl-lhero__in">
           <nav className="hl-crumbs" aria-label="Breadcrumb">
-            <a href={`/${city.slug}`}>Home</a>
+            <Link href={`/${city.slug}`}>Home</Link>
             <span aria-hidden="true">/</span>
             <span aria-current="page">{rest ? "Restaurants" : "Masjids"}</span>
           </nav>
@@ -46,9 +47,9 @@ export function ListPage({
             <div className="hl-marquee">
               <div className="hl-marquee__track">
                 {loop.map((item, i) => (
-                  <a key={`${item}-${i}`} className="hl-marquee__chip" href={`/${city.slug}/${kind}?area=${encodeURIComponent(item)}`} aria-hidden={i >= areas.length ? true : undefined} tabIndex={i >= areas.length ? -1 : undefined}>
+                  <Link key={`${item}-${i}`} className="hl-marquee__chip" href={`/${city.slug}/${kind}?area=${encodeURIComponent(item)}`} aria-hidden={i >= areas.length ? true : undefined} tabIndex={i >= areas.length ? -1 : undefined}>
                     {item}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>

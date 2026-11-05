@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Icon } from "@/components/icons";
 import { CITIES } from "@/lib/cities";
 
@@ -15,10 +16,10 @@ export default function CityNotFound() {
       <div className="hl-wrap hl-sec">
         <div className="hl-nf-cities">
           {CITIES.map((city) => (
-            <a key={city.slug} href={`/${city.slug}`} style={{ background: city.btn }}>
+            <Link key={city.slug} href={`/${city.slug}`} style={{ background: city.btn }}>
               {city.name}
               <Icon name="arrowRight" size={18} stroke={2.4} />
-            </a>
+            </Link>
           ))}
         </div>
       </div>

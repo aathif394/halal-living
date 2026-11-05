@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import type { CityTheme } from "@/lib/cities";
 import { Icon } from "./icons";
 import { LocatorLink } from "./locator";
@@ -21,10 +23,10 @@ export function BottomNav({ city }: { city: CityTheme }) {
       {items.map((item, i) => {
         const on = i === active;
         return (
-          <a key={item.key} className="bn-it" href={item.href} aria-current={on ? "page" : undefined} data-on={on ? "1" : undefined} onClick={go(i, item.href)}>
+          <Link key={item.key} className="bn-it" href={item.href} prefetch={true} aria-current={on ? "page" : undefined} data-on={on ? "1" : undefined} onClick={go(i, item.href)}>
             <Icon name={item.icon} size={22} stroke={on ? 2.1 : 1.8} />
             {item.label}
-          </a>
+          </Link>
         );
       })}
       <span className="bn-loc">

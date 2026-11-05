@@ -1,5 +1,8 @@
 "use client";
 
+import Link from "next/link";
+import { PlaceImage } from "./place-image";
+
 import { useEffect, useMemo, useState } from "react";
 import type { PlaceCard } from "@/lib/view";
 import { ShareButton } from "./detail-parts";
@@ -30,9 +33,9 @@ type Row = PlaceCard & { km: number | null; href: string };
 export function PlaceRow({ place }: { place: Row }) {
   return (
     <article className="hl-row">
-      <a className="hl-row__link" href={place.href}>
+      <Link className="hl-row__link" href={place.href} prefetch={false}>
         <span className="hl-row__ph">
-          <img src={place.photo} alt="" loading="lazy" />
+          <PlaceImage src={place.photo} alt="" width={160} height={120} sizes="80px" />
         </span>
         <span className="hl-row__t">
           <span className="hl-row__name">
@@ -43,7 +46,7 @@ export function PlaceRow({ place }: { place: Row }) {
           </span>
           <span className="hl-row__d">{place.km != null ? distLabel(place.km) : ""}</span>
         </span>
-      </a>
+      </Link>
       <ShareButton title={place.name} url={place.href} />
     </article>
   );
@@ -58,9 +61,9 @@ export function PlaceTile({ place, variant }: { place: Row; variant: "list" | "n
   const masjid = place.kind === "masjids";
   return (
     <article className={`hl-tile hl-tile--${variant}${masjid ? " hl-tile--m" : ""}`}>
-      <a className="hl-tile__link" href={place.href}>
+      <Link className="hl-tile__link" href={place.href} prefetch={false}>
         <span className="hl-tile__ph" {...(variant === "near" ? tiltHandlers() : {})}>
-          <img src={place.photo} alt="" loading="lazy" />
+          <PlaceImage src={place.photo} alt="" width={640} height={480} sizes="(min-width: 1100px) 280px, (min-width: 600px) 45vw, 90vw" />
           <span className="hl-tile__shine" aria-hidden="true" />
           {variant === "list" && place.km != null ? <span className="hl-tile__km">{distLabel(place.km)}</span> : null}
         </span>
@@ -79,7 +82,7 @@ export function PlaceTile({ place, variant }: { place: Row; variant: "list" | "n
             </span>
           ) : null}
         </span>
-      </a>
+      </Link>
       {variant === "near" ? <ShareButton title={place.name} url={place.href} /> : null}
     </article>
   );
@@ -96,8 +99,8 @@ function PlacesMap({ rows, kind, cityName }: { rows: Row[]; kind: Kind; cityName
         <Icon name="map" size={14} stroke={2.2} />
         Open in Google Maps
       </a>
-      <a className="hl-pmap__card" href={current.href}>
-        <img src={current.photo} alt="" />
+      <Link className="hl-pmap__card" href={current.href}>
+        <PlaceImage src={current.photo} alt="" width={160} height={120} sizes="80px" />
         <span>
           <b>{current.name}</b>
           <small>
@@ -108,7 +111,7 @@ function PlacesMap({ rows, kind, cityName }: { rows: Row[]; kind: Kind; cityName
         <span className="hl-pmap__go">
           <Icon name="arrowRight" size={16} stroke={2.4} />
         </span>
-      </a>
+      </Link>
     </div>
   );
 }
@@ -244,9 +247,9 @@ export function PlaceBrowser({
     ) : null;
 
   const mapButton = (
-    <button type="button" className={`hl-mapbtn${map ? " is-on" : ""}`} aria-pressed={map} onClick={() => setMap((value) => !value)}>
+    <button type="button" className={`hl-mapbtn${map ? " is-on" : ""}`} aria-label={map ? "Hide map" : "Show map"} aria-pressed={map} onClick={() => setMap((value) => !value)}>
       <Icon name="map" size={15} stroke={2.1} />
-      {map ? "Hide map" : "Show map"}
+      <span className="hl-mapbtn__label">{map ? "Hide map" : "Show map"}</span>
     </button>
   );
 
@@ -274,10 +277,10 @@ export function PlaceBrowser({
             ]}
           />
           <div className="hl-near__acts">
-            <a className="hl-btn-brand hl-btn-sm" href={`/${city.slug}/${kind}`}>
+            <Link className="hl-btn-brand hl-btn-sm" href={`/${city.slug}/${kind}`}>
               See all
               <Icon name="arrowRight" size={14} stroke={2.4} />
-            </a>
+            </Link>
             {mapButton}
           </div>
         </div>
@@ -323,10 +326,10 @@ export function PlaceBrowser({
             </button>
           </div>
         ) : null}
-        <a className="hl-seeall" href={`/${city.slug}/${kind}`}>
+        <Link className="hl-seeall" href={`/${city.slug}/${kind}`}>
           See all
           <Icon name="arrowRight" size={15} stroke={2.4} />
-        </a>
+        </Link>
       </div>
     );
   }
@@ -364,9 +367,9 @@ export function PlaceBrowser({
             {query ? ` matching “${query}”` : ""}
           </span>
           {filtered ? (
-            <a className="hl-clear" href={`/${city.slug}/${kind}`} onClick={(event) => (query ? undefined : (event.preventDefault(), clear()))}>
+            <Link className="hl-clear" href={`/${city.slug}/${kind}`} onClick={(event) => (query ? undefined : (event.preventDefault(), clear()))}>
               Clear all
-            </a>
+            </Link>
           ) : null}
         </div>
         {pos ? locAsk : null}
@@ -377,9 +380,9 @@ export function PlaceBrowser({
           {!rows.length ? (
             <div className="hl-empty">
               No {label} match that yet.{" "}
-              <a className="hl-clear" href={`/${city.slug}/${kind}`}>
+              <Link className="hl-clear" href={`/${city.slug}/${kind}`}>
                 Clear filters
-              </a>
+              </Link>
             </div>
           ) : null}
         </div>

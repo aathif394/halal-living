@@ -3,6 +3,7 @@ import "./globals.css";
 import "./launch.css";
 import { InstallProvider } from "@/components/install";
 import { SITE_DESCRIPTION } from "@/lib/cities";
+import { clarityId } from "@/lib/analytics";
 import { graphLd, jsonLdScript, organizationLd, siteUrl, websiteLd } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -35,14 +36,21 @@ export const viewport: Viewport = {
 
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const base = await siteUrl();
+  const clarity = await clarityId();
   const graph = [organizationLd(base), websiteLd(base)];
   return (
     <html lang="en-IN" suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+        <link rel="preload" href="/fonts/figtree-latin-v9.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdScript(graphLd(graph)) }} />
+        {clarity ? (
+          <script
+            id="microsoft-clarity"
+            dangerouslySetInnerHTML={{
+              __html: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "${clarity}");`,
+            }}
+          />
+        ) : null}
       </head>
       <body>
         <InstallProvider>{children}</InstallProvider>

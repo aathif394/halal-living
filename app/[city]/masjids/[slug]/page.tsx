@@ -32,7 +32,7 @@ export default async function MasjidPage({ params }: Props) {
   const { city, row } = await load(params);
   const [reels, base] = await Promise.all([loadReels(), siteUrl()]);
   const place = toMasjidView(row);
-  const reel = placeReel(place.name, place.area, place.photos, place.art, reels);
+  const reel = placeReel(place.name, place.area, place.photos, place.art, reels, row.slug);
   return (
     <>
       <MasjidDetail city={city} place={place} reel={reel} />

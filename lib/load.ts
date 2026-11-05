@@ -19,9 +19,9 @@ export async function loadCity(city: CityTheme): Promise<{ restaurants: Restaura
   return { restaurants, masjids, areas };
 }
 
-export async function loadReels(): Promise<ReelSlide[]> {
+export async function loadReels(city?: string): Promise<ReelSlide[]> {
   const posts = await listCommunity().catch(() => []);
-  return posts.map(toReelSlide);
+  return posts.filter(post => !city || post.city === city).map(toReelSlide);
 }
 
 export function one(value: string | string[] | undefined): string {

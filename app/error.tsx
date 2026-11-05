@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export default function ErrorPage({ reset }: { error: Error & { digest?: string }; reset: () => void }) {
   return (
     <main className="hl-errpage">
@@ -10,7 +12,7 @@ export default function ErrorPage({ reset }: { error: Error & { digest?: string 
         <button type="button" onClick={() => reset()}>
           Reload page
         </button>
-        <a href="/chennai">Go to home</a>
+        <Link href="/chennai">Go to home</Link>
       </div>
     </main>
   );

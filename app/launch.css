@@ -1,3 +1,5 @@
+.hlm { display: none !important; }
+html.hl-launching, html.hl-launching body { overflow: auto !important; }
 .hlm { --gold: #F2D27A; --white: #FFFFFF; --text: rgba(255,255,255,.94); --muted: rgba(255,255,255,.7); --brand: #B94421; --soft: #F0CFC2; --font: 'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif; }
 .hlm[data-city="mumbai"]    { --brand: #5A2FAC; --soft: #D6CBEE; }
 .hlm[data-city="bangalore"] { --brand: #45A34D; --soft: #CBE7CE; }

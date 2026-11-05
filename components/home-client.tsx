@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { Icon } from "./icons";
@@ -365,7 +367,7 @@ export function SuggestSheetButton({ city, cityName, areas }: { city: string; ci
 }
 
 /** "Post your ad here": the mockup's AdEnquiry dialog (centred on desktop, bottom sheet on phones). */
-export function AdvertiseButton({ city, cityName, reach }: { city: string; cityName: string; reach: string }) {
+export function AdvertiseButton({ city, cityName }: { city: string; cityName: string }) {
   const [open, setOpen] = useState(false);
   return (
     <>
@@ -373,12 +375,12 @@ export function AdvertiseButton({ city, cityName, reach }: { city: string; cityN
         Post your ad here
         <Icon name="arrowRight" size={16} stroke={2.6} />
       </button>
-      {open ? createPortal(<AdEnquiry city={city} cityName={cityName} reach={reach} onClose={() => setOpen(false)} />, document.body) : null}
+      {open ? createPortal(<AdEnquiry city={city} cityName={cityName} onClose={() => setOpen(false)} />, document.body) : null}
     </>
   );
 }
 
-function AdEnquiry({ city, cityName, reach, onClose }: { city: string; cityName: string; reach: string; onClose: () => void }) {
+function AdEnquiry({ city, cityName, onClose }: { city: string; cityName: string; onClose: () => void }) {
   const [f, setF] = useState({ biz: "", name: "", phone: "", email: "", msg: "" });
   const [err, setErr] = useState<{ biz?: boolean; phone?: boolean; email?: boolean }>({});
   const [busy, setBusy] = useState(false);
@@ -449,7 +451,7 @@ function AdEnquiry({ city, cityName, reach, onClose }: { city: string; cityName:
           <form onSubmit={submit} noValidate>
             <div className="ae-k">ADVERTISE ON HALAL LIVING</div>
             <div className="ae-h">
-              Reach {reach} people a month in {cityName}
+              Advertise your business in {cityName}
             </div>
             <div className="ae-s">Share your details and we’ll get in touch by phone or email.</div>
             {lab("Business name", "biz", true)}
@@ -482,7 +484,7 @@ function AdEnquiry({ city, cityName, reach, onClose }: { city: string; cityName:
   );
 }
 
-export type AdSlide = { id: string; href: string; label: string; name: string; pitch: string; cta: string; art: string; bg: string };
+export type AdSlide = { id: string; href?: string; label: string; name: string; mobileName?: string; pitch: string; cta: string; art: string; bg: string };
 
 /** Mockup .hl-ads: sponsored banners slide every 5 s (paused on hover), with progress dots. */
 export function AdCarousel({ ads }: { ads: AdSlide[] }) {
@@ -496,22 +498,24 @@ export function AdCarousel({ ads }: { ads: AdSlide[] }) {
   return (
     <div className="hl-ads" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
       <div className="hl-adtrack" style={{ transform: `translateX(-${i * 100}%)` }}>
-        {ads.map((ad, k) => (
-          <a key={ad.id} className="hl-ad" href={ad.href} style={{ background: ad.bg }} tabIndex={k === i ? 0 : -1} aria-hidden={k !== i}>
+        {ads.map((ad, k) => {
+          const content = <>
             <span className="hl-ad__art" aria-hidden="true">
-              <img src={ad.art} alt="" />
+              <img src={ad.art} alt="" loading="lazy" decoding="async" />
             </span>
             <span className="hl-ad__t">
               <span className="hl-ad__k">{ad.label}</span>
-              <b>{ad.name}</b>
-              <span className="hl-ad__p">{ad.pitch}</span>
+              <b>{ad.mobileName ? <><span className="hl-only-desk">{ad.name}</span><span className="hl-only-mob">{ad.mobileName}</span></> : ad.name}</b>
+              {ad.pitch ? <span className="hl-ad__p">{ad.pitch}</span> : null}
             </span>
-            <span className="hl-ad__cta">
+            {ad.cta ? <span className="hl-ad__cta">
               {ad.cta}
               <Icon name="arrowRight" size={14} stroke={2.6} />
-            </span>
-          </a>
-        ))}
+            </span> : null}
+          </>;
+          const props = { className: "hl-ad", style: { background: ad.bg }, "aria-hidden": k !== i };
+          return ad.href ? <Link key={ad.id} {...props} href={ad.href} tabIndex={k === i ? 0 : -1}>{content}</Link> : <div key={ad.id} {...props}>{content}</div>;
+        })}
       </div>
       {ads.length > 1 ? (
         <div className="hl-adots">

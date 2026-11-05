@@ -6,6 +6,7 @@ import { Icon, Stars, type IconName } from "./icons";
 import { ReelPlayer } from "./reel-player";
 import { mapEmbedUrl } from "@/lib/maps";
 import { ReviewsCarousel } from "./reviews-carousel";
+import { PhotoGallery } from "./photo-gallery";
 
 const AMENITY_ICON: Record<Amenity["key"], IconName> = { parking: "parking", women: "women", jummah: "calendar" };
 
@@ -13,7 +14,7 @@ function MapArt({ kind, compact, name, lat, lng }: { kind: "restaurant" | "masji
   const src = mapEmbedUrl(lat == null || lng == null ? null : [lat, lng]);
   if (src) return (
     <div className="hl-map-art">
-      <iframe src={src} title={`${name} location map`} loading="lazy" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen style={{ display: "block", width: "100%", height: compact ? "100%" : "calc(100% - 124px)", border: 0 }} />
+      <iframe src={src} title={`${name} location map`} loading="lazy" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen style={{ display: "block", width: "100%", height: "100%", border: 0 }} />
     </div>
   );
   return (
@@ -55,37 +56,40 @@ function MapArt({ kind, compact, name, lat, lng }: { kind: "restaurant" | "masji
   );
 }
 
-function PhotoGrid({ photos, art, label }: { photos: { src: string; credit: string }[]; art: string; label: string }) {
-  const list = photos.length ? photos.slice(0, 6) : [{ src: art, credit: "" }];
+function PhotoGrid({ photos, art, label, name }: { photos: { src: string; credit: string }[]; art: string; label: string; name: string }) {
+  return <div className="hl-photos"><div className="hl-card-k"><span>PHOTOS</span><small>{label}</small></div><PhotoGallery photos={photos} art={art} name={name} variant="grid" /></div>;
+}
+
+function VisitNote({ place }: { place: { description: string; sourceNote: string; website: string; businessStatus: string; openingHours?: MasjidView["openingHours"] } }) {
   return (
-    <div className="hl-photos">
-      <div className="hl-card-k">
-        <span>PHOTOS</span>
-        <small>{label}</small>
-      </div>
-      <div className="hl-photos__grid">
-        {list.map((photo, i) => (
-          <div key={i} className="hl-photos__cell" title={photo.credit || undefined}>
-            <img src={photo.src} alt="" loading="lazy" />
-          </div>
-        ))}
-      </div>
-    </div>
+    <section className="hl-visit-note">
+      <p>{place.description}</p>
+      {place.sourceNote ? <p className="hl-visit-note__note">{place.sourceNote}</p> : null}
+      {/closed/i.test(place.businessStatus) ? <p className="hl-visit-note__note">Google Maps lists this place as {place.businessStatus.toLowerCase()}. Check before visiting.</p> : null}
+      {place.website ? <a className="hl-link" href={place.website} target="_blank" rel="noopener noreferrer">Website<Icon name="arrowUpRight" size={13} /></a> : null}
+      {place.openingHours?.length ? (
+        <details>
+          <summary>Opening hours on Google</summary>
+          <div className="hl-hours__groups">{place.openingHours.map(row => <div key={row.day}><span>{row.day}</span><span>{row.time}</span></div>)}</div>
+          <p className="hl-visit-note__note">Opening hours are separate from Salah and Jumu’ah timings. Confirm with the masjid.</p>
+        </details>
+      ) : null}
+    </section>
   );
 }
 
-function OpenBadge({ open }: { open: boolean }) {
+function OpenBadge({ open, known = true }: { open: boolean; known?: boolean }) {
   return (
     <span className={`hl-open${open ? " is-open" : ""}`}>
       <i />
-      {open ? "Open now" : "Closed"}
+      {!known ? "Check hours" : open ? "Open now" : "Closed"}
     </span>
   );
 }
 
 export function RestaurantDetail({ city, place, reel }: { city: CityTheme; place: RestaurantView; reel: ReelSlide[] }) {
   const back = `/${city.slug}/restaurants`;
-  const handle = `@${place.name.toLowerCase().replace(/[^a-z]+/g, "").slice(0, 16)}`;
+  const handle = "@the.halal.living";
   return (
     <>
       {/* Desktop: hero card | reel, then rating, hours, map, photos, reviews. */}
@@ -132,7 +136,7 @@ export function RestaurantDetail({ city, place, reel }: { city: CityTheme; place
         <section className="hl-dcard hl-hours">
           <div className="hl-card-k">
             <span>HOURS</span>
-            <OpenBadge open={place.isOpen} />
+            <OpenBadge open={place.isOpen} known={place.hoursKnown} />
           </div>
           <div className="hl-hours__headrow">
             <div className="hl-hours__head">{place.openHead}</div>
@@ -148,7 +152,9 @@ export function RestaurantDetail({ city, place, reel }: { city: CityTheme; place
           </div>
         </section>
         <section className="hl-dmap">
-          <MapArt kind="restaurant" name={place.name} lat={place.lat} lng={place.lng} />
+          <div className="hl-dmap__map">
+            <MapArt kind="restaurant" name={place.name} lat={place.lat} lng={place.lng} />
+          </div>
           <div className="hl-dmap__card">
             <div>
               <b>{place.address || place.area}</b>
@@ -162,7 +168,8 @@ export function RestaurantDetail({ city, place, reel }: { city: CityTheme; place
           </div>
         </section>
         <section className="hl-dcard hl-dphotos">
-          <PhotoGrid photos={place.photos} art={place.art} label={place.photos.length ? "from Google" : "illustration"} />
+          <PhotoGrid photos={place.photos} art={place.art} name={place.name} label={place.photos.some(photo => photo.credit.startsWith("Photo")) ? "from Google" : place.photos.length ? "from Halal Living reels" : "illustration"} />
+          <VisitNote place={place} />
         </section>
         <section id="reviews" className="hl-dcard hl-dreviews">
           <div className="hl-dreviews__head">
@@ -203,20 +210,22 @@ export function RestaurantDetail({ city, place, reel }: { city: CityTheme; place
               </span>
             ) : null}
             <span className="hl-sheet__rc">{place.reviewCount} Google reviews</span>
-            <OpenBadge open={place.isOpen} />
+            <OpenBadge open={place.isOpen} known={place.hoursKnown} />
           </div>
-          <div className="hl-sheet__gallery">
-            {(place.photos.length ? place.photos.slice(0, 4) : [{ src: place.art, credit: "" }]).map((photo, i) => (
-              <img key={i} src={photo.src} alt="" loading="lazy" />
-            ))}
-          </div>
+          <VisitNote place={place} />
+          <PhotoGallery photos={place.photos} art={place.art} name={place.name} variant="strip" />
           <div className="hl-sheet__map">
             <div className="hl-sheet__mapart">
               <MapArt kind="restaurant" name={place.name} lat={place.lat} lng={place.lng} compact />
             </div>
             <div className="hl-sheet__addr">
-              <b>{place.address || place.area}</b>
-              <span>Today · {place.today}</span>
+              <div>
+                <b>{place.address || place.area}</b>
+                <span>Today · {place.today}</span>
+              </div>
+              <a className="hl-map-directions" href={place.mapsUrl} target="_blank" rel="noopener noreferrer">
+                Directions<Icon name="arrowUpRight" size={14} />
+              </a>
             </div>
           </div>
           <div className="hl-sheet__sec">
@@ -243,7 +252,7 @@ export function RestaurantDetail({ city, place, reel }: { city: CityTheme; place
 
 export function MasjidDetail({ city, place, reel }: { city: CityTheme; place: MasjidView; reel: ReelSlide[] }) {
   const back = `/${city.slug}/masjids`;
-  const handle = `@${place.name.toLowerCase().replace(/[^a-z]+/g, "").slice(0, 16)}`;
+  const handle = "@the.halal.living";
   return (
     <>
       <div className="hl-detail hl-detail--m hl-only-desk">
@@ -275,27 +284,24 @@ export function MasjidDetail({ city, place, reel }: { city: CityTheme; place: Ma
           <ReelPlayer slides={reel} avatar={place.photo} handle={handle} variant="card" label={`Reel: ${place.name}`} />
         </div>
         <section className="hl-dmap hl-dmap--m">
-          <MapArt kind="masjid" name={place.name} lat={place.lat} lng={place.lng} />
+          <div className="hl-dmap__map">
+            <MapArt kind="masjid" name={place.name} lat={place.lat} lng={place.lng} />
+          </div>
           <div className="hl-dmap__card">
             <div>
               <b>{place.address || place.area}</b>
               <span>{place.jummah ? `Jumu’ah at ${place.jummah}` : `${place.area} · ${city.name}`}</span>
             </div>
+            <CallButton phone={place.phone} className="hl-btn-brand" />
             <a className="hl-btn-brand" href={place.mapsUrl} target="_blank" rel="noopener noreferrer">
               Directions
             </a>
           </div>
         </section>
         <section className="hl-dcard hl-dphotos">
-          <PhotoGrid photos={place.photos} art={place.art} label={place.photos.length ? "from Google" : "illustration"} />
+          <PhotoGrid photos={place.photos} art={place.art} name={place.name} label={place.photos.some(photo => photo.credit.startsWith("Photo")) ? "from Google" : place.photos.length ? "from Halal Living reels" : "illustration"} />
+          <VisitNote place={place} />
         </section>
-        {place.reviews.length ? <section className="hl-dcard hl-dreviews">
-          <div className="hl-dreviews__head">
-            <h2>Google reviews<span><Icon name="starFill" size={16} style={{ color: "#F2A20C" }} /> {place.rating} · {place.reviewCount}</span></h2>
-            <a className="hl-link" href={place.reviewsUrl} target="_blank" rel="noopener noreferrer">See all on Google<Icon name="arrowUpRight" size={13} stroke={2.6} /></a>
-          </div>
-          <ReviewsCarousel reviews={place.reviews} />
-        </section> : null}
       </div>
 
       <div className="hl-mdetail hl-only-mob">
@@ -310,16 +316,14 @@ export function MasjidDetail({ city, place, reel }: { city: CityTheme; place: Ma
           </div>
           <p className="hl-sheet__address">{place.address}</p>
           <div className="hl-sheet__cta">
+            <CallButton phone={place.phone} className="hl-btn-brand" />
             <a className="hl-actionbar__go" href={place.mapsUrl} target="_blank" rel="noopener noreferrer">
               Directions
             </a>
           </div>
           <h2 className="hl-sheet__h2">Photos</h2>
-          <div className="hl-sheet__gallery">
-            {(place.photos.length ? place.photos.slice(0, 4) : [{ src: place.art, credit: "" }]).map((photo, i) => (
-              <img key={i} src={photo.src} alt="" loading="lazy" />
-            ))}
-          </div>
+          <VisitNote place={place} />
+          <PhotoGallery photos={place.photos} art={place.art} name={place.name} variant="strip" />
           <h2 className="hl-sheet__h2">Amenities</h2>
           <div className="hl-amen-grid">
             {place.amenities.map((item) => (
@@ -340,16 +344,15 @@ export function MasjidDetail({ city, place, reel }: { city: CityTheme; place: Ma
               <MapArt kind="masjid" name={place.name} lat={place.lat} lng={place.lng} compact />
             </div>
             <div className="hl-sheet__addr">
-              <b>{place.address || place.area}</b>
-              <span>
-                {place.area} · {city.name}
-              </span>
+              <div>
+                <b>{place.address || place.area}</b>
+                <span>{place.area} · {city.name}</span>
+              </div>
+              <a className="hl-map-directions" href={place.mapsUrl} target="_blank" rel="noopener noreferrer">
+                Directions<Icon name="arrowUpRight" size={14} />
+              </a>
             </div>
           </div>
-          {place.reviews.length ? <>
-            <div className="hl-sheet__sec"><h2>Google reviews</h2><a className="hl-link" href={place.reviewsUrl} target="_blank" rel="noopener noreferrer">See all<Icon name="arrowUpRight" size={12} stroke={2.6} /></a></div>
-            <ReviewsCarousel reviews={place.reviews} />
-          </> : null}
           <div style={{ height: 100 }} />
         </section>
       </div>

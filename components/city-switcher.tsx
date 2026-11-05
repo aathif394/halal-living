@@ -1,15 +1,15 @@
 "use client";
 
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { CITIES, type CityTheme } from "@/lib/cities";
 import { Icon } from "./icons";
 
-// Mockup city chooser: dark full-screen panel, tiles rise in one after another; on desktop the hovered
-// tile widens and its landmark tilts. Picking a city sweeps a circle of the new colour over the page
-// (landmark and name in the middle), then the new city's page fades in from under it.
+// City changes start immediately and preserve the shared client shell.
 
-const WIPE_KEY = "hl-wipe";
 const CENTRES: Record<string, [number, number]> = {
   chennai: [13.0827, 80.2707],
   mumbai: [19.076, 72.8777],
@@ -21,42 +21,8 @@ function reduced() {
   return false;
 }
 
-function Wipe({ city, phase }: { city: CityTheme; phase: "in" | "full" | "out" }) {
-  return (
-    <div className={`hl-wipe is-${phase}`} style={{ background: city.btn }} aria-hidden="true">
-      <div className="hl-wipe__in">
-        <svg width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-          <path d={city.landmark} />
-        </svg>
-        <div className="hl-wipe__name">{city.name}</div>
-      </div>
-    </div>
-  );
-}
-
-/** On the page we arrive at after picking a city, the wipe fades away. */
 export function CityWipeIn() {
-  const [city, setCity] = useState<CityTheme | null>(null);
-  const [phase, setPhase] = useState<"full" | "out">("full");
-  useEffect(() => {
-    let slug: string | null = null;
-    try {
-      slug = sessionStorage.getItem(WIPE_KEY);
-      sessionStorage.removeItem(WIPE_KEY);
-    } catch {
-      return;
-    }
-    const target = CITIES.find((c) => c.slug === slug);
-    if (!target) return;
-    setCity(target);
-    const t1 = window.setTimeout(() => setPhase("out"), 120);
-    const t2 = window.setTimeout(() => setCity(null), 700);
-    return () => {
-      window.clearTimeout(t1);
-      window.clearTimeout(t2);
-    };
-  }, []);
-  return city ? createPortal(<Wipe city={city} phase={phase} />, document.body) : null;
+  return null;
 }
 
 /** City name button that opens the full-screen city chooser. */
@@ -65,7 +31,7 @@ export function CitySwitcher({ city, variant }: { city: CityTheme; variant: "pil
   const [open, setOpen] = useState(false);
   const [shown, setShown] = useState(false);
   const [hover, setHover] = useState(-1);
-  const [wipe, setWipe] = useState<{ city: CityTheme; phase: "in" | "full" } | null>(null);
+  const router = useRouter();
   const [locating, setLocating] = useState(false);
   const closeRef = useRef<HTMLButtonElement>(null);
 
@@ -94,20 +60,10 @@ export function CitySwitcher({ city, variant }: { city: CityTheme; variant: "pil
   };
 
   const pick = (target: CityTheme) => {
-    close();
-    if (target.slug === city.slug) return;
-    try {
-      sessionStorage.setItem(WIPE_KEY, target.slug);
-    } catch {
-      // Without storage the new page simply appears.
-    }
-    if (reduced()) {
-      window.location.assign(`/${target.slug}`);
-      return;
-    }
-    setWipe({ city: target, phase: "in" });
-    requestAnimationFrame(() => requestAnimationFrame(() => setWipe({ city: target, phase: "full" })));
-    window.setTimeout(() => window.location.assign(`/${target.slug}`), 800);
+    setShown(false);
+    setOpen(false);
+    setHover(-1);
+    if (target.slug !== city.slug) router.push(`/${target.slug}`);
   };
 
   const useLocation = () => {
@@ -159,7 +115,7 @@ export function CitySwitcher({ city, variant }: { city: CityTheme; variant: "pil
               </div>
               <div className="hl-chooser__grid" onMouseLeave={() => setHover(-1)}>
                 {CITIES.map((item, i) => (
-                  <a
+                  <Link
                     key={item.slug}
                     href={`/${item.slug}`}
                     className={`hl-chooser__tile${hover === i ? " is-hover" : ""}${hover >= 0 && hover !== i ? " is-other" : ""}`}
@@ -167,7 +123,7 @@ export function CitySwitcher({ city, variant }: { city: CityTheme; variant: "pil
                     style={{ background: item.btn, transitionDelay: shown ? `0ms, ${i * 90 + 150}ms, ${i * 90 + 150}ms` : "0ms" }}
                     onMouseEnter={() => setHover(i)}
                     onClick={(event) => {
-                      if (event.metaKey || event.ctrlKey) return;
+                      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
                       event.preventDefault();
                       pick(item);
                     }}
@@ -178,14 +134,13 @@ export function CitySwitcher({ city, variant }: { city: CityTheme; variant: "pil
                     </svg>
                     <span className="hl-chooser__num">0{i + 1}</span>
                     <span className="hl-chooser__name">{item.name}</span>
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>,
             document.body,
           )
         : null}
-      {mounted && wipe ? createPortal(<Wipe city={wipe.city} phase={wipe.phase} />, document.body) : null}
     </>
   );
 }

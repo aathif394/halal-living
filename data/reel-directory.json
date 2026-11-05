@@ -1,0 +1,2731 @@
+{
+  "profile": "the.halal.living",
+  "reviewedReelCount": 161,
+  "places": [
+    {
+      "kind": "restaurants",
+      "slug": "zaheer-s-bbq-feast-triplicane",
+      "name": "Zaheer’s BBQ Feast",
+      "city": "chennai",
+      "area": "Triplicane",
+      "address": "Triplicane High Road junction, near Ratna Cafe, Chennai",
+      "reelIds": [
+        "Dcla83vIaUU",
+        "DObF4qxiELM",
+        "DblGqhSTPlF"
+      ],
+      "description": "A family-run BBQ spot featured for butter tandoori, chicken sheekh, mutton kheema, shawarma and freshly prepared kebabs.",
+      "cuisine": "BBQ · Kebabs"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "taibah-flavours-of-bombay-chetpet",
+      "name": "Taibah Flavours of Bombay",
+      "city": "chennai",
+      "area": "Chetpet",
+      "address": "Chetpet, Chennai",
+      "reelIds": [
+        "DaNdsjRvE2F"
+      ],
+      "description": "Bombay-style biryani, Mughlai dishes, malai seekh biryani and kunafa. The reel describes fresh zabiha meat.",
+      "cuisine": "Biryani · Mughlai"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "urban-spatula-anna-nagar",
+      "name": "Urban Spatula",
+      "city": "chennai",
+      "area": "Anna Nagar",
+      "address": "Near Anna Nagar East Metro, Anna Nagar, Chennai",
+      "reelIds": [
+        "DXjhz5chN7Q"
+      ],
+      "description": "A multi-cuisine restaurant with steaks, Indian dishes, Italian and Asian options. The reel also shows a private party hall.",
+      "cuisine": "Multi-cuisine"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "yaghma-kababs-thousand-lights",
+      "name": "Yaghma Kababs",
+      "city": "chennai",
+      "area": "Thousand Lights",
+      "address": "Anna Salai, near Thousand Lights Mosque, Chennai",
+      "reelIds": [
+        "DVijXNqDupj"
+      ],
+      "description": "North Indian kebabs and curries, including chicken malai tikka, butter chicken, rumali roti and Yaghma rolls.",
+      "cuisine": "North Indian · Kebabs"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "buhari-anna-salai",
+      "name": "Buhari",
+      "city": "chennai",
+      "area": "Anna Salai",
+      "address": "Buhari, Mount Road / Anna Salai, Chennai",
+      "reelIds": [
+        "DVQexgDDiuH",
+        "DHBDKE1vTtB"
+      ],
+      "description": "The Mount Road branch is featured in two Ramadan suhoor visits, with parotta, mutton curry, ghee rice and other dishes.",
+      "cuisine": "Indian · Biryani",
+      "note": "Suhoor menus, prices and reservation arrangements in these reels were seasonal. Confirm current availability with the restaurant."
+    },
+    {
+      "kind": "restaurants",
+      "slug": "juice-juice-baby-iftar-house-kodambakkam",
+      "name": "Juice Juice Baby / Iftar House",
+      "city": "chennai",
+      "area": "Kodambakkam",
+      "address": "Kodambakkam; the Iftar House reel describes it as 250 metres from Masjid-ul-Huda, Arcot Road, Chennai",
+      "reelIds": [
+        "DUsctFAEfZE",
+        "DIf7FNoPQ3C"
+      ],
+      "description": "Burgers, wings, loaded fries, shakes and chai, plus the Iftar House Ramadan menu. The reels discuss the business’s switch to fresh halal meat.",
+      "cuisine": "Burgers · Café",
+      "note": "Iftar boxes and Ramadan offers shown in the reel are seasonal; confirm current availability."
+    },
+    {
+      "kind": "restaurants",
+      "slug": "ferrara-pizzeria-nungambakkam",
+      "name": "Ferrara Pizzeria",
+      "city": "chennai",
+      "area": "Nungambakkam",
+      "address": "Khader Nawaz Khan Road, Chennai",
+      "reelIds": [
+        "DUBFS1hiGv7"
+      ],
+      "description": "Italian wood-fired pizza and portafoglio, featured on Halal Living’s food visit to KNK Road.",
+      "cuisine": "Italian · Pizza"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "taste-of-turkey-mannady",
+      "name": "Taste of Turkey",
+      "city": "chennai",
+      "area": "Mannady",
+      "address": "Mannady, Chennai",
+      "reelIds": [
+        "DTfid-LCKeu"
+      ],
+      "description": "A family-friendly restaurant featured for chicken and beef biryani, grilled dishes and fresh zabiha meat.",
+      "cuisine": "Turkish · Biryani"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "kafei-palazzo-perumbakkam",
+      "name": "Kafei Palazzo",
+      "city": "chennai",
+      "area": "Perumbakkam",
+      "address": "Perumbakkam, Chennai",
+      "reelIds": [
+        "DTK4aqTDyZd"
+      ],
+      "description": "A café with indoor, outdoor and rooftop seating, featured as a calm spot for families and small gatherings.",
+      "cuisine": "Café"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "time-cafe-nungambakkam",
+      "name": "Time Cafe",
+      "city": "chennai",
+      "area": "Nungambakkam",
+      "address": "Valluvar Kottam High Road, near Krishna Street, Chennai",
+      "reelIds": [
+        "DSpVlFhDzBq"
+      ],
+      "description": "A café and community space with burgers, flatbreads, tandoori dishes, desserts and parking, visited by Halal Living.",
+      "cuisine": "Café · Multi-cuisine",
+      "facilities": [
+        "Car parking",
+        "Family seating"
+      ]
+    },
+    {
+      "kind": "restaurants",
+      "slug": "barakath-kitchen-kolathur",
+      "name": "Barakath Kitchen",
+      "city": "chennai",
+      "area": "Kolathur",
+      "address": "Kolathur, near Villivakkam, Chennai",
+      "reelIds": [
+        "DSKgmJJD7qB"
+      ],
+      "description": "A Muslim-owned kitchen featured for chicken and beef biryani, beef tawa curry and chicken 65.",
+      "cuisine": "Biryani · South Indian"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "hungry-tiger-perambur",
+      "name": "Hungry Tiger",
+      "city": "chennai",
+      "area": "Perambur",
+      "address": "Papermills Road, Ward 66, opposite Bharat Petroleum, Chennai",
+      "reelIds": [
+        "DRPWCJ9D6G7"
+      ],
+      "description": "Biryani, barbecue, curries, chaat and rolls at a family-friendly restaurant featured in Perambur.",
+      "cuisine": "Multi-cuisine",
+      "note": "Google Maps currently lists this restaurant on Red Hills Road, Kolathur; the reel describes a Perambur / Papermills Road visit. Confirm the current location by phone before travelling."
+    },
+    {
+      "kind": "restaurants",
+      "slug": "beach-vibes-marina-beach",
+      "name": "Beach Vibes",
+      "city": "chennai",
+      "area": "Marina Beach",
+      "address": "Opposite Vivekananda House, Marina Beach, Chennai",
+      "reelIds": [
+        "DRCW_1zjyoe"
+      ],
+      "description": "A beach-side food spot featured for noodles, fried rice and starters made with fresh zabiha-cut chicken and beef.",
+      "cuisine": "Street food · Chinese"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "stack-alwarpet",
+      "name": "STACK",
+      "city": "chennai",
+      "area": "Alwarpet",
+      "address": "TTK Road, Alwarpet, Chennai",
+      "reelIds": [
+        "DQ9NkcjiJh0"
+      ],
+      "description": "Burgers, Turkish rolls, fish and chips, desserts and Stack Ki Chai, featured in Halal Living’s late-night food visit.",
+      "cuisine": "Burgers · Café",
+      "note": "The reel reports late-night service until 2 AM. Confirm current opening hours before visiting."
+    },
+    {
+      "kind": "restaurants",
+      "slug": "frysto-the-frying-stories-anna-nagar",
+      "name": "Frysto – The Frying Stories",
+      "city": "chennai",
+      "area": "Anna Nagar",
+      "address": "12th Main Road, L Block, between 4th and 2nd Avenue, Chennai",
+      "reelIds": [
+        "DPY0C3rjwXa"
+      ],
+      "description": "Chicken minis, loaded fries, wraps and beef burgers at a spot run by three brothers.",
+      "cuisine": "Burgers · Fried chicken"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "krave-kitchen-royapettah",
+      "name": "Krave Kitchen",
+      "city": "chennai",
+      "area": "Royapettah",
+      "address": "Opposite St. Williams School, Royapettah, Chennai",
+      "reelIds": [
+        "DPOiDQ6Dyuk"
+      ],
+      "description": "Sheekh kebabs and chicken and beef platters, featured as a food stop near Marina Beach.",
+      "cuisine": "Kebabs · Platters"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "affu-s-kitchen-marina-beach",
+      "name": "Affu’s Kitchen",
+      "city": "chennai",
+      "area": "Marina Beach",
+      "address": "Near Vivekananda House, Marina Beach, Chennai",
+      "reelIds": [
+        "DOtIOJoj96S"
+      ],
+      "description": "A long-running food spot featured for kebabs, fried rice and chicken shawarma.",
+      "cuisine": "Kebabs · Shawarma"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "grill-house-nungambakkam",
+      "name": "Grill House",
+      "city": "chennai",
+      "area": "Nungambakkam",
+      "address": "TMA Towers, Thirumoorthy Nagar Main Road, Chennai",
+      "reelIds": [
+        "DN0SK3dXhVg"
+      ],
+      "description": "Arabic, Indian and Chinese food, including al faham and dragon chicken. The reel describes fresh zabihah meat.",
+      "cuisine": "Arabic · Indian · Chinese"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "zaara-biryani-anna-salai",
+      "name": "Zaara Biryani",
+      "city": "chennai",
+      "area": "Anna Salai",
+      "address": "GP Road, approximately 100 metres from Express Avenue, Chennai",
+      "reelIds": [
+        "DNqEDI3v1Xt"
+      ],
+      "description": "Hyderabadi dum biryani, phatar ka goush, haleem, malai chicken and Irani chai.",
+      "cuisine": "Hyderabadi · Biryani"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "bunker-bites-ecr",
+      "name": "Bunker Bites",
+      "city": "chennai",
+      "area": "ECR",
+      "address": "French Village Food Court & Gamezone, East Coast Road, Chennai",
+      "reelIds": [
+        "DNkpEwsvijq"
+      ],
+      "description": "Mutton haleem, stuffed chicken and mutton bunkers, and shakes, featured at the French Village food court.",
+      "cuisine": "Haleem · Snacks"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "bombay-food-court-triplicane",
+      "name": "Bombay Food Court",
+      "city": "chennai",
+      "area": "Triplicane",
+      "address": "Triplicane, Chennai",
+      "reelIds": [
+        "DKkD1PbPo6v"
+      ],
+      "description": "A food-court visit featuring shish kebabs, malai chicken and grilled dishes.",
+      "cuisine": "BBQ · North Indian"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "doner-and-shish-alwarpet",
+      "name": "Doner and Shish",
+      "city": "chennai",
+      "area": "Alwarpet",
+      "address": "Near Kauvery Hospital, below the bridge, Alwarpet, Chennai",
+      "reelIds": [
+        "DJ_kyicv1EP"
+      ],
+      "description": "Doner kebabs, falafel, salad bowls and breads, featured in Halal Living’s Alwarpet visit.",
+      "cuisine": "Doner · Kebabs"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "fattoush-sholinganallur",
+      "name": "Fattoush",
+      "city": "chennai",
+      "area": "Sholinganallur",
+      "address": "Sholinganallur, near Sathyabama College, Chennai",
+      "reelIds": [
+        "DJ1eWiPPgdE"
+      ],
+      "description": "Middle Eastern grilled meats, salads and family dining, with the location identified in the reel’s narration.",
+      "cuisine": "Middle Eastern"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "hotel-royal-darbar-periamet",
+      "name": "Hotel Royal Darbar",
+      "city": "chennai",
+      "area": "Periamet",
+      "address": "Periamet, Chennai",
+      "reelIds": [
+        "DI-wIxyvl9K"
+      ],
+      "description": "A North Indian halal food stop featured by Halal Living in Periamet.",
+      "cuisine": "North Indian"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "ambur-canteen-chennai",
+      "name": "Ambur Canteen",
+      "city": "chennai",
+      "area": "Chennai",
+      "address": "Ambur Canteen, Chennai; follow the original reel for the featured outlet, Chennai",
+      "reelIds": [
+        "DF1P9GSTtaH"
+      ],
+      "description": "A food visit featuring mutton nihari, daal khaana and chicken biryani, inspired by traditional home cooking.",
+      "cuisine": "Biryani · Traditional"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "sucre-et-sal-anna-nagar",
+      "name": "Sucre et Salé",
+      "city": "chennai",
+      "area": "Anna Nagar",
+      "address": "Anna Nagar, Chennai",
+      "reelIds": [
+        "DFbgBEhTfZJ"
+      ],
+      "description": "French-inspired food, homemade sauces and desserts, featured as a halal dining option in Anna Nagar.",
+      "cuisine": "French · Café"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "hotel-safari-royapettah",
+      "name": "Hotel Safari",
+      "city": "chennai",
+      "area": "Royapettah",
+      "address": "Royapettah, Chennai",
+      "reelIds": [
+        "DE7QopIvI_c"
+      ],
+      "description": "A Muslim-owned restaurant featured for traditional non-vegetarian breakfasts, paya and lunch dishes.",
+      "cuisine": "South Indian · Breakfast"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "soul-by-dair-nungambakkam",
+      "name": "Soul by Dair",
+      "city": "chennai",
+      "area": "Nungambakkam",
+      "address": "Near Khader Nawaz Khan Road, Chennai",
+      "reelIds": [
+        "DEsI06PPs_w"
+      ],
+      "description": "A Muslim-owned food spot featured for burgers near KNK Road.",
+      "cuisine": "Burgers"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "hundreds-bistro-chetpet",
+      "name": "Hundreds Bistro",
+      "city": "chennai",
+      "area": "Chetpet",
+      "address": "Harrington Road, opposite Shoppers Stop, Chennai",
+      "reelIds": [
+        "DDr6smZzANd"
+      ],
+      "description": "A bistro featured for cappuccino, hot chocolate and Indian fusion dining, run by the team behind Hundreds Heritage in Vellore.",
+      "cuisine": "Bistro · Café"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "al-hafa-multi-cuisine-ashok-nagar",
+      "name": "Al Hafa Multi Cuisine",
+      "city": "chennai",
+      "area": "Ashok Nagar",
+      "address": "Dr. Ambedkar Road junction, Ashok Nagar, Chennai",
+      "reelIds": [
+        "DDXfvufTKFo"
+      ],
+      "description": "A multi-cuisine restaurant featured for noodles, dynamite chicken and spacious seating.",
+      "cuisine": "Multi-cuisine"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "melt-anna-nagar",
+      "name": "Melt",
+      "city": "chennai",
+      "area": "Anna Nagar",
+      "address": "Anna Nagar branch, Chennai",
+      "reelIds": [
+        "DDP85RyTfLY"
+      ],
+      "description": "Burgers and focaccia sandwiches at the Anna Nagar branch actually visited in this reel.",
+      "cuisine": "Burgers · Sandwiches",
+      "note": "The reel also mentions a KNK Road branch; this listing is specifically for the Anna Nagar visit."
+    },
+    {
+      "kind": "restaurants",
+      "slug": "nasi-kandar-pelita-t-nagar",
+      "name": "Nasi Kandar Pelita",
+      "city": "chennai",
+      "area": "T. Nagar",
+      "address": "T. Nagar, Chennai",
+      "reelIds": [
+        "DDFmob2zrPq"
+      ],
+      "description": "Malaysian cuisine featured by Halal Living. The narrator reports halal signage and the manager’s account of local halal chicken sourcing.",
+      "cuisine": "Malaysian"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "zamzam-jaaler-murthabak-mylapore",
+      "name": "Zamzam Jaaler Murthabak",
+      "city": "chennai",
+      "area": "Mylapore",
+      "address": "Chennai Citi Centre food court, Mylapore, Chennai",
+      "reelIds": [
+        "DCwcZcBPyIF",
+        "DC0f3laP5xD"
+      ],
+      "description": "Two visits to the Muslim-run Citi Centre food-court outlet, featuring Malaysian murthabak, parotta, soup, rolls and tender coconut payasam.",
+      "cuisine": "Malaysian · Murthabak"
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-noor-sowcarpet",
+      "name": "Masjid E Noor",
+      "city": "chennai",
+      "area": "Sowcarpet",
+      "address": "Narayana Mudali Street, opposite Pookada Police Station, Chennai",
+      "reelIds": [
+        "DfHssDNzFCs"
+      ],
+      "description": "A prayer stop in Sowcarpet with ventilation and a dedicated wudu area, shown open during prayer times.",
+      "facilities": [
+        "Wudu area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-saliha-purasaiwakkam",
+      "name": "Masjid Saliha",
+      "city": "chennai",
+      "area": "Purasaiwakkam",
+      "address": "Second floor above Chennai Fashion, Mookathal Street, opposite Saravana Stores, Chennai",
+      "reelIds": [
+        "Deb4DB5zqrz"
+      ],
+      "description": "A small prayer space above a clothing store, with capacity described in the reel as around 100 people.",
+      "facilities": [],
+      "note": "The reel reports Isha at 8:50 PM; prayer times may change. Confirm locally."
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-noor-e-huda-old-washermanpet",
+      "name": "Masjid E-Noor-E-Huda",
+      "city": "chennai",
+      "area": "Old Washermanpet",
+      "address": "Bojaraja Nagar, Old Washermanpet, Chennai",
+      "reelIds": [
+        "DePK0G5T8nD"
+      ],
+      "description": "An air-conditioned, carpeted masjid featured for its later Friday congregation.",
+      "facilities": [
+        "Air conditioning"
+      ],
+      "note": "The reel reports a 2:30 PM Jumu’ah. Confirm current prayer times locally."
+    },
+    {
+      "kind": "masjids",
+      "slug": "muhi-masjid-royapettah",
+      "name": "Muhi Masjid",
+      "city": "chennai",
+      "area": "Royapettah",
+      "address": "Jani Jahan Khan Road, Chennai",
+      "reelIds": [
+        "DOOFmeZCAhU",
+        "Dd90JZvzSTT"
+      ],
+      "description": "A masjid and Islamic learning centre with prayer spaces for men and women, Quran classes and community programmes. Both the masjid visit and its salah workshop reel are included.",
+      "facilities": [
+        "Women’s prayer area",
+        "Quran classes"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "green-park-academy-musallah-anna-nagar",
+      "name": "Green Park Academy Musallah",
+      "city": "chennai",
+      "area": "Anna Nagar",
+      "address": "Third floor, Green Park Academy building, 2nd Avenue, opposite Hi-Style The Fashion World, Chennai",
+      "reelIds": [
+        "DanSCCevg1u"
+      ],
+      "description": "A compact musallah shown with prayer mats, a timetable and a wudu facility.",
+      "facilities": [
+        "Wudu area"
+      ],
+      "note": "The reel states this space is for brothers, with no separate sisters’ section at the time of the visit."
+    },
+    {
+      "kind": "masjids",
+      "slug": "hameethiya-jamiya-masjid-saligramam",
+      "name": "Hameethiya Jamiya Masjid",
+      "city": "chennai",
+      "area": "Saligramam",
+      "address": "Arcot Road, Saligramam, Chennai",
+      "reelIds": [
+        "DZ2U1jxSPyw"
+      ],
+      "description": "A masjid with a spacious prayer hall, first-floor prayer space, clean wudu facilities and a dedicated area for sisters.",
+      "facilities": [
+        "Women’s prayer area",
+        "Wudu area",
+        "Air conditioning"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "uswathun-hasana-community-hall-nungambakkam",
+      "name": "Uswathun Hasana Community Hall",
+      "city": "chennai",
+      "area": "Nungambakkam",
+      "address": "Near Josier Street and Valluvar Kottam, Chennai",
+      "reelIds": [
+        "DYW9673IEFE"
+      ],
+      "description": "A community prayer space featured with air conditioning, wudu facilities, drinking water and a separate sisters’ area.",
+      "facilities": [
+        "Women’s prayer area",
+        "Wudu area",
+        "Air conditioning",
+        "Drinking water"
+      ],
+      "note": "The reel reports Jumu’ah at 1:15 PM. Confirm current arrangements locally."
+    },
+    {
+      "kind": "masjids",
+      "slug": "kannadi-vappah-masjid-nungambakkam",
+      "name": "Kannadi Vappah Masjid",
+      "city": "chennai",
+      "area": "Nungambakkam",
+      "address": "Jambulingam Street, near Go Gas LPG Station and Canara Bank, Chennai",
+      "reelIds": [
+        "DXttgxEIUMU"
+      ],
+      "description": "A prayer hall shown with an air-conditioned hall, wudu area, washroom, chairs for elders, Qurans and drinking water.",
+      "facilities": [
+        "Wudu area",
+        "Air conditioning",
+        "Seating for elders",
+        "Drinking water"
+      ],
+      "note": "The reel reports Jumu’ah at 1:15 PM and a curtain-separated sisters’ section during Ramadan only; confirm availability."
+    },
+    {
+      "kind": "masjids",
+      "slug": "green-masjid-airport-area",
+      "name": "Green Masjid",
+      "city": "chennai",
+      "area": "Airport area",
+      "address": "Near Chennai Airport; use the directions in the reel, Chennai",
+      "reelIds": [
+        "DXRoD9eD0nQ"
+      ],
+      "description": "A masjid on the airport route featured with separate prayer areas for men and women and clean wudu and restroom facilities.",
+      "facilities": [
+        "Women’s prayer area",
+        "Wudu area",
+        "Restrooms"
+      ],
+      "note": "The caption does not give a street address. Follow the filmed route and confirm the location before travelling. The reported Jumu’ah time may change."
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-madina-airport-area",
+      "name": "Masjid Madina",
+      "city": "chennai",
+      "area": "Airport area",
+      "address": "Near Chennai Airport on the Pallavaram / Tambaram route, Chennai",
+      "reelIds": [
+        "DW86kOBD68Q"
+      ],
+      "description": "A prayer stop for airport travellers, shown with a wudu area and air-conditioned prayer hall.",
+      "facilities": [
+        "Wudu area",
+        "Air conditioning"
+      ],
+      "note": "The reel reports Jumu’ah at 12:30 PM. Confirm current arrangements locally."
+    },
+    {
+      "kind": "masjids",
+      "slug": "islamic-centre-musallah-adyar",
+      "name": "Islamic Centre Musallah",
+      "city": "chennai",
+      "area": "Adyar",
+      "address": "First floor, Islamic Centre, near LensKart opposite Ramkay TVS, Sardar Patel Road, Chennai",
+      "reelIds": [
+        "DWghXVPj-Uo"
+      ],
+      "description": "The reel follows the apartment entrance beside LensKart to the first-floor Islamic Centre, with a compact prayer hall, seating for elders and wudu access.",
+      "facilities": [
+        "Wudu area",
+        "Air conditioning",
+        "Seating for elders"
+      ],
+      "note": "The reel states there was no separate sisters’ section at the time of the visit."
+    },
+    {
+      "kind": "masjids",
+      "slug": "shafi-marriage-hall-old-washermanpet",
+      "name": "Shafi Marriage Hall",
+      "city": "chennai",
+      "area": "Old Washermanpet",
+      "address": "Old Washermanpet, Chennai",
+      "reelIds": [
+        "DVgDtkOD8Zz"
+      ],
+      "description": "A women-friendly Taraweeh prayer space featured in the Old Washermanpet Ramadan guide.",
+      "facilities": [
+        "Women’s prayer area during Ramadan"
+      ],
+      "note": "Featured in a Ramadan prayer guide. Women’s access, Taraweeh and prayer times are seasonal arrangements; confirm locally before visiting."
+    },
+    {
+      "kind": "masjids",
+      "slug": "cutchi-memon-masjid-old-washermanpet",
+      "name": "Cutchi Memon Masjid",
+      "city": "chennai",
+      "area": "Old Washermanpet",
+      "address": "Old Washermanpet, Chennai",
+      "reelIds": [
+        "DVgDtkOD8Zz"
+      ],
+      "description": "A women-friendly Taraweeh prayer space featured in the Old Washermanpet Ramadan guide.",
+      "facilities": [
+        "Women’s prayer area during Ramadan"
+      ],
+      "note": "Featured in a Ramadan prayer guide. Women’s access, Taraweeh and prayer times are seasonal arrangements; confirm locally before visiting."
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-khaadim-old-washermanpet",
+      "name": "Masjid-e-Khaadim",
+      "city": "chennai",
+      "area": "Old Washermanpet",
+      "address": "Old Washermanpet, Chennai",
+      "reelIds": [
+        "DVgDtkOD8Zz"
+      ],
+      "description": "A women-friendly Taraweeh prayer space featured in the Old Washermanpet Ramadan guide.",
+      "facilities": [
+        "Women’s prayer area during Ramadan"
+      ],
+      "note": "Featured in a Ramadan prayer guide. Women’s access, Taraweeh and prayer times are seasonal arrangements; confirm locally before visiting."
+    },
+    {
+      "kind": "masjids",
+      "slug": "preston-college-prayer-space-chennai",
+      "name": "Preston College Prayer Space",
+      "city": "chennai",
+      "area": "Chennai",
+      "address": "Preston College, Chennai; follow the venue details in the reel, Chennai",
+      "reelIds": [
+        "DVM6vMDE40v"
+      ],
+      "description": "Featured for Qiyamul Lail with a ladies’ prayer space during Ramadan.",
+      "facilities": [
+        "Women’s prayer area during Ramadan"
+      ],
+      "note": "Featured in a Ramadan prayer guide. Women’s access, Taraweeh and prayer times are seasonal arrangements; confirm locally before visiting."
+    },
+    {
+      "kind": "masjids",
+      "slug": "jamia-masjid-aminjikarai-aminjikarai",
+      "name": "Jamia Masjid Aminjikarai",
+      "city": "chennai",
+      "area": "Aminjikarai",
+      "address": "Aminjikarai, Chennai",
+      "reelIds": [
+        "DVBP30MDU9X"
+      ],
+      "description": "Featured in Halal Living’s second guide to Taraweeh spaces for sisters.",
+      "facilities": [
+        "Women’s prayer area during Ramadan",
+        "Wudu area"
+      ],
+      "note": "Featured in a Ramadan prayer guide. Women’s access, Taraweeh and prayer times are seasonal arrangements; confirm locally before visiting."
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-javed-anna-nagar",
+      "name": "Masjid Javed",
+      "city": "chennai",
+      "area": "Anna Nagar",
+      "address": "Anna Nagar, Chennai",
+      "reelIds": [
+        "DU5vTgKj4MR"
+      ],
+      "description": "Featured in Halal Living’s guide to women-friendly Taraweeh spaces.",
+      "facilities": [
+        "Women’s prayer area during Ramadan",
+        "Wudu area"
+      ],
+      "note": "Featured in a Ramadan prayer guide. Women’s access, Taraweeh and prayer times are seasonal arrangements; confirm locally before visiting."
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-thaqwa-anna-nagar-west",
+      "name": "Masjid Thaqwa",
+      "city": "chennai",
+      "area": "Anna Nagar West",
+      "address": "Anna Nagar West, Chennai",
+      "reelIds": [
+        "DU5vTgKj4MR"
+      ],
+      "description": "Featured in Halal Living’s guide to women-friendly Taraweeh spaces.",
+      "facilities": [
+        "Women’s prayer area during Ramadan",
+        "Wudu area"
+      ],
+      "note": "Featured in a Ramadan prayer guide. Women’s access, Taraweeh and prayer times are seasonal arrangements; confirm locally before visiting."
+    },
+    {
+      "kind": "masjids",
+      "slug": "jamia-masjid-arumbakkam-arumbakkam",
+      "name": "Jamia Masjid Arumbakkam",
+      "city": "chennai",
+      "area": "Arumbakkam",
+      "address": "Arumbakkam, Chennai",
+      "reelIds": [
+        "DU5vTgKj4MR"
+      ],
+      "description": "Featured in Halal Living’s guide to women-friendly Taraweeh spaces.",
+      "facilities": [
+        "Women’s prayer area during Ramadan",
+        "Wudu area"
+      ],
+      "note": "Featured in a Ramadan prayer guide. Women’s access, Taraweeh and prayer times are seasonal arrangements; confirm locally before visiting."
+    },
+    {
+      "kind": "masjids",
+      "slug": "alsa-mall-musallah-egmore",
+      "name": "Alsa Mall Musallah",
+      "city": "chennai",
+      "area": "Egmore",
+      "address": "Fourth-floor terrace, Alsa Mall, Chennai",
+      "reelIds": [
+        "DQy_yDXDzQf"
+      ],
+      "description": "A musallah inside Alsa Mall, reached through the main entrance and up to the fourth-floor terrace.",
+      "facilities": []
+    },
+    {
+      "kind": "masjids",
+      "slug": "bsnl-quarters-masjid-royapettah",
+      "name": "BSNL Quarters Masjid",
+      "city": "chennai",
+      "area": "Royapettah",
+      "address": "BSNL Quarters, Royapettah, Chennai",
+      "reelIds": [
+        "DQopwZ9Dx-E"
+      ],
+      "description": "A carpeted, air-conditioned prayer space with wudu facilities and drinking water.",
+      "facilities": [
+        "Wudu area",
+        "Air conditioning",
+        "Drinking water"
+      ],
+      "note": "The reel reports a later Jumu’ah at 2:30 PM. Confirm current timings locally."
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-noor-smj-parrys-plaza-parrys-corner",
+      "name": "Masjid-e-Noor, SMJ Parrys Plaza",
+      "city": "chennai",
+      "area": "Parrys Corner",
+      "address": "SMJ Parrys Plaza, near Chennai Port, Chennai",
+      "reelIds": [
+        "DQeUdnzj6NH"
+      ],
+      "description": "A prayer space at Parrys Plaza featured with air conditioning, a wudu area and a view towards the port.",
+      "facilities": [
+        "Wudu area",
+        "Air conditioning"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-ah-ghafoor-adyar",
+      "name": "Masjid Ah-Ghafoor",
+      "city": "chennai",
+      "area": "Adyar",
+      "address": "Near Ramco Systems and IIT Madras, Adyar, Chennai",
+      "reelIds": [
+        "DN8R7I_D_7C"
+      ],
+      "description": "A small musallah featured with an imam leading all five daily congregations. Follow the reel for the entrance and walking route.",
+      "facilities": []
+    },
+    {
+      "kind": "masjids",
+      "slug": "chennai-citi-centre-prayer-hall-mylapore",
+      "name": "Chennai Citi Centre Prayer Hall",
+      "city": "chennai",
+      "area": "Mylapore",
+      "address": "Basement B2, Chennai Citi Centre; follow prayer-hall signs near pillars 20 and 4, Chennai",
+      "reelIds": [
+        "DMsdvROPg9d"
+      ],
+      "description": "A mall prayer hall with separate spaces for men and women and a dedicated wudu area.",
+      "facilities": [
+        "Women’s prayer area",
+        "Wudu area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-near-besant-nagar-beach-besant-nagar",
+      "name": "Masjid near Besant Nagar Beach",
+      "city": "chennai",
+      "area": "Besant Nagar",
+      "address": "Thiruvalluvar Nagar 2nd Street, near Nasa Youth Hub, off the beach road, Chennai",
+      "reelIds": [
+        "DMgpmafTWif"
+      ],
+      "description": "The filmed route leads to a multi-floor masjid near the beach, with wudu facilities, air conditioning and separate doors for brothers and sisters.",
+      "facilities": [
+        "Women’s prayer area",
+        "Wudu area",
+        "Air conditioning",
+        "Bike parking"
+      ],
+      "note": "The sisters’ section was described as opening during prayer times. The official masjid name needs confirmation; this listing uses the location shown in the reel."
+    },
+    {
+      "kind": "masjids",
+      "slug": "marina-beach-prayer-space-marina-beach",
+      "name": "Marina Beach Prayer Space",
+      "city": "chennai",
+      "area": "Marina Beach",
+      "address": "Behind shop 23, near the Labour Statue subway and the small shopkeepers’ lane, Chennai",
+      "reelIds": [
+        "DMW_KgxPWX7"
+      ],
+      "description": "A small, shaded prayer space behind a shop run by a Muslim couple. The reel gives a walking route from Marina Beach and the Labour Statue subway.",
+      "facilities": [
+        "Wudu area"
+      ],
+      "note": "This is the small shop-backed prayer space shown in the reel, rather than a large named mosque."
+    },
+    {
+      "kind": "masjids",
+      "slug": "parsn-complex-musallah-thousand-lights",
+      "name": "Parsn Complex Musallah",
+      "city": "chennai",
+      "area": "Thousand Lights",
+      "address": "First floor, Parsn Complex, behind The Park hotel, Chennai",
+      "reelIds": [
+        "DMIPLxovgFi"
+      ],
+      "description": "A compact air-conditioned prayer hall reached through the complex’s paid parking area, with wudu and toilet access.",
+      "facilities": [
+        "Wudu area",
+        "Air conditioning",
+        "Paid parking"
+      ],
+      "note": "The narrator describes limited space and asks visitors to be mindful of the washroom’s maintenance."
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-near-ashok-pillar-ashok-nagar",
+      "name": "Masjid near Ashok Pillar",
+      "city": "chennai",
+      "area": "Ashok Nagar",
+      "address": "Opposite the turn for Ashok Nagar 6th Avenue; follow the filmed route from Ashok Nagar Metro, Chennai",
+      "reelIds": [
+        "DJiPNX2TvB8"
+      ],
+      "description": "A spacious masjid featured near Ashok Pillar with a wudu area and a carpeted, air-conditioned prayer hall.",
+      "facilities": [
+        "Wudu area",
+        "Air conditioning"
+      ],
+      "note": "An official name is not clearly stated in the narration; this listing uses the location shown in the reel."
+    },
+    {
+      "kind": "masjids",
+      "slug": "the-marina-mall-prayer-hall-egattur",
+      "name": "The Marina Mall Prayer Hall",
+      "city": "chennai",
+      "area": "Egattur",
+      "address": "Fourth floor, The Marina Mall, Old Mahabalipuram Road, Chennai",
+      "reelIds": [
+        "DJcEJRrvnt_"
+      ],
+      "description": "Separate men’s and women’s prayer halls inside The Marina Mall. Take the lift near McDonald’s to the fourth floor and turn left from the mall office.",
+      "facilities": [
+        "Women’s prayer area",
+        "Wudu area",
+        "Air conditioning"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "hong-kong-complex-prayer-hall-t-nagar",
+      "name": "Hong Kong Complex Prayer Hall",
+      "city": "chennai",
+      "area": "T. Nagar",
+      "address": "Third-floor terrace, Hong Kong Shopping Complex, Rameswaram Street, Chennai",
+      "reelIds": [
+        "DJWmd44vd6I"
+      ],
+      "description": "A terrace prayer hall reached by three flights of stairs, with a wudu area, toilets, drinking water and prayer mats.",
+      "facilities": [
+        "Wudu area",
+        "Restrooms",
+        "Drinking water"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "anjuman-prayer-hall-ritchie-street-anna-salai",
+      "name": "Anjuman Prayer Hall, Ritchie Street",
+      "city": "chennai",
+      "area": "Anna Salai",
+      "address": "Anjuman Industrial Training Institute gate, Ritchie Street, Chennai",
+      "reelIds": [
+        "DI3zcjjvl6n"
+      ],
+      "description": "A small prayer hall inside the Anjuman institute entrance, with a wudu area. One of two prayer stops shown in the Ritchie Street guide.",
+      "facilities": [
+        "Wudu area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "governor-s-bodyguard-masjid-anna-salai",
+      "name": "Governor’s Bodyguard Masjid",
+      "city": "chennai",
+      "area": "Anna Salai",
+      "address": "Off Mount Road, at the Governor’s Bodyguard Masjid sign, Chennai",
+      "reelIds": [
+        "DI3zcjjvl6n"
+      ],
+      "description": "The second prayer stop in the Ritchie Street guide, shown as a spacious, breezy masjid with wudu facilities and a car-accessible approach.",
+      "facilities": [
+        "Wudu area"
+      ],
+      "note": "Follow the second route in the reel; it is separate from Anjuman Prayer Hall."
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjidul-jannah-thirumangalam",
+      "name": "Masjidul Jannah",
+      "city": "chennai",
+      "area": "Thirumangalam",
+      "address": "Anna Street, near Thirumangalam junction, around 600 metres from VR Mall, Chennai",
+      "reelIds": [
+        "DIkUcszzx6f"
+      ],
+      "description": "A masjid with a large wudu area and a carpeted prayer hall, reached by the filmed walk from VR Mall.",
+      "facilities": [
+        "Wudu area",
+        "Women’s prayer area"
+      ],
+      "note": "The reel describes a ladies’ section in the adjoining madrasa. Confirm access locally."
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-habib-kotturpuram",
+      "name": "Masjid-e-Habib",
+      "city": "chennai",
+      "area": "Kotturpuram",
+      "address": "Kotturpuram; follow the filmed route from Gandhi Mandapam Road near Anna Centenary Library, Chennai",
+      "reelIds": [
+        "DHcICTIBuiS"
+      ],
+      "description": "A spacious masjid in Kotturpuram, with a large prayer area and wudu facilities.",
+      "facilities": [
+        "Wudu area"
+      ],
+      "note": "The reel mentions a ladies’ hall under construction at the time; confirm current availability."
+    },
+    {
+      "kind": "masjids",
+      "slug": "anjuman-masjid-t-nagar",
+      "name": "Anjuman-e-Himayath-e-Islam Masjid",
+      "city": "chennai",
+      "area": "T. Nagar",
+      "address": "T. Nagar, reached via G. N. Chetty Road in the reel, Chennai",
+      "reelIds": [
+        "DG6nCUkT2xp",
+        "DVBP30MDU9X"
+      ],
+      "description": "A large masjid featured with an air-conditioned men’s hall, open prayer area, separate women’s space and a learning centre.",
+      "facilities": [
+        "Women’s prayer area",
+        "Wudu area",
+        "Air conditioning",
+        "Women’s prayer area during Ramadan"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "al-huda-jumma-masjid-and-madrasa-kodambakkam",
+      "name": "Al-Huda Jumma Masjid and Madrasa",
+      "city": "chennai",
+      "area": "Kodambakkam",
+      "address": "Off Kodambakkam High Road, on the route towards Valluvar Kottam, Chennai",
+      "reelIds": [
+        "DGfkxNkTQKQ"
+      ],
+      "description": "A small masjid shown with a men’s prayer hall and a women’s section upstairs, each with wudu access.",
+      "facilities": [
+        "Women’s prayer area",
+        "Wudu area"
+      ],
+      "note": "The reel also describes Ramadan Taraweeh arrangements for women; confirm current access."
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-mehmoodu-pallivasal-alwarpet",
+      "name": "Masjid Mehmoodu Pallivasal",
+      "city": "chennai",
+      "area": "Alwarpet",
+      "address": "Eldams Road, beside Rahmath City Biryani, Chennai",
+      "reelIds": [
+        "DFxdoSWP1eS"
+      ],
+      "description": "An upstairs prayer hall reached from the Samco / Kauvery Hospital junction along Eldams Road, with wudu facilities and air conditioning.",
+      "facilities": [
+        "Wudu area",
+        "Air conditioning"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "spencer-plaza-prayer-hall-anna-salai",
+      "name": "Spencer Plaza Prayer Hall",
+      "city": "chennai",
+      "area": "Anna Salai",
+      "address": "Third-floor parking area, Spencer Plaza; take the lift near Zudio, Chennai",
+      "reelIds": [
+        "DFXrqHEPGf6"
+      ],
+      "description": "A prayer space in the third-floor parking area, with a curtain-separated women’s area shown in the reel.",
+      "facilities": [
+        "Women’s prayer area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "ibnul-qayyim-irgc-prayer-space-royapettah",
+      "name": "Ibnul Qayyim IRGC Prayer Space",
+      "city": "chennai",
+      "area": "Royapettah",
+      "address": "Gowdia Mutt Road, near Cathedral Road, Chennai",
+      "reelIds": [
+        "DFGBo_ATv3M"
+      ],
+      "description": "A prayer and learning centre featured in the guide to places where ladies can pray near Cathedral Road.",
+      "facilities": [
+        "Women’s prayer arrangements"
+      ],
+      "note": "The source describes ladies’ arrangements for lectures, Taraweeh, Friday and Eid prayers. Confirm access for your intended visit."
+    },
+    {
+      "kind": "masjids",
+      "slug": "hamid-fatima-palli-nungambakkam",
+      "name": "Maami Laatha Masjid (Hameed Fatima Palli)",
+      "city": "chennai",
+      "area": "Nungambakkam",
+      "address": "Off Khader Nawaz Khan Road, reached through the lane beside Chicking, Chennai",
+      "reelIds": [
+        "DEgKxxAzNLk",
+        "DVBP30MDU9X"
+      ],
+      "description": "A prayer hall at the base of a blue building, with a wudu area, toilet and seating for elders, shown in the KNK Road guide.",
+      "facilities": [
+        "Wudu area",
+        "Restrooms",
+        "Seating for elders",
+        "Women’s prayer area during Ramadan"
+      ],
+      "note": "Also known as Maami Laatha Masjid. A later Ramadan reel describes a ladies’ Taraweeh arrangement; confirm current access and timings before visiting."
+    },
+    {
+      "kind": "masjids",
+      "slug": "mosque-rizwan-velachery",
+      "name": "Mosque Rizwan",
+      "city": "chennai",
+      "area": "Velachery",
+      "address": "Approximately 600 metres from Phoenix Marketcity, Chennai",
+      "reelIds": [
+        "DEBZDzUzczv"
+      ],
+      "description": "A masjid featured as an approximately eight-minute walk from Phoenix Marketcity. The reel shows the route for brothers looking for a place to pray.",
+      "facilities": []
+    },
+    {
+      "kind": "masjids",
+      "slug": "malabar-muslim-association-prayer-hall-egmore",
+      "name": "Malabar Muslim Association Prayer Hall",
+      "city": "chennai",
+      "area": "Egmore",
+      "address": "Pantheon Road / Kennet Lane, near the former Commissioner’s Office, Chennai",
+      "reelIds": [
+        "DD1onbPPFn6"
+      ],
+      "description": "A prayer stop with separate men’s and women’s halls, dedicated wudu areas and toilets, reached from Pantheon Road or Kennet Lane.",
+      "facilities": [
+        "Women’s prayer area",
+        "Wudu area",
+        "Restrooms"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-baitul-hujjaj-sriperumbudur-route",
+      "name": "Masjid-e-Baitul Hujjaj",
+      "city": "chennai",
+      "area": "Sriperumbudur route",
+      "address": "Bengaluru–Chennai highway, near Ambur Star Biryani and Taiba Cafe, on the Sriperumbudur route, Chennai",
+      "reelIds": [
+        "DGNhF3zPwy_"
+      ],
+      "description": "A large Haj Committee masjid shown on the highway approach to Chennai, with a women’s prayer area, toilets and a large wudu space.",
+      "facilities": [
+        "Women’s prayer area",
+        "Wudu area",
+        "Restrooms"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "nexus-vijaya-mall-prayer-hall-vadapalani",
+      "name": "Nexus Vijaya Mall Prayer Hall",
+      "city": "chennai",
+      "area": "Vadapalani",
+      "address": "Third floor near the food court, Nexus Vijaya Mall; follow the ramp beside Chicking, Chennai",
+      "reelIds": [
+        "DEzdrIePsD2"
+      ],
+      "description": "The reel shows a carpeted prayer hall, wudu facilities and a separate compact space for sisters inside the mall.",
+      "facilities": [
+        "Women’s prayer area",
+        "Wudu area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "madrasa-e-majidiya-prayer-hall-royapettah",
+      "name": "Madrasa-e-Majidiya Prayer Hall",
+      "city": "chennai",
+      "area": "Royapettah",
+      "address": "Approximately 230 metres from Express Avenue, at the Madrasa-e-Majidiya sign, Chennai",
+      "reelIds": [
+        "DDw5nzuPpXW"
+      ],
+      "description": "A small upstairs prayer hall reached by a narrow lane near Express Avenue, with a wudu area and additional prayer room.",
+      "facilities": [
+        "Wudu area"
+      ],
+      "note": "The reel describes narrow stairs; check access needs before visiting."
+    }
+  ],
+  "reels": [
+    {
+      "id": "DfHssDNzFCs",
+      "title": "Masjid E Noor",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-noor-sowcarpet"
+      ],
+      "permalink": "https://www.instagram.com/reel/DfHssDNzFCs/",
+      "poster": "/reels/DfHssDNzFCs.jpg",
+      "publishedAt": 1793367493,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid E Noor",
+          "slug": "masjid-e-noor-sowcarpet"
+        }
+      ]
+    },
+    {
+      "id": "Deb4DB5zqrz",
+      "title": "Masjid Saliha",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-saliha-purasaiwakkam"
+      ],
+      "permalink": "https://www.instagram.com/reel/Deb4DB5zqrz/",
+      "poster": "/reels/Deb4DB5zqrz.jpg",
+      "publishedAt": 1791896831,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid Saliha",
+          "slug": "masjid-saliha-purasaiwakkam"
+        }
+      ]
+    },
+    {
+      "id": "DePK0G5T8nD",
+      "title": "Masjid E-Noor-E-Huda",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-noor-e-huda-old-washermanpet"
+      ],
+      "permalink": "https://www.instagram.com/reel/DePK0G5T8nD/",
+      "poster": "/reels/DePK0G5T8nD.jpg",
+      "publishedAt": 1791470457,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid E-Noor-E-Huda",
+          "slug": "masjid-e-noor-e-huda-old-washermanpet"
+        }
+      ]
+    },
+    {
+      "id": "Dd90JZvzSTT",
+      "title": "Muhi Masjid",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "muhi-masjid-royapettah"
+      ],
+      "permalink": "https://www.instagram.com/reel/Dd90JZvzSTT/",
+      "poster": "/reels/Dd90JZvzSTT.jpg",
+      "publishedAt": 1790888175,
+      "duration": null,
+      "places": [
+        {
+          "name": "Muhi Masjid",
+          "slug": "muhi-masjid-royapettah"
+        }
+      ]
+    },
+    {
+      "id": "Dcla83vIaUU",
+      "title": "Zaheer’s BBQ Feast",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "zaheer-s-bbq-feast-triplicane"
+      ],
+      "permalink": "https://www.instagram.com/reel/Dcla83vIaUU/",
+      "poster": "/reels/Dcla83vIaUU.jpg",
+      "publishedAt": 1787922177,
+      "duration": null,
+      "places": [
+        {
+          "name": "Zaheer’s BBQ Feast",
+          "slug": "zaheer-s-bbq-feast-triplicane"
+        }
+      ]
+    },
+    {
+      "id": "DblGqhSTPlF",
+      "title": "Zaheer’s BBQ Feast",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "zaheer-s-bbq-feast-triplicane"
+      ],
+      "permalink": "https://www.instagram.com/reel/DblGqhSTPlF/",
+      "poster": "/reels/DblGqhSTPlF.jpg",
+      "publishedAt": 1785764214,
+      "duration": 79.08699798583984,
+      "places": [
+        {
+          "name": "Zaheer’s BBQ Feast",
+          "slug": "zaheer-s-bbq-feast-triplicane"
+        }
+      ]
+    },
+    {
+      "id": "DanSCCevg1u",
+      "title": "Green Park Academy Musallah",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "green-park-academy-musallah-anna-nagar"
+      ],
+      "permalink": "https://www.instagram.com/reel/DanSCCevg1u/",
+      "poster": "/reels/DanSCCevg1u.jpg",
+      "publishedAt": 1783689619,
+      "duration": null,
+      "places": [
+        {
+          "name": "Green Park Academy Musallah",
+          "slug": "green-park-academy-musallah-anna-nagar"
+        }
+      ]
+    },
+    {
+      "id": "DaNdsjRvE2F",
+      "title": "Taibah Flavours of Bombay",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "taibah-flavours-of-bombay-chetpet"
+      ],
+      "permalink": "https://www.instagram.com/reel/DaNdsjRvE2F/",
+      "poster": "/reels/DaNdsjRvE2F.jpg",
+      "publishedAt": 1782826417,
+      "duration": null,
+      "places": [
+        {
+          "name": "Taibah Flavours of Bombay",
+          "slug": "taibah-flavours-of-bombay-chetpet"
+        }
+      ]
+    },
+    {
+      "id": "DZ2U1jxSPyw",
+      "title": "Hameethiya Jamiya Masjid",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "hameethiya-jamiya-masjid-saligramam"
+      ],
+      "permalink": "https://www.instagram.com/reel/DZ2U1jxSPyw/",
+      "poster": "/reels/DZ2U1jxSPyw.jpg",
+      "publishedAt": 1782046811,
+      "duration": null,
+      "places": [
+        {
+          "name": "Hameethiya Jamiya Masjid",
+          "slug": "hameethiya-jamiya-masjid-saligramam"
+        }
+      ]
+    },
+    {
+      "id": "DYW9673IEFE",
+      "title": "Uswathun Hasana Community Hall",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "uswathun-hasana-community-hall-nungambakkam"
+      ],
+      "permalink": "https://www.instagram.com/reel/DYW9673IEFE/",
+      "poster": "/reels/DYW9673IEFE.jpg",
+      "publishedAt": 1778847361,
+      "duration": null,
+      "places": [
+        {
+          "name": "Uswathun Hasana Community Hall",
+          "slug": "uswathun-hasana-community-hall-nungambakkam"
+        }
+      ]
+    },
+    {
+      "id": "DXttgxEIUMU",
+      "title": "Kannadi Vappah Masjid",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "kannadi-vappah-masjid-nungambakkam"
+      ],
+      "permalink": "https://www.instagram.com/reel/DXttgxEIUMU/",
+      "poster": "/reels/DXttgxEIUMU.jpg",
+      "publishedAt": 1777462800,
+      "duration": null,
+      "places": [
+        {
+          "name": "Kannadi Vappah Masjid",
+          "slug": "kannadi-vappah-masjid-nungambakkam"
+        }
+      ]
+    },
+    {
+      "id": "DXjhz5chN7Q",
+      "title": "Urban Spatula",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "urban-spatula-anna-nagar"
+      ],
+      "permalink": "https://www.instagram.com/reel/DXjhz5chN7Q/",
+      "poster": "/reels/DXjhz5chN7Q.jpg",
+      "publishedAt": 1777121100,
+      "duration": null,
+      "places": [
+        {
+          "name": "Urban Spatula",
+          "slug": "urban-spatula-anna-nagar"
+        }
+      ]
+    },
+    {
+      "id": "DXRoD9eD0nQ",
+      "title": "Green Masjid",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "green-masjid-airport-area"
+      ],
+      "permalink": "https://www.instagram.com/reel/DXRoD9eD0nQ/",
+      "poster": "/reels/DXRoD9eD0nQ.jpg",
+      "publishedAt": 1776520537,
+      "duration": null,
+      "places": [
+        {
+          "name": "Green Masjid",
+          "slug": "green-masjid-airport-area"
+        }
+      ]
+    },
+    {
+      "id": "DW86kOBD68Q",
+      "title": "Masjid Madina",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-madina-airport-area"
+      ],
+      "permalink": "https://www.instagram.com/reel/DW86kOBD68Q/",
+      "poster": "/reels/DW86kOBD68Q.jpg",
+      "publishedAt": 1775825609,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid Madina",
+          "slug": "masjid-madina-airport-area"
+        }
+      ]
+    },
+    {
+      "id": "DWghXVPj-Uo",
+      "title": "Islamic Centre Musallah",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "islamic-centre-musallah-adyar"
+      ],
+      "permalink": "https://www.instagram.com/reel/DWghXVPj-Uo/",
+      "poster": "/reels/DWghXVPj-Uo.jpg",
+      "publishedAt": 1774873550,
+      "duration": null,
+      "places": [
+        {
+          "name": "Islamic Centre Musallah",
+          "slug": "islamic-centre-musallah-adyar"
+        }
+      ]
+    },
+    {
+      "id": "DVijXNqDupj",
+      "title": "Yaghma Kababs",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "yaghma-kababs-thousand-lights"
+      ],
+      "permalink": "https://www.instagram.com/reel/DVijXNqDupj/",
+      "poster": "/reels/DVijXNqDupj.jpg",
+      "publishedAt": 1772793549,
+      "duration": null,
+      "places": [
+        {
+          "name": "Yaghma Kababs",
+          "slug": "yaghma-kababs-thousand-lights"
+        }
+      ]
+    },
+    {
+      "id": "DVgDtkOD8Zz",
+      "title": "Shafi Marriage Hall / Cutchi Memon Masjid / Masjid-e-Khaadim",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "shafi-marriage-hall-old-washermanpet",
+        "cutchi-memon-masjid-old-washermanpet",
+        "masjid-e-khaadim-old-washermanpet"
+      ],
+      "permalink": "https://www.instagram.com/reel/DVgDtkOD8Zz/",
+      "poster": "/reels/DVgDtkOD8Zz.jpg",
+      "publishedAt": 1772709781,
+      "duration": null,
+      "places": [
+        {
+          "name": "Shafi Marriage Hall",
+          "slug": "shafi-marriage-hall-old-washermanpet"
+        },
+        {
+          "name": "Cutchi Memon Masjid",
+          "slug": "cutchi-memon-masjid-old-washermanpet"
+        },
+        {
+          "name": "Masjid-e-Khaadim",
+          "slug": "masjid-e-khaadim-old-washermanpet"
+        }
+      ]
+    },
+    {
+      "id": "DVQexgDDiuH",
+      "title": "Buhari",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "buhari-anna-salai"
+      ],
+      "permalink": "https://www.instagram.com/reel/DVQexgDDiuH/",
+      "poster": "/reels/DVQexgDDiuH.jpg",
+      "publishedAt": 1772187098,
+      "duration": null,
+      "places": [
+        {
+          "name": "Buhari",
+          "slug": "buhari-anna-salai"
+        }
+      ]
+    },
+    {
+      "id": "DVM6vMDE40v",
+      "title": "Preston College Prayer Space",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "preston-college-prayer-space-chennai"
+      ],
+      "permalink": "https://www.instagram.com/reel/DVM6vMDE40v/",
+      "poster": "/reels/DVM6vMDE40v.jpg",
+      "publishedAt": 1772106084,
+      "duration": null,
+      "places": [
+        {
+          "name": "Preston College Prayer Space",
+          "slug": "preston-college-prayer-space-chennai"
+        }
+      ]
+    },
+    {
+      "id": "DVBP30MDU9X",
+      "title": "Jamia Masjid Aminjikarai / Anjuman-e-Himayath-e-Islam Musallah / Maami Latha Masjid",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "jamia-masjid-aminjikarai-aminjikarai",
+        "anjuman-masjid-t-nagar",
+        "hamid-fatima-palli-nungambakkam"
+      ],
+      "permalink": "https://www.instagram.com/reel/DVBP30MDU9X/",
+      "poster": "/reels/DVBP30MDU9X.jpg",
+      "publishedAt": 1771675989,
+      "duration": null,
+      "places": [
+        {
+          "name": "Jamia Masjid Aminjikarai",
+          "slug": "jamia-masjid-aminjikarai-aminjikarai"
+        },
+        {
+          "name": "Anjuman-e-Himayath-e-Islam Masjid",
+          "slug": "anjuman-masjid-t-nagar"
+        },
+        {
+          "name": "Maami Laatha Masjid (Hameed Fatima Palli)",
+          "slug": "hamid-fatima-palli-nungambakkam"
+        }
+      ]
+    },
+    {
+      "id": "DU5vTgKj4MR",
+      "title": "Masjid Javed / Masjid Thaqwa / Jamia Masjid Arumbakkam",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-javed-anna-nagar",
+        "masjid-thaqwa-anna-nagar-west",
+        "jamia-masjid-arumbakkam-arumbakkam"
+      ],
+      "permalink": "https://www.instagram.com/reel/DU5vTgKj4MR/",
+      "poster": "/reels/DU5vTgKj4MR.jpg",
+      "publishedAt": 1771424042,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid Javed",
+          "slug": "masjid-javed-anna-nagar"
+        },
+        {
+          "name": "Masjid Thaqwa",
+          "slug": "masjid-thaqwa-anna-nagar-west"
+        },
+        {
+          "name": "Jamia Masjid Arumbakkam",
+          "slug": "jamia-masjid-arumbakkam-arumbakkam"
+        }
+      ]
+    },
+    {
+      "id": "DUsctFAEfZE",
+      "title": "Juice Juice Baby / Iftar House",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "juice-juice-baby-iftar-house-kodambakkam"
+      ],
+      "permalink": "https://www.instagram.com/reel/DUsctFAEfZE/",
+      "poster": "/reels/DUsctFAEfZE.jpg",
+      "publishedAt": 1770978103,
+      "duration": null,
+      "places": [
+        {
+          "name": "Juice Juice Baby / Iftar House",
+          "slug": "juice-juice-baby-iftar-house-kodambakkam"
+        }
+      ]
+    },
+    {
+      "id": "DUBFS1hiGv7",
+      "title": "Ferrara Pizzeria",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "ferrara-pizzeria-nungambakkam"
+      ],
+      "permalink": "https://www.instagram.com/reel/DUBFS1hiGv7/",
+      "poster": "/reels/DUBFS1hiGv7.jpg",
+      "publishedAt": 1769523007,
+      "duration": null,
+      "places": [
+        {
+          "name": "Ferrara Pizzeria",
+          "slug": "ferrara-pizzeria-nungambakkam"
+        }
+      ]
+    },
+    {
+      "id": "DTfid-LCKeu",
+      "title": "Taste of Turkey",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "taste-of-turkey-mannady"
+      ],
+      "permalink": "https://www.instagram.com/reel/DTfid-LCKeu/",
+      "poster": "/reels/DTfid-LCKeu.jpg",
+      "publishedAt": 1768397558,
+      "duration": null,
+      "places": [
+        {
+          "name": "Taste of Turkey",
+          "slug": "taste-of-turkey-mannady"
+        }
+      ]
+    },
+    {
+      "id": "DTK4aqTDyZd",
+      "title": "Kafei Palazzo",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "kafei-palazzo-perumbakkam"
+      ],
+      "permalink": "https://www.instagram.com/reel/DTK4aqTDyZd/",
+      "poster": "/reels/DTK4aqTDyZd.jpg",
+      "publishedAt": 1767704288,
+      "duration": null,
+      "places": [
+        {
+          "name": "Kafei Palazzo",
+          "slug": "kafei-palazzo-perumbakkam"
+        }
+      ]
+    },
+    {
+      "id": "DSpVlFhDzBq",
+      "title": "Time Cafe",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "time-cafe-nungambakkam"
+      ],
+      "permalink": "https://www.instagram.com/reel/DSpVlFhDzBq/",
+      "poster": "/reels/DSpVlFhDzBq.jpg",
+      "publishedAt": 1766578820,
+      "duration": null,
+      "places": [
+        {
+          "name": "Time Cafe",
+          "slug": "time-cafe-nungambakkam"
+        }
+      ]
+    },
+    {
+      "id": "DSKgmJJD7qB",
+      "title": "Barakath Kitchen",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "barakath-kitchen-kolathur"
+      ],
+      "permalink": "https://www.instagram.com/reel/DSKgmJJD7qB/",
+      "poster": "/reels/DSKgmJJD7qB.jpg",
+      "publishedAt": 1765544305,
+      "duration": null,
+      "places": [
+        {
+          "name": "Barakath Kitchen",
+          "slug": "barakath-kitchen-kolathur"
+        }
+      ]
+    },
+    {
+      "id": "DRPWCJ9D6G7",
+      "title": "Hungry Tiger",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "hungry-tiger-perambur"
+      ],
+      "permalink": "https://www.instagram.com/reel/DRPWCJ9D6G7/",
+      "poster": "/reels/DRPWCJ9D6G7.jpg",
+      "publishedAt": 1763559133,
+      "duration": null,
+      "places": [
+        {
+          "name": "Hungry Tiger",
+          "slug": "hungry-tiger-perambur"
+        }
+      ]
+    },
+    {
+      "id": "DRCW_1zjyoe",
+      "title": "Beach Vibes",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "beach-vibes-marina-beach"
+      ],
+      "permalink": "https://www.instagram.com/reel/DRCW_1zjyoe/",
+      "poster": "/reels/DRCW_1zjyoe.jpg",
+      "publishedAt": 1763123515,
+      "duration": null,
+      "places": [
+        {
+          "name": "Beach Vibes",
+          "slug": "beach-vibes-marina-beach"
+        }
+      ]
+    },
+    {
+      "id": "DQ9NkcjiJh0",
+      "title": "STACK",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "stack-alwarpet"
+      ],
+      "permalink": "https://www.instagram.com/reel/DQ9NkcjiJh0/",
+      "poster": "/reels/DQ9NkcjiJh0.jpg",
+      "publishedAt": 1762950912,
+      "duration": null,
+      "places": [
+        {
+          "name": "STACK",
+          "slug": "stack-alwarpet"
+        }
+      ]
+    },
+    {
+      "id": "DQy_yDXDzQf",
+      "title": "Alsa Mall Musallah",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "alsa-mall-musallah-egmore"
+      ],
+      "permalink": "https://www.instagram.com/reel/DQy_yDXDzQf/",
+      "poster": "/reels/DQy_yDXDzQf.jpg",
+      "publishedAt": 1762607890,
+      "duration": null,
+      "places": [
+        {
+          "name": "Alsa Mall Musallah",
+          "slug": "alsa-mall-musallah-egmore"
+        }
+      ]
+    },
+    {
+      "id": "DQopwZ9Dx-E",
+      "title": "BSNL Quarters Masjid",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "bsnl-quarters-masjid-royapettah"
+      ],
+      "permalink": "https://www.instagram.com/reel/DQopwZ9Dx-E/",
+      "poster": "/reels/DQopwZ9Dx-E.jpg",
+      "publishedAt": 1762260822,
+      "duration": null,
+      "places": [
+        {
+          "name": "BSNL Quarters Masjid",
+          "slug": "bsnl-quarters-masjid-royapettah"
+        }
+      ]
+    },
+    {
+      "id": "DQeUdnzj6NH",
+      "title": "Masjid-e-Noor, SMJ Parrys Plaza",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-noor-smj-parrys-plaza-parrys-corner"
+      ],
+      "permalink": "https://www.instagram.com/reel/DQeUdnzj6NH/",
+      "poster": "/reels/DQeUdnzj6NH.jpg",
+      "publishedAt": 1761914102,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Noor, SMJ Parrys Plaza",
+          "slug": "masjid-e-noor-smj-parrys-plaza-parrys-corner"
+        }
+      ]
+    },
+    {
+      "id": "DPY0C3rjwXa",
+      "title": "Frysto – The Frying Stories",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "frysto-the-frying-stories-anna-nagar"
+      ],
+      "permalink": "https://www.instagram.com/reel/DPY0C3rjwXa/",
+      "poster": "/reels/DPY0C3rjwXa.jpg",
+      "publishedAt": 1759581843,
+      "duration": null,
+      "places": [
+        {
+          "name": "Frysto – The Frying Stories",
+          "slug": "frysto-the-frying-stories-anna-nagar"
+        }
+      ]
+    },
+    {
+      "id": "DPOiDQ6Dyuk",
+      "title": "Krave Kitchen",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "krave-kitchen-royapettah"
+      ],
+      "permalink": "https://www.instagram.com/reel/DPOiDQ6Dyuk/",
+      "poster": "/reels/DPOiDQ6Dyuk.jpg",
+      "publishedAt": 1759236990,
+      "duration": null,
+      "places": [
+        {
+          "name": "Krave Kitchen",
+          "slug": "krave-kitchen-royapettah"
+        }
+      ]
+    },
+    {
+      "id": "DOtIOJoj96S",
+      "title": "Affu’s Kitchen",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "affu-s-kitchen-marina-beach"
+      ],
+      "permalink": "https://www.instagram.com/reel/DOtIOJoj96S/",
+      "poster": "/reels/DOtIOJoj96S.jpg",
+      "publishedAt": 1758116081,
+      "duration": null,
+      "places": [
+        {
+          "name": "Affu’s Kitchen",
+          "slug": "affu-s-kitchen-marina-beach"
+        }
+      ]
+    },
+    {
+      "id": "DObF4qxiELM",
+      "title": "Zaheer’s BBQ Feast",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "zaheer-s-bbq-feast-triplicane"
+      ],
+      "permalink": "https://www.instagram.com/reel/DObF4qxiELM/",
+      "poster": "/reels/DObF4qxiELM.jpg",
+      "publishedAt": 1757510898,
+      "duration": null,
+      "places": [
+        {
+          "name": "Zaheer’s BBQ Feast",
+          "slug": "zaheer-s-bbq-feast-triplicane"
+        }
+      ]
+    },
+    {
+      "id": "DOOFmeZCAhU",
+      "title": "Muhi Masjid",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "muhi-masjid-royapettah"
+      ],
+      "permalink": "https://www.instagram.com/reel/DOOFmeZCAhU/",
+      "poster": "/reels/DOOFmeZCAhU.jpg",
+      "publishedAt": 1757074459,
+      "duration": null,
+      "places": [
+        {
+          "name": "Muhi Masjid",
+          "slug": "muhi-masjid-royapettah"
+        }
+      ]
+    },
+    {
+      "id": "DN8R7I_D_7C",
+      "title": "Masjid Ah-Ghafoor",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-ah-ghafoor-adyar"
+      ],
+      "permalink": "https://www.instagram.com/reel/DN8R7I_D_7C/",
+      "poster": "/reels/DN8R7I_D_7C.jpg",
+      "publishedAt": 1756476885,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid Ah-Ghafoor",
+          "slug": "masjid-ah-ghafoor-adyar"
+        }
+      ]
+    },
+    {
+      "id": "DN0SK3dXhVg",
+      "title": "Grill House",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "grill-house-nungambakkam"
+      ],
+      "permalink": "https://www.instagram.com/reel/DN0SK3dXhVg/",
+      "poster": "/reels/DN0SK3dXhVg.jpg",
+      "publishedAt": 1756208807,
+      "duration": null,
+      "places": [
+        {
+          "name": "Grill House",
+          "slug": "grill-house-nungambakkam"
+        }
+      ]
+    },
+    {
+      "id": "DNqEDI3v1Xt",
+      "title": "Zaara Biryani",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "zaara-biryani-anna-salai"
+      ],
+      "permalink": "https://www.instagram.com/reel/DNqEDI3v1Xt/",
+      "poster": "/reels/DNqEDI3v1Xt.jpg",
+      "publishedAt": 1755865872,
+      "duration": null,
+      "places": [
+        {
+          "name": "Zaara Biryani",
+          "slug": "zaara-biryani-anna-salai"
+        }
+      ]
+    },
+    {
+      "id": "DNkpEwsvijq",
+      "title": "Bunker Bites",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "bunker-bites-ecr"
+      ],
+      "permalink": "https://www.instagram.com/reel/DNkpEwsvijq/",
+      "poster": "/reels/DNkpEwsvijq.jpg",
+      "publishedAt": 1755683841,
+      "duration": null,
+      "places": [
+        {
+          "name": "Bunker Bites",
+          "slug": "bunker-bites-ecr"
+        }
+      ]
+    },
+    {
+      "id": "DMsdvROPg9d",
+      "title": "Chennai Citi Centre Prayer Hall",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "chennai-citi-centre-prayer-hall-mylapore"
+      ],
+      "permalink": "https://www.instagram.com/reel/DMsdvROPg9d/",
+      "poster": "/reels/DMsdvROPg9d.jpg",
+      "publishedAt": 1753798782,
+      "duration": null,
+      "places": [
+        {
+          "name": "Chennai Citi Centre Prayer Hall",
+          "slug": "chennai-citi-centre-prayer-hall-mylapore"
+        }
+      ]
+    },
+    {
+      "id": "DMgpmafTWif",
+      "title": "Masjid near Besant Nagar Beach",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-near-besant-nagar-beach-besant-nagar"
+      ],
+      "permalink": "https://www.instagram.com/reel/DMgpmafTWif/",
+      "poster": "/reels/DMgpmafTWif.jpg",
+      "publishedAt": 1753402390,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid near Besant Nagar Beach",
+          "slug": "masjid-near-besant-nagar-beach-besant-nagar"
+        }
+      ]
+    },
+    {
+      "id": "DMW_KgxPWX7",
+      "title": "Marina Beach Prayer Space",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "marina-beach-prayer-space-marina-beach"
+      ],
+      "permalink": "https://www.instagram.com/reel/DMW_KgxPWX7/",
+      "poster": "/reels/DMW_KgxPWX7.jpg",
+      "publishedAt": 1753078161,
+      "duration": null,
+      "places": [
+        {
+          "name": "Marina Beach Prayer Space",
+          "slug": "marina-beach-prayer-space-marina-beach"
+        }
+      ]
+    },
+    {
+      "id": "DMIPLxovgFi",
+      "title": "Parsn Complex Musallah",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "parsn-complex-musallah-thousand-lights"
+      ],
+      "permalink": "https://www.instagram.com/reel/DMIPLxovgFi/",
+      "poster": "/reels/DMIPLxovgFi.jpg",
+      "publishedAt": 1752583168,
+      "duration": null,
+      "places": [
+        {
+          "name": "Parsn Complex Musallah",
+          "slug": "parsn-complex-musallah-thousand-lights"
+        }
+      ]
+    },
+    {
+      "id": "DKkD1PbPo6v",
+      "title": "Bombay Food Court",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "bombay-food-court-triplicane"
+      ],
+      "permalink": "https://www.instagram.com/reel/DKkD1PbPo6v/",
+      "poster": "/reels/DKkD1PbPo6v.jpg",
+      "publishedAt": 1749221853,
+      "duration": null,
+      "places": [
+        {
+          "name": "Bombay Food Court",
+          "slug": "bombay-food-court-triplicane"
+        }
+      ]
+    },
+    {
+      "id": "DJ_kyicv1EP",
+      "title": "Doner and Shish",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "doner-and-shish-alwarpet"
+      ],
+      "permalink": "https://www.instagram.com/reel/DJ_kyicv1EP/",
+      "poster": "/reels/DJ_kyicv1EP.jpg",
+      "publishedAt": 1747997496,
+      "duration": null,
+      "places": [
+        {
+          "name": "Doner and Shish",
+          "slug": "doner-and-shish-alwarpet"
+        }
+      ]
+    },
+    {
+      "id": "DJ1eWiPPgdE",
+      "title": "Fattoush",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "fattoush-sholinganallur"
+      ],
+      "permalink": "https://www.instagram.com/reel/DJ1eWiPPgdE/",
+      "poster": "/reels/DJ1eWiPPgdE.jpg",
+      "publishedAt": 1747658581,
+      "duration": null,
+      "places": [
+        {
+          "name": "Fattoush",
+          "slug": "fattoush-sholinganallur"
+        }
+      ]
+    },
+    {
+      "id": "DJiPNX2TvB8",
+      "title": "Masjid near Ashok Pillar",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-near-ashok-pillar-ashok-nagar"
+      ],
+      "permalink": "https://www.instagram.com/reel/DJiPNX2TvB8/",
+      "poster": "/reels/DJiPNX2TvB8.jpg",
+      "publishedAt": 1747013112,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid near Ashok Pillar",
+          "slug": "masjid-near-ashok-pillar-ashok-nagar"
+        }
+      ]
+    },
+    {
+      "id": "DJcEJRrvnt_",
+      "title": "The Marina Mall Prayer Hall",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "the-marina-mall-prayer-hall-egattur"
+      ],
+      "permalink": "https://www.instagram.com/reel/DJcEJRrvnt_/",
+      "poster": "/reels/DJcEJRrvnt_.jpg",
+      "publishedAt": 1746806144,
+      "duration": null,
+      "places": [
+        {
+          "name": "The Marina Mall Prayer Hall",
+          "slug": "the-marina-mall-prayer-hall-egattur"
+        }
+      ]
+    },
+    {
+      "id": "DJWmd44vd6I",
+      "title": "Hong Kong Complex Prayer Hall",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "hong-kong-complex-prayer-hall-t-nagar"
+      ],
+      "permalink": "https://www.instagram.com/reel/DJWmd44vd6I/",
+      "poster": "/reels/DJWmd44vd6I.jpg",
+      "publishedAt": 1746622831,
+      "duration": null,
+      "places": [
+        {
+          "name": "Hong Kong Complex Prayer Hall",
+          "slug": "hong-kong-complex-prayer-hall-t-nagar"
+        }
+      ]
+    },
+    {
+      "id": "DI-wIxyvl9K",
+      "title": "Hotel Royal Darbar",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "hotel-royal-darbar-periamet"
+      ],
+      "permalink": "https://www.instagram.com/reel/DI-wIxyvl9K/",
+      "poster": "/reels/DI-wIxyvl9K.jpg",
+      "publishedAt": 1745822675,
+      "duration": null,
+      "places": [
+        {
+          "name": "Hotel Royal Darbar",
+          "slug": "hotel-royal-darbar-periamet"
+        }
+      ]
+    },
+    {
+      "id": "DI3zcjjvl6n",
+      "title": "Anjuman Prayer Hall, Ritchie Street / Governor’s Bodyguard Masjid",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "anjuman-prayer-hall-ritchie-street-anna-salai",
+        "governor-s-bodyguard-masjid-anna-salai"
+      ],
+      "permalink": "https://www.instagram.com/reel/DI3zcjjvl6n/",
+      "poster": "/reels/DI3zcjjvl6n.jpg",
+      "publishedAt": 1745589381,
+      "duration": null,
+      "places": [
+        {
+          "name": "Anjuman Prayer Hall, Ritchie Street",
+          "slug": "anjuman-prayer-hall-ritchie-street-anna-salai"
+        },
+        {
+          "name": "Governor’s Bodyguard Masjid",
+          "slug": "governor-s-bodyguard-masjid-anna-salai"
+        }
+      ]
+    },
+    {
+      "id": "DIkUcszzx6f",
+      "title": "Masjidul Jannah",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjidul-jannah-thirumangalam"
+      ],
+      "permalink": "https://www.instagram.com/reel/DIkUcszzx6f/",
+      "poster": "/reels/DIkUcszzx6f.jpg",
+      "publishedAt": 1744935522,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjidul Jannah",
+          "slug": "masjidul-jannah-thirumangalam"
+        }
+      ]
+    },
+    {
+      "id": "DIf7FNoPQ3C",
+      "title": "Juice Juice Baby / Iftar House",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "juice-juice-baby-iftar-house-kodambakkam"
+      ],
+      "permalink": "https://www.instagram.com/reel/DIf7FNoPQ3C/",
+      "poster": "/reels/DIf7FNoPQ3C.jpg",
+      "publishedAt": 1744788160,
+      "duration": null,
+      "places": [
+        {
+          "name": "Juice Juice Baby / Iftar House",
+          "slug": "juice-juice-baby-iftar-house-kodambakkam"
+        }
+      ]
+    },
+    {
+      "id": "DHcICTIBuiS",
+      "title": "Masjid-e-Habib",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-habib-kotturpuram"
+      ],
+      "permalink": "https://www.instagram.com/reel/DHcICTIBuiS/",
+      "poster": "/reels/DHcICTIBuiS.jpg",
+      "publishedAt": 1742513074,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Habib",
+          "slug": "masjid-e-habib-kotturpuram"
+        }
+      ]
+    },
+    {
+      "id": "DHBDKE1vTtB",
+      "title": "Buhari",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "buhari-anna-salai"
+      ],
+      "permalink": "https://www.instagram.com/reel/DHBDKE1vTtB/",
+      "poster": "/reels/DHBDKE1vTtB.jpg",
+      "publishedAt": 1741604808,
+      "duration": null,
+      "places": [
+        {
+          "name": "Buhari",
+          "slug": "buhari-anna-salai"
+        }
+      ]
+    },
+    {
+      "id": "DG6nCUkT2xp",
+      "title": "Anjuman Masjid",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "anjuman-masjid-t-nagar"
+      ],
+      "permalink": "https://www.instagram.com/reel/DG6nCUkT2xp/",
+      "poster": "/reels/DG6nCUkT2xp.jpg",
+      "publishedAt": 1741388450,
+      "duration": null,
+      "places": [
+        {
+          "name": "Anjuman-e-Himayath-e-Islam Masjid",
+          "slug": "anjuman-masjid-t-nagar"
+        }
+      ]
+    },
+    {
+      "id": "DGfkxNkTQKQ",
+      "title": "Al-Huda Jumma Masjid and Madrasa",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "al-huda-jumma-masjid-and-madrasa-kodambakkam"
+      ],
+      "permalink": "https://www.instagram.com/reel/DGfkxNkTQKQ/",
+      "poster": "/reels/DGfkxNkTQKQ.jpg",
+      "publishedAt": 1740481232,
+      "duration": null,
+      "places": [
+        {
+          "name": "Al-Huda Jumma Masjid and Madrasa",
+          "slug": "al-huda-jumma-masjid-and-madrasa-kodambakkam"
+        }
+      ]
+    },
+    {
+      "id": "DGNhF3zPwy_",
+      "title": "Masjid-e-Baitul Hujjaj",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-baitul-hujjaj-sriperumbudur-route"
+      ],
+      "permalink": "https://www.instagram.com/reel/DGNhF3zPwy_/",
+      "poster": "/reels/DGNhF3zPwy_.jpg",
+      "publishedAt": 1739875415,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Baitul Hujjaj",
+          "slug": "masjid-e-baitul-hujjaj-sriperumbudur-route"
+        }
+      ]
+    },
+    {
+      "id": "DF1P9GSTtaH",
+      "title": "Ambur Canteen",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "ambur-canteen-chennai"
+      ],
+      "permalink": "https://www.instagram.com/reel/DF1P9GSTtaH/",
+      "poster": "/reels/DF1P9GSTtaH.jpg",
+      "publishedAt": 1739061026,
+      "duration": null,
+      "places": [
+        {
+          "name": "Ambur Canteen",
+          "slug": "ambur-canteen-chennai"
+        }
+      ]
+    },
+    {
+      "id": "DFxdoSWP1eS",
+      "title": "Masjid Mehmoodu Pallivasal",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-mehmoodu-pallivasal-alwarpet"
+      ],
+      "permalink": "https://www.instagram.com/reel/DFxdoSWP1eS/",
+      "poster": "/reels/DFxdoSWP1eS.jpg",
+      "publishedAt": 1738934115,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid Mehmoodu Pallivasal",
+          "slug": "masjid-mehmoodu-pallivasal-alwarpet"
+        }
+      ]
+    },
+    {
+      "id": "DFbgBEhTfZJ",
+      "title": "Sucre et Salé",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "sucre-et-sal-anna-nagar"
+      ],
+      "permalink": "https://www.instagram.com/reel/DFbgBEhTfZJ/",
+      "poster": "/reels/DFbgBEhTfZJ.jpg",
+      "publishedAt": 1738197048,
+      "duration": null,
+      "places": [
+        {
+          "name": "Sucre et Salé",
+          "slug": "sucre-et-sal-anna-nagar"
+        }
+      ]
+    },
+    {
+      "id": "DFXrqHEPGf6",
+      "title": "Spencer Plaza Prayer Hall",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "spencer-plaza-prayer-hall-anna-salai"
+      ],
+      "permalink": "https://www.instagram.com/reel/DFXrqHEPGf6/",
+      "poster": "/reels/DFXrqHEPGf6.jpg",
+      "publishedAt": 1738068913,
+      "duration": null,
+      "places": [
+        {
+          "name": "Spencer Plaza Prayer Hall",
+          "slug": "spencer-plaza-prayer-hall-anna-salai"
+        }
+      ]
+    },
+    {
+      "id": "DFGBo_ATv3M",
+      "title": "Ibnul Qayyim IRGC Prayer Space",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "ibnul-qayyim-irgc-prayer-space-royapettah"
+      ],
+      "permalink": "https://www.instagram.com/reel/DFGBo_ATv3M/",
+      "poster": "/reels/DFGBo_ATv3M.jpg",
+      "publishedAt": 1737476551,
+      "duration": null,
+      "places": [
+        {
+          "name": "Ibnul Qayyim IRGC Prayer Space",
+          "slug": "ibnul-qayyim-irgc-prayer-space-royapettah"
+        }
+      ]
+    },
+    {
+      "id": "DE7QopIvI_c",
+      "title": "Hotel Safari",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "hotel-safari-royapettah"
+      ],
+      "permalink": "https://www.instagram.com/reel/DE7QopIvI_c/",
+      "poster": "/reels/DE7QopIvI_c.jpg",
+      "publishedAt": 1737115430,
+      "duration": null,
+      "places": [
+        {
+          "name": "Hotel Safari",
+          "slug": "hotel-safari-royapettah"
+        }
+      ]
+    },
+    {
+      "id": "DEzdrIePsD2",
+      "title": "Nexus Vijaya Mall Prayer Hall",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "nexus-vijaya-mall-prayer-hall-vadapalani"
+      ],
+      "permalink": "https://www.instagram.com/reel/DEzdrIePsD2/",
+      "poster": "/reels/DEzdrIePsD2.jpg",
+      "publishedAt": 1736853713,
+      "duration": null,
+      "places": [
+        {
+          "name": "Nexus Vijaya Mall Prayer Hall",
+          "slug": "nexus-vijaya-mall-prayer-hall-vadapalani"
+        }
+      ]
+    },
+    {
+      "id": "DEsI06PPs_w",
+      "title": "Soul by Dair",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "soul-by-dair-nungambakkam"
+      ],
+      "permalink": "https://www.instagram.com/reel/DEsI06PPs_w/",
+      "poster": "/reels/DEsI06PPs_w.jpg",
+      "publishedAt": 1736607894,
+      "duration": null,
+      "places": [
+        {
+          "name": "Soul by Dair",
+          "slug": "soul-by-dair-nungambakkam"
+        }
+      ]
+    },
+    {
+      "id": "DEgKxxAzNLk",
+      "title": "Hamid Fatima Palli",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "hamid-fatima-palli-nungambakkam"
+      ],
+      "permalink": "https://www.instagram.com/reel/DEgKxxAzNLk/",
+      "poster": "/reels/DEgKxxAzNLk.jpg",
+      "publishedAt": 1736206240,
+      "duration": null,
+      "places": [
+        {
+          "name": "Maami Laatha Masjid (Hameed Fatima Palli)",
+          "slug": "hamid-fatima-palli-nungambakkam"
+        }
+      ]
+    },
+    {
+      "id": "DEBZDzUzczv",
+      "title": "Mosque Rizwan",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "mosque-rizwan-velachery"
+      ],
+      "permalink": "https://www.instagram.com/reel/DEBZDzUzczv/",
+      "poster": "/reels/DEBZDzUzczv.jpg",
+      "publishedAt": 1735173654,
+      "duration": null,
+      "places": [
+        {
+          "name": "Mosque Rizwan",
+          "slug": "mosque-rizwan-velachery"
+        }
+      ]
+    },
+    {
+      "id": "DD1onbPPFn6",
+      "title": "Malabar Muslim Association Prayer Hall",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "malabar-muslim-association-prayer-hall-egmore"
+      ],
+      "permalink": "https://www.instagram.com/reel/DD1onbPPFn6/",
+      "poster": "/reels/DD1onbPPFn6.jpg",
+      "publishedAt": 1734779101,
+      "duration": null,
+      "places": [
+        {
+          "name": "Malabar Muslim Association Prayer Hall",
+          "slug": "malabar-muslim-association-prayer-hall-egmore"
+        }
+      ]
+    },
+    {
+      "id": "DDw5nzuPpXW",
+      "title": "Madrasa-e-Majidiya Prayer Hall",
+      "city": "chennai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "madrasa-e-majidiya-prayer-hall-royapettah"
+      ],
+      "permalink": "https://www.instagram.com/reel/DDw5nzuPpXW/",
+      "poster": "/reels/DDw5nzuPpXW.jpg",
+      "publishedAt": 1734620199,
+      "duration": null,
+      "places": [
+        {
+          "name": "Madrasa-e-Majidiya Prayer Hall",
+          "slug": "madrasa-e-majidiya-prayer-hall-royapettah"
+        }
+      ]
+    },
+    {
+      "id": "DDr6smZzANd",
+      "title": "Hundreds Bistro",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "hundreds-bistro-chetpet"
+      ],
+      "permalink": "https://www.instagram.com/reel/DDr6smZzANd/",
+      "poster": "/reels/DDr6smZzANd.jpg",
+      "publishedAt": 1734453029,
+      "duration": null,
+      "places": [
+        {
+          "name": "Hundreds Bistro",
+          "slug": "hundreds-bistro-chetpet"
+        }
+      ]
+    },
+    {
+      "id": "DDXfvufTKFo",
+      "title": "Al Hafa Multi Cuisine",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "al-hafa-multi-cuisine-ashok-nagar"
+      ],
+      "permalink": "https://www.instagram.com/reel/DDXfvufTKFo/",
+      "poster": "/reels/DDXfvufTKFo.jpg",
+      "publishedAt": 1733767796,
+      "duration": null,
+      "places": [
+        {
+          "name": "Al Hafa Multi Cuisine",
+          "slug": "al-hafa-multi-cuisine-ashok-nagar"
+        }
+      ]
+    },
+    {
+      "id": "DDP85RyTfLY",
+      "title": "Melt",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "melt-anna-nagar"
+      ],
+      "permalink": "https://www.instagram.com/reel/DDP85RyTfLY/",
+      "poster": "/reels/DDP85RyTfLY.jpg",
+      "publishedAt": 1733514651,
+      "duration": null,
+      "places": [
+        {
+          "name": "Melt",
+          "slug": "melt-anna-nagar"
+        }
+      ]
+    },
+    {
+      "id": "DDFmob2zrPq",
+      "title": "Nasi Kandar Pelita",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "nasi-kandar-pelita-t-nagar"
+      ],
+      "permalink": "https://www.instagram.com/reel/DDFmob2zrPq/",
+      "poster": "/reels/DDFmob2zrPq.jpg",
+      "publishedAt": 1733167462,
+      "duration": null,
+      "places": [
+        {
+          "name": "Nasi Kandar Pelita",
+          "slug": "nasi-kandar-pelita-t-nagar"
+        }
+      ]
+    },
+    {
+      "id": "DC0f3laP5xD",
+      "title": "Zamzam Jaaler Murthabak",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "zamzam-jaaler-murthabak-mylapore"
+      ],
+      "permalink": "https://www.instagram.com/reel/DC0f3laP5xD/",
+      "poster": "/reels/DC0f3laP5xD.jpg",
+      "publishedAt": 1732593431,
+      "duration": null,
+      "places": [
+        {
+          "name": "Zamzam Jaaler Murthabak",
+          "slug": "zamzam-jaaler-murthabak-mylapore"
+        }
+      ]
+    },
+    {
+      "id": "DCwcZcBPyIF",
+      "title": "Zamzam Jaaler Murthabak",
+      "city": "chennai",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "zamzam-jaaler-murthabak-mylapore"
+      ],
+      "permalink": "https://www.instagram.com/reel/DCwcZcBPyIF/",
+      "poster": "/reels/DCwcZcBPyIF.jpg",
+      "publishedAt": 1732457656,
+      "duration": null,
+      "places": [
+        {
+          "name": "Zamzam Jaaler Murthabak",
+          "slug": "zamzam-jaaler-murthabak-mylapore"
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 import type { CommunityPost, GooglePhoto, PrayerHall, Restaurant, Review } from "./types";
 import { STATIC_PLACE_PHOTO } from "./place-import";
+import { reelPlaceDetails } from "./reel-directory";
 
 // Shapes the database rows into what the page components render.
 
@@ -22,6 +23,8 @@ export type ReviewView = { name: string; initial: string; color: string; rating:
 export type HoursRow = { day: string; time: string; today: boolean };
 
 export type RestaurantView = {
+  website: string;
+  businessStatus: string;
   slug: string;
   name: string;
   cuisine: string;
@@ -37,6 +40,9 @@ export type RestaurantView = {
   reviewCount: string;
   reviews: ReviewView[];
   isOpen: boolean;
+  hoursKnown: boolean;
+  sourceNote: string;
+  description: string;
   today: string;
   /** Empty when the week's hours are not known. */
   hours: HoursRow[];
@@ -54,6 +60,11 @@ export type RestaurantView = {
 export type Amenity = { key: "parking" | "women" | "jummah"; label: string; ok: boolean; detail: string };
 
 export type MasjidView = {
+  openingHours: HoursRow[];
+  website: string;
+  businessStatus: string;
+  sourceNote: string;
+  description: string;
   slug: string;
   name: string;
   kind: string;
@@ -87,6 +98,8 @@ export type ReelSlide = {
   by: string;
   place: string;
   link: string;
+  placeSlugs?: string[];
+  city?: string;
   /** Illustration fallback: shown whole rather than cropped to fill. */
   art?: boolean;
 };
@@ -210,6 +223,7 @@ function hoursCard(rows: HoursRow[], open: boolean, rawToday: string) {
 export function toRestaurantView(place: Restaurant): RestaurantView {
   const linked = Boolean(place.google_place_id);
   const photos = googlePhotos(place.google_photos);
+  if (!photos.length) photos.push(...(place.reel_posters || []).map(src => ({ src, credit: "From @the.halal.living" })));
   if (!photos.length && place.hero_image) photos.push({ src: place.hero_image, credit: "" });
   for (const url of place.gallery) if (photos.length < 8 && /^https:\/\//.test(url)) photos.push({ src: url, credit: "" });
   const openNow = linked && place.google_open_now != null ? place.google_open_now : place.is_open;
@@ -222,12 +236,14 @@ export function toRestaurantView(place: Restaurant): RestaurantView {
   const art = foodArt(place.slug);
   const pos = position(place.lat, place.lng);
   return {
+    website: place.google_website || "",
+    businessStatus: place.google_business_status || "",
     slug: place.slug,
     name: place.name,
     cuisine: place.cuisine || place.tagline || "Restaurant",
     area: place.neighborhood,
     address: place.address,
-    price: place.price_range || "₹₹",
+    price: place.price_range || "Price not recorded",
     photo: photos[0]?.src || art,
     photos,
     art,
@@ -237,9 +253,13 @@ export function toRestaurantView(place: Restaurant): RestaurantView {
     reviewCount: count > 0 ? count.toLocaleString("en-IN") : "0",
     reviews,
     isOpen: openNow,
+    hoursKnown: place.source_reel_ids ? place.google_open_now != null : Boolean(week.length || place.open_hours),
+    description: place.description || "",
+    sourceNote: reelPlaceDetails("restaurants", place.slug)?.sourceNote || "",
     today: hours.find((row) => row.today)?.time || fallbackToday,
     hours: week.length ? hours : [],
     ...hoursCard(week.length ? hours : [], openNow, hours.find((row) => row.today)?.time || fallbackToday),
+    ...(place.source_reel_ids ? { openHead: week.length ? "Opening hours" : "Hours not confirmed", openSub: week.length ? "Google Maps schedule · confirm before visiting" : "Check with the restaurant before visiting" } : {}),
     phone: dial(place.google_phone || place.phone),
     mapsUrl: mapsLink(place.google_maps_url, `${place.name}, ${place.address}`, place.lat, place.lng),
     reviewsUrl: place.google_maps_url || (place.google_place_id
@@ -256,6 +276,7 @@ function hasFacility(facilities: string[], pattern: RegExp): boolean {
 
 export function toMasjidView(place: PrayerHall): MasjidView {
   const photos = googlePhotos(place.google_photos);
+  if (!photos.length) photos.push(...(place.reel_posters || []).map(src => ({ src, credit: "From @the.halal.living" })));
   const women = hasFacility(place.facilities, /women|ladies|sisters/i);
   const parking = hasFacility(place.facilities, /park/i) && !hasFacility(place.facilities, /no parking/i);
   const jummah = place.jummah_time.trim();
@@ -273,18 +294,23 @@ export function toMasjidView(place: PrayerHall): MasjidView {
     .filter(([, time]) => time.trim())
     .map(([name, time]) => ({ name, time: time.trim() }));
   return {
+    openingHours: place.google_hours.length ? hoursFor(place.google_hours, "Not listed") : [],
+    website: place.google_website || "",
+    businessStatus: place.google_business_status || "",
     slug: place.slug,
     name: place.name,
-    kind: /prayer hall/i.test(`${place.name} ${place.nick ?? ""}`) ? "Prayer hall" : "Masjid",
+    kind: /prayer|musallah|musalla/i.test(`${place.name} ${place.nick ?? ""}`) ? "Prayer hall" : "Masjid",
+    description: place.description || "",
+    sourceNote: [place.note, place.google_venue_name ? `Google map, contact details and photos refer to ${place.google_venue_name}, the building containing this prayer space. Prayer access and arrangements are described in the reel.` : ""].filter(Boolean).join(" "),
     area: place.neighborhood,
     address: place.address,
     photo: photos[0]?.src || art,
     photos,
     art,
     amenities: [
-      { key: "parking", label: "Parking", ok: parking, detail: parking ? "Room for cars and two-wheelers" : "Street parking only" },
-      { key: "women", label: "Women's prayer area", ok: women, detail: women ? "Separate space for women" : "Not available here" },
-      { key: "jummah", label: "Jumu’ah held", ok: Boolean(jummah), detail: jummah ? `Khutbah at ${jummah}` : "Daily prayers only" },
+      { key: "parking", label: "Parking", ok: parking, detail: parking ? "Parking shown in the reel" : "Parking not confirmed" },
+      { key: "women", label: "Women's prayer area", ok: women, detail: women ? "Women’s space described in the reel; confirm access" : "Women’s access not confirmed" },
+      { key: "jummah", label: "Jumu’ah held", ok: Boolean(jummah), detail: jummah ? `Khutbah at ${jummah}` : "Current Jumu’ah time not confirmed" },
     ],
     women,
     parking,
@@ -314,8 +340,10 @@ export function toReelSlide(post: CommunityPost): ReelSlide {
     src: post.media_url,
     poster: post.thumbnail_url || (video ? "" : post.media_url),
     title,
-    by: "@halalliving",
-    place: at?.[1]?.trim().slice(0, 40) || "Halal Living",
+    by: "@the.halal.living",
+    place: post.place_name || at?.[1]?.trim().slice(0, 40) || "Halal Living",
+    placeSlugs: post.place_slugs,
+    city: post.city,
     link,
   };
 }
@@ -323,7 +351,8 @@ export function toReelSlide(post: CommunityPost): ReelSlide {
 const GENERIC = new Set(["hotel", "restaurant", "biryani", "briyani", "kitchen", "cafe", "masjid", "mosque", "jumma", "jamia", "juma", "house", "corner", "stall", "grill", "halal", "road", "nagar", "salai"]);
 
 // Reels shown on a place page: community posts that name the place, then the place's own photos.
-export function placeReel(name: string, area: string, photos: Photo[], art: string, posts: ReelSlide[]): ReelSlide[] {
+export function placeReel(name: string, area: string, photos: Photo[], art: string, posts: ReelSlide[], slug?: string): ReelSlide[] {
+  if (slug) return posts.filter(post => post.placeSlugs?.includes(slug));
   const key = name
     .toLowerCase()
     .split(/[^a-z]+/)

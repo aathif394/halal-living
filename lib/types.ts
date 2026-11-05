@@ -3,6 +3,10 @@ export type Review = { who?: string; when?: string; rating?: number; body?: stri
 export type GooglePhoto = { name: string; attributions: string[] };
 
 export type Restaurant = {
+  google_website?: string;
+  google_business_status?: string;
+  source_reel_ids?: string[];
+  reel_posters?: string[];
   id: string;
   slug: string;
   name: string;
@@ -44,6 +48,11 @@ export type Restaurant = {
 };
 
 export type PrayerHall = {
+  google_venue_name?: string;
+  google_website?: string;
+  google_business_status?: string;
+  source_reel_ids?: string[];
+  reel_posters?: string[];
   id: string;
   slug: string;
   name: string;
@@ -88,6 +97,9 @@ export type Featured = {
 };
 
 export type CommunityPost = {
+  place_slugs?: string[];
+  place_name?: string;
+  city?: string;
   id: string;
   media_type: string;
   media_url: string;

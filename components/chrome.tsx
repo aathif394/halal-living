@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { CITIES, STORE_URL, type CityTheme } from "@/lib/cities";
 import { CityLogo, Landmark, StarPattern, themeStyle } from "./brand";
 import { BottomNav } from "./bottom-nav";
@@ -33,10 +34,10 @@ function StoreLink({ variant }: { variant: "glass" | "solid" }) {
 function DesktopBar({ city }: { city: CityTheme }) {
   return (
     <div className="hl-dbar">
-      <a className="hl-dbar__brand" href={`/${city.slug}`}>
+      <Link className="hl-dbar__brand" href={`/${city.slug}`}>
         <CityLogo city={city} size={46} />
         <span>Halal Living</span>
-      </a>
+      </Link>
       <CityOrBack city={city.slug} name={city.name} chooser={<CitySwitcher city={city} variant="pill" />} />
       <nav className="hl-dbar__right" aria-label="Main">
         <NavSwitch city={city.slug} />
@@ -51,9 +52,9 @@ function MobileBar({ city }: { city: CityTheme }) {
   return (
     <div className="hl-mbar">
       <span className="hl-mbar__left">
-        <a href={`/${city.slug}`} aria-label="Halal Living home">
+        <Link href={`/${city.slug}`} aria-label="Halal Living home">
           <CityLogo city={city} size={42} />
-        </a>
+        </Link>
         <CitySwitcher city={city} variant="title" />
       </span>
       <StoreLink variant="glass" />
@@ -77,7 +78,7 @@ export function Footer({ city, counts }: { city: CityTheme; counts?: { restauran
       <div className="hl-footer__glow" aria-hidden="true" />
       <div className="hl-wrap">
         <div className="hl-footer__cta">
-          <a className="hl-fcta hl-fcta--brand" href={`/${city.slug}/restaurants`}>
+          <Link className="hl-fcta hl-fcta--brand" href={`/${city.slug}/restaurants`}>
             <span className="hl-fcta__ic">
               <Icon name="food" size={24} stroke={2} />
             </span>
@@ -88,8 +89,8 @@ export function Footer({ city, counts }: { city: CityTheme; counts?: { restauran
             <span className="hl-fgo">
               <Icon name="arrowRight" size={18} stroke={2.4} />
             </span>
-          </a>
-          <a className="hl-fcta" href={`/${city.slug}/masjids`}>
+          </Link>
+          <Link className="hl-fcta" href={`/${city.slug}/masjids`}>
             <span className="hl-fcta__ic hl-fcta__ic--gold">
               <Icon name="masjidWide" size={24} stroke={2} />
             </span>
@@ -100,7 +101,7 @@ export function Footer({ city, counts }: { city: CityTheme; counts?: { restauran
             <span className="hl-fgo">
               <Icon name="arrowRight" size={18} stroke={2.4} />
             </span>
-          </a>
+          </Link>
         </div>
         <div className="hl-footer__grid">
           <div className="hl-footer__about">
@@ -120,12 +121,12 @@ export function Footer({ city, counts }: { city: CityTheme; counts?: { restauran
           </div>
           <div>
             <h2>EXPLORE</h2>
-            <a className="hl-flink" href={`/${city.slug}/restaurants`}>Restaurants</a>
-            <a className="hl-flink" href={`/${city.slug}/masjids`}>Masjids</a>
+            <Link className="hl-flink" href={`/${city.slug}/restaurants`}>Restaurants</Link>
+            <Link className="hl-flink" href={`/${city.slug}/masjids`}>Masjids</Link>
             <LocatorLink className="hl-flink" city={city.slug}>
               Closest masjid
             </LocatorLink>
-            <a className="hl-flink" href={`/${city.slug}#suggest`}>Suggest a place</a>
+            <Link className="hl-flink" href={`/${city.slug}#suggest`}>Suggest a place</Link>
             <InstallLink className="hl-flink" />
           </div>
           <div>
@@ -139,16 +140,16 @@ export function Footer({ city, counts }: { city: CityTheme; counts?: { restauran
           </div>
           <div>
             <h2>ABOUT</h2>
-            <a className="hl-flink" href="/how-we-verify">How we verify</a>
-            <a className="hl-flink" href={`/${city.slug}#advertise`}>Advertise with us</a>
+            <Link className="hl-flink" href="/how-we-verify">How we verify</Link>
+            <Link className="hl-flink" href={`/${city.slug}#advertise`}>Advertise with us</Link>
           </div>
           <div>
             <h2>CITIES</h2>
             {CITIES.map((item) => (
-              <a key={item.slug} className="hl-flink hl-flink--city" href={`/${item.slug}`} aria-current={item.slug === city.slug ? "page" : undefined}>
+              <Link key={item.slug} className="hl-flink hl-flink--city" href={`/${item.slug}`} aria-current={item.slug === city.slug ? "page" : undefined}>
                 <i style={{ background: item.btn }} />
                 {item.name}
-              </a>
+              </Link>
             ))}
           </div>
         </div>

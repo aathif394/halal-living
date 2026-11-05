@@ -3,7 +3,7 @@ import type { PlaceSnapshot } from "./place-import";
 
 const snapshot = snapshotData as PlaceSnapshot;
 
-export function withPlaceSnapshot(row: Record<string, unknown>, table: "restaurants" | "prayer_halls"): Record<string, unknown> {
+export function withPlaceSnapshot<T extends Record<string, unknown>>(row: T, table: "restaurants" | "prayer_halls"): T {
   const place = snapshot.places[`${table}/${String(row.city)}/${String(row.slug)}`];
   return place ? { ...row, ...place } : row;
 }

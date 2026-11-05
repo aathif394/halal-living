@@ -11,6 +11,11 @@ export type ScrapedReview = {
 };
 
 export type ScrapedPlace = {
+  address?: string;
+  price_range?: string;
+  google_website?: string;
+  google_business_status?: string;
+  google_venue_name?: string;
   google_place_id: string;
   google_maps_url: string;
   google_rating: number | null;
@@ -109,6 +114,14 @@ function googleLink(value: unknown): string | undefined {
   return undefined;
 }
 
+function websiteLink(value: unknown): string | undefined {
+  try {
+    const url = new URL(string(value));
+    if (["https:", "http:"].includes(url.protocol) && !url.username && !url.password) return url.href;
+  } catch { /* No website provided. */ }
+  return undefined;
+}
+
 export function normalizeEntry(entry: GosomEntry, timestamp: string): ScrapedPlace {
   const placeId = string(entry.place_id);
   if (!placeId) throw new Error("Scraper result has no Google place ID.");
@@ -128,6 +141,10 @@ export function normalizeEntry(entry: GosomEntry, timestamp: string): ScrapedPla
   const week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
   const rating = number(entry.review_rating), count = number(entry.review_count);
   return {
+    ...(string(entry.address) ? { address: string(entry.address) } : {}),
+    ...(string(entry.price_range) ? { price_range: string(entry.price_range) } : {}),
+    google_website: websiteLink(entry.website),
+    google_business_status: string(entry.status) || undefined,
     google_place_id: placeId,
     google_maps_url: googleLink(entry.link) || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(string(entry.title))}&query_place_id=${encodeURIComponent(placeId)}`,
     google_rating: rating != null && rating >= 1 && rating <= 5 ? rating : null,

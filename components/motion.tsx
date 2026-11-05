@@ -2,9 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 
-// Motion is part of the design and runs on every device, as in the mockup.
 function reduced() {
-  return false;
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
 
 /**
@@ -33,15 +32,25 @@ export function Motion() {
       { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
     );
     const seen = new WeakSet<Element>();
-    const scan = () =>
-      document.querySelectorAll("[data-rv]").forEach((el) => {
+    const scan = (parent: Document | HTMLElement) => {
+      const nodes = [...parent.querySelectorAll("[data-rv]")];
+      if (parent instanceof HTMLElement && parent.matches("[data-rv]")) nodes.unshift(parent);
+      nodes.forEach((el) => {
         if (seen.has(el)) return;
         seen.add(el);
-        if (el.getBoundingClientRect().bottom < 0) el.classList.add("rv-in");
+        if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add("rv-in");
         else io.observe(el);
       });
-    scan();
-    const mo = new MutationObserver(scan);
+    };
+    scan(document);
+    // Count-up text and carousel ticks must not rescan the entire document.
+    const mo = new MutationObserver((records) => {
+      for (const record of records) {
+        for (const node of record.addedNodes) {
+          if (node instanceof HTMLElement) scan(node);
+        }
+      }
+    });
     mo.observe(document.body, { childList: true, subtree: true });
     return () => {
       io.disconnect();

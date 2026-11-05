@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import type { ReelSlide } from "@/lib/view";
 import { Icon } from "./icons";
+import { useReelPlayback } from "./use-reel-playback";
 
 const CAROUSEL_MS = 3600;
 const VIEWER_MS = 7000;
@@ -12,40 +13,101 @@ function reduced() {
   return false;
 }
 
-function Media({ reel, className, playing, onEnded, onProgress }: { reel: ReelSlide; className: string; playing?: boolean; onEnded?: () => void; onProgress?: (k: number) => void }) {
-  const video = useRef<HTMLVideoElement>(null);
+function Media({
+  reel,
+  className,
+  playing,
+  onEnded,
+  onProgress,
+  videoRef,
+  onPlaybackBlocked,
+  muted = false,
+  initialTime = 0,
+}: {
+  reel: ReelSlide;
+  className: string;
+  playing?: boolean;
+  muted?: boolean;
+  initialTime?: number;
+  onEnded?: () => void;
+  onProgress?: (k: number) => void;
+  videoRef?: React.RefObject<HTMLVideoElement | null>;
+  onPlaybackBlocked?: (blocked: boolean) => void;
+}) {
+  const localVideo = useRef<HTMLVideoElement>(null);
+  const video = videoRef || localVideo;
+  const [frameReady, setFrameReady] = useState(false);
+  const { blocked } = useReelPlayback(video, playing === true, muted, reel.id);
+
+  useEffect(() => {
+    setFrameReady(false);
+  }, [reel.id]);
+
+  useEffect(() => {
+    onPlaybackBlocked?.(blocked);
+  }, [blocked, onPlaybackBlocked]);
+
   useEffect(() => {
     const node = video.current;
-    if (!node) return;
-    if (playing) node.play().catch(() => {});
-    else node.pause();
-  }, [playing]);
+    if (!node || initialTime <= 0) return;
+    const applyTime = () => {
+      if (Math.abs(node.currentTime - initialTime) > 0.5) {
+        node.currentTime = initialTime;
+      }
+    };
+    if (node.readyState >= 1) applyTime();
+    else node.addEventListener("loadedmetadata", applyTime, { once: true });
+  }, [initialTime, video]);
+
   if (reel.kind === "video" && playing !== undefined) {
     return (
-      <video
-        ref={video}
-        className={className}
-        src={reel.src}
-        poster={reel.poster || undefined}
-        muted
-        playsInline
-        autoPlay
-        preload="metadata"
-        onEnded={onEnded}
-        onError={onEnded}
-        onTimeUpdate={(event) => event.currentTarget.duration && onProgress?.(event.currentTarget.currentTime / event.currentTarget.duration)}
-      />
+      <>
+        <video
+          ref={video}
+          className={className}
+          src={reel.src}
+          poster={reel.poster || undefined}
+          muted={muted}
+          playsInline
+          autoPlay={playing}
+          preload={playing ? "auto" : "none"}
+          onEnded={onEnded}
+          onTimeUpdate={(event) => {
+            const node = event.currentTarget;
+            if (node.currentTime > 0) setFrameReady(true);
+            if (node.duration) onProgress?.(node.currentTime / node.duration);
+          }}
+        />
+        {!frameReady && reel.poster ? <img className={`${className} hl-reel-source-poster`} src={reel.poster} alt="" /> : null}
+      </>
     );
   }
   return <div className={className} style={{ backgroundImage: `url("${(reel.poster || reel.src).replace(/"/g, "")}")` }} />;
 }
 
 /** Full-screen reel viewer (mockup ReelViewer): 7 s per reel, tap left/right thirds to skip, middle to pause. */
-export function ReelViewer({ reels, start, onClose }: { reels: ReelSlide[]; start: number; onClose: (index: number) => void }) {
+export function ReelViewer({
+  reels,
+  start,
+  initialTime = 0,
+  initialMuted = false,
+  initialPlaying = true,
+  onClose,
+}: {
+  reels: ReelSlide[];
+  start: number;
+  initialTime?: number;
+  initialMuted?: boolean;
+  initialPlaying?: boolean;
+  onClose: (index: number, currentTime?: number) => void;
+}) {
   const n = reels.length;
   const [i, setI] = useState(start);
   const [k, setK] = useState(0);
-  const [playing, setPlaying] = useState(true);
+  const [playing, setPlaying] = useState(initialPlaying);
+  const [muted, setMuted] = useState(initialMuted);
+  const [blocked, setBlocked] = useState(false);
+  const viewerVideo = useRef<HTMLVideoElement>(null);
   const [videoK, setVideoK] = useState(0);
   const at = useRef(i);
   at.current = i;
@@ -58,7 +120,7 @@ export function ReelViewer({ reels, start, onClose }: { reels: ReelSlide[]; star
     },
     [n],
   );
-  const close = useCallback(() => onClose(at.current), [onClose]);
+  const close = useCallback(() => onClose(at.current, viewerVideo.current?.currentTime || 0), [onClose]);
   const panel = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -93,13 +155,37 @@ export function ReelViewer({ reels, start, onClose }: { reels: ReelSlide[]; star
         <Icon name="arrowLeft" size={18} stroke={2.6} />
       </button>
       <div ref={panel} tabIndex={-1} className="hl-rv__panel" onClick={(e) => e.stopPropagation()}>
-        <div key={`bg${i}-${k}`} className="hl-rv__bg" style={{ animationPlayState: run }}>
-          <Media reel={r} className="hl-rv__media" playing={playing} onEnded={() => go(1)} onProgress={(x) => setVideoK(x)} />
+        <div className="hl-rv__bg" style={{ animationPlayState: run }}>
+          <Media
+            reel={r}
+            className="hl-rv__media"
+            videoRef={viewerVideo}
+            muted={muted}
+            playing={playing}
+            initialTime={i === start ? initialTime : 0}
+            onPlaybackBlocked={setBlocked}
+            onEnded={() => go(1)}
+            onProgress={(x) => setVideoK(x)}
+          />
         </div>
         <div className="hl-rv__shade" />
         <div className="hl-rv__zone hl-rv__zone--l" aria-hidden="true" onClick={() => go(-1)} />
         <div className="hl-rv__zone hl-rv__zone--r" aria-hidden="true" onClick={() => go(1)} />
-        <button type="button" className="hl-rv__zone hl-rv__zone--m" aria-label={playing ? "Pause reel" : "Play reel"} onClick={() => setPlaying((v) => !v)}>
+        <button
+          type="button"
+          className="hl-rv__zone hl-rv__zone--m"
+          aria-label={playing ? "Pause reel" : "Play reel"}
+          onClick={(e) => {
+            e.stopPropagation();
+            if (playing) {
+              viewerVideo.current?.pause();
+              setPlaying(false);
+            } else {
+              viewerVideo.current?.play().catch(() => {});
+              setPlaying(true);
+            }
+          }}
+        >
           <span className={`hl-rv__play${playing ? "" : " is-on"}`}>
             <Icon name="play" size={30} />
           </span>
@@ -125,17 +211,34 @@ export function ReelViewer({ reels, start, onClose }: { reels: ReelSlide[]; star
           </span>
           <span>
             <b>{r.by}</b>
-            <small>{r.place}</small>
           </span>
         </div>
         <button type="button" className="hl-rv__circ hl-rv__x-m" aria-label="Close reel" onClick={close}>
           <Icon name="close" size={18} stroke={2.6} />
         </button>
+        {video ? (
+          <button
+            type="button"
+            className="hl-rv__circ hl-rv__sound"
+            aria-label={muted ? "Unmute reel" : "Mute reel"}
+            onClick={(e) => {
+              e.stopPropagation();
+              e.preventDefault();
+              const next = !muted;
+              setMuted(next);
+              if (viewerVideo.current) {
+                viewerVideo.current.muted = next;
+                if (!next && viewerVideo.current.paused) {
+                  viewerVideo.current.play().catch(() => {});
+                }
+              }
+            }}
+          >
+            <Icon name={muted ? "mute" : "volume"} size={18} />
+          </button>
+        ) : null}
         <div className="hl-rv__cap">
-          <span className="hl-reel__place">
-            <Icon name="pin" size={12} stroke={2.4} />
-            {r.place}
-          </span>
+          {r.place !== r.title ? <span className="hl-reel__place"><Icon name="pin" size={12} stroke={2.4} />{r.place}</span> : null}
           <div className="hl-rv__title">{r.title}</div>
           {r.link ? (
             <a className="hl-rv__ig" href={r.link} target="_blank" rel="noopener noreferrer">
@@ -228,10 +331,12 @@ export function ReelsCarousel({ reels }: { reels: ReelSlide[] }) {
           const a = Math.abs(d);
           const scale = a === 0 ? 1 : a === 1 ? 0.84 : 0.7;
           const active = d === 0;
+          if (a > 2) return null;
           return (
             <button
               key={key}
               type="button"
+              data-reel-id={reel.id}
               className={`hl-cf__card${active ? " is-active" : ""}`}
               style={
                 {
@@ -264,10 +369,7 @@ export function ReelsCarousel({ reels }: { reels: ReelSlide[] }) {
                 <Icon name="play" size={24} />
               </span>
               <span className="hl-cf__cap">
-                <span className="hl-reel__place">
-                  <Icon name="pin" size={12} stroke={2.4} />
-                  {reel.place}
-                </span>
+                {reel.place !== reel.title ? <span className="hl-reel__place"><Icon name="pin" size={12} stroke={2.4} />{reel.place}</span> : null}
                 <span className="hl-cf__title">{reel.title}</span>
               </span>
             </button>
@@ -275,9 +377,9 @@ export function ReelsCarousel({ reels }: { reels: ReelSlide[] }) {
         })}
       </div>
       <div className="hl-cf__dots">
-        {reels.map((reel, i) => (
+        {reels.map((reel, i) => Math.abs(i - (cur % count)) <= 4 ? (
           <button key={reel.id} type="button" aria-label={`Show reel ${i + 1}: ${reel.title}`} aria-current={i === cur % count ? "true" : undefined} onClick={() => goTo(cur - (cur % count) + i)} />
-        ))}
+        ) : null)}
       </div>
       {open >= 0 ? (
         <ReelViewer

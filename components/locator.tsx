@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Icon } from "./icons";
@@ -34,7 +36,7 @@ const howText = (k: number) => (k <= 2 ? `${Math.max(1, Math.round((k / 4.8) * 6
 /** Link or button that opens the locator (falls back to the masjid list without script). */
 export function LocatorLink({ city, className, children }: { city: string; className: string; children: React.ReactNode }) {
   return (
-    <a
+    <Link
       className={className}
       href={`/${city}/masjids?near=1`}
       onClick={(event) => {
@@ -43,7 +45,7 @@ export function LocatorLink({ city, className, children }: { city: string; class
       }}
     >
       {children}
-    </a>
+    </Link>
   );
 }
 
@@ -185,9 +187,9 @@ function LocatorDialog({ city, cityName, onClose }: { city: string; cityName: st
             Directions
             <Icon name="arrowUpRight" size={13} stroke={2.6} />
           </a>
-          <a className="ln-pill" href={`/${city}/masjids/${best.slug}`}>
+          <Link className="ln-pill" href={`/${city}/masjids/${best.slug}`}>
             View masjid
-          </a>
+          </Link>
         </div>
       </div>
     );

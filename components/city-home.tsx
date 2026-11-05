@@ -1,6 +1,10 @@
+import Link from "next/link";
+import Image from "next/image";
+import { Suspense } from "react";
 import { STORE_URL, type CityTheme } from "@/lib/cities";
 import type { Featured } from "@/lib/types";
 import type { PlaceCard, ReelSlide } from "@/lib/view";
+import type { StoreProduct } from "@/lib/store-products";
 import { StarPattern } from "./brand";
 import { COMMUNITY } from "./chrome";
 import { AdCarousel, AdvertiseButton, HeroWord, SuggestForm, SuggestSheetButton } from "./home-client";
@@ -9,15 +13,10 @@ import { ReelsCarousel } from "./reels";
 import { Icon } from "./icons";
 import { InstallCard } from "./install";
 import { CountUp, HeroParallax } from "./motion";
+import { TrafficCard } from "./traffic-card";
+import type { Traffic } from "@/lib/traffic";
 import { PlaceBrowser } from "./place-browser";
 
-const PRODUCTS: [string, string, string, string][] = [
-  ["Ajwa dates, 500 g", "Pantry", "₹899", "Bestseller"],
-  ["Travel prayer mat", "Prayer", "₹749", ""],
-  ["Oud attar, 6 ml", "Fragrance", "₹1,250", "New"],
-  ["HLC Cookbook, Vol. 1", "Books", "₹599", ""],
-  ["Kids Arabic flashcards", "Kids", "₹399", ""],
-];
 const PRODUCT_BG = ["#F6E6CF", "#0F4C5C", "#F3E8DA", "#F6EEE6", "#F6F6F4"];
 
 function countBy(values: string[]): [string, number][] {
@@ -26,7 +25,7 @@ function countBy(values: string[]): [string, number][] {
   return [...counts.entries()].sort((a, b) => b[1] - a[1]);
 }
 
-const HERO_WORDS = ["food", "kebabs", "biryani", "burgers", "pizza", "eats"];
+const HERO_WORDS = ["food", "cafes", "kebabs", "biryani", "burgers", "pizza", "eats"];
 
 function Community() {
   return (
@@ -49,12 +48,12 @@ function Community() {
   );
 }
 
-const AD_BG = ["#2B1710", "#3A1B14", "#12403F", "#1F2A44"];
-const AD_ART = ["/art/food-1.svg", "/art/product-0.svg", "/art/product-2.svg", "/art/food-4.svg"];
+const AD_BG = ["#2B1710", "#3A1B14", "#12403F"];
+const AD_ART = ["/art/ad-meats.svg", "/art/ad-clothing.svg", "/art/ad-attars.svg"];
+type AdPosition = "hero" | "footer";
 
-function Sponsored({ featured, city }: { featured: Featured[]; city: CityTheme }) {
-  if (!featured.length) return null;
-  const ads = featured.map((ad, i) => ({
+function AdBlock({ featured = [], city, position }: { featured?: Featured[]; city: CityTheme; position: AdPosition }) {
+  const liveAds = featured.map((ad, i) => ({
     id: ad.id,
     href: ad.restaurant_slug ? `/${ad.restaurant_city ?? city.slug}/restaurants/${ad.restaurant_slug}` : `/${city.slug}/restaurants`,
     label: ad.sponsor_label || "Sponsored",
@@ -64,11 +63,54 @@ function Sponsored({ featured, city }: { featured: Featured[]; city: CityTheme }
     art: AD_ART[i % AD_ART.length]!,
     bg: AD_BG[i % AD_BG.length]!,
   }));
+  const mockupAds = [
+    { id: "meats", label: "Sponsored", name: `Al-Barakah Meats: fresh zabiha in 30 min across ${city.name}`, mobileName: "Al-Barakah Meats: zabiha in 30 min", pitch: "", cta: "", art: AD_ART[0]!, bg: AD_BG[0]! },
+    { id: "clothing", label: "Sponsored", name: `Crescent Modest Wear: Eid edit, free delivery in ${city.name}`, mobileName: "Crescent Modest Wear: Eid edit", pitch: "", cta: "", art: AD_ART[1]!, bg: AD_BG[1]! },
+    { id: "attars", label: "Sponsored", name: `Noor Attars: alcohol-free perfumes, free delivery in ${city.name}`, mobileName: "Noor Attars: free delivery", pitch: "", cta: "", art: AD_ART[2]!, bg: AD_BG[2]! },
+  ];
+  const ads = liveAds.length ? liveAds : mockupAds;
   return (
-    <div className="hl-wrap hl-sec-sm" data-rv="">
-      <AdCarousel ads={ads} />
-    </div>
+    <section className={`hl-wrap hl-ad-slot hl-ad-slot--${position}`} aria-label="Sponsored advertisement" data-ad-position={position} data-rv="">
+      <AdCarousel ads={position === "hero" ? ads : [ads[1] ?? ads[0]!]} />
+    </section>
   );
+}
+
+async function LiveAdBlock({ featured, city, position }: { featured: Promise<Featured[]>; city: CityTheme; position: AdPosition }) {
+  return <AdBlock featured={await featured} city={city} position={position} />;
+}
+
+function Sponsored({ featured, city, position }: { featured: Promise<Featured[]>; city: CityTheme; position: AdPosition }) {
+  return <Suspense fallback={<AdBlock city={city} position={position} />}><LiveAdBlock featured={featured} city={city} position={position} /></Suspense>;
+}
+
+function StoreCards({ products }: { products: StoreProduct[] }) {
+  return (
+    <>
+      {products.map((product, i) => (
+        <a key={product.id} className={`hl-prod${i === 0 ? " hl-prod--big" : ""}`} href={product.url} target="_blank" rel="noopener noreferrer" aria-label={`${product.name}, ₹${product.price.toLocaleString("en-IN")}`}>
+          <span className="hl-prod__img" style={{ background: PRODUCT_BG[i] }}>
+            <Image src={product.image} alt={product.name} width={640} height={640} sizes={i === 0 ? "(min-width: 1100px) 40vw, 100vw" : "(min-width: 1100px) 20vw, 50vw"} />
+          </span>
+          <span className="hl-prod__t">
+            <span className="hl-prod__n" title={product.name}>{product.name}</span>
+            <b>₹{product.price.toLocaleString("en-IN")}</b>
+            <span className="hl-prod__c">{product.businessName}</span>
+          </span>
+          {i === 0 ? (
+            <span className="hl-prod__go">
+              Shop now
+              <Icon name="arrowUpRight" size={12} stroke={2.6} />
+            </span>
+          ) : null}
+        </a>
+      ))}
+    </>
+  );
+}
+
+async function LiveStoreCards({ products }: { products: Promise<StoreProduct[]> }) {
+  return <StoreCards products={await products} />;
 }
 
 export function CityHome({
@@ -78,13 +120,19 @@ export function CityHome({
   areas,
   featured,
   reels,
+  products,
+  initialProducts,
+  traffic,
 }: {
   city: CityTheme;
   restaurants: PlaceCard[];
   masjids: PlaceCard[];
   areas: string[];
-  featured: Featured[];
+  featured: Promise<Featured[]>;
   reels: ReelSlide[];
+  products: Promise<StoreProduct[]>;
+  initialProducts: StoreProduct[];
+  traffic: Traffic | null;
 }) {
   const examples = [
     `Mutton biryani in ${areas[0] ?? city.areas[0]}`,
@@ -138,7 +186,7 @@ export function CityHome({
         </div>
       </HeroParallax>
 
-      <Sponsored featured={featured} city={city} />
+      <Sponsored featured={featured} city={city} position="hero" />
 
       <section className="hl-wrap hl-sec" aria-label={`Near you in ${city.name}`} data-rv="">
         <PlaceBrowser city={{ slug: city.slug, name: city.name }} restaurants={restaurants} masjids={masjids} areas={areas} mode="home" initialKind="restaurants" />
@@ -150,20 +198,9 @@ export function CityHome({
             Halal Living in {city.name}
           </h2>
           <div className="hl-stats__grid">
-            <div className="hl-live-card">
-              <span className="hl-live-card__c1" aria-hidden="true" />
-              <span className="hl-live-card__c2" aria-hidden="true" />
-              <span className="hl-live">
-                <i />
-                Live
-              </span>
-              <b className="hl-live-card__n">
-                <CountUp value={city.monthlyReach} />
-              </b>
-              <span className="hl-live-card__l">visits this month</span>
-            </div>
+            <TrafficCard city={city.slug} initial={traffic} />
             <div className="hl-cc-tiles">
-              <a className="cc-tile" href={`/${city.slug}/restaurants`}>
+              <Link className="cc-tile" href={`/${city.slug}/restaurants`}>
                 <span className="cc-tile__top">
                   <span className="cc-tile__ic" style={{ color: city.soft, background: `${city.soft}22` }}>
                     <Icon name="food" size={22} stroke={1.8} />
@@ -178,8 +215,8 @@ export function CityHome({
                   </b>
                   <span className="cc-tile__l">halal restaurants</span>
                 </span>
-              </a>
-              <a className="cc-tile" href={`/${city.slug}/masjids`}>
+              </Link>
+              <Link className="cc-tile" href={`/${city.slug}/masjids`}>
                 <span className="cc-tile__top">
                   <span className="cc-tile__ic" style={{ color: "#E2BE62", background: "#E2BE6222" }}>
                     <Icon name="masjidWide" size={22} stroke={1.8} />
@@ -194,7 +231,7 @@ export function CityHome({
                   </b>
                   <span className="cc-tile__l">masjids &amp; prayer halls</span>
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -203,20 +240,20 @@ export function CityHome({
       <section className="hl-store" aria-labelledby="store-h" data-rv="">
         <div className="hl-wrap hl-store__grid">
           <div className="hl-store__intro">
-            <div className="hl-store__k">HALAL LIVING STORE</div>
+            <div className="hl-store__k">LIVING COLLECTIVE STORE</div>
             <h2 id="store-h">Shop from Muslim-owned businesses</h2>
             <div className="hl-store__perks">
               <span>
                 <i>
                   <Icon name="box" size={14} stroke={2.2} />
                 </i>
-                100+ Muslim-owned brands
+                Discover Muslim-owned brands
               </span>
               <span>
                 <i>
                   <Icon name="sparkle" size={14} stroke={2.2} />
                 </i>
-                Picked by the Halal Living team
+                A fresh selection every visit
               </span>
             </div>
             <a className="hl-store__cta hl-only-desk" href={STORE_URL} target="_blank" rel="noopener noreferrer">
@@ -225,24 +262,9 @@ export function CityHome({
             </a>
           </div>
           <div className="hl-store__cards">
-            {PRODUCTS.map(([name, cat, price], i) => (
-              <a key={name} className={`hl-prod${i === 0 ? " hl-prod--big" : ""}`} href={STORE_URL} target="_blank" rel="noopener noreferrer" aria-label={`${name}, ${price}`}>
-                <span className="hl-prod__img" style={{ background: PRODUCT_BG[i] }}>
-                  <img src={`/art/product-${i}.svg`} alt="" loading="lazy" />
-                </span>
-                <span className="hl-prod__t">
-                  <span className="hl-prod__n">{i === 0 ? name : name}</span>
-                  <b>{price}</b>
-                  <span className="hl-prod__c">{cat}</span>
-                </span>
-                {i === 0 ? (
-                  <span className="hl-prod__go">
-                    Shop now
-                    <Icon name="arrowUpRight" size={12} stroke={2.6} />
-                  </span>
-                ) : null}
-              </a>
-            ))}
+            <Suspense fallback={<StoreCards products={initialProducts} />}>
+              <LiveStoreCards products={products} />
+            </Suspense>
           </div>
           <a className="hl-store__cta hl-store__cta--block hl-only-mob" href={STORE_URL} target="_blank" rel="noopener noreferrer">
             Shop the store
@@ -256,12 +278,12 @@ export function CityHome({
           <div>
             <div className="hl-adv__k">ADVERTISE WITH US</div>
             <h2 id="ad-h2">
-              Reach {Math.round(city.monthlyReach / 1000)}k people a month in {city.name}
+              Reach people looking for halal places in {city.name}
             </h2>
             <p className="hl-only-desk">Put your restaurant, shop or service in front of people looking for halal places near them.</p>
             <p className="hl-only-mob">Put your business in front of people looking for halal places near them.</p>
           </div>
-          <AdvertiseButton city={city.slug} cityName={city.name} reach={`${Math.round(city.monthlyReach / 1000)}k`} />
+          <AdvertiseButton city={city.slug} cityName={city.name} />
         </div>
       </section>
 
@@ -271,10 +293,10 @@ export function CityHome({
         <div className="hl-sg">
           <StarPattern />
           <div className="hl-sg__intro">
-            <h2 id="sg-h" className="hl-sg__h" aria-label="Know a chai stall we haven’t found?">
+            <h2 id="sg-h" className="hl-sg__h" aria-label="Know a halal place we haven’t found?">
               Know a
               <br />
-              <HeroWord words={["chai stall", "biryani spot", "new masjid", "halal café"]} />
+              <HeroWord words={["biryani spot", "new masjid", "halal café"]} />
               <br />
               we haven't found?
             </h2>
@@ -303,6 +325,15 @@ export function CityHome({
                 <span>Listed with a badge that says what we found.</span>
               </li>
             </ol>
+            <aside className="hl-owner" aria-labelledby="owner-h">
+              <div className="hl-owner__copy">
+                <h3 id="owner-h">Are you a halal restaurant owner?</h3>
+              </div>
+              <a className="hl-owner__cta" href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+                List your restaurant
+                <Icon name="arrowUpRight" size={16} stroke={2.3} />
+              </a>
+            </aside>
             <div className="hl-only-mob">
               <SuggestSheetButton city={city.slug} cityName={city.name} areas={areas} />
             </div>
@@ -312,6 +343,8 @@ export function CityHome({
           </div>
         </div>
       </section>
+
+      <Sponsored featured={featured} city={city} position="footer" />
     </>
   );
 }

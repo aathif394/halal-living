@@ -1,18 +1,6 @@
-import { asGooglePhotos, asGoogleReviews, asHourLines } from "./google";
 import { getSupabase } from "./supabase";
-import { withPlaceSnapshot } from "./place-snapshot";
-import type { AboutPage, CommunityPost, Featured, PrayerHall, Restaurant, Review, Signature } from "./types";
-
-const GOOGLE_COLUMNS =
-  "google_place_id,google_maps_url,google_rating,google_review_count,google_reviews,google_photos,google_hours,google_phone,google_open_now,google_synced_at";
-
-const RESTAURANT_COLUMNS =
-  "id,slug,name,tagline,cuisine,neighborhood,city,address,lat,lng,rating,review_count,price_range,certification,open_hours,phone,description,hero_image,gallery,tags,is_open,closes_at,signatures,reviews,owner_signature,owner_title,signed_on," +
-  GOOGLE_COLUMNS;
-
-const MASJID_COLUMNS =
-  "id,slug,name,nick,neighborhood,city,address,lat,lng,capacity,madhab,facilities,jummah_time,fajr,dhuhr,asr,maghrib,isha,description,note," +
-  GOOGLE_COLUMNS;
+import { reelCommunity, reelMasjids, reelRestaurants } from "./reel-directory";
+import type { AboutPage, CommunityPost, Featured, PrayerHall, Restaurant } from "./types";
 
 export type PlaceFilters = {
   q?: string;
@@ -21,96 +9,6 @@ export type PlaceFilters = {
   lat?: number;
   lng?: number;
 };
-
-function asStringArray(value: unknown): string[] {
-  return Array.isArray(value) ? value.filter((item): item is string => typeof item === "string") : [];
-}
-
-function asSignatures(value: unknown): Signature[] {
-  if (!Array.isArray(value)) return [];
-  return value.filter((item) => item && typeof item === "object") as Signature[];
-}
-
-function asReviews(value: unknown): Review[] {
-  if (!Array.isArray(value)) return [];
-  return value.filter((item) => item && typeof item === "object") as Review[];
-}
-
-function googleFields(row: Record<string, unknown>) {
-  return {
-    google_place_id: row.google_place_id ? String(row.google_place_id) : null,
-    google_maps_url: row.google_maps_url ? String(row.google_maps_url) : null,
-    google_rating: row.google_rating == null || row.google_rating === "" ? null : Number(row.google_rating),
-    google_review_count: row.google_review_count == null || row.google_review_count === "" ? null : Number(row.google_review_count),
-    google_reviews: asGoogleReviews(row.google_reviews),
-    google_photos: asGooglePhotos(row.google_photos),
-    google_hours: asHourLines(row.google_hours),
-    google_phone: row.google_phone ? String(row.google_phone) : null,
-    google_open_now: typeof row.google_open_now === "boolean" ? row.google_open_now : null,
-    google_synced_at: row.google_synced_at ? String(row.google_synced_at) : null,
-  };
-}
-
-function mapRestaurant(row: Record<string, unknown>): Restaurant {
-  row = withPlaceSnapshot(row, "restaurants");
-  return {
-    id: String(row.id),
-    slug: String(row.slug),
-    name: String(row.name),
-    tagline: String(row.tagline ?? ""),
-    cuisine: String(row.cuisine ?? ""),
-    neighborhood: String(row.neighborhood ?? ""),
-    city: String(row.city),
-    address: String(row.address ?? ""),
-    lat: Number(row.lat ?? 0),
-    lng: Number(row.lng ?? 0),
-    rating: Number(row.rating ?? 0),
-    review_count: Number(row.review_count ?? 0),
-    price_range: String(row.price_range ?? ""),
-    certification: String(row.certification ?? ""),
-    open_hours: String(row.open_hours ?? ""),
-    phone: row.phone ? String(row.phone) : null,
-    description: row.description ? String(row.description) : null,
-    hero_image: row.hero_image ? String(row.hero_image) : null,
-    gallery: asStringArray(row.gallery),
-    tags: asStringArray(row.tags),
-    is_open: Boolean(row.is_open),
-    closes_at: row.closes_at ? String(row.closes_at) : null,
-    signatures: asSignatures(row.signatures),
-    reviews: asReviews(row.reviews),
-    owner_signature: row.owner_signature ? String(row.owner_signature) : null,
-    owner_title: row.owner_title ? String(row.owner_title) : null,
-    signed_on: row.signed_on ? String(row.signed_on) : null,
-    ...googleFields(row),
-  };
-}
-
-function mapMasjid(row: Record<string, unknown>): PrayerHall {
-  row = withPlaceSnapshot(row, "prayer_halls");
-  return {
-    id: String(row.id),
-    slug: String(row.slug),
-    name: String(row.name),
-    nick: row.nick ? String(row.nick) : null,
-    neighborhood: String(row.neighborhood ?? ""),
-    city: String(row.city),
-    address: String(row.address ?? ""),
-    lat: Number(row.lat ?? 0),
-    lng: Number(row.lng ?? 0),
-    capacity: Number(row.capacity ?? 0),
-    madhab: String(row.madhab ?? ""),
-    facilities: asStringArray(row.facilities),
-    jummah_time: String(row.jummah_time ?? ""),
-    fajr: String(row.fajr ?? ""),
-    dhuhr: String(row.dhuhr ?? ""),
-    asr: String(row.asr ?? ""),
-    maghrib: String(row.maghrib ?? ""),
-    isha: String(row.isha ?? ""),
-    description: row.description ? String(row.description) : null,
-    note: row.note ? String(row.note) : null,
-    ...googleFields(row),
-  };
-}
 
 export function haversineKm(lat1: number, lng1: number, lat2: number, lng2: number): number {
   const toRad = (value: number) => (value * Math.PI) / 180;
@@ -141,37 +39,23 @@ export function parseCoord(value: string | undefined): number | undefined {
   return number;
 }
 
+function filterPlaces<T extends { name: string; neighborhood: string; city: string; lat: number; lng: number }>(rows: T[], city: string | undefined, filters: PlaceFilters): T[] {
+  const term = safeTerm(filters.q)?.toLowerCase();
+  return sortByDistance(rows.filter((row) => {
+    if (city && row.city !== city) return false;
+    if (filters.area && row.neighborhood !== filters.area) return false;
+    const cuisine = "cuisine" in row ? String(row.cuisine) : "";
+    if (filters.cuisine && cuisine !== filters.cuisine) return false;
+    return !term || `${row.name} ${row.neighborhood} ${cuisine}`.toLowerCase().includes(term);
+  }), filters.lat, filters.lng);
+}
+
 async function queryRestaurants(city: string | undefined, filters: PlaceFilters): Promise<Restaurant[]> {
-  const supabase = await getSupabase();
-  let query = supabase.from("restaurants").select(RESTAURANT_COLUMNS).eq("active", true);
-  if (city) query = query.eq("city", city);
-  if (filters.area) query = query.eq("neighborhood", filters.area);
-  if (filters.cuisine) query = query.eq("cuisine", filters.cuisine);
-  const term = safeTerm(filters.q);
-  if (term) {
-    query = query.or(
-      `name.ilike."%${term}%",cuisine.ilike."%${term}%",neighborhood.ilike."%${term}%",tagline.ilike."%${term}%"`,
-    );
-  }
-  const { data, error } = await query.order("rating", { ascending: false }).limit(80);
-  if (error) throw new Error(error.message);
-  const rows = ((data ?? []) as unknown as Record<string, unknown>[]).map(mapRestaurant);
-  return sortByDistance(rows, filters.lat, filters.lng);
+  return filterPlaces(reelRestaurants(), city, filters);
 }
 
 async function queryMasjids(city: string | undefined, filters: PlaceFilters): Promise<PrayerHall[]> {
-  const supabase = await getSupabase();
-  let query = supabase.from("prayer_halls").select(MASJID_COLUMNS).eq("active", true);
-  if (city) query = query.eq("city", city);
-  if (filters.area) query = query.eq("neighborhood", filters.area);
-  const term = safeTerm(filters.q);
-  if (term) {
-    query = query.or(`name.ilike."%${term}%",neighborhood.ilike."%${term}%",nick.ilike."%${term}%"`);
-  }
-  const { data, error } = await query.order("name", { ascending: true }).limit(80);
-  if (error) throw new Error(error.message);
-  const rows = ((data ?? []) as unknown as Record<string, unknown>[]).map(mapMasjid);
-  return sortByDistance(rows, filters.lat, filters.lng);
+  return filterPlaces(reelMasjids(), city, filters);
 }
 
 export function listRestaurants(city: string, filters: PlaceFilters = {}) {
@@ -191,29 +75,11 @@ export function searchMasjids(filters: PlaceFilters) {
 }
 
 export async function getRestaurant(city: string, slug: string): Promise<Restaurant | null> {
-  const supabase = await getSupabase();
-  const { data, error } = await supabase
-    .from("restaurants")
-    .select(RESTAURANT_COLUMNS)
-    .eq("city", city)
-    .eq("slug", slug)
-    .eq("active", true)
-    .maybeSingle();
-  if (error) throw new Error(error.message);
-  return data ? mapRestaurant(data as unknown as Record<string, unknown>) : null;
+  return reelRestaurants().find((place) => place.city === city && place.slug === slug) ?? null;
 }
 
 export async function getMasjid(city: string, slug: string): Promise<PrayerHall | null> {
-  const supabase = await getSupabase();
-  const { data, error } = await supabase
-    .from("prayer_halls")
-    .select(MASJID_COLUMNS)
-    .eq("city", city)
-    .eq("slug", slug)
-    .eq("active", true)
-    .maybeSingle();
-  if (error) throw new Error(error.message);
-  return data ? mapMasjid(data as unknown as Record<string, unknown>) : null;
+  return reelMasjids().find((place) => place.city === city && place.slug === slug) ?? null;
 }
 
 export async function listFeatured(city: string): Promise<Featured[]> {
@@ -222,7 +88,8 @@ export async function listFeatured(city: string): Promise<Featured[]> {
     .from("featured_placements")
     .select("id,name,pitch,cta,sponsor_label,restaurant_id,restaurants(slug,city)")
     .eq("active", true)
-    .limit(6);
+    .limit(6)
+    .abortSignal(AbortSignal.timeout(1500));
   if (error) return [];
   return (data ?? [])
     .map((row) => {
@@ -242,23 +109,7 @@ export async function listFeatured(city: string): Promise<Featured[]> {
 }
 
 export async function listCommunity(): Promise<CommunityPost[]> {
-  const supabase = await getSupabase();
-  const { data, error } = await supabase
-    .from("instagram_posts")
-    .select("id,media_type,media_url,thumbnail_url,permalink,caption,alt_text,position")
-    .eq("active", true)
-    .order("position", { ascending: true })
-    .limit(8);
-  if (error) return [];
-  return (data ?? []).map((row) => ({
-    id: String(row.id),
-    media_type: String(row.media_type ?? "IMAGE"),
-    media_url: String(row.media_url),
-    thumbnail_url: row.thumbnail_url ? String(row.thumbnail_url) : null,
-    permalink: String(row.permalink),
-    caption: row.caption ? String(row.caption) : null,
-    alt_text: row.alt_text ? String(row.alt_text) : null,
-  }));
+  return reelCommunity();
 }
 
 export async function getAboutPage(): Promise<AboutPage | null> {
@@ -269,33 +120,13 @@ export async function getAboutPage(): Promise<AboutPage | null> {
 }
 
 export async function listSitemapPlaces(): Promise<{ city: string; slug: string; kind: "restaurants" | "masjids" }[]> {
-  const supabase = await getSupabase();
-  const [restaurants, masjids] = await Promise.all([
-    supabase.from("restaurants").select("city,slug").eq("active", true),
-    supabase.from("prayer_halls").select("city,slug").eq("active", true),
-  ]);
-  if (restaurants.error) throw new Error(restaurants.error.message);
-  if (masjids.error) throw new Error(masjids.error.message);
   return [
-    ...(restaurants.data ?? []).map((row) => ({
-      city: String(row.city),
-      slug: String(row.slug),
-      kind: "restaurants" as const,
-    })),
-    ...(masjids.data ?? []).map((row) => ({
-      city: String(row.city),
-      slug: String(row.slug),
-      kind: "masjids" as const,
-    })),
+    ...reelRestaurants().map((place) => ({ city: place.city, slug: place.slug, kind: "restaurants" as const })),
+    ...reelMasjids().map((place) => ({ city: place.city, slug: place.slug, kind: "masjids" as const })),
   ];
 }
 
-/** Listing counts for the footer ("118 restaurants in Chennai"). */
 export async function countPlaces(city: string): Promise<{ restaurants: number; masjids: number }> {
-  const supabase = await getSupabase();
-  const [r, m] = await Promise.all([
-    supabase.from("restaurants").select("id", { count: "exact", head: true }).eq("active", true).eq("city", city),
-    supabase.from("prayer_halls").select("id", { count: "exact", head: true }).eq("active", true).eq("city", city),
-  ]);
-  return { restaurants: r.count ?? 0, masjids: m.count ?? 0 };
+  return { restaurants: reelRestaurants().filter(place => place.city === city).length,
+    masjids: reelMasjids().filter(place => place.city === city).length };
 }

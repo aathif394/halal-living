@@ -3,7 +3,7 @@ import { bindings, defineConfig, defineWorker } from "cf/config";
 export default defineConfig({
   worker: defineWorker({
     name: "halal-living",
-    entrypoint: "vinext/server/fetch-handler",
+    entrypoint: "./worker/index.ts",
     compatibilityDate: "2026-10-26",
     compatibilityFlags: ["nodejs_compat"],
     workersDev: true,
@@ -11,7 +11,7 @@ export default defineConfig({
     assets: {
       htmlHandling: "none",
       notFoundHandling: "none",
-      runWorkerFirst: ["/*", "!/_next/static/*", "!/*/_next/static/*", "!/icons/*", "!/art/*", "!/brand/*", "!/places/photos/*"],
+      runWorkerFirst: ["/*", "!/_next/static/*", "!/*/_next/static/*", "!/icons/*", "!/art/*", "!/brand/*", "!/fonts/*", "!/places/photos/*", "!/reels/*"],
     },
     env: {
       ASSETS: bindings.assets(),
@@ -19,6 +19,8 @@ export default defineConfig({
       ENABLE_PAID_GOOGLE_PLACES: bindings.text("false"),
       NEXT_PUBLIC_SUPABASE_URL: bindings.text("https://xrhwforbjljuztqcpqnp.supabase.co"),
       NEXT_PUBLIC_SUPABASE_ANON_KEY: bindings.text("sb_publishable_vo7N12rMCyBxnOb4OOSTNQ_ueZJRUf_"),
+      NEXT_PUBLIC_CLARITY_ID: bindings.text("z7by4r07yv"),
+      CLOUDFLARE_ANALYTICS_TOKEN: bindings.text(""),
     },
   }),
 });
