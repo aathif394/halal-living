@@ -1,4 +1,5 @@
 import type { CityTheme } from "@/lib/cities";
+import { reelHandle } from "@/lib/reel-directory";
 import type { Amenity, MasjidView, ReelSlide, RestaurantView } from "@/lib/view";
 import { SealPill, VerifiedSeal } from "./brand";
 import { CallButton, DrawerHandle } from "./detail-parts";
@@ -89,7 +90,7 @@ function OpenBadge({ open, known = true }: { open: boolean; known?: boolean }) {
 
 export function RestaurantDetail({ city, place, reel }: { city: CityTheme; place: RestaurantView; reel: ReelSlide[] }) {
   const back = `/${city.slug}/restaurants`;
-  const handle = "@the.halal.living";
+  const handle = reelHandle(city.slug);
   return (
     <>
       {/* Desktop: hero card | reel, then rating, hours, map, photos, reviews. */}
@@ -252,7 +253,7 @@ export function RestaurantDetail({ city, place, reel }: { city: CityTheme; place
 
 export function MasjidDetail({ city, place, reel }: { city: CityTheme; place: MasjidView; reel: ReelSlide[] }) {
   const back = `/${city.slug}/masjids`;
-  const handle = "@the.halal.living";
+  const handle = reelHandle(city.slug);
   return (
     <>
       <div className="hl-detail hl-detail--m hl-only-desk">

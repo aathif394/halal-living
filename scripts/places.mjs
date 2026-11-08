@@ -144,16 +144,25 @@ async function importResults() {
     const entry = candidates[0];
     if (!entry?.place_id) { report.unmatched.push(key); continue; }
     const normalized = normalizeEntry(entry, timestamp);
-    if (approvedMatches[key]?.scope === "venue") {
-      // The building's reviews and hours do not describe its prayer room.
-      normalized.google_venue_name = String(entry.title);
-      normalized.address = `${target.address} · ${normalized.address || ""}`;
+    const scope = approvedMatches[key]?.scope;
+    const landmark = scope === "landmark";
+    if (scope === "venue" || landmark) {
       normalized.google_rating = null;
       normalized.google_review_count = null;
       normalized.google_reviews = [];
       normalized.google_hours = [];
+      if (landmark) {
+        normalized.address = target.address;
+        normalized.google_phone = null;
+        delete normalized.google_website;
+        delete normalized.google_business_status;
+        delete normalized.price_range;
+      } else {
+        normalized.google_venue_name = String(entry.title);
+        normalized.address = `${target.address} · ${normalized.address || ""}`;
+      }
     }
-    const photos = await Promise.all(photoCandidates(entry).map(async url => {
+    const photos = await Promise.all((landmark ? [] : photoCandidates(entry)).map(async url => {
       try {
         if (!photoCache.has(url)) photoCache.set(url, downloadPhoto(url));
         const name = await photoCache.get(url);
@@ -163,9 +172,9 @@ async function importResults() {
     normalized.google_photos = photos.filter((photo, index) => photo && photos.findIndex(other => other?.name === photo.name) === index);
     const previous = snapshot.places[key];
     // Partial refreshes must not erase previously downloaded media or reviews.
-    if (previous?.google_place_id === normalized.google_place_id) {
+    if (!landmark && previous?.google_place_id === normalized.google_place_id) {
       if (!normalized.google_photos.length) normalized.google_photos = previous.google_photos;
-      if (!normalized.google_reviews.length) normalized.google_reviews = previous.google_reviews;
+      if (scope !== "venue" && !normalized.google_reviews.length) normalized.google_reviews = previous.google_reviews;
     }
     snapshot.places[key] = normalized;
     report.imported.push({ key, name: entry.title, photos: normalized.google_photos.length, reviews: normalized.google_reviews.length });

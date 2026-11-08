@@ -29,15 +29,17 @@ The UI fixes on top of that data integration add swipeable review cards with arr
 
 ## Reel directory
 
-The app uses `data/reel-directory.json` as its directory: 33 restaurants and 45 masjids/prayer spaces featured in 79 relevant reels, reviewed from the profile’s 161 reels. Multiple names and repeat visits are grouped into one place. Existing React layouts, filters, maps and mobile full-screen reels are preserved. Original reel links are retained. `/api/reels/[id]` resolves Instagram’s public embed metadata and redirects the browser to the original Instagram CDN video; videos are never downloaded or re-encoded by this app. Only posters live in `public/reels/`. Source URLs refresh after ten minutes so expiring Instagram links are not saved in the catalog. The player starts with sound enabled; if a browser blocks audible autoplay, the user can tap Play.
+The app uses `data/reel-directory.json` for its Chennai, Bangalore, Mumbai and Hyderabad listings. The catalog records each city’s source profile and reel count. It groups repeat visits and alternate names under one listing and links to the original reels. `/api/reels/[id]` resolves Instagram’s public embed metadata and redirects the browser to the original Instagram CDN video. Only posters live in `public/reels/`. Source URLs refresh after ten minutes so expiring Instagram links stay out of the catalog. The player starts with sound enabled. If a browser blocks audible autoplay, the user can tap Play.
 
-`data/google-places.json` enriches only these listings. The 2026-11-02 Gosom import contains 435 local Google photos and 446 written reviews. Reviewed Google place IDs and matching evidence are in `data/google-place-matches.json`. Five prayer rooms have building-only matches: their maps/photos are labeled as venue information and their venue reviews and opening hours are excluded. Missing Google photos fall back to the reel poster. Imported hours are a schedule, never a live open/closed signal.
+`data/google-places.json` enriches the directory with reviewed Gosom results. Reviewed Google place IDs and matching evidence are in `data/google-place-matches.json`. Building-only matches label the map and photos as venue information and omit venue reviews and hours. Landmark matches use the starting point shown in the reel for directions and keep the reel poster and original address directions. Listings without a reliable match use their reel details. Imported hours are a published schedule.
 
 Refresh with `node scripts/places.mjs prepare`, `node scripts/places.mjs run`, then review new matches before `node scripts/places.mjs import --only-reviewed`. For this import, the two scrape batches were combined in `.local/places/combined-results.jsonl`. Raw extraction data and logs remain local and ignored. No Instagram cookies, Cloudflare credentials or paid Google API calls are shipped to the app.
 
 ## Loading and navigation
 
 Internal links use the client router; the main navigation prefetches its destinations and city changes start immediately. Optional sponsored placements and live store products stream within independent Suspense boundaries, so they cannot block the city heading, directory, or shared navigation. Store cards render from the real local catalog while current prices arrive. Analytics starts from a measured snapshot for the current month and refreshes through its existing API.
+
+Live traffic uses the `CLOUDFLARE_ANALYTICS_TOKEN` secret on the production Worker. Use an account-scoped Cloudflare token with Account Analytics Read permission. The card checks for fresh totals every five minutes while visible and when the tab becomes visible again. To refresh the fallback snapshot, run `node --env-file=.env.local scripts/traffic.mjs` with an analytics-capable token configured locally.
 
 The homepage retains the mockup carousel below the hero and the banner after suggestions. The Medina Dates billboard between the advertising enquiry section and reels has been removed. The mockup creatives remain visible when no active placements are returned; configured live placements replace them within those slots.
 
@@ -47,3 +49,10 @@ Local place cards and galleries use prebuilt 320px/640px WebP images, served dir
 ## Store products
 
 The homepage selects five real products on each request, favoring different businesses. `data/store-products.json` is a fallback catalog of 487 available products from 40 verified businesses on `www.livingcollective.store`. Selected businesses’ product data is refreshed from the store’s public API with a ten-minute cache; cards use current prices and availability when that API responds. Every card links to its specific store product. Run `node scripts/store-products.mjs` to refresh the fallback pool. No store credentials are needed.
+
+"Stay updated" sign-ups (`/api/subscribe`) are stored in `digest_subscribers` (one row per email; cities and topics merge on re-subscribe) and get a confirmation email from `updates@halal.livingcollective.net` through Resend (`lib/email.ts`).
+
+The monthly digest (`lib/digest.ts`) runs from the Worker cron `30 3 1 * *` (09:00 IST on the 1st). Each subscriber gets the restaurants and masjids first featured (earliest reel date) in their cities since their last digest; nobody is emailed when there is nothing new. Every email has an unsubscribe link (`/unsubscribe`) and one-click `List-Unsubscribe` headers.
+
+- Worker secrets: `RESEND_API_KEY`, `DIGEST_SECRET` (also stored in `private.app_secrets` in Supabase; the digest functions check it, so the table is never readable with the public key).
+- Manual run: `POST /api/digest` with `Authorization: Bearer $DIGEST_SECRET` and `{"dryRun":true}` to preview, `{"to":"delivered@resend.dev"}` to send every email to one test address, or `{}` to send for real.

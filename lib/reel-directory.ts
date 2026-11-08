@@ -7,6 +7,11 @@ export type ReelPlace = (typeof catalog.places)[number];
 
 export const reelPlaces = catalog.places;
 export const directoryReels = catalog.reels;
+const sources: Readonly<Record<string, { profile: string }>> = catalog.sources;
+
+export function reelHandle(city: string | null | undefined): string {
+  return `@${sources[city ?? ""]?.profile ?? catalog.profile}`;
+}
 
 export function reelsForPlace(kind: "restaurants" | "masjids", slug: string): DirectoryReel[] {
   const place = reelPlaces.find((item) => item.kind === kind && item.slug === slug);

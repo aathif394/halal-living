@@ -18,8 +18,8 @@ export function Subscribe({ city }: { city: CitySlug }) {
   const [open, setOpen] = useState(false);
   const [mob, setMob] = useState(false);
   const [subbed, setSubbed] = useState(false);
-  const [form, setForm] = useState<{ name: string; email: string; cities: CitySlug[] }>({ name: "", email: "", cities: [city] });
-  const [err, setErr] = useState<{ email?: boolean; cities?: boolean }>({});
+  const [form, setForm] = useState({ name: "", email: "", cities: [city], rest: true, mas: true });
+  const [err, setErr] = useState<{ email?: boolean; cities?: boolean; topics?: boolean }>({});
   const [busy, setBusy] = useState(false);
   const [done, setDone] = useState(false);
   const [saveErr, setSaveErr] = useState("");
@@ -84,11 +84,12 @@ export function Subscribe({ city }: { city: CitySlug }) {
     const e: typeof err = {};
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(form.email.trim())) e.email = true;
     if (!form.cities.length) e.cities = true;
+    if (!form.rest && !form.mas) e.topics = true;
     setErr(e);
     if (Object.keys(e).length) return;
     setBusy(true);
     try {
-      const response = await fetch("/api/subscribe", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ ...form, rest: true, mas: true }) });
+      const response = await fetch("/api/subscribe", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(form) });
       if (!response.ok) throw new Error();
       setDone(true);
       setSubbed(true);
@@ -108,6 +109,7 @@ export function Subscribe({ city }: { city: CitySlug }) {
   const chosen = chosenCities[0] ?? CITIES[0]!;
   const names = chosenCities.map((c) => c.name);
   const cityNames = names.length > 1 ? `${names.slice(0, -1).join(", ")} and ${names[names.length - 1]}` : (names[0] ?? "");
+  const topicNames = [form.rest && "restaurants", form.mas && "masjids"].filter(Boolean).join(" and ");
   const chip = (on: boolean, label: string, onClick: () => void, required = false) => (
     <button key={label} type="button" className={`sub-chip${on ? " is-on" : ""}`} aria-pressed={on} aria-disabled={required || undefined} onClick={required ? undefined : onClick}>
       {on ? <Icon name="check" size={13} stroke={3} /> : null}
@@ -122,7 +124,7 @@ export function Subscribe({ city }: { city: CitySlug }) {
       </span>
       <b>You’re on the list for {cityNames}</b>
       <p>
-        Once a month we’ll email {form.email.trim()} with new restaurants and masjids. Every email has an unsubscribe link.
+        Once a month we’ll email {form.email.trim()} with new {topicNames}. Every email has an unsubscribe link.
       </p>
       <button type="button" className="hl-btn-line" onClick={() => setOpen(false)}>
         Done
@@ -182,9 +184,14 @@ export function Subscribe({ city }: { city: CitySlug }) {
       ) : null}
       <div className="sub-lab">Tell me about</div>
       <div className="sub-chips">
-        <span className="sub-chip is-on"><Icon name="check" size={13} stroke={3} />Restaurants</span>
-        <span className="sub-chip is-on"><Icon name="check" size={13} stroke={3} />Masjids</span>
+        {chip(form.rest, "Restaurants", () => up({ rest: !form.rest }), form.rest && !form.mas)}
+        {chip(form.mas, "Masjids", () => up({ mas: !form.mas }), form.mas && !form.rest)}
       </div>
+      {err.topics ? (
+        <div className="sub-err" role="alert">
+          Pick at least one topic.
+        </div>
+      ) : null}
       {saveErr ? (
         <div className="sub-err" role="alert">
           {saveErr}

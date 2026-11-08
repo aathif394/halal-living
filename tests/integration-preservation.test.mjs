@@ -55,8 +55,40 @@ test('directory filters, cards, search and surrounding map card remain unchanged
  assert.equal(card(normalizeDelivery(current)),card(normalizeDelivery(old)));
 });
 
-test('every reel listing has a reviewed Google match and all snapshot photos exist',async()=>{
- const snapshot=JSON.parse(await source('data/google-places.json')); const catalog=JSON.parse(await source('data/reel-directory.json')); const matches=JSON.parse(await source('data/google-place-matches.json')); const places=Object.values(snapshot.places); assert.equal(places.length,catalog.places.length); for(const place of catalog.places){const key=`${place.kind==='restaurants'?'restaurants':'prayer_halls'}/${place.city}/${place.slug}`;const row=snapshot.places[key];assert.ok(row,key);assert.equal(row.google_place_id,matches[key].placeId,key);if(matches[key].scope==='venue'){assert.equal(row.google_rating,null);assert.equal(row.google_review_count,null);assert.deepEqual(row.google_reviews,[]);assert.deepEqual(row.google_hours,[]);assert.ok(row.google_venue_name);}}
+test('Google snapshots have reviewed matches, scoped prayer-room data and local photos',async()=>{
+ const snapshot=JSON.parse(await source('data/google-places.json'));
+ const catalog=JSON.parse(await source('data/reel-directory.json'));
+ const matches=JSON.parse(await source('data/google-place-matches.json'));
+ const listings=new Map(catalog.places.map(place=>[
+   `${place.kind==='restaurants'?'restaurants':'prayer_halls'}/${place.city}/${place.slug}`,place
+ ]));
+ assert.deepEqual(Object.keys(snapshot.places).sort(),Object.keys(matches).sort());
+ for(const [key,place] of listings){
+   if(place.city==='chennai')assert.ok(snapshot.places[key],key);
+ }
+ for(const [key,row] of Object.entries(snapshot.places)){
+   const place=listings.get(key);
+   assert.ok(place,key);
+   const {scope,placeId,title}=matches[key];
+   assert.equal(row.google_place_id,placeId,key);
+   if(scope==='venue'||scope==='landmark'){
+     assert.equal(place.kind,'masjids',key);
+     assert.equal(row.google_rating,null,key);
+     assert.equal(row.google_review_count,null,key);
+     assert.deepEqual(row.google_reviews,[],key);
+     assert.deepEqual(row.google_hours,[],key);
+   }
+   if(scope==='venue')assert.equal(row.google_venue_name,title,key);
+   if(scope==='landmark'){
+     assert.ok(place.note.includes(title),key);
+     assert.equal(row.address,place.address,key);
+     assert.equal(row.google_phone,null,key);
+     assert.equal(row.google_website,undefined,key);
+     assert.equal(row.google_business_status,undefined,key);
+     assert.deepEqual(row.google_photos,[],key);
+   }
+ }
+ const places=Object.values(snapshot.places);
  const photos=places.flatMap(p=>p.google_photos);assert.ok(photos.length>400);assert.ok(places.flatMap(p=>p.google_reviews).length>400);
  for(const p of places){assert.ok(Number.isFinite(p.lat)&&Number.isFinite(p.lng));for(const photo of p.google_photos){assert.match(photo.name,/^\/places\/photos\/[a-f0-9]{64}\.(jpg|png|webp)$/);assert.ok((await stat(new URL('../public'+photo.name,import.meta.url))).size>0);}}
 });

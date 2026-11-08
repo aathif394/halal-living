@@ -329,7 +329,7 @@ export function CityHome({
               <div className="hl-owner__copy">
                 <h3 id="owner-h">Are you a halal restaurant owner?</h3>
               </div>
-              <a className="hl-owner__cta" href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+              <a className="hl-owner__cta" href="https://docs.google.com/forms/d/e/1FAIpQLScMCPLtKNBezUZhS2DvqmOtQ8IVrYV0OXD3WsNeobDtLqI50A/viewform" target="_blank" rel="noopener noreferrer">
                 List your restaurant
                 <Icon name="arrowUpRight" size={16} stroke={2.3} />
               </a>

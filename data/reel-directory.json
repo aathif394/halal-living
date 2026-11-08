@@ -1188,6 +1188,1724 @@
         "Wudu area"
       ],
       "note": "The reel describes narrow stairs; check access needs before visiting."
+    },
+    {
+      "kind": "masjids",
+      "slug": "dlf-westend-heights-musalla-akshayanagar",
+      "name": "DLF Westend Heights Musalla",
+      "city": "bangalore",
+      "area": "Akshayanagar",
+      "address": "Near DLF Westend Heights, DLF Newtown, Bangalore",
+      "reelIds": [
+        "DfKeG9xt02K"
+      ],
+      "description": "A neighborhood prayer space near Westend Heights with a board listing prayer and congregation times.",
+      "facilities": [],
+      "note": "Google Maps points to DLF Westend Heights, the starting landmark. Follow the reel and the address directions from there."
+    },
+    {
+      "kind": "masjids",
+      "slug": "nexus-shantiniketan-mall-prayer-room-whitefield",
+      "name": "Nexus Shantiniketan Mall Prayer Room",
+      "city": "bangalore",
+      "area": "Whitefield",
+      "address": "Inside Nexus Shantiniketan Mall, Bangalore",
+      "reelIds": [
+        "DfFct5FviUY"
+      ],
+      "description": "The mall prayer space has separate areas for men and women and facilities for wudu.",
+      "facilities": [
+        "Women's prayer area",
+        "Wudu area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-inamul-hassan-geddalahalli",
+      "name": "Masjid-e-Inamul Hassan",
+      "city": "bangalore",
+      "area": "Geddalahalli",
+      "address": "Near Ashwath Nagar, Geddalahalli, Bangalore",
+      "reelIds": [
+        "DfChUtgurIL"
+      ],
+      "description": "A neighborhood masjid with a spacious prayer hall and wudu facilities.",
+      "facilities": [
+        "Wudu area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-sharfiya-hennur",
+      "name": "Masjid-e-Sharfiya",
+      "city": "bangalore",
+      "area": "Hennur",
+      "address": "Janakiram Layout, second cross off Hennur Main Road, near Sparsh Hospital, Bangalore",
+      "reelIds": [
+        "DernUYaPeJ_"
+      ],
+      "description": "The reel starts at Sparsh Hospital and follows Hennur Main Road to the blue prayer hall in Janakiram Layout. Wudu facilities are available.",
+      "facilities": [
+        "Wudu area"
+      ],
+      "note": "Google Maps points to SPARSH Hospital, Hennur, the starting landmark. Follow the reel and the address directions from there."
+    },
+    {
+      "kind": "masjids",
+      "slug": "musalla-near-st-josephs-college-langford-town",
+      "name": "Musalla near St. Joseph’s College",
+      "city": "bangalore",
+      "area": "Langford Town",
+      "address": "First floor through the Imperial Parking entrance near St. Joseph’s College, Bangalore",
+      "reelIds": [
+        "DejiWcSPYdX"
+      ],
+      "description": "Enter at the Imperial Parking banner, turn right and go upstairs to the first floor. The hall has wudu facilities and congregational prayers.",
+      "facilities": [
+        "Wudu area"
+      ],
+      "note": "Google Maps points to St Joseph's University, the starting landmark. Follow the reel and the address directions from there."
+    },
+    {
+      "kind": "masjids",
+      "slug": "musalla-near-a4-car-care-jp-nagar",
+      "name": "Musalla near A4 Car Care",
+      "city": "bangalore",
+      "area": "JP Nagar",
+      "address": "Near A4 Car Care and Shoppers Stop, JP Nagar 4th Phase, Bannerghatta Road, Bangalore",
+      "reelIds": [
+        "Deb1wXzPa4v"
+      ],
+      "description": "A prayer space near A4 Car Care, featured for all five daily congregational prayers.",
+      "facilities": [],
+      "note": "Google Maps points to A4CarCare, the starting landmark. Follow the reel and the address directions from there."
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-abdur-raheem-faizi-hegde-nagar",
+      "name": "Masjid-e-Abdur Raheem Faizi",
+      "city": "bangalore",
+      "area": "Hegde Nagar",
+      "address": "Near Sampigehalli Police Station, Hegde Nagar, Bangalore",
+      "reelIds": [
+        "DeZpUduN8Un"
+      ],
+      "description": "A spacious masjid with wudu and washrooms and a women’s prayer area on the first floor.",
+      "facilities": [
+        "Women's prayer area",
+        "Wudu area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-safa-brigade-road",
+      "name": "Masjid-e-Safa",
+      "city": "bangalore",
+      "area": "Brigade Road",
+      "address": "Inside Indo Dubai Plaza, Brigade Road, Bangalore",
+      "reelIds": [
+        "DeUHSoTvAcq"
+      ],
+      "description": "A prayer hall with a wudu area inside Indo Dubai Plaza. Check the board inside for congregation times.",
+      "facilities": [
+        "Wudu area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "national-plaza-musalla-residency-road",
+      "name": "National Plaza Musalla",
+      "city": "bangalore",
+      "area": "Residency Road",
+      "address": "First floor, National Plaza, Residency Road, Bangalore",
+      "reelIds": [
+        "DeO6UCbBCAf"
+      ],
+      "description": "Turn left on entering National Plaza and take the stairs to the first-floor prayer hall.",
+      "facilities": [
+        "Wudu area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "musalla-e-khalid-richmond-town",
+      "name": "Musalla-e-Khalid",
+      "city": "bangalore",
+      "area": "Richmond Town",
+      "address": "Second floor beside Prakash Textiles, near Fanoos on Hosur Road, Bangalore",
+      "reelIds": [
+        "DeMOQXBsZby"
+      ],
+      "description": "Take the staircase beside Prakash Textiles to the second-floor prayer hall.",
+      "facilities": [],
+      "note": "Google Maps points to Hotel Fanoos, the starting landmark. Follow the reel and the address directions from there."
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-ayesha-frazer-town",
+      "name": "Masjid-e-Ayesha",
+      "city": "bangalore",
+      "area": "Frazer Town",
+      "address": "Pulikeshi Nagar, Frazer Town, Bangalore",
+      "reelIds": [
+        "DctalKsOJPP",
+        "DVMPxF4kvNU"
+      ],
+      "description": "Two reels feature the masjid’s women’s prayer arrangements, including a first-floor space. The Jummah and Ramadan arrangements can differ.",
+      "facilities": [
+        "Women's prayer area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "musalla-abu-bakr-koramangala",
+      "name": "Musalla Abu Bakr",
+      "city": "bangalore",
+      "area": "Koramangala",
+      "address": "Below a house opposite the BSNL office, Koramangala, Bangalore",
+      "reelIds": [
+        "Da2iYxfP1eP"
+      ],
+      "description": "An air-conditioned musalla opposite the BSNL office with daily congregational prayers and wudu at the entrance.",
+      "facilities": [
+        "Wudu area",
+        "Air conditioning"
+      ],
+      "note": "Google Maps points to Telephone Exchange Koramangala, the starting landmark. Follow the reel and the address directions from there."
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-mamoor-koramangala",
+      "name": "Masjid-e-Mamoor",
+      "city": "bangalore",
+      "area": "Koramangala",
+      "address": "Koramangala, Bangalore",
+      "reelIds": [
+        "DanQLSsOnFG",
+        "DViixyiDkVX"
+      ],
+      "description": "The women’s prayer area has a back entrance and its own wudu facilities. Also featured in the Ramadan prayer-space roundup.",
+      "facilities": [
+        "Women's prayer area",
+        "Wudu area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "zameer-complex-musalla-sg-palya",
+      "name": "Zameer Complex Musalla",
+      "city": "bangalore",
+      "area": "SG Palya",
+      "address": "Terrace of Zameer Complex, opposite Golden Trends Salon, SG Palya Main Road, Bangalore",
+      "reelIds": [
+        "DZ2TrogvwNS"
+      ],
+      "description": "A terrace prayer space close to Christ University.",
+      "facilities": [],
+      "note": "Google Maps points to Golden Trends, the starting landmark. Follow the reel and the address directions from there."
+    },
+    {
+      "kind": "masjids",
+      "slug": "forum-rex-walk-prayer-room-brigade-road",
+      "name": "Forum Rex Walk Prayer Room",
+      "city": "bangalore",
+      "area": "Brigade Road",
+      "address": "Inside Forum Rex Walk, Brigade Road, Bangalore",
+      "reelIds": [
+        "DYzV1fzPR05"
+      ],
+      "description": "An air-conditioned prayer space inside the mall with separate sections and wudu facilities.",
+      "facilities": [
+        "Women's prayer area",
+        "Wudu area",
+        "Air conditioning"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "edigah-masjid-jayanagar",
+      "name": "Edigah Masjid",
+      "city": "bangalore",
+      "area": "Jayanagar",
+      "address": "Near Jayanagar Shopping Complex, Jayanagar 4th Block, Bangalore",
+      "reelIds": [
+        "DXtte4HI_Et"
+      ],
+      "description": "A masjid near the Jayanagar market featured for its prayer space for women.",
+      "facilities": [
+        "Women's prayer area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-noor-jayanagar",
+      "name": "Masjid-e-Noor",
+      "city": "bangalore",
+      "area": "Jayanagar",
+      "address": "Near Jayanagar Bus Stand and Shopping Complex, Bangalore",
+      "reelIds": [
+        "DXjf5OPD0sk"
+      ],
+      "description": "A prayer stop near the Jayanagar bus stand with separate access to the women’s prayer area.",
+      "facilities": [
+        "Women's prayer area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "vega-city-mall-prayer-room-bannerghatta-road",
+      "name": "Vega City Mall Prayer Room",
+      "city": "bangalore",
+      "area": "Bannerghatta Road",
+      "address": "Inside Vega City Mall, Bannerghatta Main Road, Bangalore",
+      "reelIds": [
+        "DXZPTmMjZbt"
+      ],
+      "description": "A prayer room inside Vega City Mall. The reel shows how to find it from inside the mall.",
+      "facilities": []
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-abu-bakr-electronic-city",
+      "name": "Masjid-e-Abu Bakr",
+      "city": "bangalore",
+      "area": "Electronic City",
+      "address": "Electronic City, Bangalore",
+      "reelIds": [
+        "DViixyiDkVX"
+      ],
+      "description": "Featured in a roundup of Bangalore masjids with arrangements for women during Taraweeh.",
+      "facilities": [
+        "Women's prayer area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "hajee-ismail-sait-masjid-frazer-town",
+      "name": "Hajee Ismail Sait Masjid",
+      "city": "bangalore",
+      "area": "Frazer Town",
+      "address": "Frazer Town, Bangalore",
+      "reelIds": [
+        "DVMPxF4kvNU"
+      ],
+      "description": "The Ramadan reel highlights women’s Taraweeh arrangements in the nearby Jalsa Banquet Hall. Confirm the current venue before visiting.",
+      "facilities": []
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-usmaan-e-ghani-kg-halli",
+      "name": "Masjid-e-Usmaan-e-Ghani",
+      "city": "bangalore",
+      "area": "KG Halli",
+      "address": "KG Halli, Bangalore",
+      "reelIds": [
+        "DVMPxF4kvNU"
+      ],
+      "description": "The Ramadan reel shows the separate rear entrance used by women for Taraweeh.",
+      "facilities": [
+        "Women's prayer area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-tawheed-jp-nagar",
+      "name": "Masjid-e-Tawheed",
+      "city": "bangalore",
+      "area": "JP Nagar",
+      "address": "JP Nagar, Bangalore",
+      "reelIds": [
+        "DVBQfy3kjNN"
+      ],
+      "description": "Featured in a guide to women’s Taraweeh spaces in Bangalore.",
+      "facilities": [
+        "Women's prayer area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "jamia-masjid-basavanagudi-basavanagudi",
+      "name": "Jamia Masjid Basavanagudi",
+      "city": "bangalore",
+      "area": "Basavanagudi",
+      "address": "Basavanagudi, Bangalore",
+      "reelIds": [
+        "DVBQfy3kjNN"
+      ],
+      "description": "Featured in a guide to women’s Taraweeh spaces in Bangalore.",
+      "facilities": [
+        "Women's prayer area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "iwan-institute-prayer-space-basavanagudi",
+      "name": "Iwan Institute Prayer Space",
+      "city": "bangalore",
+      "area": "Basavanagudi",
+      "address": "Ground floor, Iwan Institute, Church Road, Basavanagudi, Bangalore",
+      "reelIds": [
+        "DVBQfy3kjNN"
+      ],
+      "description": "The Ramadan reel shows the ground-floor women’s Taraweeh space and the approach from Madhav Rao Circle. Confirm current arrangements.",
+      "facilities": [
+        "Women's prayer area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-yaqoob-new-bel-road",
+      "name": "Masjid-e-Yaqoob",
+      "city": "bangalore",
+      "area": "New BEL Road",
+      "address": "New BEL Road area, Bangalore",
+      "reelIds": [
+        "DVBQfy3kjNN"
+      ],
+      "description": "Featured in a guide to women’s Taraweeh spaces in Bangalore.",
+      "facilities": [
+        "Women's prayer area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-meena-btm-layout",
+      "name": "Masjid-e-Meena",
+      "city": "bangalore",
+      "area": "BTM Layout",
+      "address": "BTM Layout, Bangalore",
+      "reelIds": [
+        "DU5uL8wjk7e"
+      ],
+      "description": "A BTM Layout masjid featured for its women’s Taraweeh arrangements.",
+      "facilities": [
+        "Women's prayer area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-salafi-btm-layout",
+      "name": "Masjid-e-Salafi",
+      "city": "bangalore",
+      "area": "BTM Layout",
+      "address": "9th C Main Road, BTM 1st Stage, Bangalore",
+      "reelIds": [
+        "DU5uL8wjk7e",
+        "DcVxiNiOzys"
+      ],
+      "description": "Also known as Kerala Salafi Masjid. The reels show the dedicated women’s prayer space and feature the Malayalam Friday khutbah.",
+      "facilities": [
+        "Women's prayer area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-mouzzam-btm-layout",
+      "name": "Masjid Mouzzam",
+      "city": "bangalore",
+      "area": "BTM Layout",
+      "address": "BTM Layout, Bangalore",
+      "reelIds": [
+        "DU5uL8wjk7e"
+      ],
+      "description": "A BTM Layout masjid featured for its women’s Taraweeh arrangements.",
+      "facilities": [
+        "Women's prayer area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "prestige-meridian-prayer-hall-mg-road",
+      "name": "Prestige Meridian Prayer Hall",
+      "city": "bangalore",
+      "area": "MG Road",
+      "address": "Inside Prestige Meridian, near MG Road Metro, Bangalore",
+      "reelIds": [
+        "DTSjNLfjKlR"
+      ],
+      "description": "A prayer space with wudu facilities inside Prestige Meridian, within walking distance of Church Street.",
+      "facilities": [
+        "Wudu area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "juma-masjid-shivajinagar",
+      "name": "Juma Masjid",
+      "city": "bangalore",
+      "area": "Shivajinagar",
+      "address": "At the end of Commercial Street, Shivajinagar, Bangalore",
+      "reelIds": [
+        "DSpVHY_kq1w"
+      ],
+      "description": "A traditional masjid at the end of Commercial Street with a wudu area and prayer facilities for women.",
+      "facilities": [
+        "Women's prayer area",
+        "Wudu area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "ibc-knowledge-park-prayer-hall-sg-palya",
+      "name": "IBC Knowledge Park Prayer Hall",
+      "city": "bangalore",
+      "area": "SG Palya",
+      "address": "Inside IBC Knowledge Park, Bannerghatta Main Road, Bangalore",
+      "reelIds": [
+        "DSfKdPVEre2"
+      ],
+      "description": "An air-conditioned prayer hall with wudu facilities, a separate women’s area and Jumu’ah.",
+      "facilities": [
+        "Women's prayer area",
+        "Wudu area",
+        "Air conditioning"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "lulu-mall-bangalore-prayer-rooms-rajajinagar",
+      "name": "LuLu Mall Bangalore Prayer Rooms",
+      "city": "bangalore",
+      "area": "Rajajinagar",
+      "address": "Top floor beside the Funtura ticket counter, LuLu Mall, Bangalore",
+      "reelIds": [
+        "DSXQUFUkjyn"
+      ],
+      "description": "Separate prayer rooms for men and women and a wudu area, above the food court near Funtura.",
+      "facilities": [
+        "Women's prayer area",
+        "Wudu area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "bismillah-masjid-sg-palya",
+      "name": "Bismillah Masjid",
+      "city": "bangalore",
+      "area": "SG Palya",
+      "address": "Masjid Road, off Bannerghatta Road in Bismillah Nagar, Bangalore",
+      "reelIds": [
+        "DSFXn1_kpG7"
+      ],
+      "description": "A two-floor masjid with wudu, washrooms and Jummah. The reel starts from the Christ University back gate and shows the turn at Eat N Drink.",
+      "facilities": [
+        "Wudu area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "koramangala-1st-block-musalla-koramangala",
+      "name": "Koramangala 1st Block Musalla",
+      "city": "bangalore",
+      "area": "Koramangala",
+      "address": "Down the furniture-shop lane opposite Subway, Koramangala 1st Block, Bangalore",
+      "reelIds": [
+        "DQy_8VXknb0"
+      ],
+      "description": "A prayer space off the lane opposite Subway, featured for wudu, daily congregations and Jummah.",
+      "facilities": [
+        "Wudu area"
+      ],
+      "note": "Google Maps points to Subway CNA Koramangala, the starting landmark. Follow the reel and the address directions from there."
+    },
+    {
+      "kind": "masjids",
+      "slug": "al-fajr-musalla-bellandur",
+      "name": "Al Fajr Musalla",
+      "city": "bangalore",
+      "area": "Bellandur",
+      "address": "Near Indiqube, Cult Fit and Bangalore Pet Hospital, Bellandur, Bangalore",
+      "reelIds": [
+        "DQrDplBElni"
+      ],
+      "description": "A neighborhood prayer space with wudu at the back and daily congregational prayers.",
+      "facilities": [
+        "Wudu area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "forum-south-bangalore-prayer-room-konanakunte",
+      "name": "Forum South Bangalore Prayer Room",
+      "city": "bangalore",
+      "area": "Konanakunte",
+      "address": "Terrace level, Forum South Bangalore, Konanakunte Cross, Bangalore",
+      "reelIds": [
+        "DQeVBZHksK0"
+      ],
+      "description": "A mall prayer space with separate areas and wudu facilities for men and women.",
+      "facilities": [
+        "Women's prayer area",
+        "Wudu area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-edigah-e-bilal-bannerghatta-road",
+      "name": "Masjid-e-Edigah-e-Bilal",
+      "city": "bangalore",
+      "area": "Bannerghatta Road",
+      "address": "Bannerghatta Road, Bangalore",
+      "reelIds": [
+        "DO_DWjEkiqt"
+      ],
+      "description": "The reel shows the first-floor women’s prayer hall, separate entrance and wudu facilities.",
+      "facilities": [
+        "Women's prayer area",
+        "Wudu area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-ghouse-ul-wara-electronic-city",
+      "name": "Masjid-e-Ghouse-ul-Wara",
+      "city": "bangalore",
+      "area": "Electronic City",
+      "address": "Near Chikkathogur and Vittasandra Main Road, Electronic City Phase 1, Bangalore",
+      "reelIds": [
+        "DOyiV2bCsKO"
+      ],
+      "description": "A masjid with a spacious prayer hall, wudu and daily prayers including Jummah.",
+      "facilities": [
+        "Wudu area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "proms-complex-musalla-koramangala",
+      "name": "Proms Complex Musalla",
+      "city": "bangalore",
+      "area": "Koramangala",
+      "address": "Third floor, 776 80 Feet Road, Koramangala 4th Block, Bangalore",
+      "reelIds": [
+        "DOtEXBkElO5"
+      ],
+      "description": "A prayer hall above the Domino’s storefront with wudu facilities. Take the passage to the left of the storefront and use the lift to the third floor.",
+      "facilities": [
+        "Wudu area"
+      ],
+      "note": "Google Maps points to Domino's Pizza | Koramangala, Bengaluru, the starting landmark. Follow the reel and the address directions from there."
+    },
+    {
+      "kind": "masjids",
+      "slug": "nexus-koramangala-mall-musalla-koramangala",
+      "name": "Nexus Koramangala Mall Musalla",
+      "city": "bangalore",
+      "area": "Koramangala",
+      "address": "Inside Nexus Mall, Koramangala, Bangalore",
+      "reelIds": [
+        "DOgH5JkEiRw"
+      ],
+      "description": "A mall prayer hall with a wudu area, separate women’s section and daily congregations.",
+      "facilities": [
+        "Women's prayer area",
+        "Wudu area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "hayes-road-musalla-residency-road",
+      "name": "Hayes Road Musalla",
+      "city": "bangalore",
+      "area": "Residency Road",
+      "address": "Hayes Road, in the lane beside Auguste Skin Clinic, Bangalore",
+      "reelIds": [
+        "DObGibHkoy_"
+      ],
+      "description": "A musalla with five daily congregations, wudu facilities and a separate women’s entrance with lift access. The reel caption says Jummah is unavailable.",
+      "facilities": [
+        "Women's prayer area",
+        "Wudu area",
+        "Lift access"
+      ],
+      "note": "Google Maps points to Augusté Skin | The Facial Specialist Studio, the starting landmark. Follow the reel and the address directions from there."
+    },
+    {
+      "kind": "masjids",
+      "slug": "castle-street-musalla-richmond-town",
+      "name": "Castle Street Musalla",
+      "city": "bangalore",
+      "area": "Richmond Town",
+      "address": "Basement prayer space near AK Castle Suites and Empire Restaurant, Castle Street, Bangalore",
+      "reelIds": [
+        "DOOGOg8jPtv"
+      ],
+      "description": "A small carpeted prayer space with wudu for individual salah.",
+      "facilities": [
+        "Wudu area"
+      ],
+      "note": "Google Maps points to AK Castle Suites, the starting landmark. Follow the reel and the address directions from there."
+    },
+    {
+      "kind": "restaurants",
+      "slug": "marbella-jp-nagar",
+      "name": "Marbella",
+      "city": "bangalore",
+      "area": "JP Nagar",
+      "address": "JP Nagar 5th Phase, Bangalore",
+      "reelIds": [
+        "DYW9sTKhT37"
+      ],
+      "description": "Halal Living’s visit features mutton chapli kebabs, Bangalore-style biryani and Arabic mandi.",
+      "cuisine": "Kebabs · Biryani"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "yaghma-kebabs-hbr-layout",
+      "name": "Yaghma Kebabs",
+      "city": "bangalore",
+      "area": "HBR Layout",
+      "address": "HBR Layout, Bangalore",
+      "reelIds": [
+        "DW87BN-j3X5"
+      ],
+      "description": "Delhi-style kebabs, tandoori chicken and mutton malai kebabs. The reel discusses fresh halal meat sourcing.",
+      "cuisine": "North Indian · Kebabs"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "the-lokum-kammanahalli",
+      "name": "The Lokum",
+      "city": "bangalore",
+      "area": "Kammanahalli",
+      "address": "Kammanahalli, Bangalore",
+      "reelIds": [
+        "DU5aFwdEq_x"
+      ],
+      "description": "A Turkish restaurant featured for its Ramadan iftar spread, including mezze, lamb mandi, kebabs and sütlaç.",
+      "cuisine": "Turkish"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "crispy-world-shivajinagar",
+      "name": "Crispy World",
+      "city": "bangalore",
+      "area": "Shivajinagar",
+      "address": "Thimmaiah Road, Shivajinagar, Bangalore",
+      "reelIds": [
+        "DUs2SGgEtVc"
+      ],
+      "description": "The reel features crispy chicken burgers, wraps, wings and strips and discusses halal verification.",
+      "cuisine": "Fried chicken · Burgers"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "the-estate-deli-indiranagar",
+      "name": "The Estate Deli",
+      "city": "bangalore",
+      "area": "Indiranagar",
+      "address": "Indiranagar, Bangalore",
+      "reelIds": [
+        "DRpAULEkt2I"
+      ],
+      "description": "A café featuring Chikkamagaluru coffee and regional dishes such as rice-flour pashti with chicken broth.",
+      "cuisine": "Café · Karnataka"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "maachiz-shanti-nagar",
+      "name": "Maachiz",
+      "city": "bangalore",
+      "area": "Shanti Nagar",
+      "address": "Shanti Nagar, Bangalore",
+      "reelIds": [
+        "DRUe5wyEjy4"
+      ],
+      "description": "Tikkas, gravies and Indo-Chinese dishes. Halal Living reports fresh meat from Muslim vendors.",
+      "cuisine": "Indian · Indo-Chinese"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "kebapci-konanakunte",
+      "name": "Kebapci",
+      "city": "bangalore",
+      "area": "Konanakunte",
+      "address": "Forum South Bangalore, Kanakapura Road, Bangalore",
+      "reelIds": [
+        "DPd0qrIjaQM"
+      ],
+      "description": "The South Forum branch features Turkish köfte, kebabs, mandi and mocktails. The reel discusses the owners’ meat sourcing.",
+      "cuisine": "Turkish · Kebabs"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "sultanate-of-shawarma-brigade-road",
+      "name": "Sultanate of Shawarma",
+      "city": "bangalore",
+      "area": "Brigade Road",
+      "address": "Brigade Road, Bangalore",
+      "reelIds": [
+        "DPOic14EnGz"
+      ],
+      "description": "The Brigade Road outlet is featured for shawarma, Egyptian rumali rolls and halal snack packs.",
+      "cuisine": "Shawarma"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "sarposh-indiranagar",
+      "name": "Sarposh",
+      "city": "bangalore",
+      "area": "Indiranagar",
+      "address": "Indiranagar, Bangalore",
+      "reelIds": [
+        "DLFHuzPylnd"
+      ],
+      "description": "A Kashmiri restaurant and cultural space with food prepared by trained wazas. The reel discusses halal meat sourcing.",
+      "cuisine": "Kashmiri"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "broast-khan-bangalore",
+      "name": "Broast Khan",
+      "city": "bangalore",
+      "area": "Bangalore",
+      "address": "Bangalore",
+      "reelIds": [
+        "DKhM3YVS9Hr"
+      ],
+      "description": "A halal food visit featuring broasted chicken, burgers and flatbread pizzas.",
+      "cuisine": "Fried chicken · Burgers"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "grill-and-cheese-bangalore",
+      "name": "Grill and Cheese",
+      "city": "bangalore",
+      "area": "Bangalore",
+      "address": "Bangalore",
+      "reelIds": [
+        "DKR_jDpSzan"
+      ],
+      "description": "Halal Living features Grill and Cheese as a halal food stop.",
+      "cuisine": "Grill"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "al-bain-kammanahalli",
+      "name": "Al Bain",
+      "city": "bangalore",
+      "area": "Kammanahalli",
+      "address": "Kammanahalli, Bangalore",
+      "reelIds": [
+        "DJJtd1tyU4c"
+      ],
+      "description": "Arabic, Indian and Chinese food with majlis seating and a shawarma counter. Featured dishes include chicken fatayer and Uzbeki rice.",
+      "cuisine": "Arabic · Multi-cuisine"
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-mohammedi-hutchins-road",
+      "name": "Masjid-e-Mohammedi",
+      "city": "bangalore",
+      "area": "Hutchins Road",
+      "address": "Hutchins Road, Bangalore",
+      "reelIds": [
+        "DViixyiDkVX"
+      ],
+      "description": "A masjid featured in the guide to separate women’s Taraweeh spaces.",
+      "facilities": [
+        "Women's prayer area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-rahmani-kg-halli",
+      "name": "Masjid-e-Rahmani",
+      "city": "bangalore",
+      "area": "KG Halli",
+      "address": "KG Halli, Bangalore",
+      "reelIds": [
+        "DVMPxF4kvNU"
+      ],
+      "description": "The Ramadan guide shows a dedicated women’s entrance by the water tank, through a blue gate.",
+      "facilities": [
+        "Women's prayer area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "musalla-beside-metro-timbers-doddakallasandra",
+      "name": "Musalla beside Metro Timbers",
+      "city": "bangalore",
+      "area": "Doddakallasandra",
+      "address": "Through the gate beside Metro Timbers, on the road toward Konanakunte Cross, Bangalore",
+      "reelIds": [
+        "De9mT3NOk69"
+      ],
+      "description": "A small upstairs prayer room with wudu outside. Enter the gate next to Metro Timbers, follow the passage to the stairs and turn right at the top.",
+      "facilities": [
+        "Wudu area"
+      ],
+      "note": "Google Maps points to METRO TIMBERS, the starting landmark. Follow the reel and the address directions from there."
+    },
+    {
+      "kind": "masjids",
+      "slug": "musalla-near-kristu-jayanti-university-kothanur",
+      "name": "Musalla near Kristu Jayanti University",
+      "city": "bangalore",
+      "area": "Kothanur",
+      "address": "Near the banyan tree and timber yard outside Kristu Jayanti University, Bangalore",
+      "reelIds": [
+        "DewabA-vwUq"
+      ],
+      "description": "A small elevated prayer room near the university. Follow the reel’s route past the large banyan tree to the timber yard.",
+      "facilities": []
+    },
+    {
+      "kind": "masjids",
+      "slug": "house-of-lords-musalla-st-marks-road",
+      "name": "House of Lords Musalla",
+      "city": "bangalore",
+      "area": "St. Mark’s Road",
+      "address": "Terrace above the fourth floor of House of Lords, St. Mark’s Road, Bangalore",
+      "reelIds": [
+        "DeMh9JtBPmy"
+      ],
+      "description": "The reel shows the lift and staircase up to the terrace musalla and wudu area. It reports congregations from Zuhr to Maghrib.",
+      "facilities": [
+        "Wudu area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "musalla-near-reva-university-kattigenahalli",
+      "name": "Musalla near REVA University",
+      "city": "bangalore",
+      "area": "Kattigenahalli",
+      "address": "Past Apex Hospital on the road from the REVA PU College gate, Bangalore",
+      "reelIds": [
+        "Dclbms3shSn"
+      ],
+      "description": "A neighborhood prayer room with outdoor wudu and prayer timings displayed inside.",
+      "facilities": [
+        "Wudu area"
+      ],
+      "note": "Google Maps points to Apex Multispeciality Hospital, the starting landmark. Follow the reel and the address directions from there."
+    },
+    {
+      "kind": "masjids",
+      "slug": "aecs-layout-musalla-near-cmrit-brookefield",
+      "name": "AECS Layout Musalla near CMRIT",
+      "city": "bangalore",
+      "area": "Brookefield",
+      "address": "Basement near Asha Tiffins and Green Trends, AECS Layout Main Road, Bangalore",
+      "reelIds": [
+        "DfADYqENbbh"
+      ],
+      "description": "A small basement musalla with daily prayer and congregation times posted inside. The reel shows the route from CMRIT.",
+      "facilities": []
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-maimuna-o-shams-electronic-city",
+      "name": "Masjid-e-Maimuna-o-Shams",
+      "city": "bangalore",
+      "area": "Electronic City",
+      "address": "Near the Electronic City toll gate and Infosys Foundation Metro Station, Bangalore",
+      "reelIds": [
+        "DTc5b-zki0L"
+      ],
+      "description": "A spacious prayer hall with wudu and a dedicated prayer area for people with disabilities.",
+      "facilities": [
+        "Wudu area",
+        "Accessible prayer area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "prestige-tech-park-musalla-bellandur",
+      "name": "Prestige Tech Park Musalla",
+      "city": "bangalore",
+      "area": "Bellandur",
+      "address": "Tenth floor, Prestige Tech Park, Bellandur, Bangalore",
+      "reelIds": [
+        "DL7FaLVy7NJ"
+      ],
+      "description": "A prayer room inside the tech park with a lift, Qurans and a congregation timetable.",
+      "facilities": [
+        "Lift access"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "madrasa-e-talha-mahadevapura",
+      "name": "Madrasa-e-Talha",
+      "city": "bangalore",
+      "area": "Mahadevapura",
+      "address": "Near Phoenix Marketcity, Mahadevapura, Bangalore",
+      "reelIds": [
+        "DMNPjlqSwgQ"
+      ],
+      "description": "The reel shows a mosque with wudu and Jummah prayers in the lanes near Phoenix Marketcity.",
+      "facilities": [
+        "Wudu area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "kutchi-memon-jamaat-khana-musalla-shivajinagar",
+      "name": "Kutchi Memon Jamaat Khana Musalla",
+      "city": "bangalore",
+      "area": "Shivajinagar",
+      "address": "Kutchi Memon Jamaat Khana, near Kamaraj Road and Commercial Street, Bangalore",
+      "reelIds": [
+        "DJj0v8pybC1"
+      ],
+      "description": "A prayer hall with lift access, wudu and a women’s prayer area. The reel’s timetable shows weekday congregations.",
+      "facilities": [
+        "Women's prayer area",
+        "Wudu area",
+        "Lift access"
+      ]
+    },
+    {
+      "kind": "restaurants",
+      "slug": "shenzhen-kitchen-bangalore",
+      "name": "Shenzhen Kitchen",
+      "city": "bangalore",
+      "area": "Bangalore",
+      "address": "1 Sobha Mall, Ashok Nagar, Bangalore",
+      "reelIds": [
+        "DNA-OoVywMI"
+      ],
+      "description": "A halal Asian food visit featuring Thai red curry, garlic basil bao and chicken dumpling ramen. The reel discusses meat sourcing from Johnson Market.",
+      "cuisine": "Asian · Chinese"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "sheesh-kebab-frazer-town",
+      "name": "Sheesh Kebab",
+      "city": "bangalore",
+      "area": "Frazer Town",
+      "address": "MM Road, Frazer Town, Bangalore",
+      "reelIds": [
+        "DMvbD81ygtd"
+      ],
+      "description": "A halal food stop on MM Road featured for Persian-inspired kebabs.",
+      "cuisine": "Persian · Kebabs"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "big-bang-pizza-cox-town",
+      "name": "Big Bang Pizza",
+      "city": "bangalore",
+      "area": "Cox Town",
+      "address": "Coles Road, opposite ICICI Bank, Cox Town branch, Bangalore",
+      "reelIds": [
+        "DIspmvNStn7"
+      ],
+      "description": "Large thin-crust pizzas with halal meat toppings. The reel visits the Cox Town outlet and discusses fresh chicken and mutton sourcing.",
+      "cuisine": "Pizza"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "taco-street-indiranagar",
+      "name": "Taco Street",
+      "city": "bangalore",
+      "area": "Indiranagar",
+      "address": "Indiranagar branch, Bangalore",
+      "reelIds": [
+        "DJRQ97_yXBb"
+      ],
+      "description": "The reel visits Taco Street for tacos, burgers, chicken strips and drinks, and discusses its halal meat source.",
+      "cuisine": "Tacos · Burgers"
+    },
+    {
+      "kind": "masjids",
+      "slug": "teachers-colony-musalla-koramangala",
+      "name": "Teacher’s Colony Musalla",
+      "city": "bangalore",
+      "area": "Koramangala",
+      "address": "Second floor above Bhawani Mobile & Service, near Sai Surakshaa Family Dentistry, Teacher’s Colony, Bangalore",
+      "reelIds": [
+        "DfFCbSPvVcX"
+      ],
+      "description": "A second-floor prayer room with a wudu area and congregation timetable. Look for the yellow building shown in the reel.",
+      "facilities": [
+        "Wudu area"
+      ],
+      "note": "Google Maps points to Bhawani mobile and service, the starting landmark. Follow the reel and the address directions from there."
+    },
+    {
+      "kind": "masjids",
+      "slug": "al-fajr-musalla-at-syeds-plaza-bellandur",
+      "name": "Al-Fajr Musalla at Syed’s Plaza",
+      "city": "bangalore",
+      "area": "Bellandur",
+      "address": "Second floor, Syed’s Plaza, Outer Ring Road service road near RMZ Ecospace, Bangalore",
+      "reelIds": [
+        "DLptuxQyYEh"
+      ],
+      "description": "A second-floor prayer hall with a wudu area and daily congregations. Look for the Al-Fajr sign on Syed’s Plaza.",
+      "facilities": [
+        "Wudu area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "commercial-street-rooftop-musalla-shivajinagar",
+      "name": "Commercial Street Rooftop Musalla",
+      "city": "bangalore",
+      "area": "Shivajinagar",
+      "address": "Upstairs beside the Traditions clothing storefront, Commercial Street, Bangalore",
+      "reelIds": [
+        "DJ8hvlgyZga"
+      ],
+      "description": "A carpeted prayer hall and wudu area above the shops. Follow the reel through the stairwell to reach it.",
+      "facilities": [
+        "Wudu area"
+      ],
+      "note": "Google Maps points to Traditions, the starting landmark. Follow the reel and the address directions from there."
+    },
+    {
+      "kind": "masjids",
+      "slug": "musalla-near-silk-board-btm-layout",
+      "name": "Musalla near Silk Board",
+      "city": "bangalore",
+      "area": "BTM Layout",
+      "address": "Upstairs in the complex with AKM Men’s Salon, near Silk Board, Bangalore",
+      "reelIds": [
+        "DJp052_S7-N"
+      ],
+      "description": "A prayer space with wudu in the complex shown in the reel, a short walk from Silk Board toward BTM.",
+      "facilities": [
+        "Wudu area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "ub-city-prayer-hall-vittal-mallya-road",
+      "name": "UB City Prayer Hall",
+      "city": "bangalore",
+      "area": "Vittal Mallya Road",
+      "address": "Parking level inside UB City, near pillar J31, Bangalore",
+      "reelIds": [
+        "DIMJZ3aypK3"
+      ],
+      "description": "The reel shows the signed route through the parking levels to a large prayer hall, wudu and a separate women’s room.",
+      "facilities": [
+        "Women's prayer area",
+        "Wudu area",
+        "Lift access"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "fifth-avenue-mall-masjid-brigade-road",
+      "name": "Fifth Avenue Mall Masjid",
+      "city": "bangalore",
+      "area": "Brigade Road",
+      "address": "Fourth floor, Fifth Avenue Mall, Brigade Road, Bangalore",
+      "reelIds": [
+        "DHnOFVBSI41"
+      ],
+      "description": "Follow the passage by Pashmina House and go up to the fourth floor. The reel shows a wudu area and a prayer hall for women.",
+      "facilities": [
+        "Women's prayer area",
+        "Wudu area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "barton-centre-musalla-mg-road",
+      "name": "Barton Centre Musalla",
+      "city": "bangalore",
+      "area": "MG Road",
+      "address": "First floor, Barton Centre, MG Road, Bangalore",
+      "reelIds": [
+        "DHW5LXsz3KX"
+      ],
+      "description": "A prayer space on the first floor. The reel shows the route through Barton Centre and the red door leading toward the hall.",
+      "facilities": []
+    },
+    {
+      "kind": "masjids",
+      "slug": "musalla-near-classic-surplus-store-nagavara",
+      "name": "Musalla near Classic Surplus Store",
+      "city": "bangalore",
+      "area": "Nagavara",
+      "address": "Behind Classic Surplus Store near Manyata Tech Park, Nagavara, Bangalore",
+      "reelIds": [
+        "DWjJKUSjEYq"
+      ],
+      "description": "A prayer space for people working near Manyata Tech Park. Follow the route past Classic Surplus Store as shown in the reel.",
+      "facilities": [
+        "Women's prayer area"
+      ],
+      "note": "Google Maps points to Classic Export Surplus & Discount Sale, the starting landmark. Follow the reel and the address directions from there."
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-al-noor-halasuru",
+      "name": "Masjid Al Noor",
+      "city": "bangalore",
+      "area": "Halasuru",
+      "address": "Dickenson Road, near Auro Mirra International School, Bangalore",
+      "reelIds": [
+        "DViixyiDkVX"
+      ],
+      "description": "A masjid near the school featured for its women’s Taraweeh arrangements. The reel shows the route to the separate prayer space.",
+      "facilities": [
+        "Women's prayer area"
+      ]
+    },
+    {
+      "kind": "restaurants",
+      "slug": "food-bae-electronic-city",
+      "name": "Food Bae",
+      "city": "bangalore",
+      "area": "Electronic City",
+      "address": "Ajmera Avenue, Electronic City Phase 1, Bangalore",
+      "reelIds": [
+        "DNXpfH3S5cF"
+      ],
+      "description": "Kerala-style fish, Arabic grills, tandoori dishes and Chinese food. The reel features mutton kanthari grill and discusses the restaurant’s meat suppliers.",
+      "cuisine": "Multi-cuisine · Kerala"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "taco-street-hrbr-layout",
+      "name": "Taco Street",
+      "city": "bangalore",
+      "area": "HRBR Layout",
+      "address": "Monar Abode, HRBR Layout 2nd Block, Bangalore",
+      "reelIds": [
+        "DJRQ97_yXBb"
+      ],
+      "description": "The second Taco Street branch in the reel is featured for loaded chicken fries, crispy chicken rolls, brownie and milkshakes.",
+      "cuisine": "Tacos · Burgers"
+    },
+    {
+      "kind": "masjids",
+      "slug": "musalla-near-saigal-guest-house-goregaon-west",
+      "name": "Musalla near Saigal Guest House",
+      "city": "mumbai",
+      "area": "Goregaon West",
+      "address": "Behind Saigal Guest House, near Siddhi Rugnalaya and City Centre Mall, SV Road, Mumbai",
+      "reelIds": [
+        "DehSxF1vatl"
+      ],
+      "description": "An air-conditioned prayer space with wudu. Follow the lane past Saigal Guest House and turn left at Siddhi Rugnalaya.",
+      "facilities": [
+        "Wudu area",
+        "Air conditioning"
+      ],
+      "note": "Google Maps points to Saigal Guest House, the starting landmark. Follow the reel and the address directions from there."
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-baqi-banjara-hills",
+      "name": "Masjid-e-Baqi",
+      "city": "hyderabad",
+      "area": "Banjara Hills",
+      "address": "Road No. 12, opposite Virinchi Hospital, Banjara Hills, Hyderabad",
+      "reelIds": [
+        "DeuDQ_dxOBE",
+        "DU3Jcp8k-w0"
+      ],
+      "description": "A spacious masjid with air-conditioned prayer areas, dedicated facilities for women, wudu and seating for elders.",
+      "facilities": [
+        "Women's prayer area",
+        "Wudu area",
+        "Air conditioning"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-mohammad-gachibowli",
+      "name": "Masjid-e-Mohammad",
+      "city": "hyderabad",
+      "area": "Gachibowli",
+      "address": "Sixth floor above the Ola showroom, opposite Shah Ghouse near the Biodiversity Flyover, Hyderabad",
+      "reelIds": [
+        "DejicPwRClx",
+        "DRo_9RBk66S"
+      ],
+      "description": "A sixth-floor masjid with wudu facilities and views across Gachibowli. The reel describes two Jummah congregations.",
+      "facilities": [
+        "Wudu area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-munawwara-kokapet",
+      "name": "Masjid-e-Munawwara",
+      "city": "hyderabad",
+      "area": "Kokapet",
+      "address": "Opposite Mandal Parishad High School, near Prestige Beverly Hills, Kokapet, Hyderabad",
+      "reelIds": [
+        "Deg_Xb5RbHB"
+      ],
+      "description": "A carpeted prayer hall with wudu, drinking water, seating for elders and additional prayer space.",
+      "facilities": [
+        "Wudu area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-allah-ka-ghar-begumpet",
+      "name": "Masjid Allah Ka Ghar",
+      "city": "hyderabad",
+      "area": "Begumpet",
+      "address": "Fourth floor, Bismillah Apartment, beside Goel Drugs, Begumpet, Hyderabad",
+      "reelIds": [
+        "DeUFldjRUu5"
+      ],
+      "description": "A fourth-floor musalla inside Bismillah Apartment. The reel shows the entrance from the street.",
+      "facilities": []
+    },
+    {
+      "kind": "masjids",
+      "slug": "lakeshore-mall-musalla-kukatpally",
+      "name": "Lakeshore Mall Musalla",
+      "city": "hyderabad",
+      "area": "Kukatpally",
+      "address": "Basement levels, Lakeshore Mall, Kukatpally, Hyderabad",
+      "reelIds": [
+        "DcdkQljzKyE"
+      ],
+      "description": "An air-conditioned mall prayer space with separate halls, wudu, drinking water and Qurans. The reel directs men to Basement 2.",
+      "facilities": [
+        "Women's prayer area",
+        "Wudu area",
+        "Air conditioning"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-quthub-shahi-kukatpally",
+      "name": "Masjid-e-Quthub Shahi",
+      "city": "hyderabad",
+      "area": "Kukatpally",
+      "address": "Beside Lakeshore Mall near Balanagar Metro, Hyderabad",
+      "reelIds": [
+        "DcLEANvTHGT"
+      ],
+      "description": "A masjid beside Lakeshore Mall with a spacious prayer hall, wudu, drinking water and Qurans.",
+      "facilities": [
+        "Wudu area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-osmania-golconda",
+      "name": "Masjid-e-Osmania",
+      "city": "hyderabad",
+      "area": "Golconda",
+      "address": "Near Golconda Fort and Shalimar Function Hall, Hyderabad",
+      "reelIds": [
+        "Da2iYUMBsfc"
+      ],
+      "description": "An air-conditioned prayer hall with wudu facilities near Golconda Fort.",
+      "facilities": [
+        "Wudu area",
+        "Air conditioning"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-ibrahim-gachibowli",
+      "name": "Masjid-e-Ibrahim",
+      "city": "hyderabad",
+      "area": "Gachibowli",
+      "address": "Inside GPRA Quarters, Gachibowli, Hyderabad",
+      "reelIds": [
+        "DarfLMIBi7k"
+      ],
+      "description": "A prayer hall within GPRA Quarters, with wudu and additional first-floor space when needed.",
+      "facilities": [
+        "Wudu area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "care-hospitals-prayer-room-gachibowli",
+      "name": "CARE Hospitals Prayer Room",
+      "city": "hyderabad",
+      "area": "Gachibowli",
+      "address": "Inside CARE Hospitals, Gachibowli, Hyderabad",
+      "reelIds": [
+        "DZ2SjuLTKf-"
+      ],
+      "description": "An air-conditioned hospital prayer room with mats and Qurans, featured for patients’ visitors and companions.",
+      "facilities": [
+        "Air conditioning"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-qutub-shahi-madhapur",
+      "name": "Masjid-e-Qutub Shahi",
+      "city": "hyderabad",
+      "area": "Madhapur",
+      "address": "Below Durgam Cheruvu Cable Bridge, Madhapur, Hyderabad",
+      "reelIds": [
+        "DXtuF4mRSsQ"
+      ],
+      "description": "A historic Qutb Shahi-era mosque by the Durgam Cheruvu Cable Bridge.",
+      "facilities": []
+    },
+    {
+      "kind": "masjids",
+      "slug": "aig-hospitals-musalla-gachibowli",
+      "name": "AIG Hospitals Musalla",
+      "city": "hyderabad",
+      "area": "Gachibowli",
+      "address": "Sixth floor, AIG Hospitals, Gachibowli, Hyderabad",
+      "reelIds": [
+        "DXjgoYYDy0d"
+      ],
+      "description": "A sixth-floor hospital prayer space for visitors and people accompanying patients.",
+      "facilities": []
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-yousuf-tekri-tolichowki",
+      "name": "Masjid-e-Yousuf Tekri",
+      "city": "hyderabad",
+      "area": "Tolichowki",
+      "address": "Yousuf Tekri, Tolichowki, Hyderabad",
+      "reelIds": [
+        "DXLd970Tt9e"
+      ],
+      "description": "The reel shows the men’s prayer hall and a separate air-conditioned prayer area for women.",
+      "facilities": [
+        "Women's prayer area",
+        "Air conditioning"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-imam-tolichowki",
+      "name": "Masjid-e-Imam",
+      "city": "hyderabad",
+      "area": "Tolichowki",
+      "address": "Tolichowki, Hyderabad",
+      "reelIds": [
+        "DW87MJHk2Ru"
+      ],
+      "description": "A masjid set amid greenery with a dedicated prayer hall for women.",
+      "facilities": [
+        "Women's prayer area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "ayyappa-society-musalla-hitec-city",
+      "name": "Ayyappa Society Musalla",
+      "city": "hyderabad",
+      "area": "HITEC City",
+      "address": "Basement under T-Shirt House, Ayyappa Society, near Durgam Cheruvu Metro, Hyderabad",
+      "reelIds": [
+        "DUDgx0tE3KS",
+        "DeO4XBaJpbL"
+      ],
+      "description": "Two reels show the same basement prayer hall under T-Shirt House, with a wudu area, drinking water and prayer times on display. Jummah is unavailable here.",
+      "facilities": [
+        "Wudu area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-chiraan-palace-jubilee-hills",
+      "name": "Masjid-e-Chiraan Palace",
+      "city": "hyderabad",
+      "area": "Jubilee Hills",
+      "address": "Near KBR Park, Jubilee Hills, Hyderabad",
+      "reelIds": [
+        "DTc4qDJDN6E"
+      ],
+      "description": "A mosque surrounded by greenery, with prayer halls for men and women, wudu and parking.",
+      "facilities": [
+        "Women's prayer area",
+        "Wudu area",
+        "Parking"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "podium-mall-masjid-tolichowki",
+      "name": "Podium Mall Masjid",
+      "city": "hyderabad",
+      "area": "Tolichowki",
+      "address": "Fifth floor, Podium Mall, Tolichowki, Hyderabad",
+      "reelIds": [
+        "DTShBLxE2Zu"
+      ],
+      "description": "A fifth-floor mall mosque with lift access, wudu and a separate women’s prayer area.",
+      "facilities": [
+        "Women's prayer area",
+        "Wudu area",
+        "Lift access"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "hyderabad-airport-prayer-rooms-shamshabad",
+      "name": "Hyderabad Airport Prayer Rooms",
+      "city": "hyderabad",
+      "area": "Shamshabad",
+      "address": "Inside Rajiv Gandhi International Airport terminal, Hyderabad",
+      "reelIds": [
+        "DSfKv8fE69f"
+      ],
+      "description": "The terminal has separate prayer facilities for men and women with prayer mats, wudu and marked qibla direction.",
+      "facilities": [
+        "Women's prayer area",
+        "Wudu area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "kakaji-city-center-masjid-charminar",
+      "name": "Kakaji City Center Masjid",
+      "city": "hyderabad",
+      "area": "Charminar",
+      "address": "Inside Kakaji City Center, Charminar, Hyderabad",
+      "reelIds": [
+        "DSXQuGIk9Ji"
+      ],
+      "description": "The shopping center has a fifth-floor main prayer hall, lift access and a separate women’s prayer space.",
+      "facilities": [
+        "Women's prayer area",
+        "Lift access"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "famous-tea-point-namaz-room-peddapur",
+      "name": "Famous Tea Point Namaz Room",
+      "city": "hyderabad",
+      "area": "Peddapur",
+      "address": "Famous Tea Point, Peddapur, Hyderabad–Bidar Highway, Hyderabad",
+      "reelIds": [
+        "DR4aeplk3in"
+      ],
+      "description": "A dedicated prayer room at a highway tea stop on the route toward Bidar and Zaheerabad.",
+      "facilities": []
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-mohammadia-langer-house",
+      "name": "Masjid-e-Mohammadia",
+      "city": "hyderabad",
+      "area": "Langer House",
+      "address": "Langer House, Hyderabad",
+      "reelIds": [
+        "DRUeP9gE4R1"
+      ],
+      "description": "A mosque with a ventilated men’s hall and a private air-conditioned women’s prayer hall.",
+      "facilities": [
+        "Women's prayer area",
+        "Air conditioning"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-amera-abids",
+      "name": "Masjid-e-Amera",
+      "city": "hyderabad",
+      "area": "Abids",
+      "address": "Abids, Hyderabad",
+      "reelIds": [
+        "DQrED5bEwUT"
+      ],
+      "description": "A historic-looking masjid featured for its minarets and prayer spaces in the heart of Abids.",
+      "facilities": []
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-aliya-abids",
+      "name": "Masjid-e-Aliya",
+      "city": "hyderabad",
+      "area": "Abids",
+      "address": "Opposite Nizam College, Abids, Hyderabad",
+      "reelIds": [
+        "DQeVtD_k8C8"
+      ],
+      "description": "A historic masjid with a spacious courtyard and separate prayer halls for men and women.",
+      "facilities": [
+        "Women's prayer area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "inorbit-mall-prayer-rooms-madhapur",
+      "name": "Inorbit Mall Prayer Rooms",
+      "city": "hyderabad",
+      "area": "Madhapur",
+      "address": "Inside Inorbit Mall, Madhapur, Hyderabad",
+      "reelIds": [
+        "DPOmLneE40C"
+      ],
+      "description": "A mall prayer stop with separate areas for men and women and a wudu facility.",
+      "facilities": [
+        "Women's prayer area",
+        "Wudu area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "lulu-mall-kukatpally-prayer-rooms-kukatpally",
+      "name": "LuLu Mall Kukatpally Prayer Rooms",
+      "city": "hyderabad",
+      "area": "Kukatpally",
+      "address": "B1 and first floor, LuLu Mall, opposite JNTU, Hyderabad",
+      "reelIds": [
+        "DOyCgL2k-ZA"
+      ],
+      "description": "The reel shows the men’s hall and wudu on B1 and the women’s prayer room on the first floor.",
+      "facilities": [
+        "Women's prayer area",
+        "Wudu area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "nexus-hyderabad-mall-prayer-rooms-kukatpally",
+      "name": "Nexus Hyderabad Mall Prayer Rooms",
+      "city": "hyderabad",
+      "area": "Kukatpally",
+      "address": "Inside Nexus Hyderabad Mall, Kukatpally, Hyderabad",
+      "reelIds": [
+        "DNVWXIIT1Fi"
+      ],
+      "description": "The mall has separate prayer halls for men and women, as shown in the reel.",
+      "facilities": [
+        "Women's prayer area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-azizia-mehdipatnam",
+      "name": "Masjid-e-Azizia",
+      "city": "hyderabad",
+      "area": "Mehdipatnam",
+      "address": "Mehdipatnam, Hyderabad",
+      "reelIds": [
+        "DLzmwSpTW4w"
+      ],
+      "description": "Halal Living features the masjid for its arrangements for women to pray.",
+      "facilities": [
+        "Women's prayer area"
+      ]
+    },
+    {
+      "kind": "restaurants",
+      "slug": "accro-cafe-banjara-hills",
+      "name": "Accro Café",
+      "city": "hyderabad",
+      "area": "Banjara Hills",
+      "address": "Banjara Hills, Hyderabad",
+      "reelIds": [
+        "DaNh1ohs3W-"
+      ],
+      "description": "A café featured for fresh coffee, pizzas, burgers, cake bombs and mocktails. The reel discusses halal verification.",
+      "cuisine": "Café · Pizza"
+    },
+    {
+      "kind": "restaurants",
+      "slug": "kebapci-banjara-hills",
+      "name": "Kebapci",
+      "city": "hyderabad",
+      "area": "Banjara Hills",
+      "address": "Near GVK Mall, Banjara Hills, Hyderabad",
+      "reelIds": [
+        "DPd03Xjkxrf"
+      ],
+      "description": "A Turkish restaurant featured for slow-cooked lamb neck, clay-pot kebabs, kabsa and cheesecake.",
+      "cuisine": "Turkish · Kebabs"
+    },
+    {
+      "kind": "masjids",
+      "slug": "haj-house-prayer-hall-nampally",
+      "name": "Haj House Prayer Hall",
+      "city": "hyderabad",
+      "area": "Nampally",
+      "address": "Haj House, near Gandhi Bhavan Metro, Nampally, Hyderabad",
+      "reelIds": [
+        "DM1SNYZTamR"
+      ],
+      "description": "Haj House has a main prayer hall and a separate women’s prayer hall with wudu on the second floor.",
+      "facilities": [
+        "Women's prayer area",
+        "Wudu area",
+        "Lift access"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "shahi-masjid-bagh-e-aam-nampally",
+      "name": "Shahi Masjid Bagh-e-Aam",
+      "city": "hyderabad",
+      "area": "Nampally",
+      "address": "Inside Public Gardens, Nampally, Hyderabad",
+      "reelIds": [
+        "DMebiXCzhnd"
+      ],
+      "description": "A historic mosque in Public Gardens with a spacious separate women’s hall for Friday prayers.",
+      "facilities": [
+        "Women's prayer area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-ibad-ur-rahman-golconda",
+      "name": "Masjid-e-Ibad-ur-Rahman",
+      "city": "hyderabad",
+      "area": "Golconda",
+      "address": "Near Golconda Fort, Hyderabad",
+      "reelIds": [
+        "DMJixQxT3uP"
+      ],
+      "description": "A masjid near the fort with air conditioning, separate prayer space for women and wudu. The reel shows the side entrance.",
+      "facilities": [
+        "Women's prayer area",
+        "Wudu area",
+        "Air conditioning"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "sarath-city-capital-mall-prayer-rooms-kondapur",
+      "name": "Sarath City Capital Mall Prayer Rooms",
+      "city": "hyderabad",
+      "area": "Kondapur",
+      "address": "Basement 1, Sarath City Capital Mall, Kondapur, Hyderabad",
+      "reelIds": [
+        "DLpklpZTQ98"
+      ],
+      "description": "Separate prayer rooms for women and men inside the mall. The reel shows the signed women’s room, the nearby men’s hall and wudu facilities.",
+      "facilities": [
+        "Women's prayer area",
+        "Wudu area"
+      ]
+    },
+    {
+      "kind": "masjids",
+      "slug": "city-centre-mall-prayer-room-banjara-hills",
+      "name": "City Centre Mall Prayer Room",
+      "city": "hyderabad",
+      "area": "Banjara Hills",
+      "address": "Inside City Centre Mall, Banjara Hills, Hyderabad",
+      "reelIds": [
+        "DLJ-5MyTHs_"
+      ],
+      "description": "A prayer room inside City Centre Mall. Follow the original reel for directions within the building.",
+      "facilities": []
+    },
+    {
+      "kind": "masjids",
+      "slug": "masjid-e-husaini-begum-gandipet",
+      "name": "Masjid-e-Husaini Begum",
+      "city": "hyderabad",
+      "area": "Gandipet",
+      "address": "Near Janwada and FNF Arena, Gandipet, Hyderabad",
+      "reelIds": [
+        "DcGFhzhTXmk"
+      ],
+      "description": "The Halal Living reel shows this mosque as a prayer stop near FNF Arena.",
+      "facilities": []
     }
   ],
   "reels": [
@@ -2726,6 +4444,2155 @@
           "slug": "zamzam-jaaler-murthabak-mylapore"
         }
       ]
+    },
+    {
+      "id": "DfKeG9xt02K",
+      "title": "DLF Westend Heights Musalla",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "dlf-westend-heights-musalla-akshayanagar"
+      ],
+      "permalink": "https://www.instagram.com/reel/DfKeG9xt02K/",
+      "poster": "/reels/DfKeG9xt02K.jpg",
+      "publishedAt": 1793460575,
+      "duration": null,
+      "places": [
+        {
+          "name": "DLF Westend Heights Musalla",
+          "slug": "dlf-westend-heights-musalla-akshayanagar"
+        }
+      ]
+    },
+    {
+      "id": "DfFct5FviUY",
+      "title": "Nexus Shantiniketan Mall Prayer Room",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "nexus-shantiniketan-mall-prayer-room-whitefield"
+      ],
+      "permalink": "https://www.instagram.com/reel/DfFct5FviUY/",
+      "poster": "/reels/DfFct5FviUY.jpg",
+      "publishedAt": 1793291705,
+      "duration": null,
+      "places": [
+        {
+          "name": "Nexus Shantiniketan Mall Prayer Room",
+          "slug": "nexus-shantiniketan-mall-prayer-room-whitefield"
+        }
+      ]
+    },
+    {
+      "id": "DfFCbSPvVcX",
+      "title": "Teacher’s Colony Musalla",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "teachers-colony-musalla-koramangala"
+      ],
+      "permalink": "https://www.instagram.com/reel/DfFCbSPvVcX/",
+      "poster": "/reels/DfFCbSPvVcX.jpg",
+      "publishedAt": 1793277906,
+      "duration": null,
+      "places": [
+        {
+          "name": "Teacher’s Colony Musalla",
+          "slug": "teachers-colony-musalla-koramangala"
+        }
+      ]
+    },
+    {
+      "id": "DfChUtgurIL",
+      "title": "Masjid-e-Inamul Hassan",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-inamul-hassan-geddalahalli"
+      ],
+      "permalink": "https://www.instagram.com/reel/DfChUtgurIL/",
+      "poster": "/reels/DfChUtgurIL.jpg",
+      "publishedAt": 1793194705,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Inamul Hassan",
+          "slug": "masjid-e-inamul-hassan-geddalahalli"
+        }
+      ]
+    },
+    {
+      "id": "DfADYqENbbh",
+      "title": "AECS Layout Musalla near CMRIT",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "aecs-layout-musalla-near-cmrit-brookefield"
+      ],
+      "permalink": "https://www.instagram.com/reel/DfADYqENbbh/",
+      "poster": "/reels/DfADYqENbbh.jpg",
+      "publishedAt": 1793110939,
+      "duration": null,
+      "places": [
+        {
+          "name": "AECS Layout Musalla near CMRIT",
+          "slug": "aecs-layout-musalla-near-cmrit-brookefield"
+        }
+      ]
+    },
+    {
+      "id": "De9mT3NOk69",
+      "title": "Musalla beside Metro Timbers",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "musalla-beside-metro-timbers-doddakallasandra"
+      ],
+      "permalink": "https://www.instagram.com/reel/De9mT3NOk69/",
+      "poster": "/reels/De9mT3NOk69.jpg",
+      "publishedAt": 1793028374,
+      "duration": null,
+      "places": [
+        {
+          "name": "Musalla beside Metro Timbers",
+          "slug": "musalla-beside-metro-timbers-doddakallasandra"
+        }
+      ]
+    },
+    {
+      "id": "DewabA-vwUq",
+      "title": "Musalla near Kristu Jayanti University",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "musalla-near-kristu-jayanti-university-kothanur"
+      ],
+      "permalink": "https://www.instagram.com/reel/DewabA-vwUq/",
+      "poster": "/reels/DewabA-vwUq.jpg",
+      "publishedAt": 1792585806,
+      "duration": null,
+      "places": [
+        {
+          "name": "Musalla near Kristu Jayanti University",
+          "slug": "musalla-near-kristu-jayanti-university-kothanur"
+        }
+      ]
+    },
+    {
+      "id": "DeuDQ_dxOBE",
+      "title": "Masjid-e-Baqi",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-baqi-banjara-hills"
+      ],
+      "permalink": "https://www.instagram.com/reel/DeuDQ_dxOBE/",
+      "poster": "/reels/DeuDQ_dxOBE.jpg",
+      "publishedAt": 1792506606,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Baqi",
+          "slug": "masjid-e-baqi-banjara-hills"
+        }
+      ]
+    },
+    {
+      "id": "DernUYaPeJ_",
+      "title": "Masjid-e-Sharfiya",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-sharfiya-hennur"
+      ],
+      "permalink": "https://www.instagram.com/reel/DernUYaPeJ_/",
+      "poster": "/reels/DernUYaPeJ_.jpg",
+      "publishedAt": 1792424941,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Sharfiya",
+          "slug": "masjid-e-sharfiya-hennur"
+        }
+      ]
+    },
+    {
+      "id": "DejicPwRClx",
+      "title": "Masjid-e-Mohammad",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-mohammad-gachibowli"
+      ],
+      "permalink": "https://www.instagram.com/reel/DejicPwRClx/",
+      "poster": "/reels/DejicPwRClx.jpg",
+      "publishedAt": 1792153816,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Mohammad",
+          "slug": "masjid-e-mohammad-gachibowli"
+        }
+      ]
+    },
+    {
+      "id": "DejiWcSPYdX",
+      "title": "Musalla near St. Joseph’s College",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "musalla-near-st-josephs-college-langford-town"
+      ],
+      "permalink": "https://www.instagram.com/reel/DejiWcSPYdX/",
+      "poster": "/reels/DejiWcSPYdX.jpg",
+      "publishedAt": 1792153812,
+      "duration": null,
+      "places": [
+        {
+          "name": "Musalla near St. Joseph’s College",
+          "slug": "musalla-near-st-josephs-college-langford-town"
+        }
+      ]
+    },
+    {
+      "id": "DehSxF1vatl",
+      "title": "Musalla near Saigal Guest House",
+      "city": "mumbai",
+      "kind": "masjids",
+      "placeSlugs": [
+        "musalla-near-saigal-guest-house-goregaon-west"
+      ],
+      "permalink": "https://www.instagram.com/reel/DehSxF1vatl/",
+      "poster": "/reels/DehSxF1vatl.jpg",
+      "publishedAt": 1792078612,
+      "duration": null,
+      "places": [
+        {
+          "name": "Musalla near Saigal Guest House",
+          "slug": "musalla-near-saigal-guest-house-goregaon-west"
+        }
+      ]
+    },
+    {
+      "id": "Deg_Xb5RbHB",
+      "title": "Masjid-e-Munawwara",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-munawwara-kokapet"
+      ],
+      "permalink": "https://www.instagram.com/reel/Deg_Xb5RbHB/",
+      "poster": "/reels/Deg_Xb5RbHB.jpg",
+      "publishedAt": 1792068309,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Munawwara",
+          "slug": "masjid-e-munawwara-kokapet"
+        }
+      ]
+    },
+    {
+      "id": "Deb1wXzPa4v",
+      "title": "Musalla near A4 Car Care",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "musalla-near-a4-car-care-jp-nagar"
+      ],
+      "permalink": "https://www.instagram.com/reel/Deb1wXzPa4v/",
+      "poster": "/reels/Deb1wXzPa4v.jpg",
+      "publishedAt": 1791895507,
+      "duration": null,
+      "places": [
+        {
+          "name": "Musalla near A4 Car Care",
+          "slug": "musalla-near-a4-car-care-jp-nagar"
+        }
+      ]
+    },
+    {
+      "id": "DeUFldjRUu5",
+      "title": "Masjid Allah Ka Ghar",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-allah-ka-ghar-begumpet"
+      ],
+      "permalink": "https://www.instagram.com/reel/DeUFldjRUu5/",
+      "poster": "/reels/DeUFldjRUu5.jpg",
+      "publishedAt": 1791894602,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid Allah Ka Ghar",
+          "slug": "masjid-allah-ka-ghar-begumpet"
+        }
+      ]
+    },
+    {
+      "id": "DeZpUduN8Un",
+      "title": "Masjid-e-Abdur Raheem Faizi",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-abdur-raheem-faizi-hegde-nagar"
+      ],
+      "permalink": "https://www.instagram.com/reel/DeZpUduN8Un/",
+      "poster": "/reels/DeZpUduN8Un.jpg",
+      "publishedAt": 1791822178,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Abdur Raheem Faizi",
+          "slug": "masjid-e-abdur-raheem-faizi-hegde-nagar"
+        }
+      ]
+    },
+    {
+      "id": "DeUHSoTvAcq",
+      "title": "Masjid-e-Safa",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-safa-brigade-road"
+      ],
+      "permalink": "https://www.instagram.com/reel/DeUHSoTvAcq/",
+      "poster": "/reels/DeUHSoTvAcq.jpg",
+      "publishedAt": 1791636307,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Safa",
+          "slug": "masjid-e-safa-brigade-road"
+        }
+      ]
+    },
+    {
+      "id": "DeO6UCbBCAf",
+      "title": "National Plaza Musalla",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "national-plaza-musalla-residency-road"
+      ],
+      "permalink": "https://www.instagram.com/reel/DeO6UCbBCAf/",
+      "poster": "/reels/DeO6UCbBCAf.jpg",
+      "publishedAt": 1791461765,
+      "duration": null,
+      "places": [
+        {
+          "name": "National Plaza Musalla",
+          "slug": "national-plaza-musalla-residency-road"
+        }
+      ]
+    },
+    {
+      "id": "DeO4XBaJpbL",
+      "title": "Ayyappa Society Musalla",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "ayyappa-society-musalla-hitec-city"
+      ],
+      "permalink": "https://www.instagram.com/reel/DeO4XBaJpbL/",
+      "poster": "/reels/DeO4XBaJpbL.jpg",
+      "publishedAt": 1791460764,
+      "duration": null,
+      "places": [
+        {
+          "name": "Ayyappa Society Musalla",
+          "slug": "ayyappa-society-musalla-hitec-city"
+        }
+      ]
+    },
+    {
+      "id": "DeMh9JtBPmy",
+      "title": "House of Lords Musalla",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "house-of-lords-musalla-st-marks-road"
+      ],
+      "permalink": "https://www.instagram.com/reel/DeMh9JtBPmy/",
+      "poster": "/reels/DeMh9JtBPmy.jpg",
+      "publishedAt": 1791381917,
+      "duration": null,
+      "places": [
+        {
+          "name": "House of Lords Musalla",
+          "slug": "house-of-lords-musalla-st-marks-road"
+        }
+      ]
+    },
+    {
+      "id": "DeMOQXBsZby",
+      "title": "Musalla-e-Khalid",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "musalla-e-khalid-richmond-town"
+      ],
+      "permalink": "https://www.instagram.com/reel/DeMOQXBsZby/",
+      "poster": "/reels/DeMOQXBsZby.jpg",
+      "publishedAt": 1791371635,
+      "duration": null,
+      "places": [
+        {
+          "name": "Musalla-e-Khalid",
+          "slug": "musalla-e-khalid-richmond-town"
+        }
+      ]
+    },
+    {
+      "id": "DctalKsOJPP",
+      "title": "Masjid-e-Ayesha",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-ayesha-frazer-town"
+      ],
+      "permalink": "https://www.instagram.com/reel/DctalKsOJPP/",
+      "poster": "/reels/DctalKsOJPP.jpg",
+      "publishedAt": 1788190372,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Ayesha",
+          "slug": "masjid-e-ayesha-frazer-town"
+        }
+      ]
+    },
+    {
+      "id": "Dclbms3shSn",
+      "title": "Musalla near REVA University",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "musalla-near-reva-university-kattigenahalli"
+      ],
+      "permalink": "https://www.instagram.com/reel/Dclbms3shSn/",
+      "poster": "/reels/Dclbms3shSn.jpg",
+      "publishedAt": 1787922486,
+      "duration": null,
+      "places": [
+        {
+          "name": "Musalla near REVA University",
+          "slug": "musalla-near-reva-university-kattigenahalli"
+        }
+      ]
+    },
+    {
+      "id": "DcdkQljzKyE",
+      "title": "Lakeshore Mall Musalla",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "lakeshore-mall-musalla-kukatpally"
+      ],
+      "permalink": "https://www.instagram.com/reel/DcdkQljzKyE/",
+      "poster": "/reels/DcdkQljzKyE.jpg",
+      "publishedAt": 1787658580,
+      "duration": null,
+      "places": [
+        {
+          "name": "Lakeshore Mall Musalla",
+          "slug": "lakeshore-mall-musalla-kukatpally"
+        }
+      ]
+    },
+    {
+      "id": "DcVxiNiOzys",
+      "title": "Masjid-e-Salafi",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-salafi-btm-layout"
+      ],
+      "permalink": "https://www.instagram.com/reel/DcVxiNiOzys/",
+      "poster": "/reels/DcVxiNiOzys.jpg",
+      "publishedAt": 1787397090,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Salafi",
+          "slug": "masjid-e-salafi-btm-layout"
+        }
+      ]
+    },
+    {
+      "id": "DcLEANvTHGT",
+      "title": "Masjid-e-Quthub Shahi",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-quthub-shahi-kukatpally"
+      ],
+      "permalink": "https://www.instagram.com/reel/DcLEANvTHGT/",
+      "poster": "/reels/DcLEANvTHGT.jpg",
+      "publishedAt": 1787037719,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Quthub Shahi",
+          "slug": "masjid-e-quthub-shahi-kukatpally"
+        }
+      ]
+    },
+    {
+      "id": "DcGFhzhTXmk",
+      "title": "Masjid-e-Husaini Begum",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-husaini-begum-gandipet"
+      ],
+      "permalink": "https://www.instagram.com/reel/DcGFhzhTXmk/",
+      "poster": "/reels/DcGFhzhTXmk.jpg",
+      "publishedAt": 1786870714,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Husaini Begum",
+          "slug": "masjid-e-husaini-begum-gandipet"
+        }
+      ]
+    },
+    {
+      "id": "Da2iYUMBsfc",
+      "title": "Masjid-e-Osmania",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-osmania-golconda"
+      ],
+      "permalink": "https://www.instagram.com/reel/Da2iYUMBsfc/",
+      "poster": "/reels/Da2iYUMBsfc.jpg",
+      "publishedAt": 1784201407,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Osmania",
+          "slug": "masjid-e-osmania-golconda"
+        }
+      ]
+    },
+    {
+      "id": "Da2iYxfP1eP",
+      "title": "Musalla Abu Bakr",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "musalla-abu-bakr-koramangala"
+      ],
+      "permalink": "https://www.instagram.com/reel/Da2iYxfP1eP/",
+      "poster": "/reels/Da2iYxfP1eP.jpg",
+      "publishedAt": 1784201406,
+      "duration": null,
+      "places": [
+        {
+          "name": "Musalla Abu Bakr",
+          "slug": "musalla-abu-bakr-koramangala"
+        }
+      ]
+    },
+    {
+      "id": "DarfLMIBi7k",
+      "title": "Masjid-e-Ibrahim",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-ibrahim-gachibowli"
+      ],
+      "permalink": "https://www.instagram.com/reel/DarfLMIBi7k/",
+      "poster": "/reels/DarfLMIBi7k.jpg",
+      "publishedAt": 1783830608,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Ibrahim",
+          "slug": "masjid-e-ibrahim-gachibowli"
+        }
+      ]
+    },
+    {
+      "id": "DanQLSsOnFG",
+      "title": "Masjid-e-Mamoor",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-mamoor-koramangala"
+      ],
+      "permalink": "https://www.instagram.com/reel/DanQLSsOnFG/",
+      "poster": "/reels/DanQLSsOnFG.jpg",
+      "publishedAt": 1783689025,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Mamoor",
+          "slug": "masjid-e-mamoor-koramangala"
+        }
+      ]
+    },
+    {
+      "id": "DaNh1ohs3W-",
+      "title": "Accro Café",
+      "city": "hyderabad",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "accro-cafe-banjara-hills"
+      ],
+      "permalink": "https://www.instagram.com/reel/DaNh1ohs3W-/",
+      "poster": "/reels/DaNh1ohs3W-.jpg",
+      "publishedAt": 1782826100,
+      "duration": null,
+      "places": [
+        {
+          "name": "Accro Café",
+          "slug": "accro-cafe-banjara-hills"
+        }
+      ]
+    },
+    {
+      "id": "DZ2TrogvwNS",
+      "title": "Zameer Complex Musalla",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "zameer-complex-musalla-sg-palya"
+      ],
+      "permalink": "https://www.instagram.com/reel/DZ2TrogvwNS/",
+      "poster": "/reels/DZ2TrogvwNS.jpg",
+      "publishedAt": 1782046210,
+      "duration": null,
+      "places": [
+        {
+          "name": "Zameer Complex Musalla",
+          "slug": "zameer-complex-musalla-sg-palya"
+        }
+      ]
+    },
+    {
+      "id": "DZ2SjuLTKf-",
+      "title": "CARE Hospitals Prayer Room",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "care-hospitals-prayer-room-gachibowli"
+      ],
+      "permalink": "https://www.instagram.com/reel/DZ2SjuLTKf-/",
+      "poster": "/reels/DZ2SjuLTKf-.jpg",
+      "publishedAt": 1782045612,
+      "duration": null,
+      "places": [
+        {
+          "name": "CARE Hospitals Prayer Room",
+          "slug": "care-hospitals-prayer-room-gachibowli"
+        }
+      ]
+    },
+    {
+      "id": "DYzV1fzPR05",
+      "title": "Forum Rex Walk Prayer Room",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "forum-rex-walk-prayer-room-brigade-road"
+      ],
+      "permalink": "https://www.instagram.com/reel/DYzV1fzPR05/",
+      "poster": "/reels/DYzV1fzPR05.jpg",
+      "publishedAt": 1779799301,
+      "duration": null,
+      "places": [
+        {
+          "name": "Forum Rex Walk Prayer Room",
+          "slug": "forum-rex-walk-prayer-room-brigade-road"
+        }
+      ]
+    },
+    {
+      "id": "DYW9sTKhT37",
+      "title": "Marbella",
+      "city": "bangalore",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "marbella-jp-nagar"
+      ],
+      "permalink": "https://www.instagram.com/reel/DYW9sTKhT37/",
+      "poster": "/reels/DYW9sTKhT37.jpg",
+      "publishedAt": 1778847254,
+      "duration": null,
+      "places": [
+        {
+          "name": "Marbella",
+          "slug": "marbella-jp-nagar"
+        }
+      ]
+    },
+    {
+      "id": "DXtuF4mRSsQ",
+      "title": "Masjid-e-Qutub Shahi",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-qutub-shahi-madhapur"
+      ],
+      "permalink": "https://www.instagram.com/reel/DXtuF4mRSsQ/",
+      "poster": "/reels/DXtuF4mRSsQ.jpg",
+      "publishedAt": 1777463112,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Qutub Shahi",
+          "slug": "masjid-e-qutub-shahi-madhapur"
+        }
+      ]
+    },
+    {
+      "id": "DXtte4HI_Et",
+      "title": "Edigah Masjid",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "edigah-masjid-jayanagar"
+      ],
+      "permalink": "https://www.instagram.com/reel/DXtte4HI_Et/",
+      "poster": "/reels/DXtte4HI_Et.jpg",
+      "publishedAt": 1777462800,
+      "duration": null,
+      "places": [
+        {
+          "name": "Edigah Masjid",
+          "slug": "edigah-masjid-jayanagar"
+        }
+      ]
+    },
+    {
+      "id": "DXjgoYYDy0d",
+      "title": "AIG Hospitals Musalla",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "aig-hospitals-musalla-gachibowli"
+      ],
+      "permalink": "https://www.instagram.com/reel/DXjgoYYDy0d/",
+      "poster": "/reels/DXjgoYYDy0d.jpg",
+      "publishedAt": 1777120617,
+      "duration": null,
+      "places": [
+        {
+          "name": "AIG Hospitals Musalla",
+          "slug": "aig-hospitals-musalla-gachibowli"
+        }
+      ]
+    },
+    {
+      "id": "DXjf5OPD0sk",
+      "title": "Masjid-e-Noor",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-noor-jayanagar"
+      ],
+      "permalink": "https://www.instagram.com/reel/DXjf5OPD0sk/",
+      "poster": "/reels/DXjf5OPD0sk.jpg",
+      "publishedAt": 1777120207,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Noor",
+          "slug": "masjid-e-noor-jayanagar"
+        }
+      ]
+    },
+    {
+      "id": "DXZPTmMjZbt",
+      "title": "Vega City Mall Prayer Room",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "vega-city-mall-prayer-room-bannerghatta-road"
+      ],
+      "permalink": "https://www.instagram.com/reel/DXZPTmMjZbt/",
+      "poster": "/reels/DXZPTmMjZbt.jpg",
+      "publishedAt": 1776775996,
+      "duration": null,
+      "places": [
+        {
+          "name": "Vega City Mall Prayer Room",
+          "slug": "vega-city-mall-prayer-room-bannerghatta-road"
+        }
+      ]
+    },
+    {
+      "id": "DXLd970Tt9e",
+      "title": "Masjid-e-Yousuf Tekri",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-yousuf-tekri-tolichowki"
+      ],
+      "permalink": "https://www.instagram.com/reel/DXLd970Tt9e/",
+      "poster": "/reels/DXLd970Tt9e.jpg",
+      "publishedAt": 1776313809,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Yousuf Tekri",
+          "slug": "masjid-e-yousuf-tekri-tolichowki"
+        }
+      ]
+    },
+    {
+      "id": "DW87MJHk2Ru",
+      "title": "Masjid-e-Imam",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-imam-tolichowki"
+      ],
+      "permalink": "https://www.instagram.com/reel/DW87MJHk2Ru/",
+      "poster": "/reels/DW87MJHk2Ru.jpg",
+      "publishedAt": 1775825919,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Imam",
+          "slug": "masjid-e-imam-tolichowki"
+        }
+      ]
+    },
+    {
+      "id": "DW87BN-j3X5",
+      "title": "Yaghma Kebabs",
+      "city": "bangalore",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "yaghma-kebabs-hbr-layout"
+      ],
+      "permalink": "https://www.instagram.com/reel/DW87BN-j3X5/",
+      "poster": "/reels/DW87BN-j3X5.jpg",
+      "publishedAt": 1775825839,
+      "duration": null,
+      "places": [
+        {
+          "name": "Yaghma Kebabs",
+          "slug": "yaghma-kebabs-hbr-layout"
+        }
+      ]
+    },
+    {
+      "id": "DWjJKUSjEYq",
+      "title": "Musalla near Classic Surplus Store",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "musalla-near-classic-surplus-store-nagavara"
+      ],
+      "permalink": "https://www.instagram.com/reel/DWjJKUSjEYq/",
+      "poster": "/reels/DWjJKUSjEYq.jpg",
+      "publishedAt": 1774960806,
+      "duration": null,
+      "places": [
+        {
+          "name": "Musalla near Classic Surplus Store",
+          "slug": "musalla-near-classic-surplus-store-nagavara"
+        }
+      ]
+    },
+    {
+      "id": "DViixyiDkVX",
+      "title": "Prayer spaces in Bangalore",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-mamoor-koramangala",
+        "masjid-e-abu-bakr-electronic-city",
+        "masjid-e-mohammedi-hutchins-road",
+        "masjid-al-noor-halasuru"
+      ],
+      "permalink": "https://www.instagram.com/reel/DViixyiDkVX/",
+      "poster": "/reels/DViixyiDkVX.jpg",
+      "publishedAt": 1772793172,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Mamoor",
+          "slug": "masjid-e-mamoor-koramangala"
+        },
+        {
+          "name": "Masjid-e-Abu Bakr",
+          "slug": "masjid-e-abu-bakr-electronic-city"
+        },
+        {
+          "name": "Masjid-e-Mohammedi",
+          "slug": "masjid-e-mohammedi-hutchins-road"
+        },
+        {
+          "name": "Masjid Al Noor",
+          "slug": "masjid-al-noor-halasuru"
+        }
+      ]
+    },
+    {
+      "id": "DVMPxF4kvNU",
+      "title": "Prayer spaces in Bangalore",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-ayesha-frazer-town",
+        "hajee-ismail-sait-masjid-frazer-town",
+        "masjid-e-usmaan-e-ghani-kg-halli",
+        "masjid-e-rahmani-kg-halli"
+      ],
+      "permalink": "https://www.instagram.com/reel/DVMPxF4kvNU/",
+      "poster": "/reels/DVMPxF4kvNU.jpg",
+      "publishedAt": 1772045116,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Ayesha",
+          "slug": "masjid-e-ayesha-frazer-town"
+        },
+        {
+          "name": "Hajee Ismail Sait Masjid",
+          "slug": "hajee-ismail-sait-masjid-frazer-town"
+        },
+        {
+          "name": "Masjid-e-Usmaan-e-Ghani",
+          "slug": "masjid-e-usmaan-e-ghani-kg-halli"
+        },
+        {
+          "name": "Masjid-e-Rahmani",
+          "slug": "masjid-e-rahmani-kg-halli"
+        }
+      ]
+    },
+    {
+      "id": "DVBQfy3kjNN",
+      "title": "Prayer spaces in Bangalore",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-tawheed-jp-nagar",
+        "jamia-masjid-basavanagudi-basavanagudi",
+        "iwan-institute-prayer-space-basavanagudi",
+        "masjid-e-yaqoob-new-bel-road"
+      ],
+      "permalink": "https://www.instagram.com/reel/DVBQfy3kjNN/",
+      "poster": "/reels/DVBQfy3kjNN.jpg",
+      "publishedAt": 1771676261,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Tawheed",
+          "slug": "masjid-e-tawheed-jp-nagar"
+        },
+        {
+          "name": "Jamia Masjid Basavanagudi",
+          "slug": "jamia-masjid-basavanagudi-basavanagudi"
+        },
+        {
+          "name": "Iwan Institute Prayer Space",
+          "slug": "iwan-institute-prayer-space-basavanagudi"
+        },
+        {
+          "name": "Masjid-e-Yaqoob",
+          "slug": "masjid-e-yaqoob-new-bel-road"
+        }
+      ]
+    },
+    {
+      "id": "DU5uL8wjk7e",
+      "title": "Prayer spaces in Bangalore",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-meena-btm-layout",
+        "masjid-e-salafi-btm-layout",
+        "masjid-mouzzam-btm-layout"
+      ],
+      "permalink": "https://www.instagram.com/reel/DU5uL8wjk7e/",
+      "poster": "/reels/DU5uL8wjk7e.jpg",
+      "publishedAt": 1771423456,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Meena",
+          "slug": "masjid-e-meena-btm-layout"
+        },
+        {
+          "name": "Masjid-e-Salafi",
+          "slug": "masjid-e-salafi-btm-layout"
+        },
+        {
+          "name": "Masjid Mouzzam",
+          "slug": "masjid-mouzzam-btm-layout"
+        }
+      ]
+    },
+    {
+      "id": "DU5aFwdEq_x",
+      "title": "The Lokum",
+      "city": "bangalore",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "the-lokum-kammanahalli"
+      ],
+      "permalink": "https://www.instagram.com/reel/DU5aFwdEq_x/",
+      "poster": "/reels/DU5aFwdEq_x.jpg",
+      "publishedAt": 1771412874,
+      "duration": null,
+      "places": [
+        {
+          "name": "The Lokum",
+          "slug": "the-lokum-kammanahalli"
+        }
+      ]
+    },
+    {
+      "id": "DU3Jcp8k-w0",
+      "title": "Masjid-e-Baqi",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-baqi-banjara-hills"
+      ],
+      "permalink": "https://www.instagram.com/reel/DU3Jcp8k-w0/",
+      "poster": "/reels/DU3Jcp8k-w0.jpg",
+      "publishedAt": 1771337023,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Baqi",
+          "slug": "masjid-e-baqi-banjara-hills"
+        }
+      ]
+    },
+    {
+      "id": "DUs2SGgEtVc",
+      "title": "Crispy World",
+      "city": "bangalore",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "crispy-world-shivajinagar"
+      ],
+      "permalink": "https://www.instagram.com/reel/DUs2SGgEtVc/",
+      "poster": "/reels/DUs2SGgEtVc.jpg",
+      "publishedAt": 1770991432,
+      "duration": null,
+      "places": [
+        {
+          "name": "Crispy World",
+          "slug": "crispy-world-shivajinagar"
+        }
+      ]
+    },
+    {
+      "id": "DUDgx0tE3KS",
+      "title": "Ayyappa Society Musalla",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "ayyappa-society-musalla-hitec-city"
+      ],
+      "permalink": "https://www.instagram.com/reel/DUDgx0tE3KS/",
+      "poster": "/reels/DUDgx0tE3KS.jpg",
+      "publishedAt": 1769604423,
+      "duration": null,
+      "places": [
+        {
+          "name": "Ayyappa Society Musalla",
+          "slug": "ayyappa-society-musalla-hitec-city"
+        }
+      ]
+    },
+    {
+      "id": "DTc5b-zki0L",
+      "title": "Masjid-e-Maimuna-o-Shams",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-maimuna-o-shams-electronic-city"
+      ],
+      "permalink": "https://www.instagram.com/reel/DTc5b-zki0L/",
+      "poster": "/reels/DTc5b-zki0L.jpg",
+      "publishedAt": 1768308758,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Maimuna-o-Shams",
+          "slug": "masjid-e-maimuna-o-shams-electronic-city"
+        }
+      ]
+    },
+    {
+      "id": "DTc4qDJDN6E",
+      "title": "Masjid-e-Chiraan Palace",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-chiraan-palace-jubilee-hills"
+      ],
+      "permalink": "https://www.instagram.com/reel/DTc4qDJDN6E/",
+      "poster": "/reels/DTc4qDJDN6E.jpg",
+      "publishedAt": 1768308378,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Chiraan Palace",
+          "slug": "masjid-e-chiraan-palace-jubilee-hills"
+        }
+      ]
+    },
+    {
+      "id": "DTSjNLfjKlR",
+      "title": "Prestige Meridian Prayer Hall",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "prestige-meridian-prayer-hall-mg-road"
+      ],
+      "permalink": "https://www.instagram.com/reel/DTSjNLfjKlR/",
+      "poster": "/reels/DTSjNLfjKlR.jpg",
+      "publishedAt": 1767961592,
+      "duration": null,
+      "places": [
+        {
+          "name": "Prestige Meridian Prayer Hall",
+          "slug": "prestige-meridian-prayer-hall-mg-road"
+        }
+      ]
+    },
+    {
+      "id": "DTShBLxE2Zu",
+      "title": "Podium Mall Masjid",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "podium-mall-masjid-tolichowki"
+      ],
+      "permalink": "https://www.instagram.com/reel/DTShBLxE2Zu/",
+      "poster": "/reels/DTShBLxE2Zu.jpg",
+      "publishedAt": 1767960546,
+      "duration": null,
+      "places": [
+        {
+          "name": "Podium Mall Masjid",
+          "slug": "podium-mall-masjid-tolichowki"
+        }
+      ]
+    },
+    {
+      "id": "DSpVHY_kq1w",
+      "title": "Juma Masjid",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "juma-masjid-shivajinagar"
+      ],
+      "permalink": "https://www.instagram.com/reel/DSpVHY_kq1w/",
+      "poster": "/reels/DSpVHY_kq1w.jpg",
+      "publishedAt": 1766578429,
+      "duration": null,
+      "places": [
+        {
+          "name": "Juma Masjid",
+          "slug": "juma-masjid-shivajinagar"
+        }
+      ]
+    },
+    {
+      "id": "DSfKv8fE69f",
+      "title": "Hyderabad Airport Prayer Rooms",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "hyderabad-airport-prayer-rooms-shamshabad"
+      ],
+      "permalink": "https://www.instagram.com/reel/DSfKv8fE69f/",
+      "poster": "/reels/DSfKv8fE69f.jpg",
+      "publishedAt": 1766237462,
+      "duration": null,
+      "places": [
+        {
+          "name": "Hyderabad Airport Prayer Rooms",
+          "slug": "hyderabad-airport-prayer-rooms-shamshabad"
+        }
+      ]
+    },
+    {
+      "id": "DSfKdPVEre2",
+      "title": "IBC Knowledge Park Prayer Hall",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "ibc-knowledge-park-prayer-hall-sg-palya"
+      ],
+      "permalink": "https://www.instagram.com/reel/DSfKdPVEre2/",
+      "poster": "/reels/DSfKdPVEre2.jpg",
+      "publishedAt": 1766237303,
+      "duration": null,
+      "places": [
+        {
+          "name": "IBC Knowledge Park Prayer Hall",
+          "slug": "ibc-knowledge-park-prayer-hall-sg-palya"
+        }
+      ]
+    },
+    {
+      "id": "DSXQuGIk9Ji",
+      "title": "Kakaji City Center Masjid",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "kakaji-city-center-masjid-charminar"
+      ],
+      "permalink": "https://www.instagram.com/reel/DSXQuGIk9Ji/",
+      "poster": "/reels/DSXQuGIk9Ji.jpg",
+      "publishedAt": 1765972123,
+      "duration": null,
+      "places": [
+        {
+          "name": "Kakaji City Center Masjid",
+          "slug": "kakaji-city-center-masjid-charminar"
+        }
+      ]
+    },
+    {
+      "id": "DSXQUFUkjyn",
+      "title": "LuLu Mall Bangalore Prayer Rooms",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "lulu-mall-bangalore-prayer-rooms-rajajinagar"
+      ],
+      "permalink": "https://www.instagram.com/reel/DSXQUFUkjyn/",
+      "poster": "/reels/DSXQUFUkjyn.jpg",
+      "publishedAt": 1765971918,
+      "duration": null,
+      "places": [
+        {
+          "name": "LuLu Mall Bangalore Prayer Rooms",
+          "slug": "lulu-mall-bangalore-prayer-rooms-rajajinagar"
+        }
+      ]
+    },
+    {
+      "id": "DSFXn1_kpG7",
+      "title": "Bismillah Masjid",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "bismillah-masjid-sg-palya"
+      ],
+      "permalink": "https://www.instagram.com/reel/DSFXn1_kpG7/",
+      "poster": "/reels/DSFXn1_kpG7.jpg",
+      "publishedAt": 1765371761,
+      "duration": null,
+      "places": [
+        {
+          "name": "Bismillah Masjid",
+          "slug": "bismillah-masjid-sg-palya"
+        }
+      ]
+    },
+    {
+      "id": "DR4aeplk3in",
+      "title": "Famous Tea Point Namaz Room",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "famous-tea-point-namaz-room-peddapur"
+      ],
+      "permalink": "https://www.instagram.com/reel/DR4aeplk3in/",
+      "poster": "/reels/DR4aeplk3in.jpg",
+      "publishedAt": 1764937200,
+      "duration": null,
+      "places": [
+        {
+          "name": "Famous Tea Point Namaz Room",
+          "slug": "famous-tea-point-namaz-room-peddapur"
+        }
+      ]
+    },
+    {
+      "id": "DRpAULEkt2I",
+      "title": "The Estate Deli",
+      "city": "bangalore",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "the-estate-deli-indiranagar"
+      ],
+      "permalink": "https://www.instagram.com/reel/DRpAULEkt2I/",
+      "poster": "/reels/DRpAULEkt2I.jpg",
+      "publishedAt": 1764420078,
+      "duration": null,
+      "places": [
+        {
+          "name": "The Estate Deli",
+          "slug": "the-estate-deli-indiranagar"
+        }
+      ]
+    },
+    {
+      "id": "DRo_9RBk66S",
+      "title": "Masjid-e-Mohammad",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-mohammad-gachibowli"
+      ],
+      "permalink": "https://www.instagram.com/reel/DRo_9RBk66S/",
+      "poster": "/reels/DRo_9RBk66S.jpg",
+      "publishedAt": 1764419832,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Mohammad",
+          "slug": "masjid-e-mohammad-gachibowli"
+        }
+      ]
+    },
+    {
+      "id": "DRUe5wyEjy4",
+      "title": "Maachiz",
+      "city": "bangalore",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "maachiz-shanti-nagar"
+      ],
+      "permalink": "https://www.instagram.com/reel/DRUe5wyEjy4/",
+      "poster": "/reels/DRUe5wyEjy4.jpg",
+      "publishedAt": 1763731433,
+      "duration": null,
+      "places": [
+        {
+          "name": "Maachiz",
+          "slug": "maachiz-shanti-nagar"
+        }
+      ]
+    },
+    {
+      "id": "DRUeP9gE4R1",
+      "title": "Masjid-e-Mohammadia",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-mohammadia-langer-house"
+      ],
+      "permalink": "https://www.instagram.com/reel/DRUeP9gE4R1/",
+      "poster": "/reels/DRUeP9gE4R1.jpg",
+      "publishedAt": 1763731099,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Mohammadia",
+          "slug": "masjid-e-mohammadia-langer-house"
+        }
+      ]
+    },
+    {
+      "id": "DQy_8VXknb0",
+      "title": "Koramangala 1st Block Musalla",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "koramangala-1st-block-musalla-koramangala"
+      ],
+      "permalink": "https://www.instagram.com/reel/DQy_8VXknb0/",
+      "poster": "/reels/DQy_8VXknb0.jpg",
+      "publishedAt": 1762607903,
+      "duration": null,
+      "places": [
+        {
+          "name": "Koramangala 1st Block Musalla",
+          "slug": "koramangala-1st-block-musalla-koramangala"
+        }
+      ]
+    },
+    {
+      "id": "DQrED5bEwUT",
+      "title": "Masjid-e-Amera",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-amera-abids"
+      ],
+      "permalink": "https://www.instagram.com/reel/DQrED5bEwUT/",
+      "poster": "/reels/DQrED5bEwUT.jpg",
+      "publishedAt": 1762341626,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Amera",
+          "slug": "masjid-e-amera-abids"
+        }
+      ]
+    },
+    {
+      "id": "DQrDplBElni",
+      "title": "Al Fajr Musalla",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "al-fajr-musalla-bellandur"
+      ],
+      "permalink": "https://www.instagram.com/reel/DQrDplBElni/",
+      "poster": "/reels/DQrDplBElni.jpg",
+      "publishedAt": 1762341436,
+      "duration": null,
+      "places": [
+        {
+          "name": "Al Fajr Musalla",
+          "slug": "al-fajr-musalla-bellandur"
+        }
+      ]
+    },
+    {
+      "id": "DQeVtD_k8C8",
+      "title": "Masjid-e-Aliya",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-aliya-abids"
+      ],
+      "permalink": "https://www.instagram.com/reel/DQeVtD_k8C8/",
+      "poster": "/reels/DQeVtD_k8C8.jpg",
+      "publishedAt": 1761914684,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Aliya",
+          "slug": "masjid-e-aliya-abids"
+        }
+      ]
+    },
+    {
+      "id": "DQeVBZHksK0",
+      "title": "Forum South Bangalore Prayer Room",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "forum-south-bangalore-prayer-room-konanakunte"
+      ],
+      "permalink": "https://www.instagram.com/reel/DQeVBZHksK0/",
+      "poster": "/reels/DQeVBZHksK0.jpg",
+      "publishedAt": 1761914345,
+      "duration": null,
+      "places": [
+        {
+          "name": "Forum South Bangalore Prayer Room",
+          "slug": "forum-south-bangalore-prayer-room-konanakunte"
+        }
+      ]
+    },
+    {
+      "id": "DPd03Xjkxrf",
+      "title": "Kebapci",
+      "city": "hyderabad",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "kebapci-banjara-hills"
+      ],
+      "permalink": "https://www.instagram.com/reel/DPd03Xjkxrf/",
+      "poster": "/reels/DPd03Xjkxrf.jpg",
+      "publishedAt": 1759750083,
+      "duration": null,
+      "places": [
+        {
+          "name": "Kebapci",
+          "slug": "kebapci-banjara-hills"
+        }
+      ]
+    },
+    {
+      "id": "DPd0qrIjaQM",
+      "title": "Kebapci",
+      "city": "bangalore",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "kebapci-konanakunte"
+      ],
+      "permalink": "https://www.instagram.com/reel/DPd0qrIjaQM/",
+      "poster": "/reels/DPd0qrIjaQM.jpg",
+      "publishedAt": 1759749884,
+      "duration": null,
+      "places": [
+        {
+          "name": "Kebapci",
+          "slug": "kebapci-konanakunte"
+        }
+      ]
+    },
+    {
+      "id": "DPOmLneE40C",
+      "title": "Inorbit Mall Prayer Rooms",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "inorbit-mall-prayer-rooms-madhapur"
+      ],
+      "permalink": "https://www.instagram.com/reel/DPOmLneE40C/",
+      "poster": "/reels/DPOmLneE40C.jpg",
+      "publishedAt": 1759239012,
+      "duration": null,
+      "places": [
+        {
+          "name": "Inorbit Mall Prayer Rooms",
+          "slug": "inorbit-mall-prayer-rooms-madhapur"
+        }
+      ]
+    },
+    {
+      "id": "DPOic14EnGz",
+      "title": "Sultanate of Shawarma",
+      "city": "bangalore",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "sultanate-of-shawarma-brigade-road"
+      ],
+      "permalink": "https://www.instagram.com/reel/DPOic14EnGz/",
+      "poster": "/reels/DPOic14EnGz.jpg",
+      "publishedAt": 1759237136,
+      "duration": null,
+      "places": [
+        {
+          "name": "Sultanate of Shawarma",
+          "slug": "sultanate-of-shawarma-brigade-road"
+        }
+      ]
+    },
+    {
+      "id": "DO_DWjEkiqt",
+      "title": "Masjid-e-Edigah-e-Bilal",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-edigah-e-bilal-bannerghatta-road"
+      ],
+      "permalink": "https://www.instagram.com/reel/DO_DWjEkiqt/",
+      "poster": "/reels/DO_DWjEkiqt.jpg",
+      "publishedAt": 1758717429,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Edigah-e-Bilal",
+          "slug": "masjid-e-edigah-e-bilal-bannerghatta-road"
+        }
+      ]
+    },
+    {
+      "id": "DOyiV2bCsKO",
+      "title": "Masjid-e-Ghouse-ul-Wara",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-ghouse-ul-wara-electronic-city"
+      ],
+      "permalink": "https://www.instagram.com/reel/DOyiV2bCsKO/",
+      "poster": "/reels/DOyiV2bCsKO.jpg",
+      "publishedAt": 1758297417,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Ghouse-ul-Wara",
+          "slug": "masjid-e-ghouse-ul-wara-electronic-city"
+        }
+      ]
+    },
+    {
+      "id": "DOyCgL2k-ZA",
+      "title": "LuLu Mall Kukatpally Prayer Rooms",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "lulu-mall-kukatpally-prayer-rooms-kukatpally"
+      ],
+      "permalink": "https://www.instagram.com/reel/DOyCgL2k-ZA/",
+      "poster": "/reels/DOyCgL2k-ZA.jpg",
+      "publishedAt": 1758280824,
+      "duration": null,
+      "places": [
+        {
+          "name": "LuLu Mall Kukatpally Prayer Rooms",
+          "slug": "lulu-mall-kukatpally-prayer-rooms-kukatpally"
+        }
+      ]
+    },
+    {
+      "id": "DOtEXBkElO5",
+      "title": "Proms Complex Musalla",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "proms-complex-musalla-koramangala"
+      ],
+      "permalink": "https://www.instagram.com/reel/DOtEXBkElO5/",
+      "poster": "/reels/DOtEXBkElO5.jpg",
+      "publishedAt": 1758113930,
+      "duration": null,
+      "places": [
+        {
+          "name": "Proms Complex Musalla",
+          "slug": "proms-complex-musalla-koramangala"
+        }
+      ]
+    },
+    {
+      "id": "DOgH5JkEiRw",
+      "title": "Nexus Koramangala Mall Musalla",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "nexus-koramangala-mall-musalla-koramangala"
+      ],
+      "permalink": "https://www.instagram.com/reel/DOgH5JkEiRw/",
+      "poster": "/reels/DOgH5JkEiRw.jpg",
+      "publishedAt": 1757679604,
+      "duration": null,
+      "places": [
+        {
+          "name": "Nexus Koramangala Mall Musalla",
+          "slug": "nexus-koramangala-mall-musalla-koramangala"
+        }
+      ]
+    },
+    {
+      "id": "DObGibHkoy_",
+      "title": "Hayes Road Musalla",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "hayes-road-musalla-residency-road"
+      ],
+      "permalink": "https://www.instagram.com/reel/DObGibHkoy_/",
+      "poster": "/reels/DObGibHkoy_.jpg",
+      "publishedAt": 1757511097,
+      "duration": null,
+      "places": [
+        {
+          "name": "Hayes Road Musalla",
+          "slug": "hayes-road-musalla-residency-road"
+        }
+      ]
+    },
+    {
+      "id": "DOOGOg8jPtv",
+      "title": "Castle Street Musalla",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "castle-street-musalla-richmond-town"
+      ],
+      "permalink": "https://www.instagram.com/reel/DOOGOg8jPtv/",
+      "poster": "/reels/DOOGOg8jPtv.jpg",
+      "publishedAt": 1757074719,
+      "duration": null,
+      "places": [
+        {
+          "name": "Castle Street Musalla",
+          "slug": "castle-street-musalla-richmond-town"
+        }
+      ]
+    },
+    {
+      "id": "DNXpfH3S5cF",
+      "title": "Food Bae",
+      "city": "bangalore",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "food-bae-electronic-city"
+      ],
+      "permalink": "https://www.instagram.com/reel/DNXpfH3S5cF/",
+      "poster": "/reels/DNXpfH3S5cF.jpg",
+      "publishedAt": 1755247768,
+      "duration": null,
+      "places": [
+        {
+          "name": "Food Bae",
+          "slug": "food-bae-electronic-city"
+        }
+      ]
+    },
+    {
+      "id": "DNVWXIIT1Fi",
+      "title": "Nexus Hyderabad Mall Prayer Rooms",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "nexus-hyderabad-mall-prayer-rooms-kukatpally"
+      ],
+      "permalink": "https://www.instagram.com/reel/DNVWXIIT1Fi/",
+      "poster": "/reels/DNVWXIIT1Fi.jpg",
+      "publishedAt": 1755170652,
+      "duration": null,
+      "places": [
+        {
+          "name": "Nexus Hyderabad Mall Prayer Rooms",
+          "slug": "nexus-hyderabad-mall-prayer-rooms-kukatpally"
+        }
+      ]
+    },
+    {
+      "id": "DNA-OoVywMI",
+      "title": "Shenzhen Kitchen",
+      "city": "bangalore",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "shenzhen-kitchen-bangalore"
+      ],
+      "permalink": "https://www.instagram.com/reel/DNA-OoVywMI/",
+      "poster": "/reels/DNA-OoVywMI.jpg",
+      "publishedAt": 1754488034,
+      "duration": null,
+      "places": [
+        {
+          "name": "Shenzhen Kitchen",
+          "slug": "shenzhen-kitchen-bangalore"
+        }
+      ]
+    },
+    {
+      "id": "DM1SNYZTamR",
+      "title": "Haj House Prayer Hall",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "haj-house-prayer-hall-nampally"
+      ],
+      "permalink": "https://www.instagram.com/reel/DM1SNYZTamR/",
+      "poster": "/reels/DM1SNYZTamR.jpg",
+      "publishedAt": 1754094629,
+      "duration": null,
+      "places": [
+        {
+          "name": "Haj House Prayer Hall",
+          "slug": "haj-house-prayer-hall-nampally"
+        }
+      ]
+    },
+    {
+      "id": "DMvbD81ygtd",
+      "title": "Sheesh Kebab",
+      "city": "bangalore",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "sheesh-kebab-frazer-town"
+      ],
+      "permalink": "https://www.instagram.com/reel/DMvbD81ygtd/",
+      "poster": "/reels/DMvbD81ygtd.jpg",
+      "publishedAt": 1753898107,
+      "duration": null,
+      "places": [
+        {
+          "name": "Sheesh Kebab",
+          "slug": "sheesh-kebab-frazer-town"
+        }
+      ]
+    },
+    {
+      "id": "DMebiXCzhnd",
+      "title": "Shahi Masjid Bagh-e-Aam",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "shahi-masjid-bagh-e-aam-nampally"
+      ],
+      "permalink": "https://www.instagram.com/reel/DMebiXCzhnd/",
+      "poster": "/reels/DMebiXCzhnd.jpg",
+      "publishedAt": 1753327869,
+      "duration": null,
+      "places": [
+        {
+          "name": "Shahi Masjid Bagh-e-Aam",
+          "slug": "shahi-masjid-bagh-e-aam-nampally"
+        }
+      ]
+    },
+    {
+      "id": "DMNPjlqSwgQ",
+      "title": "Madrasa-e-Talha",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "madrasa-e-talha-mahadevapura"
+      ],
+      "permalink": "https://www.instagram.com/reel/DMNPjlqSwgQ/",
+      "poster": "/reels/DMNPjlqSwgQ.jpg",
+      "publishedAt": 1752751139,
+      "duration": null,
+      "places": [
+        {
+          "name": "Madrasa-e-Talha",
+          "slug": "madrasa-e-talha-mahadevapura"
+        }
+      ]
+    },
+    {
+      "id": "DMJixQxT3uP",
+      "title": "Masjid-e-Ibad-ur-Rahman",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-ibad-ur-rahman-golconda"
+      ],
+      "permalink": "https://www.instagram.com/reel/DMJixQxT3uP/",
+      "poster": "/reels/DMJixQxT3uP.jpg",
+      "publishedAt": 1752626972,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Ibad-ur-Rahman",
+          "slug": "masjid-e-ibad-ur-rahman-golconda"
+        }
+      ]
+    },
+    {
+      "id": "DL7FaLVy7NJ",
+      "title": "Prestige Tech Park Musalla",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "prestige-tech-park-musalla-bellandur"
+      ],
+      "permalink": "https://www.instagram.com/reel/DL7FaLVy7NJ/",
+      "poster": "/reels/DL7FaLVy7NJ.jpg",
+      "publishedAt": 1752141785,
+      "duration": null,
+      "places": [
+        {
+          "name": "Prestige Tech Park Musalla",
+          "slug": "prestige-tech-park-musalla-bellandur"
+        }
+      ]
+    },
+    {
+      "id": "DLzmwSpTW4w",
+      "title": "Masjid-e-Azizia",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "masjid-e-azizia-mehdipatnam"
+      ],
+      "permalink": "https://www.instagram.com/reel/DLzmwSpTW4w/",
+      "poster": "/reels/DLzmwSpTW4w.jpg",
+      "publishedAt": 1751890975,
+      "duration": null,
+      "places": [
+        {
+          "name": "Masjid-e-Azizia",
+          "slug": "masjid-e-azizia-mehdipatnam"
+        }
+      ]
+    },
+    {
+      "id": "DLptuxQyYEh",
+      "title": "Al-Fajr Musalla at Syed’s Plaza",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "al-fajr-musalla-at-syeds-plaza-bellandur"
+      ],
+      "permalink": "https://www.instagram.com/reel/DLptuxQyYEh/",
+      "poster": "/reels/DLptuxQyYEh.jpg",
+      "publishedAt": 1751559010,
+      "duration": null,
+      "places": [
+        {
+          "name": "Al-Fajr Musalla at Syed’s Plaza",
+          "slug": "al-fajr-musalla-at-syeds-plaza-bellandur"
+        }
+      ]
+    },
+    {
+      "id": "DLpklpZTQ98",
+      "title": "Sarath City Capital Mall Prayer Rooms",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "sarath-city-capital-mall-prayer-rooms-kondapur"
+      ],
+      "permalink": "https://www.instagram.com/reel/DLpklpZTQ98/",
+      "poster": "/reels/DLpklpZTQ98.jpg",
+      "publishedAt": 1751554201,
+      "duration": null,
+      "places": [
+        {
+          "name": "Sarath City Capital Mall Prayer Rooms",
+          "slug": "sarath-city-capital-mall-prayer-rooms-kondapur"
+        }
+      ]
+    },
+    {
+      "id": "DLJ-5MyTHs_",
+      "title": "City Centre Mall Prayer Room",
+      "city": "hyderabad",
+      "kind": "masjids",
+      "placeSlugs": [
+        "city-centre-mall-prayer-room-banjara-hills"
+      ],
+      "permalink": "https://www.instagram.com/reel/DLJ-5MyTHs_/",
+      "poster": "/reels/DLJ-5MyTHs_.jpg",
+      "publishedAt": 1750494285,
+      "duration": null,
+      "places": [
+        {
+          "name": "City Centre Mall Prayer Room",
+          "slug": "city-centre-mall-prayer-room-banjara-hills"
+        }
+      ]
+    },
+    {
+      "id": "DLFHuzPylnd",
+      "title": "Sarposh",
+      "city": "bangalore",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "sarposh-indiranagar"
+      ],
+      "permalink": "https://www.instagram.com/reel/DLFHuzPylnd/",
+      "poster": "/reels/DLFHuzPylnd.jpg",
+      "publishedAt": 1750331183,
+      "duration": null,
+      "places": [
+        {
+          "name": "Sarposh",
+          "slug": "sarposh-indiranagar"
+        }
+      ]
+    },
+    {
+      "id": "DKhM3YVS9Hr",
+      "title": "Broast Khan",
+      "city": "bangalore",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "broast-khan-bangalore"
+      ],
+      "permalink": "https://www.instagram.com/reel/DKhM3YVS9Hr/",
+      "poster": "/reels/DKhM3YVS9Hr.jpg",
+      "publishedAt": 1749125852,
+      "duration": null,
+      "places": [
+        {
+          "name": "Broast Khan",
+          "slug": "broast-khan-bangalore"
+        }
+      ]
+    },
+    {
+      "id": "DKR_jDpSzan",
+      "title": "Grill and Cheese",
+      "city": "bangalore",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "grill-and-cheese-bangalore"
+      ],
+      "permalink": "https://www.instagram.com/reel/DKR_jDpSzan/",
+      "poster": "/reels/DKR_jDpSzan.jpg",
+      "publishedAt": 1748615569,
+      "duration": null,
+      "places": [
+        {
+          "name": "Grill and Cheese",
+          "slug": "grill-and-cheese-bangalore"
+        }
+      ]
+    },
+    {
+      "id": "DJ8hvlgyZga",
+      "title": "Commercial Street Rooftop Musalla",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "commercial-street-rooftop-musalla-shivajinagar"
+      ],
+      "permalink": "https://www.instagram.com/reel/DJ8hvlgyZga/",
+      "poster": "/reels/DJ8hvlgyZga.jpg",
+      "publishedAt": 1747895234,
+      "duration": null,
+      "places": [
+        {
+          "name": "Commercial Street Rooftop Musalla",
+          "slug": "commercial-street-rooftop-musalla-shivajinagar"
+        }
+      ]
+    },
+    {
+      "id": "DJp052_S7-N",
+      "title": "Musalla near Silk Board",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "musalla-near-silk-board-btm-layout"
+      ],
+      "permalink": "https://www.instagram.com/reel/DJp052_S7-N/",
+      "poster": "/reels/DJp052_S7-N.jpg",
+      "publishedAt": 1747267759,
+      "duration": null,
+      "places": [
+        {
+          "name": "Musalla near Silk Board",
+          "slug": "musalla-near-silk-board-btm-layout"
+        }
+      ]
+    },
+    {
+      "id": "DJj0v8pybC1",
+      "title": "Kutchi Memon Jamaat Khana Musalla",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "kutchi-memon-jamaat-khana-musalla-shivajinagar"
+      ],
+      "permalink": "https://www.instagram.com/reel/DJj0v8pybC1/",
+      "poster": "/reels/DJj0v8pybC1.jpg",
+      "publishedAt": 1747066413,
+      "duration": null,
+      "places": [
+        {
+          "name": "Kutchi Memon Jamaat Khana Musalla",
+          "slug": "kutchi-memon-jamaat-khana-musalla-shivajinagar"
+        }
+      ]
+    },
+    {
+      "id": "DJRQ97_yXBb",
+      "title": "Prayer spaces in Bangalore",
+      "city": "bangalore",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "taco-street-indiranagar",
+        "taco-street-hrbr-layout"
+      ],
+      "permalink": "https://www.instagram.com/reel/DJRQ97_yXBb/",
+      "poster": "/reels/DJRQ97_yXBb.jpg",
+      "publishedAt": 1746443596,
+      "duration": null,
+      "places": [
+        {
+          "name": "Taco Street",
+          "slug": "taco-street-indiranagar"
+        },
+        {
+          "name": "Taco Street",
+          "slug": "taco-street-hrbr-layout"
+        }
+      ]
+    },
+    {
+      "id": "DJJtd1tyU4c",
+      "title": "Al Bain",
+      "city": "bangalore",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "al-bain-kammanahalli"
+      ],
+      "permalink": "https://www.instagram.com/reel/DJJtd1tyU4c/",
+      "poster": "/reels/DJJtd1tyU4c.jpg",
+      "publishedAt": 1746190128,
+      "duration": null,
+      "places": [
+        {
+          "name": "Al Bain",
+          "slug": "al-bain-kammanahalli"
+        }
+      ]
+    },
+    {
+      "id": "DIspmvNStn7",
+      "title": "Big Bang Pizza",
+      "city": "bangalore",
+      "kind": "restaurants",
+      "placeSlugs": [
+        "big-bang-pizza-cox-town"
+      ],
+      "permalink": "https://www.instagram.com/reel/DIspmvNStn7/",
+      "poster": "/reels/DIspmvNStn7.jpg",
+      "publishedAt": 1745215002,
+      "duration": null,
+      "places": [
+        {
+          "name": "Big Bang Pizza",
+          "slug": "big-bang-pizza-cox-town"
+        }
+      ]
+    },
+    {
+      "id": "DIMJZ3aypK3",
+      "title": "UB City Prayer Hall",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "ub-city-prayer-hall-vittal-mallya-road"
+      ],
+      "permalink": "https://www.instagram.com/reel/DIMJZ3aypK3/",
+      "poster": "/reels/DIMJZ3aypK3.jpg",
+      "publishedAt": 1744124995,
+      "duration": null,
+      "places": [
+        {
+          "name": "UB City Prayer Hall",
+          "slug": "ub-city-prayer-hall-vittal-mallya-road"
+        }
+      ]
+    },
+    {
+      "id": "DHnOFVBSI41",
+      "title": "Fifth Avenue Mall Masjid",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "fifth-avenue-mall-masjid-brigade-road"
+      ],
+      "permalink": "https://www.instagram.com/reel/DHnOFVBSI41/",
+      "poster": "/reels/DHnOFVBSI41.jpg",
+      "publishedAt": 1742885317,
+      "duration": null,
+      "places": [
+        {
+          "name": "Fifth Avenue Mall Masjid",
+          "slug": "fifth-avenue-mall-masjid-brigade-road"
+        }
+      ]
+    },
+    {
+      "id": "DHW5LXsz3KX",
+      "title": "Barton Centre Musalla",
+      "city": "bangalore",
+      "kind": "masjids",
+      "placeSlugs": [
+        "barton-centre-musalla-mg-road"
+      ],
+      "permalink": "https://www.instagram.com/reel/DHW5LXsz3KX/",
+      "poster": "/reels/DHW5LXsz3KX.jpg",
+      "publishedAt": 1742337565,
+      "duration": null,
+      "places": [
+        {
+          "name": "Barton Centre Musalla",
+          "slug": "barton-centre-musalla-mg-road"
+        }
+      ]
     }
-  ]
+  ],
+  "sources": {
+    "chennai": {
+      "profile": "the.halal.living",
+      "reviewedReelCount": 161
+    },
+    "bangalore": {
+      "profile": "the.halal.living.bangalore",
+      "reviewedReelCount": 126
+    },
+    "mumbai": {
+      "profile": "the.halalliving.mumbai",
+      "reviewedReelCount": 7
+    },
+    "hyderabad": {
+      "profile": "the.halal.living.hyderabad",
+      "reviewedReelCount": 106
+    }
+  }
 }

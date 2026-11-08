@@ -554,5 +554,841 @@
     "scope": "venue",
     "reviewedAt": "2026-11-02",
     "evidence": "Matched name, street and venue against reel directions. Venue matches provide building map/photos only; venue reviews and hours are excluded."
+  },
+  "prayer_halls/bangalore/dlf-westend-heights-musalla-akshayanagar": {
+    "placeId": "ChIJycxWvC1rrjsRMZEocP3NMQ8",
+    "title": "DLF Westend Heights",
+    "address": "Begur, DLF Newtown, Akshayanagar, Bengaluru, Karnataka 560114",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel uses this landmark to locate the prayer space.",
+    "scope": "landmark"
+  },
+  "prayer_halls/bangalore/nexus-shantiniketan-mall-prayer-room-whitefield": {
+    "placeId": "ChIJ_XjH7D0RrjsRzta064zzPmU",
+    "title": "Forum Shantiniketan prayer hall",
+    "address": "XPQH+R4V Forum Shantiniketan prayer hall, Whitefield Main Rd, Hoodi, Thigalarapalya, Krishnarajapuram, Bengaluru, Karnataka 560048",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/masjid-e-inamul-hassan-geddalahalli": {
+    "placeId": "ChIJ7f7HhFwXrjsR3aramqJYIgo",
+    "title": "Masjid-E-Inamul Hassan",
+    "address": "1st A Main St, Geddalahalli, Amam Enclave Layout, Ashwath Nagar, Thanisandra, Bengaluru, Karnataka 560077",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/musalla-near-a4-car-care-jp-nagar": {
+    "placeId": "ChIJPblk5yAVrjsRXsujd0IlWIs",
+    "title": "A4CarCare",
+    "address": "194/5, 1st Main Rd, NS Palya, BTM Layout 2nd Stage, BTM Layout, Bengaluru, Karnataka 560076",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel uses this landmark to locate the prayer space.",
+    "scope": "landmark"
+  },
+  "prayer_halls/bangalore/masjid-e-safa-brigade-road": {
+    "placeId": "ChIJ0Wbp4X0WrjsRnnOUkl3JjO4",
+    "title": "Indo Dubai Plaza",
+    "address": "Rest House Rd, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560001",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel shows the prayer space inside this venue.",
+    "scope": "venue"
+  },
+  "prayer_halls/bangalore/national-plaza-musalla-residency-road": {
+    "placeId": "ChIJN0dxQX4WrjsRJI9RcRRb3b4",
+    "title": "National Plaza",
+    "address": "28, Field Marshal Cariappa Rd, Shanthala Nagar, Sampangi Rama Nagar, Bengaluru, Karnataka 560025",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel shows the prayer space inside this venue.",
+    "scope": "venue"
+  },
+  "prayer_halls/bangalore/musalla-e-khalid-richmond-town": {
+    "placeId": "ChIJs07I3dQVrjsRBWhAnpCFJd8",
+    "title": "Hotel Fanoos",
+    "address": "17, Hosur Rd, Richmond Town, Bengaluru, Karnataka 560025",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel uses this landmark to locate the prayer space.",
+    "scope": "landmark"
+  },
+  "prayer_halls/bangalore/masjid-e-ayesha-frazer-town": {
+    "placeId": "ChIJsXtf1vEWrjsRYYNEpiiwutg",
+    "title": "Masjid e Ayesha",
+    "address": "Pulikeshi Nagar, 12, Lazar Rd, Fraser Town, Bengaluru, Karnataka 560005",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/musalla-abu-bakr-koramangala": {
+    "placeId": "ChIJqVsA-FwUrjsRB2Z2GC9NaDs",
+    "title": "Telephone Exchange Koramangala",
+    "address": "478, 1st A cross Rd, 4th Block, Koramangala, Bengaluru, Karnataka 560034",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel uses this landmark to locate the prayer space.",
+    "scope": "landmark"
+  },
+  "prayer_halls/bangalore/masjid-e-mamoor-koramangala": {
+    "placeId": "ChIJ1yGPN04UrjsRLQuwmfJRmyo",
+    "title": "Masjid E Mamoor Bengaluru",
+    "address": "1st Floor, Masjid E Mamoor Bengaluru, Mamoor Plaza-2, 1st A cross Rd, opp. McDonalds, KHB Colony, Koramangala 5 Block, Koramangala, Bengaluru, Karnataka 560095",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/zameer-complex-musalla-sg-palya": {
+    "placeId": "ChIJa8f72KwVrjsRyyASWMi0mCE",
+    "title": "Golden Trends",
+    "address": "3, Golden Trends, Christ University, 36, 5th Cross Rd, Tavarekere, Venkateshwara Layout, S.G. Palya, Bengaluru, Karnataka 560029",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel uses this landmark to locate the prayer space.",
+    "scope": "landmark"
+  },
+  "prayer_halls/bangalore/forum-rex-walk-prayer-room-brigade-road": {
+    "placeId": "ChIJSWi0MpAXrjsRFc321rPY1P0",
+    "title": "Forum Rex Walk",
+    "address": "XJC4+WQH Forum Rex Walk, Brigade Rd, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560001",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel shows the prayer space inside this venue.",
+    "scope": "venue"
+  },
+  "prayer_halls/bangalore/edigah-masjid-jayanagar": {
+    "placeId": "ChIJpWypr5gVrjsRk5sxGpIX8xA",
+    "title": "Eidgah Masjid Jayanagar",
+    "address": "31st Cross Rd, 4th T Block East, 4th Block, Jayanagar, Bengaluru, Karnataka 560011",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/masjid-e-noor-jayanagar": {
+    "placeId": "ChIJpYP6spcVrjsRhqoPqANj6X0",
+    "title": "Masjid E Noor",
+    "address": "WHPM+549 Masjid E Noor, 17th Cross Rd, Jaya Nagar 1st Block, Jayanagar 3rd Block, Jayanagar, Bengaluru, Karnataka 560011",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/vega-city-mall-prayer-room-bannerghatta-road": {
+    "placeId": "ChIJZxEMUQAVrjsRqbqQPohjbvQ",
+    "title": "Nexus Vega City Mall",
+    "address": "WJ52+3FJ Nexus Vega City Mall, Vega city, Bannerghatta Rd, Dollar Layout, BTM Layout 2nd Stage, BTM Layout, Bengaluru, Karnataka 560076",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel shows the prayer space inside this venue.",
+    "scope": "venue"
+  },
+  "prayer_halls/bangalore/masjid-e-abu-bakr-electronic-city": {
+    "placeId": "ChIJ3Y2fcl9trjsR11QLbBUx3GY",
+    "title": "Masjid-e-Abu Baker, Ahle hadees",
+    "address": "Site no. 03,Shikaripalya Main Road Maragonahalli, near to CONCORDE TECH TURF, Electronic City Phase I, Electronic City, Bengaluru, Karnataka 560105",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/hajee-ismail-sait-masjid-frazer-town": {
+    "placeId": "ChIJ__cTkvAWrjsR0l8KbrhK1Ds",
+    "title": "Hajee Sir Ismail Sait Masjid",
+    "address": "2J28+975 Hajee Sir Ismail Sait Masjid, Mosque Rd, Fraser Town, Bengaluru, Karnataka 560005",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/masjid-e-usmaan-e-ghani-kg-halli": {
+    "placeId": "ChIJ94tynQQXrjsRfVpGpBo8VsE",
+    "title": "Masjid E Usmaan e Ghani",
+    "address": "elite next apartment, 2419, Kushal Nagar, Kadugondanahalli, Bengaluru, Karnataka 560045",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/masjid-e-tawheed-jp-nagar": {
+    "placeId": "ChIJ-wkf6noVrjsRRe5eUORWNzM",
+    "title": "Masjid At-Tawheed Ahle Hadees umarbagh layout J.P Nagar Bangalore",
+    "address": "BSK Ward, Umarbagh Layout, Banashankari, Bengaluru, Karnataka 560111",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/jamia-masjid-basavanagudi-basavanagudi": {
+    "placeId": "ChIJbyoEeJQVrjsRR3Lep1jWEto",
+    "title": "Jamia Masjid, Basavanagudi",
+    "address": "WHRH+4MW Jamia Masjid, Basavanagudi, Khazi St, Basavanagudi, Bengaluru, Karnataka 560004",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/masjid-e-yaqoob-new-bel-road": {
+    "placeId": "ChIJCazpc-EXrjsRC8Q4jMf4Drs",
+    "title": "Masjid-e-Yaqoob",
+    "address": "No 561, Masjid-e-Yaqoob, Mosque Cross, New BEL Rd, AGS Layout, Dollars Colony, R.M.V. 2nd Stage, Bengaluru, Karnataka 560094",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/masjid-e-meena-btm-layout": {
+    "placeId": "ChIJx9lO0wAVrjsRvWC39wF7Vn8",
+    "title": "Masjid-E-Mina",
+    "address": "24th, 7th A Main Rd, KEB Colony, New Gurappana Palya, 1st Stage, BTM 1st Stage, Bengaluru, Karnataka 560029",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/masjid-e-salafi-btm-layout": {
+    "placeId": "ChIJoaahiQEVrjsRpUimbaG47Hs",
+    "title": "Kerala Salafi Masjid",
+    "address": "31, Kerala Salafi Masjid, 37, 9th C Main Rd, KEB Colony, 1st Stage, BTM 1st Stage, Bengaluru, Karnataka 560029",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/masjid-mouzzam-btm-layout": {
+    "placeId": "ChIJmcBw9QEVrjsRs1qTPusa54I",
+    "title": "Masjid Mouzzam",
+    "address": "WJ84+VG5 Masjid Mouzzam, 9th F Main Rd, KEB Colony, 1st Stage, BTM 1st Stage, Bengaluru, Karnataka 560029",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/prestige-meridian-prayer-hall-mg-road": {
+    "placeId": "ChIJSSqnTIEWrjsR20B8d6KVPTE",
+    "title": "Prestige Meridian",
+    "address": "29, Prestige Meridian, 30, Mahatma Gandhi Rd, Ashok Nagar, Bengaluru, Karnataka 560001",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel shows the prayer space inside this venue.",
+    "scope": "venue"
+  },
+  "prayer_halls/bangalore/juma-masjid-shivajinagar": {
+    "placeId": "ChIJKe7bRGIWrjsRP29eC9a-UuA",
+    "title": "Jumma Masjid Mosque",
+    "address": "479, Dispensary Rd, Tasker Town, Shivaji Nagar, Sampangi, Bengaluru, Karnataka 560001",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/ibc-knowledge-park-prayer-hall-sg-palya": {
+    "placeId": "ChIJ5RMqpi4VrjsROxdiesMWg8M",
+    "title": "IBC Mosque",
+    "address": "Basement 1, IBC Mosque, Accenture Tower, A, IBC Internal Rd, Bhavani Nagar, S.G. Palya, Bengaluru, Karnataka 560029",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/lulu-mall-bangalore-prayer-rooms-rajajinagar": {
+    "placeId": "ChIJ2RjDF3UXrjsROZhvDRVZq6k",
+    "title": "LuLu Mall Prayer room",
+    "address": "19, Old Mysuru Rd, Gopalapura, Sevashrama, Bengaluru, Karnataka 560023",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/koramangala-1st-block-musalla-koramangala": {
+    "placeId": "ChIJB0r1TUsVrjsRBK7w8eMbEw8",
+    "title": "Subway CNA Koramangala",
+    "address": "WJHP+H32 Subway CNA Koramangala, 1st Block Koramangala, HSR Layout 5th Sector, Bengaluru, Karnataka 560034",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel uses this landmark to locate the prayer space.",
+    "scope": "landmark"
+  },
+  "prayer_halls/bangalore/al-fajr-musalla-bellandur": {
+    "placeId": "ChIJyQI3wjUTrjsROpMEaiKgAxE",
+    "title": "Al Fajr Prayer Hall",
+    "address": "227, Palm Ave, Green Glen Layout, Bellandur, Bengaluru, Karnataka 560103",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/forum-south-bangalore-prayer-room-konanakunte": {
+    "placeId": "ChIJCVZIHR8VrjsRpHoLjfwzghI",
+    "title": "Forum South Bengaluru",
+    "address": "Konanakunte Cross Metro Station, Anjanadri Layout, Konanakunte, Bengaluru, Karnataka 560062",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel shows the prayer space inside this venue.",
+    "scope": "venue"
+  },
+  "prayer_halls/bangalore/masjid-e-ghouse-ul-wara-electronic-city": {
+    "placeId": "ChIJA7SuFwBrrjsRTBEiflbHLxk",
+    "title": "Masjid e Ghouse Ul Wara Noori Foundation",
+    "address": "VJ3R+7V7 Masjid e Ghouse Ul Wara Noori Foundation, Vittasandra Main Rd, Vittasandra, Karnataka 560100",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/nexus-koramangala-mall-musalla-koramangala": {
+    "placeId": "ChIJuzGXhU0UrjsRCRsq7sQj5Xs",
+    "title": "Nexus Koramangala Mall",
+    "address": "Hosur Rd, Chikku Lakshmaiah Layout, Koramangala, Bengaluru, Karnataka 560030",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel shows the prayer space inside this venue.",
+    "scope": "venue"
+  },
+  "restaurants/bangalore/marbella-jp-nagar": {
+    "placeId": "ChIJO89RSo8VrjsRaJh1NVkz09E",
+    "title": "MARBELLA MULTICUISINE ROOFTOP",
+    "address": "17, 24th Main Rd, opp. HDFC BANK, 5th Phase, Annaiah Reddy Layout, J. P. Nagar, Bengaluru, Karnataka 560078",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "restaurants/bangalore/yaghma-kebabs-hbr-layout": {
+    "placeId": "ChIJFT5QshgXrjsRgJWpw_n5KSY",
+    "title": "Yaghma Kababs",
+    "address": "5th main road, 5th Cross Rd, HRBR Layout 2nd Block, HRBR Layout, Kalyan Nagar, Bengaluru, Karnataka 560043",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "restaurants/bangalore/the-lokum-kammanahalli": {
+    "placeId": "ChIJI4y_EwUXrjsRmO0YQajCarU",
+    "title": "The Lokum",
+    "address": "Aizah International 5th A Main Road, CMR Main Rd, HRBR Layout 2nd Block, Kalyan Nagar, Bengaluru, Karnataka 560043",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "restaurants/bangalore/crispy-world-shivajinagar": {
+    "placeId": "ChIJkzH0BwAXrjsR5eBBwmfmb0g",
+    "title": "Crispy World",
+    "address": "Thimmaiah Rd, Sultan Nagar, Bharati Nagar, Shivaji Nagar, Bengaluru, Karnataka 560001",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "restaurants/bangalore/the-estate-deli-indiranagar": {
+    "placeId": "ChIJoepqCgAXrjsRcX_XHh5xUdM",
+    "title": "The Estate Deli",
+    "address": "The Estate Deli, #3162, 60 feet, 12th Cross Rd, HAL 2nd Stage, Defence Colony, Indranagar, Bengaluru, Karnataka 560008",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "restaurants/bangalore/maachiz-shanti-nagar": {
+    "placeId": "ChIJnUAyvkMVrjsRUhiU2JMb_sw",
+    "title": "Maachiz - Indian, Chinese & Tandoor",
+    "address": "20, Langford Rd, Akkithimana Halli, Bheemanna Garden, Shanti Nagar, Bengaluru, Karnataka 560027",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "restaurants/bangalore/kebapci-konanakunte": {
+    "placeId": "ChIJa_IaTgAVrjsRao4qFJtRLwQ",
+    "title": "Kebapci Forum South",
+    "address": "3rd Floor, Kebapci Forum South, 311, Forum Mall Rd, Anjanadri Layout, Konanakunte, Bengaluru, Karnataka 560062",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "restaurants/bangalore/sultanate-of-shawarma-brigade-road": {
+    "placeId": "ChIJea_mp7MXrjsRukK3mLR-RkY",
+    "title": "SOS (Sultanate Of Shawarma)",
+    "address": "30, Residency Rd, Shanthala Nagar, Richmond Town, Bengaluru, Karnataka 560025",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "restaurants/bangalore/sarposh-indiranagar": {
+    "placeId": "ChIJiR4tNAsXrjsRdgtuje4HECo",
+    "title": "Sarposh - Experience Kashmir",
+    "address": "First Floor, Sarposh - Experience Kashmir, 39, 80 Feet Rd, opposite 12th Main Road, above Crossword, Hal, HAL 3rd Stage, Indiranagar, Bengaluru, Karnataka 560075",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "restaurants/bangalore/broast-khan-bangalore": {
+    "placeId": "ChIJvw_jIx4XrjsRC7rFPWp67RY",
+    "title": "BroastKhan",
+    "address": "PNS Layout, Subbayianiah Palyam, Banaswadi, Bengaluru, Karnataka 560084",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "restaurants/bangalore/grill-and-cheese-bangalore": {
+    "placeId": "ChIJ-eQ0g9MXrjsRO6OH0C7xE7I",
+    "title": "The Grill & Cheese Cafe",
+    "address": "GF01 SMART PLAZA, 64, Coles Rd, Cleveland Town, Fraser Town, Bengaluru, Karnataka 560005",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "restaurants/bangalore/al-bain-kammanahalli": {
+    "placeId": "ChIJBctLXtEXrjsR0S_RgzzvJYM",
+    "title": "Al Bain Restaurant",
+    "address": "Near, #1, 5th Main, 60 feet, BESCOM Road, Kullappa Circle, Kammanahalli, Bengaluru, Karnataka 560084",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/masjid-e-mohammedi-hutchins-road": {
+    "placeId": "ChIJTxUjn-YWrjsR1ArlmE41lPQ",
+    "title": "Masjid E Mohammedi",
+    "address": "Thomas Town, Lingarajapuram, Bengaluru, Karnataka 560084",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/masjid-e-rahmani-kg-halli": {
+    "placeId": "ChIJwz8a2v0WrjsRkO7ExThpYEU",
+    "title": "Masjid-e-Rahmani",
+    "address": "2J67+FHX Masjid-e-Rahmani, Pillanna Garden 2nd Stage, Muslim Colony, P and T Colony, Kadugondanahalli, Bengaluru, Karnataka 560045",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/musalla-beside-metro-timbers-doddakallasandra": {
+    "placeId": "ChIJWzmmNOM_rjsRurLJ4r_W2_s",
+    "title": "METRO TIMBERS",
+    "address": "42, Kanakapura Rd Venkatareddy Layout, Doddakallasandra, Kanakapura Main Rd, Venkatareddy Layout, Doddakallasandra, Bikasipura, Bengaluru, Karnataka 560062",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel uses this landmark to locate the prayer space.",
+    "scope": "landmark"
+  },
+  "prayer_halls/bangalore/musalla-near-kristu-jayanti-university-kothanur": {
+    "placeId": "ChIJ8UeLIQAXrjsRJW1XS5qn6j0",
+    "title": "Musalla near Kristu Jayanti College",
+    "address": "Kristu Jayanti College, K.Narayanapura, Kothanur, Bengaluru, Karnataka 560077",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/house-of-lords-musalla-st-marks-road": {
+    "placeId": "ChIJzfbmAgAXrjsRFAXtlyda3Tw",
+    "title": "House of Lords",
+    "address": "17, St Mark's Rd, near Bank of India, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560001",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel shows the prayer space inside this venue.",
+    "scope": "venue"
+  },
+  "prayer_halls/bangalore/aecs-layout-musalla-near-cmrit-brookefield": {
+    "placeId": "ChIJr27LeYATrjsRKrFb5j0J3vw",
+    "title": "Musalla(small Masjid)",
+    "address": "G-1/613, AECS Layout - C Block, Kundalahalli, Whitefield, Bengaluru, Karnataka 560037",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/masjid-e-maimuna-o-shams-electronic-city": {
+    "placeId": "ChIJO47PIpJsrjsRGLDOW5H5720",
+    "title": "Masjid e Maimuna O shams",
+    "address": "RMXC+8QX Masjid e Maimuna O shams, Service Rd, Muniswamy Layout, Konappana Agrahara, Electronic City, Konappana Agrahara, Karnataka 560100",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/prestige-tech-park-musalla-bellandur": {
+    "placeId": "ChIJ7-Cgk7MTrjsRpYr_lkVDiM8",
+    "title": "Prestige Tech Park",
+    "address": "Kadubeesanahalli, Bengaluru, Karnataka 560103",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel shows the prayer space inside this venue.",
+    "scope": "venue"
+  },
+  "prayer_halls/bangalore/madrasa-e-talha-mahadevapura": {
+    "placeId": "ChIJ3QlmW3URrjsRzRw9qaM95-E",
+    "title": "Masjid E Talha",
+    "address": "12, 6th Cross Rd, Garudachar Palya, Mahadevapura, Bengaluru, Karnataka 560048",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/kutchi-memon-jamaat-khana-musalla-shivajinagar": {
+    "placeId": "ChIJpweiAIkWrjsREhFrAZ5RiU0",
+    "title": "Cutchi Memon Jamath Khana",
+    "address": "Sivanchetti Gardens, Bengaluru, Karnataka 560042",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel shows the prayer space inside this venue.",
+    "scope": "venue"
+  },
+  "restaurants/bangalore/shenzhen-kitchen-bangalore": {
+    "placeId": "ChIJ7cBWDg8XrjsRKcxlRvLuKuA",
+    "title": "Shenzhen Kitchen - 1 Sobha Mall",
+    "address": "XJG2+6QC Shenzhen Kitchen - 1 Sobha Mall, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560001",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "restaurants/bangalore/sheesh-kebab-frazer-town": {
+    "placeId": "ChIJ89MzCI0XrjsR0Y6xqL9E7G4",
+    "title": "Sheeshkebab",
+    "address": "MM Road, Fraser Town, Bengaluru, Karnataka 560005",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "restaurants/bangalore/big-bang-pizza-cox-town": {
+    "placeId": "ChIJ5ZZ5TJwXrjsR06OL6tYq51E",
+    "title": "Big Bang Pizza",
+    "address": "60/1-A, Coles Rd, Cleveland Town, Fraser Town, Bengaluru, Karnataka 560005",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "restaurants/bangalore/taco-street-indiranagar": {
+    "placeId": "ChIJZ-08wYAXrjsRsaseNJb4oi4",
+    "title": "Taco Street - Indiranagar",
+    "address": "108, ground floor, 1st cross, 4th Main Rd, HAL 3rd Stage, Bengaluru, Karnataka 560075",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/mumbai/musalla-near-saigal-guest-house-goregaon-west": {
+    "placeId": "ChIJSUscXvS35zsRLvyjdYL1LKI",
+    "title": "Saigal Guest House",
+    "address": "1st floor, Saigal Guest House, Ashok Raj Building, Swami Vivekanand Rd, above Ratna Hotel, Kakaji Nagar, Jawahar Nagar, Goregaon West, Mumbai, Maharashtra 400104",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel uses this landmark to locate the prayer space.",
+    "scope": "landmark"
+  },
+  "prayer_halls/hyderabad/masjid-e-baqi-banjara-hills": {
+    "placeId": "ChIJIfvfxOuXyzsRY9cEoj8_8J0",
+    "title": "Masjid-e-Baqi",
+    "address": "8-2-703, Road No. 12, Bhola Nagar, Banjara Hills, Hyderabad, Telangana 500028",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/hyderabad/masjid-e-mohammad-gachibowli": {
+    "placeId": "ChIJI3eTdQCTyzsRyU1VnQcKDY0",
+    "title": "Masjid-e-Mohammad",
+    "address": "6th floor, Masjid-e-Mohammad, Jk empire, near OLA Showroom, near Bio Diversity Park, Silpa Gram Craft Village, Gachibowli, Rai Durg, Hyderabad, Telangana 500032",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/hyderabad/masjid-e-munawwara-kokapet": {
+    "placeId": "ChIJ0c8lNIuUyzsRY2xsZl-GbJE",
+    "title": "Masjid-e-Munawara",
+    "address": "Kokapet, Hyderabad, Telangana 500075",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/hyderabad/lakeshore-mall-musalla-kukatpally": {
+    "placeId": "ChIJ2bMpdQCRyzsRHgvasjNGPhY",
+    "title": "Lake Shore Mall",
+    "address": "IDA Kukatpally, Kukatpally, Hyderabad, Telangana 500072",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel shows the prayer space inside this venue.",
+    "scope": "venue"
+  },
+  "prayer_halls/hyderabad/masjid-e-osmania-golconda": {
+    "placeId": "ChIJz4xPNJKWyzsR1C4jjT3W5qQ",
+    "title": "Masjid-e-Osmania",
+    "address": "9CR2+7XM Masjid-e-Osmania, Resham Bagh, Golconda Fort, Alijapur, Hyderabad, Telangana 500008",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/hyderabad/masjid-e-ibrahim-gachibowli": {
+    "placeId": "ChIJXzKVeZaTyzsRo478qJeREwA",
+    "title": "Masjid-e-Ibrahim",
+    "address": "74, Indira Nagar, Gachibowli, Hyderabad, Telangana 500032",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/hyderabad/care-hospitals-prayer-room-gachibowli": {
+    "placeId": "ChIJEwkxe_CTyzsRacNKcJGoAVs",
+    "title": "CARE Hospitals - Hitec City | Best Hospital in Hyderabad",
+    "address": "Old Mumbai Hwy, near Cyberabad Police Commissionerate, Jayabheri Pine Valley, HITEC City, Hyderabad, Telangana 500032",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel shows the prayer space inside this venue.",
+    "scope": "venue"
+  },
+  "prayer_halls/hyderabad/masjid-e-qutub-shahi-madhapur": {
+    "placeId": "ChIJcQV2QlSRyzsR7wHIz6DMoJQ",
+    "title": "Masjid-e-Qutub Shahi",
+    "address": "C9GQ+GC2 Masjid-e-Qutub Shahi, BN Reddy Colony, Madhapur, Hyderabad, Telangana 500104",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/hyderabad/aig-hospitals-musalla-gachibowli": {
+    "placeId": "ChIJZyT5_umTyzsR1xWsZCiId4s",
+    "title": "AIG Hospitals",
+    "address": "1-66/AIG/2 to 5, Mindspace Rd, P Janardhan Reddy Nagar, Gachibowli, Hyderabad, Telangana 500032",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel shows the prayer space inside this venue.",
+    "scope": "venue"
+  },
+  "prayer_halls/hyderabad/masjid-e-yousuf-tekri-tolichowki": {
+    "placeId": "ChIJ15Ap2OaWyzsRoNZubR5iOeQ",
+    "title": "Masjid-e-Yousuf Tekri",
+    "address": "9CXF+46M Masjid-e-Yousuf Tekri, Yousuf Tekri, Toli Chowki, Hyderabad, Telangana 500008",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/hyderabad/masjid-e-imam-tolichowki": {
+    "placeId": "ChIJLXF4LjOXyzsR5xaTnfBK4M8",
+    "title": "Masjid E Imam",
+    "address": "Unnamed Road, Yousuf Tekri, Toli Chowki, Hyderabad, Telangana 500008",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/hyderabad/masjid-e-chiraan-palace-jubilee-hills": {
+    "placeId": "ChIJyRb4hdSWyzsR1vwhSmIlBio",
+    "title": "Masjid Chiraan Park",
+    "address": "CCCF+QV9 Masjid Chiraan Park, KBR Park Nature Trail, Jubilee Hills, Hyderabad, Telangana 500034",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/hyderabad/podium-mall-masjid-tolichowki": {
+    "placeId": "ChIJ2YDOT9GXyzsRp32AZmEP1RE",
+    "title": "Podium Mall",
+    "address": "Old Mumbai Hwy, Daulat Gulshan Colony, Janaki Nagar Colony, Toli Chowki, Hyderabad, Telangana 500008",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel shows the prayer space inside this venue.",
+    "scope": "venue"
+  },
+  "prayer_halls/hyderabad/hyderabad-airport-prayer-rooms-shamshabad": {
+    "placeId": "ChIJ22lebX-7yzsRqxKAlE9NeR8",
+    "title": "Multi Faith Prayer Room",
+    "address": "Rajiv Gandhi International Airport, International Departures Terminal, Sai Hills Colony, Shamshabad, Hyderabad, Gollapalle Khurd, Telangana 500048",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/hyderabad/kakaji-city-center-masjid-charminar": {
+    "placeId": "ChIJJcI536CXyzsR-qJXNNsI7ns",
+    "title": "Kakaji City Centre",
+    "address": "20-4-226, Mahboob Chowk, Khilwat, Hyderabad, Telangana 500002",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel shows the prayer space inside this venue.",
+    "scope": "venue"
+  },
+  "prayer_halls/hyderabad/famous-tea-point-namaz-room-peddapur": {
+    "placeId": "ChIJN_6kb7b-yzsR7IRGy1kGWnc",
+    "title": "Famous Tea Point",
+    "address": "Telangana 502306",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel shows the prayer space inside this venue.",
+    "scope": "venue"
+  },
+  "prayer_halls/hyderabad/masjid-e-mohammadia-langer-house": {
+    "placeId": "ChIJUwa-jlaWyzsR2SpUdb5ZTmA",
+    "title": "Masjid-e-Mohammadia",
+    "address": "9/1, 1/172A, Hashim Nagar, Langar Houz, Hyderabad, Telangana 500008",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/hyderabad/masjid-e-amera-abids": {
+    "placeId": "ChIJZ3X5M9aZyzsROaXY2fdvGbg",
+    "title": "Masjid-e-Amera",
+    "address": "9FQG+MGF Masjid-e-Amera, On The Cross Roads, Abids Road, Chirag Ali Lane, Abids, Hyderabad, Telangana 500001",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/hyderabad/masjid-e-aliya-abids": {
+    "placeId": "ChIJw44hC2KXyzsRB67u6GUq7Qk",
+    "title": "Jama Masjid Aliya",
+    "address": "9FWF+QX9 Jama Masjid Aliya, Fateh Maidan, Abids, Hyderabad, Telangana 500001",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/hyderabad/inorbit-mall-prayer-rooms-madhapur": {
+    "placeId": "ChIJEUdt5i-XyzsRE1OhHGknLX8",
+    "title": "Inorbit Mall",
+    "address": "S No. 64, Inorbit Mall, Inorbit Mall Rd, APIIC Software Layout, Mindspace, Madhapur, Hyderabad, Telangana 500081",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel shows the prayer space inside this venue.",
+    "scope": "venue"
+  },
+  "prayer_halls/hyderabad/lulu-mall-kukatpally-prayer-rooms-kukatpally": {
+    "placeId": "ChIJVwf9EQCRyzsROTrhxL9YL4s",
+    "title": "Lulu Mall Prayer hall",
+    "address": "F9RV+39M Lulu Mall Prayer hall, JNTU Malaysian Twp Flyover, Kukatpally Housing Board Colony, K P H B Phase 3, Kukatpally, Hyderabad, Telangana 500072",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/hyderabad/nexus-hyderabad-mall-prayer-rooms-kukatpally": {
+    "placeId": "ChIJH3oNSQCRyzsRCmAO7rw3HZw",
+    "title": "Nexus Mall Masjid",
+    "address": "Nexus Mall, Kukatpally Housing Board Colony, K P H B Phase 9, Kukatpally, Hyderabad, Telangana 500085",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/hyderabad/masjid-e-azizia-mehdipatnam": {
+    "placeId": "ChIJAQAAAB-XyzsR5uoPiF5jxa4",
+    "title": "Masjid-e-Azizia",
+    "address": "Humayun Nagar Rd, Royal Colony, Mehdipatnam, Hyderabad, Telangana 500006",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "restaurants/hyderabad/accro-cafe-banjara-hills": {
+    "placeId": "ChIJbxlbPKeVyzsR-W_9U5LA4pA",
+    "title": "ACCRO CAFE",
+    "address": "Road No. 5, Banjara Hills, Hyderabad, Telangana 500034",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "restaurants/hyderabad/kebapci-banjara-hills": {
+    "placeId": "ChIJ4-ovtA6XyzsRO3J0mOgNefQ",
+    "title": "Kebapci",
+    "address": "Rd Number 7, off Road Number 7, adjacent to Meridian School Lane, Zahara Nagar, Banjara Hills, Hyderabad, Telangana 500034",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/hyderabad/haj-house-prayer-hall-nampally": {
+    "placeId": "ChIJDxX9xGOXyzsRRrAvebKCJqI",
+    "title": "Hajj House Masjid",
+    "address": "9FWC+QG5 Hajj House Masjid, Public Garden Rd, beside Assembly, Fateh Maidan, Abids, Hyderabad, Telangana 500001",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/hyderabad/shahi-masjid-bagh-e-aam-nampally": {
+    "placeId": "ChIJaeuVagCXyzsRvHwDC_-TLOo",
+    "title": "NAMPALLY PUBLIC GARDEN BAAG E AAM MASJID",
+    "address": "9FX9+CGM NAMPALLY PUBLIC GARDEN BAAG E AAM MASJID, Public Gardens, Red Hills, Lakdikapul, Hyderabad, Telangana 500004",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/hyderabad/masjid-e-ibad-ur-rahman-golconda": {
+    "placeId": "ChIJP2Kq8fWWyzsRgdSAucjVQqk",
+    "title": "Masjid-e-Ibad Ur Rahman Ahlesunnat waljamah (Ahlehadees)",
+    "address": "9-8-110/c/141, Masjid-e-Ibad Ur Rahman Ahlesunnat waljamah (Ahlehadees), Dhankota, Dhankhota, Golconda Fort, Hyderabad, Telangana 500008",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/hyderabad/sarath-city-capital-mall-prayer-rooms-kondapur": {
+    "placeId": "ChIJgdR1RhOTyzsR8-n-tQFv3_k",
+    "title": "Prayer hall B1- Sarath City mall",
+    "address": "Sarath City Capital Mall, Kondapur, Whitefields, Gachibowli, Hyderabad, Telangana 500084",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/hyderabad/city-centre-mall-prayer-room-banjara-hills": {
+    "placeId": "ChIJFYnPoS6RyzsRv5cDtJRXRgo",
+    "title": "City Center Mall",
+    "address": "CITY CENTER, 8-2-592, Road No. 1, Banjara Hills, Hyderabad, Telangana 500034",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel shows the prayer space inside this venue.",
+    "scope": "venue"
+  },
+  "prayer_halls/bangalore/al-fajr-musalla-at-syeds-plaza-bellandur": {
+    "placeId": "ChIJz8PYC6ATrjsRuCpfSq65BEk",
+    "title": "Al-Fajr Masjid Prayer Hall",
+    "address": "Marathahalli - Sarjapur Outer Ring Rd, Adarsh Palm Retreat Villas, Bellandur, Bengaluru, Karnataka 560103",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/hyderabad/ayyappa-society-musalla-hitec-city": {
+    "placeId": "ChIJfapAq4yRyzsRr2i7O-PBrRc",
+    "title": "Musalla Masjid مُصلىٰ مسجد",
+    "address": "Masjid in, Ayyappa Society Main Rd, below lawrent club showroom, Megha Hills, Sri Sai Nagar, Madhapur, Hyderabad, Telangana 500081",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/barton-centre-musalla-mg-road": {
+    "placeId": "ChIJh94Ls30WrjsRtwoPP1sIn7E",
+    "title": "Barton Centre",
+    "address": "303, Mahatma Gandhi Rd, Haridevpur, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560001",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel shows the prayer space inside this venue.",
+    "scope": "venue"
+  },
+  "prayer_halls/bangalore/commercial-street-rooftop-musalla-shivajinagar": {
+    "placeId": "ChIJ7aOLFikXrjsRxgKWJic3nfw",
+    "title": "Traditions",
+    "address": "Kareem Building, 182, Commercial Street, opposite Salonee, Tasker Town, Shivaji Nagar, Bengaluru, Karnataka 560001",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel uses this landmark to locate the prayer space.",
+    "scope": "landmark"
+  },
+  "prayer_halls/bangalore/fifth-avenue-mall-masjid-brigade-road": {
+    "placeId": "ChIJwZshFH4WrjsRoXlI2toxqWE",
+    "title": "Fifth Avenue Masjid, mosque",
+    "address": "119, Brigade Rd, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560001",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/hyderabad/masjid-allah-ka-ghar-begumpet": {
+    "placeId": "ChIJA9jUPbuQyzsRxT0ThO-XbWw",
+    "title": "Bismillah Apartment",
+    "address": "Mayur Marg, Begumpet, Hyderabad, Telangana 500016",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel shows the prayer space inside this venue.",
+    "scope": "venue"
+  },
+  "prayer_halls/bangalore/masjid-al-noor-halasuru": {
+    "placeId": "ChIJ3UFLpYgWrjsRJ1mbXlXgplY",
+    "title": "Masjid Al Noor (Halasuru)",
+    "address": "Dickenson Rd, near 1, Halasuru, FM Cariappa Colony, Sivanchetti Gardens, Bengaluru, Karnataka 560042",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/masjid-e-abdur-raheem-faizi-hegde-nagar": {
+    "placeId": "ChIJDwUEiukZrjsRVBkPeb8_lv8",
+    "title": "Masjid E Abdur Raheem Faizi",
+    "address": "3JGJ+GX6 Masjid E Abdur Raheem Faizi, Sri Balaji Krupa Layout, RK Hegde Nagar, Bengaluru, Karnataka 560064",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/hyderabad/masjid-e-quthub-shahi-kukatpally": {
+    "placeId": "ChIJJwfeza6RyzsRRzlVBvqELTw",
+    "title": "Qutub Shahi Masjid - kukkatpally",
+    "address": "FCGC+RR2 Qutub Shahi Masjid - kukkatpally, near Dmart - Y Junction, IDA Kukatpally, Kukatpally, Hyderabad, Telangana 500072",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/musalla-near-classic-surplus-store-nagavara": {
+    "placeId": "ChIJY9LOBAAXrjsRasU1n2asegA",
+    "title": "Classic Export Surplus & Discount Sale",
+    "address": "Sy No 152, Prithvi Theatre Complex, Beside MANYATA TECH PARK, Outer Ring Road, Nagavara Flyover, MS Ramaiah North City, Before, Nagavara, Bengaluru, Karnataka 560045",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel uses this landmark to locate the prayer space.",
+    "scope": "landmark"
+  },
+  "prayer_halls/bangalore/musalla-near-reva-university-kattigenahalli": {
+    "placeId": "ChIJtQY-OAAZrjsRoPMuBkQMD9c",
+    "title": "Apex Multispeciality Hospital",
+    "address": "Bellahalli Main Road, near Reva University, Yelahanka, Sathanur, Bengaluru, Karnataka 560064",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel uses this landmark to locate the prayer space.",
+    "scope": "landmark"
+  },
+  "prayer_halls/bangalore/musalla-near-st-josephs-college-langford-town": {
+    "placeId": "ChIJFQ_b_dkVrjsRrs4jJRNSyN4",
+    "title": "St Joseph's University",
+    "address": "36, Lal Bagh Main Rd, Langford Gardens, Bengaluru, Karnataka 560027",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel uses this landmark to locate the prayer space.",
+    "scope": "landmark"
+  },
+  "prayer_halls/bangalore/teachers-colony-musalla-koramangala": {
+    "placeId": "ChIJy7PXqFMVrjsRsc6c7t8QJO8",
+    "title": "Bhawani mobile and service",
+    "address": "Venkatapura Main Rd, near 7th ABC Cross Road, Teacher's Colony, Jakkasandra, 1st Block Koramangala, HSR Layout 5th Sector, Bengaluru, Karnataka 560034",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel uses this landmark to locate the prayer space.",
+    "scope": "landmark"
+  },
+  "prayer_halls/bangalore/ub-city-prayer-hall-vittal-mallya-road": {
+    "placeId": "ChIJMbSrYHcWrjsRzUo30pTxOvQ",
+    "title": "Masjid E UB CITY, mosque",
+    "address": "UB City 3rd Floor Parking area at corner, Grant Rd, KG Halli, D' Souza Layout, Ashok Nagar, Bengaluru, Karnataka 560001",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/bismillah-masjid-sg-palya": {
+    "placeId": "ChIJqUJPMrUVrjsRAtKUzJoqT_s",
+    "title": "Bismillah Masjid",
+    "address": "1219/4D, Masjid Road, Bannerghatta Rd, Bismillahnagar, BTM Layout, Bengaluru, Karnataka 560029",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/castle-street-musalla-richmond-town": {
+    "placeId": "ChIJ4VhMCQAVrjsR6itNHrNPHg0",
+    "title": "AK Castle Suites",
+    "address": "35, Castle St, off Brigade Road Richmond Town, Ashok Nagar, Bengaluru, Karnataka 560025",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel uses this landmark to locate the prayer space.",
+    "scope": "landmark"
+  },
+  "restaurants/bangalore/food-bae-electronic-city": {
+    "placeId": "ChIJiSf4fpJrrjsR0gZNALy14hQ",
+    "title": "Foodbae Restaurant",
+    "address": "S block, Foodbae Restaurant, Ajmera Avenue, & panchayath, Neeladri Rd, Karuna Nagar, Electronic City Phase I, Electronic City, Doddathoguru, Karnataka 560100",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/hayes-road-musalla-residency-road": {
+    "placeId": "ChIJp1hc0_AVrjsRMWjX8_NxUtM",
+    "title": "Augusté Skin | The Facial Specialist Studio",
+    "address": "ground floor, Augusté Skin | The Facial Specialist Studio, Sycon Solitaire, Old no. 11, Hayes Rd, Shanthala Nagar, Bengaluru, Karnataka 560025",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel uses this landmark to locate the prayer space.",
+    "scope": "landmark"
+  },
+  "prayer_halls/bangalore/masjid-e-edigah-e-bilal-bannerghatta-road": {
+    "placeId": "ChIJPRtddQcVrjsRIXIUT-RMU8c",
+    "title": "MASJID-E- EIDGAH BILAL",
+    "address": "Jayanagara 9th Block, Jayanagar, Bengaluru, Karnataka",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "prayer_halls/bangalore/masjid-e-sharfiya-hennur": {
+    "placeId": "ChIJjzDLfAAXrjsRgJoZuubPIQ0",
+    "title": "SPARSH Hospital, Hennur",
+    "address": "DivyaSree Avance, Hennur Bagalur Main Rd, Geddalahalli, Chikkanna Layout, HBR Layout, Bengaluru, Karnataka 560043",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel uses this landmark to locate the prayer space.",
+    "scope": "landmark"
+  },
+  "prayer_halls/bangalore/proms-complex-musalla-koramangala": {
+    "placeId": "ChIJm_TkFmcUrjsRzqrpzMJ3rlg",
+    "title": "Domino's Pizza | Koramangala, Bengaluru",
+    "address": "Ground Floor, Domino's Pizza | Koramangala, Bengaluru, 776, 80 Feet Rd, Proms, Koramangala, Bengaluru, Karnataka 560034",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel uses this landmark to locate the prayer space.",
+    "scope": "landmark"
+  },
+  "prayer_halls/bangalore/iwan-institute-prayer-space-basavanagudi": {
+    "placeId": "ChIJKfHUkN0VrjsRYmR-uBeNQQE",
+    "title": "Iwan Community",
+    "address": "Church Rd, Kanakapura, Basavanagudi, Bengaluru, Karnataka 560004",
+    "reviewedAt": "2026-11-05",
+    "evidence": "The original reel shows the prayer space inside this venue.",
+    "scope": "venue"
+  },
+  "prayer_halls/hyderabad/masjid-e-husaini-begum-gandipet": {
+    "placeId": "ChIJqYgoIXDryzsRZxYE6pW5_P0",
+    "title": "Masjid-e-Hussaini Begum",
+    "address": "C725+FG9 Masjid-e-Hussaini Begum, Janwada, Telangana 500075",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
+  },
+  "restaurants/bangalore/taco-street-hrbr-layout": {
+    "placeId": "ChIJzYTntK8XrjsRepezZiZvyfQ",
+    "title": "Taco Street - Kammanahalli ( Kalyan Nagar )",
+    "address": "Shop no 1, Taco Street - Kammanahalli ( Kalyan Nagar ), Monar Abode, Club House, 4CC-534, HRBR Layout 2nd Block, HRBR Layout, Banaswadi, Bengaluru, Karnataka 560043",
+    "reviewedAt": "2026-11-05",
+    "evidence": "Matched the name or signage and locality against the original reel."
   }
 }

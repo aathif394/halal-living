@@ -1,6 +1,6 @@
 import type { CommunityPost, GooglePhoto, PrayerHall, Restaurant, Review } from "./types";
 import { STATIC_PLACE_PHOTO } from "./place-import";
-import { reelPlaceDetails } from "./reel-directory";
+import { reelHandle, reelPlaceDetails } from "./reel-directory";
 
 // Shapes the database rows into what the page components render.
 
@@ -223,7 +223,7 @@ function hoursCard(rows: HoursRow[], open: boolean, rawToday: string) {
 export function toRestaurantView(place: Restaurant): RestaurantView {
   const linked = Boolean(place.google_place_id);
   const photos = googlePhotos(place.google_photos);
-  if (!photos.length) photos.push(...(place.reel_posters || []).map(src => ({ src, credit: "From @the.halal.living" })));
+  if (!photos.length) photos.push(...(place.reel_posters || []).map(src => ({ src, credit: `From ${reelHandle(place.city)}` })));
   if (!photos.length && place.hero_image) photos.push({ src: place.hero_image, credit: "" });
   for (const url of place.gallery) if (photos.length < 8 && /^https:\/\//.test(url)) photos.push({ src: url, credit: "" });
   const openNow = linked && place.google_open_now != null ? place.google_open_now : place.is_open;
@@ -276,7 +276,7 @@ function hasFacility(facilities: string[], pattern: RegExp): boolean {
 
 export function toMasjidView(place: PrayerHall): MasjidView {
   const photos = googlePhotos(place.google_photos);
-  if (!photos.length) photos.push(...(place.reel_posters || []).map(src => ({ src, credit: "From @the.halal.living" })));
+  if (!photos.length) photos.push(...(place.reel_posters || []).map(src => ({ src, credit: `From ${reelHandle(place.city)}` })));
   const women = hasFacility(place.facilities, /women|ladies|sisters/i);
   const parking = hasFacility(place.facilities, /park/i) && !hasFacility(place.facilities, /no parking/i);
   const jummah = place.jummah_time.trim();
@@ -340,7 +340,7 @@ export function toReelSlide(post: CommunityPost): ReelSlide {
     src: post.media_url,
     poster: post.thumbnail_url || (video ? "" : post.media_url),
     title,
-    by: "@the.halal.living",
+    by: reelHandle(post.city),
     place: post.place_name || at?.[1]?.trim().slice(0, 40) || "Halal Living",
     placeSlugs: post.place_slugs,
     city: post.city,

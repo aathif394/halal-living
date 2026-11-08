@@ -1,13 +1,13 @@
 {
   "counts": {
-    "chennai": 54,
-    "mumbai": 0,
-    "bangalore": 0,
-    "hyderabad": 0
+    "chennai": 528,
+    "mumbai": 24,
+    "bangalore": 96,
+    "hyderabad": 35
   },
   "start": "2026-10-31T18:30:00.000Z",
-  "end": "2026-11-02T10:08:04.809Z",
-  "updatedAt": "2026-11-02T10:08:04.809Z",
+  "end": "2026-11-06T05:19:40.972Z",
+  "updatedAt": "2026-11-06T05:19:40.972Z",
   "source": "Verified Analytics",
   "mode": "snapshot"
 }

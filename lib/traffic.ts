@@ -57,8 +57,7 @@ export function trafficSnapshot(now = new Date()): Traffic | null {
 
 export async function monthlyTraffic(): Promise<Traffic | null> {
   if (cached && cached.expires > Date.now()) return cached.data;
-  const token =
-    (await readEnv("CLOUDFLARE_ANALYTICS_TOKEN")) || (await readEnv("CLOUDFLARE_API_TOKEN"));
+  const token = await readEnv("CLOUDFLARE_ANALYTICS_TOKEN");
   const now = new Date();
   const windows = trafficWindows(now);
   const measuredSnapshot = trafficSnapshot(now);
