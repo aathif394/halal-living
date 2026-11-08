@@ -261,11 +261,12 @@ export function ReelViewer({
 
 /** "Check out these reels": 3D coverflow that advances every 3.6 s; tap a reel to open the viewer. */
 export function ReelsCarousel({ reels }: { reels: ReelSlide[] }) {
-  // The ring needs at least 7 cards so there are two either side of the centre (as in the mockup);
-  // with fewer reels it repeats them. Dots and the viewer use the real reel index.
+  // Each reel appears once. With 5+ reels there are two either side of the centre (as in the mockup);
+  // with fewer, the ring just shows what there is. Never repeat a reel to fill space.
   const count = reels.length;
-  const slots = Array.from({ length: Math.max(7, count) }, (_, i) => ({ reel: reels[i % count]!, key: `${reels[i % count]!.id}-${i}` }));
+  const slots = reels.map((reel) => ({ reel, key: reel.id }));
   const n = slots.length;
+  const single = n < 2;
   const [cur, setCur] = useState(0);
   const [open, setOpen] = useState(-1);
   const [visible, setVisible] = useState(false);
@@ -291,12 +292,12 @@ export function ReelsCarousel({ reels }: { reels: ReelSlide[] }) {
 
   // Advance on a timer while on screen, as the mockup's startReels() does.
   useEffect(() => {
-    if (!visible || open >= 0 || reduced()) return;
+    if (single || !visible || open >= 0 || reduced()) return;
     const id = window.setInterval(() => {
       if (!document.hidden) setCur((x) => (x + 1) % n);
     }, CAROUSEL_MS);
     return () => window.clearInterval(id);
-  }, [visible, open, n, tick]);
+  }, [single, visible, open, n, tick]);
 
   return (
     <section ref={root} className="hl-reels" aria-labelledby="reels-h" data-rv="">
@@ -308,21 +309,21 @@ export function ReelsCarousel({ reels }: { reels: ReelSlide[] }) {
             <path d="M48 17 C120 13 200 13 252 15" pathLength={1} strokeWidth="2.5" opacity=".5" />
           </svg>
         </h2>
-        <div className="hl-reels__arrows">
+        {single ? null : <div className="hl-reels__arrows">
           <button type="button" aria-label="Previous reel" onClick={() => goTo(cur - 1)}>
             <Icon name="arrowLeft" size={18} stroke={2.4} />
           </button>
           <button type="button" aria-label="Next reel" onClick={() => goTo(cur + 1)}>
             <Icon name="arrowRight" size={18} stroke={2.4} />
           </button>
-        </div>
+        </div>}
       </div>
       <div
         className="hl-cf"
         onTouchStart={(event) => (touchX.current = event.touches[0]!.clientX)}
         onTouchEnd={(event) => {
           const dx = event.changedTouches[0]!.clientX - touchX.current;
-          if (Math.abs(dx) > 40) goTo(cur + (dx < 0 ? 1 : -1));
+          if (!single && Math.abs(dx) > 40) goTo(cur + (dx < 0 ? 1 : -1));
         }}
       >
         {slots.map(({ reel, key }, i) => {
@@ -353,7 +354,7 @@ export function ReelsCarousel({ reels }: { reels: ReelSlide[] }) {
             >
               <Media reel={reel} className="hl-cf__bg" />
               <span className="hl-cf__shade" />
-              <span className="hl-cf__bar">{active ? <i key={`p${cur}-${tick}`} style={{ animationDuration: `${CAROUSEL_MS}ms` }} /> : null}</span>
+              <span className="hl-cf__bar">{active && !single ? <i key={`p${cur}-${tick}`} style={{ animationDuration: `${CAROUSEL_MS}ms` }} /> : null}</span>
               <span className="hl-cf__top">
                 <span className="hl-cf__av">
                   <img src="/icons/icon-192.png" alt="" />
@@ -376,11 +377,11 @@ export function ReelsCarousel({ reels }: { reels: ReelSlide[] }) {
           );
         })}
       </div>
-      <div className="hl-cf__dots">
+      {single ? null : <div className="hl-cf__dots">
         {reels.map((reel, i) => Math.abs(i - (cur % count)) <= 4 ? (
           <button key={reel.id} type="button" aria-label={`Show reel ${i + 1}: ${reel.title}`} aria-current={i === cur % count ? "true" : undefined} onClick={() => goTo(cur - (cur % count) + i)} />
         ) : null)}
-      </div>
+      </div>}
       {open >= 0 ? (
         <ReelViewer
           reels={reels}

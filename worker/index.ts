@@ -1,5 +1,6 @@
 import { runWithExecutionContext } from "vinext/shims/request-context";
 import handler from "vinext/server/fetch-handler";
+import { runDigest } from "../lib/digest";
 
 type AssetsBinding = {
   fetch(input: RequestInfo | URL, init?: RequestInit): Promise<Response>;
@@ -138,6 +139,10 @@ const worker = {
       const response = await handler.fetch(request, env, ctx);
       return inlineStyles(response, request, env);
     });
+  },
+  // Monthly "Stay updated" digest (cron in cloudflare.config.ts: 03:30 UTC on the 1st = 09:00 IST).
+  scheduled(_event: unknown, _env: Env, ctx: ExecutionContextLike) {
+    ctx.waitUntil(runDigest().catch((error) => console.error("digest run failed:", error instanceof Error ? error.message : error)));
   },
 };
 
