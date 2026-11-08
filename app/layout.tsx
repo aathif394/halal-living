@@ -14,7 +14,10 @@ export async function generateMetadata(): Promise<Metadata> {
     description: SITE_DESCRIPTION,
     applicationName: "Halal Living",
     manifest: "/manifest.webmanifest",
-    icons: { icon: "/icons/icon-192.png", apple: "/icons/apple-touch-icon.png" },
+    icons: {
+      icon: [{ url: "/favicon.ico", sizes: "any" }, { url: "/icons/favicon-192.png", sizes: "192x192", type: "image/png" }],
+      apple: "/icons/apple-touch-icon.png",
+    },
     appleWebApp: { capable: true, title: "Halal Living", statusBarStyle: "black-translucent" },
     openGraph: {
       type: "website",
