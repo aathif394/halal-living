@@ -38,6 +38,7 @@ export function organizationLd(base: string) {
     url: base,
     description: SITE_DESCRIPTION,
     areaServed: CITIES.map((city) => city.name),
+    sameAs: CITIES.map((city) => `https://www.instagram.com/${city.instagram}/`),
   };
 }
 

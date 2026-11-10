@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CITIES, STORE_URL, type CityTheme } from "@/lib/cities";
+import { CITIES, STORE_URL, type CityTheme, instagramUrl } from "@/lib/cities";
 import { CityLogo, Landmark, StarPattern, themeStyle } from "./brand";
 import { BottomNav } from "./bottom-nav";
 import { CitySwitcher, CityWipeIn } from "./city-switcher";
@@ -108,14 +108,8 @@ export function Footer({ city, counts }: { city: CityTheme; counts?: { restauran
             <CityLogo city={city} size={48} />
             <p>Halal restaurants and masjids in four cities, checked by people who live there.</p>
             <div className="hl-footer__social">
-              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <a href={instagramUrl(city.instagram)} target="_blank" rel="noopener noreferrer" aria-label={`Halal Living ${city.name} on Instagram (@${city.instagram})`}>
                 <Icon name="instagram" size={18} stroke={2} />
-              </a>
-              <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-                <Icon name="youtube" size={18} stroke={2} />
-              </a>
-              <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-                <Icon name="whatsapp" size={18} stroke={2} />
               </a>
             </div>
           </div>

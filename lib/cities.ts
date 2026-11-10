@@ -9,11 +9,14 @@ export type CityTheme = {
   accent: string;
   landmark: string;
   areas: string[];
+  /** Instagram account for the city (handle without @). */
+  instagram: string;
 };
 
 export const CITIES: CityTheme[] = [
   {
     slug: "chennai",
+    instagram: "the.halal.living",
     name: "Chennai",
     btn: "#B94421",
     tint: "#FAEDE8",
@@ -25,6 +28,7 @@ export const CITIES: CityTheme[] = [
   },
   {
     slug: "mumbai",
+    instagram: "the.halalliving.mumbai",
     name: "Mumbai",
     btn: "#5A2FAC",
     tint: "#EFEAF8",
@@ -36,6 +40,7 @@ export const CITIES: CityTheme[] = [
   },
   {
     slug: "bangalore",
+    instagram: "the.halal.living.bangalore",
     name: "Bangalore",
     btn: "#45A34D",
     tint: "#ECF6ED",
@@ -47,6 +52,7 @@ export const CITIES: CityTheme[] = [
   },
   {
     slug: "hyderabad",
+    instagram: "the.halal.living.hyderabad",
     name: "Hyderabad",
     btn: "#09AAAC",
     tint: "#E5F6F6",
@@ -57,6 +63,8 @@ export const CITIES: CityTheme[] = [
     areas: ["Charminar", "Tolichowki", "Mehdipatnam", "Banjara Hills", "Mallepally", "Masab Tank", "Shah Ali Banda", "Gachibowli"],
   },
 ];
+
+export const instagramUrl = (handle: string) => `https://www.instagram.com/${handle}/`;
 
 export function getCity(slug: string): CityTheme | undefined {
   return CITIES.find((city) => city.slug === slug);
